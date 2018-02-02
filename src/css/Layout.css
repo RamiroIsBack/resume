@@ -1,0 +1,62 @@
+
+.sidebar__contaniner{
+  background: transparent;
+  border-radius: 25px;
+  top: 100px;
+  width: 100px;
+  padding: 8px;
+  margin:1px;
+  position: fixed;
+
+}
+
+.container {
+    top: 0;
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "i i i i i i i i i i i i"
+        "s u u u u u u u u u u u"
+        "s e e e e e e e e e e e"
+        "s t t t t t t t t t t t"
+        "s t t t t t t t t t t t" ;
+}
+
+.IntroContainer {
+    grid-area: i;
+    overflow-wrap: break-word;
+}
+
+.SummaryContainer {
+    grid-area: u;
+    overflow-wrap: break-word;
+    padding-top: 100px;
+}
+
+.ServicesContainer {
+    grid-area: e;
+    overflow-wrap: break-word;
+    padding-top: 100px;
+}
+
+.SkillsContainer {
+    grid-area: k;
+    overflow-wrap: break-word;
+    padding-top: 100px;
+}
+.TimeLineContainer {
+    grid-area: t;
+    overflow-wrap: break-word;
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+.SideBarSpace {
+    grid-area: s;
+    width:120px;
+    overflow-wrap: break-word;
+    z-index: 1;
+
+}

@@ -1,0 +1,7 @@
+.sidebar__section__link{
+  cursor: pointer;
+  margin: 0;
+  padding: 4px;
+  padding-top: 50px;
+  z-index: 1;
+}
