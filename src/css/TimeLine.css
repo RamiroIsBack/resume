@@ -1,0 +1,170 @@
+.year__container{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(9, 100px);
+  grid-template-areas:
+      ". . . . . e e . . . . . "
+      ". . . . . n n . . . . . "
+      ". . . . . s s . . . . . "
+      ". . . . . v v . . . . . "
+      ". . . . . l l . . . . . "
+      ". . . . . t t . . . . . "
+      ". . . . . i i . . . . . "
+      ". . . . . f f . . . . . ";
+  text-align: center;
+  position: absolute;
+}
+.eighteen{
+  grid-area: e;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid rgb(2, 145, 171);
+  border-radius: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+  position: absolute;
+}
+.seventeen{
+  grid-area: n;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid rgb(2, 145, 171);
+  border-radius: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+  position: absolute;
+}
+.sixteen{
+  grid-area: s;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid rgb(2, 145, 171);
+  border-radius: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+  position: absolute;
+}
+.fiveteen{
+  grid-area: v;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid rgb(2, 145, 171);
+  border-radius: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+  position: absolute;
+}
+.twelve{
+  grid-area: l;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid rgb(2, 145, 171);
+  border-radius: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+  position: absolute;
+}
+.ten{
+  grid-area: t;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid rgb(2, 145, 171);
+  border-radius: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+  position: absolute;
+}
+.eight{
+  grid-area: i;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid rgb(2, 145, 171);
+  border-radius: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+  position: absolute;
+}
+.five{
+  grid-area: f;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid rgb(2, 145, 171);
+  border-radius: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+  position: absolute;
+}
+.zero{
+  grid-area: f;
+  bottom: 1px;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid rgb(2, 145, 171);
+  border-radius: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+  position: absolute;
+}
+/*-------------------------------------------------------------------------*/
+.timeLine__container {
+  height: 100%;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(9, 100px) ;
+  grid-template-areas:
+  ". . . . . . l . . . . . . "
+  "w w w w w w l r r r r r r "
+  "t t t t t t l v v v v v v "
+  "n n n n n n l a a a a a a "
+  "j j j j j j l . . . . . . "
+  "e e e e e e l c c c c c c "
+  "p p p p p p l . . . . . . "
+  ". . . . . . l d d d d d d ";
+  text-align: center;
+  position: relative;
+}
+
+.line{
+  grid-area: l;
+  position: relative;
+  border: 5px solid rgb(2, 145, 171);
+  border-radius: 20px;
+  width: 0;
+}
+.studies__degree{
+  grid-area: d;
+}
+.studies__civil__servant{
+  grid-area: c;
+}
+.studies__android{
+  grid-area: a;
+}
+.studies__vertical{
+  grid-area: v;
+}
+.studies__react{
+  grid-area: r;
+}
+.work__programmingC{
+  grid-area: p;
+}
+.work__java{
+  grid-area: j;
+}
+.work__english__teacher{
+  grid-area: e;
+}
+.work__android{
+  grid-area: n;
+}
+.work__rope__acces__technician{
+  grid-area: t;
+}
+.work__web__app{
+  grid-area: w;
+}
