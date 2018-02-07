@@ -92,35 +92,41 @@ class App extends Component {
                 <SideBarContainerMobile  />
 
               </div>
-              <div className = 'section__headline__mobile'>
-                Professional Profile
-              </div>
+              {this.props.section.imgLoaded &&
+                <div className = 'section__headline__mobile'>
+                  Professional Profile
+                </div>
+              }
               <SummaryContainerMobile  />
 
             </div>
 
 
             <div className='ServicesContainer__mobile' id='servicesContainer'>
-              <div className = 'section__headline__mobile'>
-                Skills and services
-              </div>
+              {this.props.section.imgLoaded &&
+                <div className = 'section__headline__mobile'>
+                  Skills and services
+                </div>
+              }
               <ServicesContainer  />
 
             </div>
 
 
             <div className='TimeLineContainer__mobile' id='timeLineContainer'>
-              <div className = 'section__headline__mobile'>
-                Time-line resume
-                <div>
-                  <div className = 'section__secondLiner__work__mobile'>
-                    Work
-                  </div>
-                  <div className = 'section__secondLiner__studies__mobile'>
-                    Studies
+              {this.props.section.imgLoaded &&
+                <div className = 'section__headline__mobile'>
+                  Time-line resume
+                  <div>
+                    <div className = 'section__secondLiner__work__mobile'>
+                      Work
+                    </div>
+                    <div className = 'section__secondLiner__studies__mobile'>
+                      Studies
+                    </div>
                   </div>
                 </div>
-              </div>
+              }
               <TimeLineContainerMobile  />
 
             </div>
@@ -142,34 +148,40 @@ class App extends Component {
             </div>
 
             <div className='SummaryContainer' id='summaryContainer'>
-              <div className = 'section__headline'>
-                Professional Profile
-              </div>
+              {this.props.section.imgLoaded &&
+                <div className = 'section__headline'>
+                  Professional Profile
+                </div>
+              }
               <SummaryContainer  />
 
             </div>
 
             <div className='ServicesContainer' id='servicesContainer'>
-              <div className = 'section__headline'>
-                Skills and services
-              </div>
+              {this.props.section.imgLoaded &&
+                <div className = 'section__headline'>
+                  Skills and services
+                </div>
+              }
               <ServicesContainer  />
 
             </div>
 
 
             <div className='TimeLineContainer' id='timeLineContainer'>
-              <div className = 'section__headline'>
-                Time-line resume
-                <div>
-                  <div className = 'section__secondLiner__work'>
-                    Work
-                  </div>
-                  <div className = 'section__secondLiner__studies'>
-                    Studies
+              {this.props.section.imgLoaded &&
+                <div className = 'section__headline'>
+                  Time-line resume
+                  <div>
+                    <div className = 'section__secondLiner__work'>
+                      Work
+                    </div>
+                    <div className = 'section__secondLiner__studies'>
+                      Studies
+                    </div>
                   </div>
                 </div>
-              </div>
+              }
               <TimeLineContainer  />
 
             </div>
