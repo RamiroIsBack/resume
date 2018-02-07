@@ -17,9 +17,9 @@
 }
 .fecha__inicio__mobile{
   display: inline-block;
-  font-weight: 200;
+  font-weight: 300;
   margin-top: 3px;
-  opacity: 0.4;
+  opacity: 0.7;
   margin: 0;
   font-size: 14px;
 
@@ -27,9 +27,9 @@
 }
 .fecha__fin__mobile{
   display: inline-block;
-  font-weight: 200;
+  font-weight: 300;
   margin-top: 3px;
-  opacity: 0.4;
+  opacity: 0.7;
   margin: 0;
   font-size: 14px;
 }
