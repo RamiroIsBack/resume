@@ -26,11 +26,11 @@ class Mapa extends Component {
       >
 
         <InfoWindow >
-          <div style = {{maxWidth: 400,padding : 0}}>
+          <div style = {{maxWidth: 600,padding : 0}}>
 
             <img role='presentation' src={foto} className ='infoWindow__img' alt='foto' id='fotoInfoWindow'
               style = {{
-                opacity: 0.9, maxHeight: 60, maxWidth:60, cursor: 'pointer',float:'left', marginRight:'4px',
+                opacity: 0.9, maxHeight: 60, maxWidth:60, cursor: 'pointer',float:'left', marginRight:'2px',
               }}
               onClick={() => this.handleClick('https://www.google.com/maps/place/Hampden,+Baltimore,+Maryland+21211/@39.3399061,-76.6020314,12.93z/data=!4m5!3m4!1s0x89c804d5f7905ff3:0x5cc1e5ec25566796!8m2!3d39.3333706!4d-76.632607')}>
             </img>

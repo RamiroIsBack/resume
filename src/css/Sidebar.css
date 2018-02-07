@@ -6,6 +6,7 @@
 .sidebar__section__link__mobile{
   cursor: pointer;
   margin: 0;
+  margin-right: 4px;
   padding-top: 10px;
   font-size: 14px;
   display: inline-block;
