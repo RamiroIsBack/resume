@@ -7,10 +7,6 @@ import {PopularFunctions} from '../../utils';
 
 class ServicesContainer extends Component {
 
-  selectService(service){
-    console.log ('service clicked '+ service)
-  }
-
   getServicesComponents(rawList){
     let servicesComponentList = [];
     let animeIt =false;
@@ -21,7 +17,10 @@ class ServicesContainer extends Component {
     for(let i = 0; i<rawList.length; i++){
       servicesComponentList.push(
         <div key ={i}>
-          <Service sectionSelected= {animeIt} serviceInfo ={rawList[i]} whenClicked={this.selectService.bind(this)}/>
+          <Service
+            sectionSelected= {animeIt}
+            serviceInfo ={rawList[i]}
+          />
         </div>
       );
     }
