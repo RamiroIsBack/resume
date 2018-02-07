@@ -28,12 +28,26 @@ class IntroContainer extends Component {
       urlPic = copy.urlPic;
     }
     return (
-      <div className='intro__foto__container' style = {visual}>
-        <img className='intro__foto'
-          src= {urlPic}
-          onLoad={this.handleImageLoaded.bind(this)}
-          onError={this.handleImageErrored.bind(this)}
-        ></img>
+      <div>
+        {visual.opacity===0 &&
+          <div>
+            <div className = 'spiner__copy'>
+              Loading Ramiro Santamaria's resume
+            </div>
+            <div className='spinner'>
+              <div className='double-bounce1'></div>
+              <div className='double-bounce2'></div>
+            </div>
+          </div>
+
+        }
+        <div className='intro__foto__container' style = {visual}>
+          <img className='intro__foto'
+            src= {urlPic}
+            onLoad={this.handleImageLoaded.bind(this)}
+            onError={this.handleImageErrored.bind(this)}
+          ></img>
+        </div>
       </div>
     );
   }
