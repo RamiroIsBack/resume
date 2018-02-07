@@ -7,15 +7,11 @@ class SkillsContainer extends Component {
 
 
   render() {
-    let suma = 5;
+
 
     return (
       <div >
-        <h3 > skldfjasdlkf;jsd;flkajsdf;lskdjf;lsakdfjsdklfjsdkfjsdkflsjdf < /h3>
-        <h3 > la suma es {suma} < /h3>
-        <h3 > dfkgjhdfkbjnpofnWEFASDLFKJWOEIFJOINVLKVMSLDKCSJDFLKJDFOWIEJFLSKFJSLDKFJSLDKFJSDLFKJSDFKLSDFJ < /h3>
-        <h3 > la suma es {suma} < /h3>
-        <h3 > sldkfjsdlfksjfdlksdf;lskdfjsdiofjsdflksdfjlskdfjsdlkfjsdflksjdflksdjfkldsf < /h3>
+        
       </div>
     );
   }

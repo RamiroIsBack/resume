@@ -10,15 +10,25 @@ class Service extends Component {
     if(this.props.serviceInfo){
       logo = this.props.serviceInfo.urlPic;
       let percentage = parseInt(this.props.serviceInfo.percentage);
-      stylingBarWidth ={
-        width: ''+percentage+'%'
-      };
+      if (this.props.sectionSelected){
+        stylingBarWidth ={
+          width: ''+percentage+'%',
+          animationName: 'progress',
+          animationDuration: '10s',
+          animationTimingFunction: 'ease-in-out',
+        };
+      }else {
+        stylingBarWidth ={
+          width: ''+percentage+'%',
+
+        };
+      }
     }
 
     return (
       <div >
         <div className = 'name__pic__container'>
-          <h2  className = 'name' >{this.props.serviceInfo.nombre}</h2>
+          <h2  className = 'service__name' >{this.props.serviceInfo.nombre}</h2>
           <img className = 'logo_pic' src= {logo}></img>
         </div>
         <div className = 'progress__bar' style={stylingBarWidth}></div>
