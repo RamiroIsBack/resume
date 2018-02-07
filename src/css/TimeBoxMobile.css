@@ -1,0 +1,58 @@
+.leaf__container__mobile{
+  width: 100%;
+  text-align: left;
+}
+.timeBox__name__mobile{
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 4px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+.fecha_container__mobile{
+  display: inline-block;
+  padding-left: 4px;
+
+}
+.fecha__inicio__mobile{
+  display: inline-block;
+  font-weight: 200;
+  margin-top: 3px;
+  opacity: 0.4;
+  margin: 0;
+  font-size: 14px;
+
+
+}
+.fecha__fin__mobile{
+  display: inline-block;
+  font-weight: 200;
+  margin-top: 3px;
+  opacity: 0.4;
+  margin: 0;
+  font-size: 14px;
+}
+.logo__photo__container__mobile{
+  padding-left: 4px;
+  max-height: 60px;
+  max-width: 80px;
+}
+
+.logo__photo__mobile{
+  cursor: pointer;
+  max-height: 60px;
+  max-width: 120px;
+}
+
+.description__container__mobile{
+  padding-top: 8px;
+  text-align: left;
+  padding-left: 2px;
+}
+.description__text__mobile{
+  margin-top: 3px;
+  display: inline-block;
+  font-size: 12px;
+
+}

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Services_css} from '../../css';
 import {connect} from 'react-redux';
-import actions from '../../actions'
-import {Service} from '../presentational'
+import actions from '../../actions';
+import {Service} from '../presentational';
 import {PopularFunctions} from '../../utils';
 
 class ServicesContainer extends Component {
@@ -13,10 +13,15 @@ class ServicesContainer extends Component {
 
   getServicesComponents(rawList){
     let servicesComponentList = [];
+    let animeIt =false;
+    if(this.props.section.sectionSelected ==='services'){
+
+      animeIt =true;
+    }
     for(let i = 0; i<rawList.length; i++){
       servicesComponentList.push(
         <div key ={i}>
-          <Service serviceInfo ={rawList[i]} whenClicked={this.selectService.bind(this)}/>
+          <Service sectionSelected= {animeIt} serviceInfo ={rawList[i]} whenClicked={this.selectService.bind(this)}/>
         </div>
       );
     }
@@ -32,7 +37,6 @@ class ServicesContainer extends Component {
     }
 
     let visual = PopularFunctions.figureOutOpacity(this.props);
-
     return (
       <div className = 'services__container' style= {visual}>
         {servicesList}

@@ -20,21 +20,13 @@ class IntroContainer extends Component {
   }
 
   render() {
-    let urlPic =''
-    if(this.props.copy){
-      if (this.props.copy.copyList.length != 0){
-        for(let i = 0; i<this.props.copy.copyList.length; i++){
-          if(this.props.copy.copyList[i].nombre === 'introPic'){
-            urlPic = this.props.copy.copyList[i].urlPic;
-            break;
-          }
+    let urlPic ='';
 
-        }
-
-      }
-    }
+    let copy = PopularFunctions.selectSpecificCopy(this.props,'introPic');
     let visual = PopularFunctions.figureOutOpacity(this.props);
-
+    if (copy.urlPic){
+      urlPic = copy.urlPic;
+    }
     return (
       <div className='intro__foto__container' style = {visual}>
         <img className='intro__foto'

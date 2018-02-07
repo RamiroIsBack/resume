@@ -19,6 +19,25 @@ export default {
     return{
       type: constants.IMG_LOADED,
       data: loaded
-    }
-  }
+    };
+  },
+  chageScreenWidth: (screenSize) =>{
+    return{
+      type:constants.CHANGE_SCREEN_WIDTH,
+      data: screenSize,
+    };
+  },
+  toggleMenu:(order)=>{
+    return{
+      type:constants.TOGGLE_MENU,
+      data: order,
+    };
+  },
+  changeScrollIndicator:(scrollIndicator)=>{
+    return{
+      type:constants.CHANGE_SCROLL_INDICATOR,
+      data: scrollIndicator,
+    };
+  },
+
 };

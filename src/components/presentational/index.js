@@ -1,7 +1,10 @@
 import Service from './Service.js';
-import Skill from './Skill.js';
-
+import TimeBox from './TimeBox.js';
+import TimeBoxMobile from './TimeBoxMobile.js';
+import Mapa from './Mapa.js';
 export{
+  Mapa,
   Service,
-  Skill,
+  TimeBox,
+  TimeBoxMobile,
 };

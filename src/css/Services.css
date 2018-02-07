@@ -1,6 +1,6 @@
 .services__container {
     display: grid;
-    grid-gap: 40px;
+    grid-gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-auto-rows: repeat(auto-fit, minmax(200px, 400px));
     grid-auto-flow: dense;
@@ -9,6 +9,7 @@
 .name__pic__container{
   display: inline-block;
   width: 80%;
+  padding-left: 6px;
 }
 
 .progress__bar{
@@ -18,11 +19,8 @@
   overflow: hidden;
   width: 80%;
   background-color: black;
-  animation-name: progress;
-  animation-duration: 10s;
-  animation-iteration-count: 2;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+  margin-left: 6px;
+
 }
 @keyframes progress {
   from {width: 0;}
@@ -31,15 +29,17 @@
 .percentage__num{
   font-weight: 200;
   margin-top: 3px;
+  padding-left: 6px;
 }
 .logo_pic{
   height: 60px;
   width: 60px;
   float: right;
 }
-.name{
+.service__name{
 display: inline-block;
 }
 .bio__container{
   width: 85%;
+  padding-left: 6px;
 }

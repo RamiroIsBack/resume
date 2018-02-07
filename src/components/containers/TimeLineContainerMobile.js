@@ -1,18 +1,18 @@
 
 import React, {Component} from 'react';
-import {TimeLineYears_css,TimeLineActivities_css} from '../../css';
+import {TimeLineYears_mobile_css,TimeLineActivities_mobile_css} from '../../css';
 import {connect} from 'react-redux';
 import actions from '../../actions';
 import {PopularFunctions} from '../../utils';
-import {TimeBox} from '../presentational';
+import {TimeBoxMobile} from '../presentational';
 
-class TimeLineContainer extends Component {
+class TimeLineContainerMobile extends Component {
   getTimeLineComponents(rawList){
     let timeLineComponentList = [];
     for(let i = 0; i<rawList.length; i++){
       timeLineComponentList.push(
-        <div className = {rawList[i].className} key ={i}>
-          <TimeBox
+        <div className = {rawList[i].className+'__mobile'} key ={i}>
+          <TimeBoxMobile
             urlClick = {this.handleClick.bind(this)}
             copy = {rawList[i]}
             screenSize = {this.props.section.screenSize}
@@ -38,20 +38,20 @@ class TimeLineContainer extends Component {
     let visual = PopularFunctions.figureOutOpacity(this.props);
 
     return (
-      <div className = 'timeLine__container' style = {visual} >
+      <div className = 'timeLine__container__mobile' style = {visual} >
         {timeLineList}
-        <div className = 'line'>
+        <div className = 'line__mobile'>
         </div>
-        <div className = 'year__container'>
-          <div className = 'eighteen'>2018</div>
-          <div className = 'seventeen'>2017</div>
-          <div className = 'sixteen'>2016</div>
-          <div className = 'fiveteen'>2015</div>
-          <div className = 'twelve'>2012</div>
-          <div className = 'ten'>2010</div>
-          <div className = 'eight'>2008</div>
-          <div className = 'five'>2005</div>
-          <div className = 'zero'>2000</div>
+        <div className = 'year__container__mobile'>
+          <div className = 'eighteen__mobile'>2018</div>
+          <div className = 'seventeen__mobile'>2017</div>
+          <div className = 'sixteen__mobile'>2016</div>
+          <div className = 'fiveteen__mobile'>2015</div>
+          <div className = 'twelve__mobile'>2012</div>
+          <div className = 'ten__mobile'>2010</div>
+          <div className = 'eight__mobile'>2008</div>
+          <div className = 'five__mobile'>2005</div>
+          <div className = 'zero__mobile'>2000</div>
         </div>
 
       </div>
@@ -73,4 +73,4 @@ const stateToProps = (state) => {
   };
 };
 
-export default connect (stateToProps,dispatchToProps)(TimeLineContainer);
+export default connect (stateToProps,dispatchToProps)(TimeLineContainerMobile);

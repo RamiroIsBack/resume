@@ -5,8 +5,8 @@ var initialState = {
   copyLoaded : false,
   copyList: [],
   servicesList: [],
-  skillsList: [],
   timeLineList: [],
+  footerList:[],
 
 };
 var getSubList=(copyList,request)=>{
@@ -41,7 +41,8 @@ export default (state = initialState, action) => {
       let list = action.data;
       newState['copyList'] = list;
       newState['servicesList'] = getSubList(list,'services');
-      newState['skillsList'] = getSubList(list,'skills');
+      newState['timeLineList'] = getSubList(list,'timeLine');
+      newState['footerList'] = getSubList(list,'footer');
       newState['copyLoaded'] = true;
       console.log('copyLoaded');
     }

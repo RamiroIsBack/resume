@@ -1,7 +1,52 @@
 .sidebar__section__link{
   cursor: pointer;
+  padding: 0;
+  margin-top: 50px;
+}
+.sidebar__section__link__mobile{
+  cursor: pointer;
   margin: 0;
-  padding: 4px;
-  padding-top: 50px;
-  z-index: 1;
+  padding-top: 10px;
+  font-size: 14px;
+  display: inline-block;
+}
+.sidebar__menu__arrow__colapse__container{
+  background-color: transparent;
+  position: absolute;
+  top:35%;
+  left:0;
+}
+.sidebar__menu__arrow__colapse{
+  height: 30px;
+  width: 20px;
+  border-radius: 5px;
+}
+.sidebar__menu__container__mobile{
+  background-color: rgba(255, 255, 255, 0.58);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+
+
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1;}
+}
+.sidebar__colapsed__photo__container__mobile{
+  width: 40px;
+  float: right;
+  padding-top: 10px;
+  background-color: rgba(255, 255, 255, 0.58);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+.sidebar__colapsed__photo__mobile{
+  width: 40px;
+  border-radius: 5px;
 }
