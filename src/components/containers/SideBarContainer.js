@@ -11,7 +11,16 @@ class SideBarContainer extends Component {
     this.props.movetoSection(section);
     const element = document.getElementById(section+'Container');
     element.scrollIntoView({block: 'start',  behaviour: 'smooth'});
+    if (this.props.section.screenSize ==='mobile'){
+      this.props.toggleMenu(!this.props.section.colapsed);
+    }
   }
+  toggleMenu(){
+
+    this.props.toggleMenu(!this.props.section.colapsed);
+
+  }
+
 
   render() {
     let styleSummary ={};
@@ -33,31 +42,95 @@ class SideBarContainer extends Component {
     }
 
     let visual = PopularFunctions.figureOutOpacity(this.props);
+    let copy = PopularFunctions.selectSpecificCopy(this.props,'sideBar');
+
+    let colapsed = true;
+    let imgSideBarColapsed = '';
+    imgSideBarColapsed = copy.urlPic;
+    let arrowClose = copy.urlArrowClose;
+    let arrowOpen = copy.urlArrowOpen;
+    if(!this.props.section.colapsed){
+      colapsed = false;
+    }
+    let mobile = false;
+    if (this.props.section.screenSize ==='mobile'){
+      if(this.props.section.scrollIndicator === ''){
+        visual ={opacity:0};
+      }
+      mobile = true;
+    }
     return (
-      <div style= {visual}>
-        <h4 className = 'sidebar__section__link '
-          id = 'summary'
-          style = {styleSummary}
-          onClick = {this.handleSectionSelection.bind(this)}
-        >Professional profile</h4>
-        <h4 className = 'sidebar__section__link'
-          id = 'services'
-          style = {styleServices}
-          onClick = {this.handleSectionSelection.bind(this)}
-        >Skills and services</h4>
+      <div>
+        {!mobile &&
+          <div style= {visual}>
+            <h4 className = 'sidebar__section__link '
+              id = 'summary'
+              style = {styleSummary}
+              onClick = {this.handleSectionSelection.bind(this)}
+            >Professional profile</h4>
+            <h4 className = 'sidebar__section__link'
+              id = 'services'
+              style = {styleServices}
+              onClick = {this.handleSectionSelection.bind(this)}
+            >Skills and services</h4>
 
-        <h4 className = 'sidebar__section__link'
-          id = 'timeLine'
-          style = {styleSTimeLine}
-          onClick = {this.handleSectionSelection.bind(this)}
-        >Time line resume</h4>
+            <h4 className = 'sidebar__section__link'
+              id = 'timeLine'
+              style = {styleSTimeLine}
+              onClick = {this.handleSectionSelection.bind(this)}
+            >Time line resume</h4>
 
-        <h4 className = 'sidebar__section__link'
-          id = 'footer'
-          onClick = {this.handleSectionSelection.bind(this)}
-        >Contact</h4>
+            <h4 className = 'sidebar__section__link'
+              id = 'footer'
+              onClick = {this.handleSectionSelection.bind(this)}
+            >Contact</h4>
+          </div>
+        }
+        {mobile &&
+          <div style= {visual}>
+            { !colapsed &&
+              <div className = 'sidebar__menu__container__mobile'>
+                <div className = 'sidebar__menu__arrow__colapse__container'>
+                  <img
+                    className = 'sidebar__menu__arrow__colapse'
+                    src = {arrowClose}
+                    onClick = {this.toggleMenu.bind(this)}
+                  ></img>
+                </div>
+                <h4 className = 'sidebar__section__link '
+                  id = 'summary'
+                  style = {styleSummary}
+                  onClick = {this.handleSectionSelection.bind(this)}
+                >Profile</h4>
+                <h4 className = 'sidebar__section__link'
+                  id = 'services'
+                  style = {styleServices}
+                  onClick = {this.handleSectionSelection.bind(this)}
+                >Skills</h4>
 
+                <h4 className = 'sidebar__section__link'
+                  id = 'timeLine'
+                  style = {styleSTimeLine}
+                  onClick = {this.handleSectionSelection.bind(this)}
+                >Resume</h4>
 
+                <h4 className = 'sidebar__section__link'
+                  id = 'footer'
+                  onClick = {this.handleSectionSelection.bind(this)}
+                >Contact</h4>
+              </div>
+            }
+            {colapsed &&
+              <div className = 'sidebar__colapsed__photo__container__mobile'>
+                <img
+                  className = 'sidebar__colapsed__photo__mobile'
+                  src= {arrowOpen}
+                  onClick = {this.toggleMenu.bind(this)}
+                ></img>
+              </div>
+            }
+          </div>
+        }
       </div>
     );
   }
@@ -66,7 +139,7 @@ class SideBarContainer extends Component {
 const dispatchToProps = (dispatch) =>{
 
   return{
-    getCopy: () => dispatch(actions.getCopy()),
+    toggleMenu:(order)=> dispatch(actions.toggleMenu(order)),
     movetoSection: (section) => dispatch(actions.movetoSection(section)),
 
   };

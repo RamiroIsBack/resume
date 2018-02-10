@@ -3,14 +3,6 @@
   padding: 0;
   margin-top: 50px;
 }
-.sidebar__section__link__mobile{
-  cursor: pointer;
-  margin: 0;
-  margin-right: 4px;
-  padding-top: 10px;
-  font-size: 14px;
-  display: inline-block;
-}
 .sidebar__menu__arrow__colapse__container{
   background-color: transparent;
   position: absolute;
@@ -50,4 +42,15 @@
 .sidebar__colapsed__photo__mobile{
   width: 40px;
   border-radius: 5px;
+}
+@media screen and (max-width: 705px) {
+  .sidebar__section__link{
+    cursor: pointer;
+    margin: 0;
+    margin-right: 4px;
+    padding-top: 10px;
+    font-size: 14px;
+    display: inline-block;
+  }
+
 }

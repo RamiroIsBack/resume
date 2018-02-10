@@ -6,14 +6,19 @@ import {Service} from '../presentational';
 import {PopularFunctions} from '../../utils';
 
 class ServicesContainer extends Component {
-
+  constructor(){
+    super();
+    this.state = {
+      animatedAlready : false,
+    };
+  }
   getServicesComponents(rawList){
     let servicesComponentList = [];
     let animeIt =false;
-    if(this.props.section.sectionSelected ==='services'){
-
+    if(this.props.section.scrollIndicator === 'servicesContainer' ){
       animeIt =true;
     }
+
     for(let i = 0; i<rawList.length; i++){
       servicesComponentList.push(
         <div key ={i}>

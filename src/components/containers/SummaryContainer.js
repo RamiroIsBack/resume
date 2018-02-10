@@ -17,46 +17,58 @@ class SummaryContainer extends Component {
     let urlPic = '';
     let bio = '';
 
-    let intros = <div><br/><br/></div>;
-    let bioCss = 'bio';
-    let headLineCss = 'head__line';
-
     let copy = PopularFunctions.selectSpecificCopy(this.props,'summaryPic');
     let visual = PopularFunctions.figureOutOpacity(this.props);
     if (copy.bio){
       urlPic = copy.urlPic;
       bio = copy.bio;
     }
-    if(this.props.section.screenSize === 'tablet'){
-      intros = <div style = {{margin:0,padding:5}}></div>;
-      bioCss = 'bio__tablet';
-      headLineCss = 'head__line__tablet';
+    let tablet = false;
+    if (this.props.section.screenSize ==='tablet' || this.props.section.screenSize ==='mobile'){
+      tablet = true;
     }
-    if(this.props.section.screenSize === 'prelaptop'){
-      intros = <div><br/></div>;
-      bioCss = 'bio__prelaptop';
-      headLineCss = 'head__line__tablet';
 
-    }
     return (
       <div className = 'summary__container' style = {visual}>
-        <div className = 'summary__photo__container' >
-          <h2 className = 'contact__button'
-            onClick = {this.handleClick.bind(this)}
-          >
-            Contact info
-          </h2>
-          <div className = 'summary__copy'>
-            <h2 className = {headLineCss}>
-              About me:
-            </h2>
-            <div className = 'bio__container'>
-              {bio.split('\n').map((item, key) => {
-                return <span className = {bioCss} key={key}>{item}{intros}</span>;})}
+        {!tablet &&
+          <div>
+            <div className = 'summary__photo__container' >
+              <div className = 'summary__copy'>
+                <h2 className = 'head__line'>
+                  About me:
+                </h2>
+                <div className = 'bio__container'>
+                  {bio.split('\n').map((item, key) => {
+                    return <span className = 'bio' key={key}>{item}<div><br/></div></span>;})}
+                </div>
+              </div>
+              <img className = 'summary__photo' src = {urlPic}></img>
             </div>
           </div>
-          <img className = 'summary__photo' src = {urlPic}></img>
-        </div>
+        }
+        {tablet &&
+          <div>
+            <div className = 'headLine__andPhoto__container'>
+              <h2 className = 'head__line'>
+                Some words about me:
+              </h2>
+              <h2 className = 'contact__button'
+                onClick = {this.handleClick.bind(this)}
+              >
+                Contact info
+              </h2>
+              <div className = 'summary__photo__container' >
+                <img className = 'summary__photo' src = {urlPic}></img>
+              </div>
+            </div>
+            <div className = 'summary__copy'>
+              <div className = 'bio__container'>
+                {bio.split('\n').map((item, key) => {
+                  return <span className = 'bio' key={key}>{item}<br/><br/></span>;})}
+              </div>
+            </div>
+          </div>
+        }
       </div>
     );
   }
