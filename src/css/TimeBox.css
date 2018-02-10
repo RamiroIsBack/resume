@@ -1,67 +1,68 @@
 .leaf__container{
   width: 97%;
   text-align: left;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(40px, 55px));
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+      " . h h h h h h"
+      " . f f f f f f"
+      " . b b b b b b";
+}
+.timeBox__headline__container{
+  grid-area: h;
+  display:grid;
+  grid-template-columns: repeat(2,auto);
+  grid-template-rows: auto;
 }
 .timeBox__name{
+  font-family: 'Helvetica Neue', sans-serif;
   cursor: pointer;
   display: inline-block;
-  width: 60%;
+  width: 90%;
   margin: 0;
-  padding: 5px;
+
+  color:rgb(2, 145, 171); /* rgb(81, 192, 242) */
 }
-.timeBox__name__tablet{
-  cursor: pointer;
-  display: inline-block;
-  width: 50%;
-  margin: 0;
-  padding: 2px;
-  font-size: 16px;
-}
+
 .fecha_container{
-  display: inline-block;
-  width: 70%;
-  text-align: right;
+  grid-area: f;
+
+  display:grid;
+  grid-template-columns: repeat(80,auto);
+  grid-template-rows: auto;
+
+
 }
 .fecha__inicio{
-  display: inline-block;
+
+
   font-weight: 200;
   margin-top: 3px;
   opacity: 0.4;
   margin: 0;
-  padding: 3px;
+  padding: 3px 0 3px 3px;
 
 }
 .fecha__fin{
-  display: inline-block;
+
+
   font-weight: 200;
   margin-top: 3px;
   opacity: 0.4;
-  float:right;
+
   margin: 0;
-  padding: 3px;
+  padding: 3px 0 3px 3px;
 }
 .logo__photo__container{
-  padding-right: 30px;
-  text-align: center;
+
+  text-align: right;
   display: inline-block;
-  float: right;
+
   max-height: 60px;
   max-width: 120px;
 }
-.logo__photo__container__prelaptop{
-  text-align: center;
-  display: inline-block;
-  float: right;
-  max-height: 60px;
-  max-width: 118px;
-}
-.logo__photo__container__tablet{
-  text-align: center;
-  display: inline-block;
-  float: right;
-  max-height: 60px;
-  max-width: 50%;
-}
+
 .logo__photo{
   cursor: pointer;
   max-height: 60px;
@@ -73,13 +74,15 @@
   max-width: 100px;
 }
 .description__container{
+  grid-area: b;
+
   padding-top: 8px;
-  text-align: left;
+
 }
 .description__text{
-  margin-top: 3px;
-  display: inline-block;
-  width: 100%;
+
+
+
 
 }
 .description__text__tablet{
@@ -87,5 +90,86 @@
   margin-top: 2px;
   display: inline-block;
   width: 100%;
+
+}
+@media screen and (max-width: 810px) {
+  .leaf__container{
+    width: 98%;
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(40px, 55px));
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+        " h h h h h h"
+        " f f f f f f"
+        " b b b b b b";
+  }
+}
+
+@media screen and (max-width: 705px) {
+  .leaf__container{
+
+    text-align: left;
+    display: inline-block;
+
+  }
+  .timeBox__headline__container{
+    display: inline-block;
+  }
+  .timeBox__name{
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 4px;
+    margin: 0;
+    font-size: 17px;
+    font-weight: 400;
+  }
+  .fecha_container{
+    display: inline-block;
+    padding-left: 4px;
+
+  }
+  .fecha__inicio{
+    display: inline-block;
+    font-weight: 300;
+    margin-top: 3px;
+    opacity: 0.7;
+    margin: 0;
+    font-size: 13px;
+
+
+  }
+  .fecha__fin{
+    display: inline-block;
+    font-weight: 300;
+    margin-top: 3px;
+    opacity: 0.7;
+    margin: 0;
+    font-size: 13px;
+  }
+  .logo__photo__container{
+    padding-left: 4px;
+    max-height: 40px;
+    max-width: 80px;
+  }
+
+  .logo__photo{
+    cursor: pointer;
+    max-height: 40px;
+    max-width: 80px;
+  }
+
+  .description__container{
+    padding-top: 1px;
+    text-align: left;
+    padding-left: 4px;
+  }
+
+  .description__text{
+    margin-top: 1px;
+    display: inline-block;
+    font-size: 12px;
+
+  }
 
 }

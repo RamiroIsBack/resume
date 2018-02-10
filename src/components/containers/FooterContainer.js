@@ -16,10 +16,6 @@ class FooterContainer extends Component {
     let emailCopy = {};
     let telCopy = {};
     let connectList = [];
-    let gitHubCopy = {};
-    let instagramCopy = {};
-    let linkedInCopy = {};
-    let stackOverFlowCopy ={};
     let footerList =[];
     if(this.props.copy){
       if (this.props.copy.footerList.length != 0){
@@ -54,6 +50,10 @@ class FooterContainer extends Component {
         }
       }
     }
+    let mailClassName = 'footer__mail';
+    if (this.props.section.screenSize === 'mobile'){
+      mailClassName = 'footer__mail__mobile';
+    }
     let visual = PopularFunctions.figureOutOpacity(this.props);
     let footerLook = 'footer__container';
     if(this.props.section.screenSize ==='mobile'){
@@ -68,28 +68,32 @@ class FooterContainer extends Component {
             loadingElement={<div style={{ height: '100%' }} />}
           />
         </div>
-        <div className='footer__tel'>
-          <a href={'tel:' + telCopy.urlLink} style={{color: 'black'}}>{telCopy.urlLink}</a>
+        <div className='footer__tel__container'>
+          <div className='footer__tel'>
+            <a href={'tel:' + telCopy.urlLink} style={{color: 'white',fontWeight:'bold'}}>{telCopy.urlLink}</a>
+          </div>
+          <div className='footer__tel__pic'>
+            <img className='footer__picPhoto'
+              src= {telCopy.urlPic}
+            ></img>
+          </div>
         </div>
-        <div className='footer__tel__pic'>
-          <img className='footer__picPhoto'
-            src= {telCopy.urlPic}
-          ></img>
-        </div>
-        <div className='footer__mail'>
-          <a href={'mailto:' + emailCopy.urlLink} style={{color: 'black'}}>{emailCopy.urlLink}</a>
+        <div className='footer__mail__container'>
+          <div className={mailClassName}>
+            <a href={'mailto:' + emailCopy.urlLink} style={{color: 'white',fontWeight:'bold'}}>{emailCopy.urlLink}</a>
 
-        </div>
-        <div className='footer__mail__pic'>
-          <img className='footer__picPhoto'
-            src= {emailCopy.urlPic}
-          ></img>
+          </div>
+          <div className='footer__mail__pic'>
+            <img className='footer__picPhoto'
+              src= {emailCopy.urlPic}
+            ></img>
+          </div>
         </div>
 
         <div className='footer__connect__foto__container'>
           {connectList}
         </div>
-        
+
       </div>
     );
   }

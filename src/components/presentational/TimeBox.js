@@ -9,10 +9,6 @@ class TimeBox extends Component {
 
   render() {
     let copy = this.props.copy;
-    let logoContainer = 'logo__photo__container';
-    let logoPhoto = 'logo__photo';
-    let descriptionText = 'description__text';
-    let timeBoxName = 'timeBox__name';
     let pointer = {
       cursor: 'pointer',
     };
@@ -21,27 +17,19 @@ class TimeBox extends Component {
         cursor: 'auto',
       };
     }
-    if(this.props.screenSize === 'prelaptop'){
-      logoContainer = 'logo__photo__container__prelaptop';
-    }
-    if(this.props.screenSize === 'tablet'){
-      logoContainer = 'logo__photo__container__tablet';
-      logoPhoto = 'logo__photo_tablet';
-      descriptionText = 'description__text__tablet';
-      timeBoxName = 'timeBox__name__tablet';
-    }
+
     return (
       <div className = 'leaf__container' >
         <div className= 'timeBox__headline__container'>
           <h3
-            className ={timeBoxName}
+            className ='timeBox__name'
             style = {pointer}
             onClick = {this.handleClick.bind(this)}
           >{copy.nombre}</h3>
 
-          <div className ={logoContainer}>
+          <div className ='logo__photo__container'>
             <img
-              className ={logoPhoto}
+              className ='logo__photo'
               src= {copy.urlPic}
               style = {pointer}
               onClick = {this.handleClick.bind(this)}
@@ -54,7 +42,7 @@ class TimeBox extends Component {
         </div>
         <div className= 'description__container'>
           {copy.description.split('\n').map((item, key) => {
-            return <span className ={descriptionText} key={key}>{item}<br/></span>;})}
+            return <span className ='description__text' key={key}>{item}<br/></span>;})}
         </div>
       </div>
     );

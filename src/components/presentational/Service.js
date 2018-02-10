@@ -20,7 +20,7 @@ class Service extends Component {
         stylingBarWidth ={
           width: ''+percentage+'%',
           animationName: 'progress',
-          animationDuration: '10s',
+          animationDuration: '3s',
           animationTimingFunction: 'ease-in-out',
         };
       }else {
@@ -46,7 +46,9 @@ class Service extends Component {
             onClick = {this.handleClick.bind(this)}
           ></img>
         </div>
-        <div className = 'progress__bar' style={stylingBarWidth}></div>
+        <div className = 'progress__bar__container'>
+          <div className = 'progress__bar' style={stylingBarWidth}></div>
+        </div>
         <h5 className = 'percentage__num'>{this.props.serviceInfo.percentage}%</h5>
         <div className = 'bio__container'>
           {this.props.serviceInfo.bio.split('\n').map((item, key) => {

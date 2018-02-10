@@ -4,7 +4,7 @@ var initialState = {
 
   sectionSelected : 'intro', //summary services timeLine footer
   imgLoaded: false,
-  screenSize: 'laptop', //tablet or mobile
+  screenSize: 'laptop', //or mobile
   colapsed: true,
   scrollIndicator: '', //summaryContainer servicesContainer timeLineContainer
 

@@ -11,16 +11,27 @@
   width: 80%;
   padding-left: 6px;
 }
+.progress__bar__container{
 
-.progress__bar{
-  border-radius: 20px;
-  height: 4px;
-  opacity: 0.7;
+  border-top: 1px solid;
+  height: 6px;
+
   overflow: hidden;
   width: 80%;
-  background-color: black;
-  margin-left: 6px;
 
+  margin-left: 6px;
+  position: relative;
+
+}
+.progress__bar{
+  position: absolute;
+  border-radius: 20px;
+  margin-top: 1px;
+  height: 4px;
+
+  background-color: rgb(81, 192, 242);
+  overflow: hidden;
+  width: 100%;
 }
 @keyframes progress {
   from {width: 0;}

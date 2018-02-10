@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import actions from '../../actions';
-import {Layout, LayoutMobile} from '../../css';
+import {Layout} from '../../css';
 import {PopularFunctions} from '../../utils';
 import {
   IntroContainer,
   SummaryContainer,
-  SummaryContainerMobile,
+
   ServicesContainer,
   TimeLineContainer,
-  TimeLineContainerMobile,
+
   SideBarContainer,
-  SideBarContainerMobile,
+
   NombreContainer,
-  NombreContainerMobile,
   FooterContainer,
-  FooterContainerMobile,
+
 } from '../containers';
 
 
@@ -43,6 +42,14 @@ class App extends Component {
   checkElementIntoView(windowHight,el,scrollTopPosition){
     let elementTop =el.offsetTop;
     let elementBottom = elementTop + el.scrollHeight;
+    if(el.id ==='summaryContainer' ){
+      if(scrollTopPosition < elementTop - (windowHight/16) ){
+        if(this.props.section.scrollIndicator !== ''){
+          this.props.changeScrollIndicator('');
+        }
+        return;
+      }
+    }
     if(scrollTopPosition > elementTop - (windowHight/3) &&
       scrollTopPosition < elementBottom - (windowHight/3)) {
       if(this.props.section.scrollIndicator !== el.id){
@@ -51,16 +58,13 @@ class App extends Component {
     }
   }
   handleWindowSizeChange(){
-    if(window.innerWidth > 1240 && this.props.section.screenSize !== 'laptop'){
+    if(window.innerWidth > 810 && this.props.section.screenSize !== 'laptop'){
       this.props.chageScreenWidth('laptop');
     }
-    if(window.innerWidth < 1240 && window.innerWidth > 920 && this.props.section.screenSize !== 'prelaptop'){
-      this.props.chageScreenWidth('prelaptop');
-    }
-    if(window.innerWidth < 920 && window.innerWidth > 820  && this.props.section.screenSize !== 'tablet'){
+    if(window.innerWidth < 810 && window.innerWidth > 705  && this.props.section.screenSize !== 'tablet'){
       this.props.chageScreenWidth('tablet');
     }
-    if(window.innerWidth< 820  && this.props.section.screenSize !== 'mobile' ){
+    if(window.innerWidth< 705  && this.props.section.screenSize !== 'mobile' ){
       this.props.chageScreenWidth('mobile');
     }
   }
@@ -73,134 +77,77 @@ class App extends Component {
 
     return (
       <div>
-        {mobile &&
-          <NombreContainerMobile />
-        }
-        {!mobile &&
-          <NombreContainer />
-        }
-        {mobile &&
-          <div className='container__mobile'>
-            <div className='IntroContainer__mobile'>
-              <IntroContainer  />
 
-            </div>
+        <NombreContainer />
 
 
-            <div className='SummaryContainer__mobile' id='summaryContainer'>
-              <div className='sidebarColapsable__contaniner__mobile'>
-                <SideBarContainerMobile  />
-
-              </div>
-              {this.props.section.imgLoaded &&
-                <div className = 'section__headline__mobile'>
-                  Professional Profile
-                </div>
-              }
-              <SummaryContainerMobile  />
-
-            </div>
-
-
-            <div className='ServicesContainer__mobile' id='servicesContainer'>
-              {this.props.section.imgLoaded &&
-                <div className = 'section__headline__mobile'>
-                  Skills and services
-                </div>
-              }
-              <ServicesContainer  />
-
-            </div>
-
-
-            <div className='TimeLineContainer__mobile' id='timeLineContainer'>
-              {this.props.section.imgLoaded &&
-                <div className = 'section__headline__mobile'>
-                  Time-line resume
-                  <div>
-                    <div className = 'section__secondLiner__work__mobile'>
-                      Work
-                    </div>
-                    <div className = 'section__secondLiner__studies__mobile'>
-                      Studies
-                    </div>
-                  </div>
-                </div>
-              }
-              <TimeLineContainerMobile  />
-
-            </div>
-            <div className='FooterContainer__mobile' id='footerContainer'>
-
-              <FooterContainer  />
-
-            </div>
-
-
+        <div className='container'>
+          <div className='IntroContainer'>
+            <IntroContainer  />
 
           </div>
-        }
-        {!mobile &&
-          <div className='container'>
-            <div className='IntroContainer'>
-              <IntroContainer  />
 
-            </div>
-
-            <div className='SummaryContainer' id='summaryContainer'>
-              {this.props.section.imgLoaded &&
-                <div className = 'section__headline'>
-                  Professional Profile
-                </div>
-              }
-              <SummaryContainer  />
-
-            </div>
-
-            <div className='ServicesContainer' id='servicesContainer'>
-              {this.props.section.imgLoaded &&
-                <div className = 'section__headline'>
-                  Skills and services
-                </div>
-              }
-              <ServicesContainer  />
-
-            </div>
-
-
-            <div className='TimeLineContainer' id='timeLineContainer'>
-              {this.props.section.imgLoaded &&
-                <div className = 'section__headline'>
-                  Time-line resume
-                  <div>
-                    <div className = 'section__secondLiner__work'>
-                      Work
-                    </div>
-                    <div className = 'section__secondLiner__studies'>
-                      Studies
-                    </div>
-                  </div>
-                </div>
-              }
-              <TimeLineContainer  />
-
-            </div>
-
-            <div className='SideBarSpace'>
-
-              <div className='sidebar__contaniner'>
-                <SideBarContainer  />
-
+          <div className='SummaryContainer' id='summaryContainer'>
+            {this.props.section.imgLoaded &&
+              <div className = 'section__headline'>
+                Professional Profile
               </div>
-            </div>
-            <div className='FooterContainer' id='footerContainer'>
-
-              <FooterContainer  />
-
-            </div>
+            }
+            <SummaryContainer  />
 
           </div>
-        }
+
+          <div className='ServicesContainer' id='servicesContainer'>
+            {this.props.section.imgLoaded &&
+              <div className = 'section__headline'>
+                Skills and services
+              </div>
+            }
+            <ServicesContainer  />
+
+          </div>
+
+
+          <div className='TimeLineContainer' id='timeLineContainer'>
+            {this.props.section.imgLoaded &&
+              <div className = 'section__headline'>
+                Time-line resume
+                <div className = 'section__secondLiner__container'>
+                  <div className = 'section__secondLiner__work'>
+                    Work
+                  </div>
+                  <div className = 'section__secondLiner__studies'>
+                    Studies
+                  </div>
+                </div>
+              </div>
+            }
+            <TimeLineContainer  />
+
+          </div>
+          {mobile &&
+            <div className='sidebarColapsable__contaniner'>
+              <SideBarContainer  />
+
+            </div>
+          }
+          {!mobile &&
+          <div className='SideBarSpace'>
+
+            <div className='sidebar__contaniner'>
+              <SideBarContainer  />
+
+            </div>
+          </div>
+          }
+          <div className='FooterContainer' id='footerContainer'>
+
+            <FooterContainer  />
+
+          </div>
+
+        </div>
+
       </div>
     );
   }
