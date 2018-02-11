@@ -137,14 +137,15 @@
       z-index: 2;
   }
   .section__headline{
-    padding: 8px;
+    padding: 0 0 20px 0;
+    margin: 0;
     text-align: center;
     color: rgb(2, 145, 171);
 
     font-size: 25px;
 
     font-family: 'Helvetica Neue', sans-serif;
-    font-weight: 100;
+    font-weight: 200;
     letter-spacing: 1px;
   }
   .section__secondLiner__container{
@@ -160,7 +161,7 @@
     font-size: 18px;
     color: black;
     float:left;
-    padding:8px;
+    padding:12px 0 8px 0;
     opacity: .7;
     width :50%;
 
@@ -169,7 +170,7 @@
     grid-area: s;
     font-size: 18px;
     color: black;
-    padding:8px;
+    padding:12px 0 8px 0;
     float:right;
     opacity: .7;
     width :50%;
@@ -185,7 +186,7 @@
   .ServicesContainer {
       grid-area: e;
       overflow-wrap: break-word;
-      padding-top: 50px;
+      padding: 50px 0 0 0;
 
   }
 
@@ -193,8 +194,8 @@
   .TimeLineContainer {
       grid-area: t;
       overflow-wrap: break-word;
-      padding-bottom: 100px;
-      padding-top: 50px;
+
+      padding-top: 0;
   }
   .FooterContainer {
       grid-area: f;

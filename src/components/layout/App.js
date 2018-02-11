@@ -44,8 +44,8 @@ class App extends Component {
     let elementBottom = elementTop + el.scrollHeight;
     if(el.id ==='summaryContainer' ){
       if(scrollTopPosition < elementTop - (windowHight/16) ){
-        if(this.props.section.scrollIndicator !== ''){
-          this.props.changeScrollIndicator('');
+        if(this.props.section.scrollIndicator !== 'entry'){
+          this.props.changeScrollIndicator('entry');
         }
         return;
       }
