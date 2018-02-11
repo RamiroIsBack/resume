@@ -54,9 +54,9 @@ class SideBarContainer extends Component {
     }
     let mobile = false;
     if (this.props.section.screenSize ==='mobile'){
-      if(this.props.section.scrollIndicator === 'entry'){
-        visual ={opacity:0};
-      }
+      // if(this.props.section.scrollIndicator === 'entry'){
+      //   visual ={opacity:0};
+      // }
       mobile = true;
     }
     return (
