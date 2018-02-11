@@ -50,7 +50,7 @@ class Service extends Component {
           <div className = 'progress__bar' style={stylingBarWidth}></div>
         </div>
         <h5 className = 'percentage__num'>{this.props.serviceInfo.percentage}%</h5>
-        <div className = 'bio__container'>
+        <div className = 'bio__container__services'>
           {this.props.serviceInfo.bio.split('\n').map((item, key) => {
             return <span key={key}>{item}<br/></span>;})}
         </div>

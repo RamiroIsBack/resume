@@ -50,7 +50,7 @@
 .service__name{
 display: inline-block;
 }
-.bio__container{
+.bio__container__services{
   width: 85%;
   padding-left: 6px;
 }
