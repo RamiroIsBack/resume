@@ -15,12 +15,16 @@ class FooterContainer extends Component {
     let gMapsCopy = {};
     let emailCopy = {};
     let telCopy = {};
+    let downloadCopy = {};
     let connectList = [];
     let footerList =[];
     if(this.props.copy){
       if (this.props.copy.footerList.length != 0){
         footerList = this.props.copy.footerList;
         for(let i = 0; i<footerList.length; i++){
+          if(footerList[i].nombre === 'download'){
+            downloadCopy = footerList[i];
+          }
           if(footerList[i].nombre === 'gMaps'){
             gMapsCopy = footerList[i];
           }
@@ -50,17 +54,11 @@ class FooterContainer extends Component {
         }
       }
     }
-    let mailClassName = 'footer__mail';
-    if (this.props.section.screenSize === 'mobile'){
-      mailClassName = 'footer__mail__mobile';
-    }
+
     let visual = PopularFunctions.figureOutOpacity(this.props);
-    let footerLook = 'footer__container';
-    if(this.props.section.screenSize ==='mobile'){
-      footerLook = 'footer__container__mobile';
-    }
+
     return (
-      <div className={footerLook} style = {visual}>
+      <div className='footer__container' style = {visual}>
         <div className='footer__map__container'>
           <MapaContainer
             mapInfo = {gMapsCopy}
@@ -79,7 +77,7 @@ class FooterContainer extends Component {
           </div>
         </div>
         <div className='footer__mail__container'>
-          <div className={mailClassName}>
+          <div className='footer__mail'>
             <a href={'mailto:' + emailCopy.urlLink} style={{color: 'white',fontWeight:'bold'}}>{emailCopy.urlLink}</a>
 
           </div>
@@ -92,6 +90,21 @@ class FooterContainer extends Component {
 
         <div className='footer__connect__foto__container'>
           {connectList}
+        </div>
+        <div className='footer__download__foto__container'>
+          <a className = 'footer__download__text__link__container'
+            href={downloadCopy.urlLink}
+            download='Ramiro Santamaria Resume.pdf'>
+            <h4 className ='footer__download__text'>Download the one-page .pdf</h4>
+          </a>
+          <a className = 'footer__download__foto__link__container'
+            href={downloadCopy.urlLink}
+            download='Ramiro Santamaria Resume.pdf'>
+            <img className='footer__download__foto'
+              src= {downloadCopy.urlPic}
+              alt= 'download' >
+            </img>
+          </a>
         </div>
 
       </div>
