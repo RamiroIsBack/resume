@@ -5,44 +5,42 @@ import actions from '../../actions';
 import {PopularFunctions} from '../../utils';
 
 class IntroContainer extends Component {
-  componentDidMount(){
-    if (!this.props.copy.copyLoaded){
-      this.props.getCopy();
-    }
+  constructor(){
+    super();
+    this.state={
+      imgLoaded:false
+    };
   }
   handleImageLoaded(){
 
-    this.props.imgLoaded(true);
+    this.setState({imgLoaded:true});
   }
   handleImageErrored(){
+    console.log('error while handleing intro img');
 
-    this.props.imgLoaded(false);
   }
 
   render() {
-    let urlPic ='';
+    let urlPic ='./backgroundImage.png';
+    let animeIt = {};
 
-    let copy = PopularFunctions.selectSpecificCopy(this.props,'introPic');
-    let visual = PopularFunctions.figureOutOpacity(this.props);
-    if (copy.urlPic){
-      urlPic = copy.urlPic;
+    if(this.state.imgLoaded){
+      animeIt = {
+        animation: 'fadeIntro 2s ease-in',
+        opacity: '0.5',
+      };
     }
+    else{
+      animeIt = {
+        opacity: '0',
+      };
+    }
+
     return (
       <div>
-        {visual.opacity===0 &&
-          <div>
-            <div className = 'spiner__copy'>
-              Loading Ramiro Santamaria's resume
-            </div>
-            <div className='spinner'>
-              <div className='double-bounce1'></div>
-              <div className='double-bounce2'></div>
-            </div>
-          </div>
 
-        }
-        <div className='intro__foto__container' style = {visual}>
-          <img className='intro__foto'
+        <div className='intro__foto__container' >
+          <img className='intro__foto' style = {animeIt}
             src= {urlPic}
             onLoad={this.handleImageLoaded.bind(this)}
             onError={this.handleImageErrored.bind(this)}

@@ -8,21 +8,13 @@ class NombreContainer extends Component {
 
 
   render() {
-    let visual = PopularFunctions.figureOutOpacity(this.props);
-    let animeIt = {};
-    if(this.props.section){
-      if(this.props.section.imgLoaded){
-        animeIt = {
-          animation: 'typing 3.5s steps(40, end),blink-caret .75s step-end infinite'
-        };
-      }
-    }
+
 
     return (
-      <div className = 'nombre__contaniner' style = {visual}>
+      <div className = 'nombre__contaniner'>
         <h3 className = 'saludo'>Hi! I'm</h3>
         <h3 className = 'nombre'>Ramiro Santamaria</h3>
-        <h3 className = 'puesto' style={animeIt} >Web App Developer</h3>
+        <h3 className = 'puesto' >Web App Developer</h3>
       </div>
     );
   }

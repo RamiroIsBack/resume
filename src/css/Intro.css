@@ -7,9 +7,13 @@
 .intro__foto{
   max-height: 100%;
   max-width: 100%;
-  opacity: 0.5;
+  
+  }
+  @keyframes fadeIntro {
+  from {opacity: 0;}
+  to {opacity:.5;}
+  }
 
-}
 .spiner__copy{
   font-size: 20;
   margin-top: 100px;
