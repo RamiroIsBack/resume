@@ -1,0 +1,805 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getTimeBoxComponents 1`] = `
+Array [
+  Object {},
+  <div
+    className="studies__android"
+>
+    <div
+        className="leaf__container"
+    >
+        <div
+            className="timeBox__headline__container"
+        >
+            <h3
+                className="timeBox__name"
+                onClick={[Function]}
+                style={
+                    Object {
+                        "cursor": "pointer",
+                      }
+                }
+            >
+                Android development learning
+            </h3>
+            <div
+                className="logo__photo__container"
+            >
+                <img
+                    className="logo__photo"
+                    onClick={[Function]}
+                    src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fandroid.png?alt=media&token=dbd89d37-fd48-4257-aab4-53122db4ac39"
+                    style={
+                        Object {
+                            "cursor": "pointer",
+                          }
+                    }
+                />
+            </div>
+        </div>
+        <div
+            className="fecha_container"
+        >
+            <h3
+                className="fecha__inicio"
+            >
+                2013
+                 -
+            </h3>
+            <h3
+                className="fecha__fin"
+            >
+                -&gt;  
+                2014
+            </h3>
+        </div>
+        <div
+            className="description__container"
+        >
+            <span
+                className="description__text"
+            >
+                I got to be a self taught android developer while I run my, so far, first and only start-up.
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div
+    className="studies__civil__servant"
+>
+    <div
+        className="leaf__container"
+    >
+        <div
+            className="timeBox__headline__container"
+        >
+            <h3
+                className="timeBox__name"
+                onClick={[Function]}
+                style={
+                    Object {
+                        "cursor": "auto",
+                      }
+                }
+            >
+                Civil servant studies
+            </h3>
+            <div
+                className="logo__photo__container"
+            >
+                <img
+                    className="logo__photo"
+                    onClick={[Function]}
+                    src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fcivil.jpg?alt=media&token=ed72cab4-6e35-43b5-a7cf-2f3ff1a2cf7f"
+                    style={
+                        Object {
+                            "cursor": "auto",
+                          }
+                    }
+                />
+            </div>
+        </div>
+        <div
+            className="fecha_container"
+        >
+            <h3
+                className="fecha__inicio"
+            >
+                2008
+                 -
+            </h3>
+            <h3
+                className="fecha__fin"
+            >
+                -&gt;  
+                2010
+            </h3>
+        </div>
+        <div
+            className="description__container"
+        >
+            <span
+                className="description__text"
+            >
+                for some time I got prepared to become a civil servant in Madrid, Spain.
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div
+    className="studies__degree"
+>
+    <div
+        className="leaf__container"
+    >
+        <div
+            className="timeBox__headline__container"
+        >
+            <h3
+                className="timeBox__name"
+                onClick={[Function]}
+                style={
+                    Object {
+                        "cursor": "pointer",
+                      }
+                }
+            >
+                Computer science degree
+            </h3>
+            <div
+                className="logo__photo__container"
+            >
+                <img
+                    className="logo__photo"
+                    onClick={[Function]}
+                    src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fuax.png?alt=media&token=d7927956-96fe-4a08-b399-32038af344a2"
+                    style={
+                        Object {
+                            "cursor": "pointer",
+                          }
+                    }
+                />
+            </div>
+        </div>
+        <div
+            className="fecha_container"
+        >
+            <h3
+                className="fecha__inicio"
+            >
+                2000
+                 -
+            </h3>
+            <h3
+                className="fecha__fin"
+            >
+                -&gt;  
+                2005
+            </h3>
+        </div>
+        <div
+            className="description__container"
+        >
+            <span
+                className="description__text"
+            >
+                Bachelor degree in computer science at Univerdad Alfonso Décimo el sabio, Madrid, Spain.
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div
+    className="studies__vertical"
+>
+    <div
+        className="leaf__container"
+    >
+        <div
+            className="timeBox__headline__container"
+        >
+            <h3
+                className="timeBox__name"
+                onClick={[Function]}
+                style={
+                    Object {
+                        "cursor": "pointer",
+                      }
+                }
+            >
+                Rope access technician 
+            </h3>
+            <div
+                className="logo__photo__container"
+            >
+                <img
+                    className="logo__photo"
+                    onClick={[Function]}
+                    src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fgwo.jpg?alt=media&token=97f84471-61c0-42fc-8925-f97f0958222f"
+                    style={
+                        Object {
+                            "cursor": "pointer",
+                          }
+                    }
+                />
+            </div>
+        </div>
+        <div
+            className="fecha_container"
+        >
+            <h3
+                className="fecha__inicio"
+            >
+                2014
+                 -
+            </h3>
+            <h3
+                className="fecha__fin"
+            >
+                -&gt;  
+                2016
+            </h3>
+        </div>
+        <div
+            className="description__container"
+        >
+            <span
+                className="description__text"
+            >
+                Wind turbine generator technician by GWO.
+                <br />
+            </span>
+            <span
+                className="description__text"
+            >
+                IRATA level 2.
+                <br />
+            </span>
+            <span
+                className="description__text"
+            >
+                Both international certifications.
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div
+    className="studies__react"
+>
+    <div
+        className="leaf__container"
+    >
+        <div
+            className="timeBox__headline__container"
+        >
+            <h3
+                className="timeBox__name"
+                onClick={[Function]}
+                style={
+                    Object {
+                        "cursor": "pointer",
+                      }
+                }
+            >
+                Web-app development self teaching to full-stack 
+            </h3>
+            <div
+                className="logo__photo__container"
+            >
+                <img
+                    className="logo__photo"
+                    onClick={[Function]}
+                    src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fudemy.png?alt=media&token=b10d8ae5-5cf2-4b28-be17-75bd9b960f71"
+                    style={
+                        Object {
+                            "cursor": "pointer",
+                          }
+                    }
+                />
+            </div>
+        </div>
+        <div
+            className="fecha_container"
+        >
+            <h3
+                className="fecha__inicio"
+            >
+                2016
+                 -
+            </h3>
+            <h3
+                className="fecha__fin"
+            >
+                -&gt;  
+                never ending
+            </h3>
+        </div>
+        <div
+            className="description__container"
+        >
+            <span
+                className="description__text"
+            >
+                One can never stop learning when it comes to programming and designing ,that's what makes it fun, right?
+                <br />
+            </span>
+            <span
+                className="description__text"
+            >
+                Link goes to one of the many online curses I've done so far.
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div
+    className="work__english__teacher"
+>
+    <div
+        className="leaf__container"
+    >
+        <div
+            className="timeBox__headline__container"
+        >
+            <h3
+                className="timeBox__name"
+                onClick={[Function]}
+                style={
+                    Object {
+                        "cursor": "pointer",
+                      }
+                }
+            >
+                English teacher at MDS.
+            </h3>
+            <div
+                className="logo__photo__container"
+            >
+                <img
+                    className="logo__photo"
+                    onClick={[Function]}
+                    src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FMDS.jpg?alt=media&token=04363ae9-87aa-4c09-be5d-4dd2f29a6e0e"
+                    style={
+                        Object {
+                            "cursor": "pointer",
+                          }
+                    }
+                />
+            </div>
+        </div>
+        <div
+            className="fecha_container"
+        >
+            <h3
+                className="fecha__inicio"
+            >
+                2009
+                 -
+            </h3>
+            <h3
+                className="fecha__fin"
+            >
+                -&gt;  
+                2012
+            </h3>
+        </div>
+        <div
+            className="description__container"
+        >
+            <span
+                className="description__text"
+            >
+                English teacher in different Spanish companies like Gonvarri, Dematic or Gestamp.
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div
+    className="work__java"
+>
+    <div
+        className="leaf__container"
+    >
+        <div
+            className="timeBox__headline__container"
+        >
+            <h3
+                className="timeBox__name"
+                onClick={[Function]}
+                style={
+                    Object {
+                        "cursor": "auto",
+                      }
+                }
+            >
+                Java Developer at Awimbawe LLC
+            </h3>
+            <div
+                className="logo__photo__container"
+            >
+                <img
+                    className="logo__photo"
+                    onClick={[Function]}
+                    src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fjava.png?alt=media&token=d0c05b0b-656e-4159-8cc7-73c8c7ba0c4f"
+                    style={
+                        Object {
+                            "cursor": "auto",
+                          }
+                    }
+                />
+            </div>
+        </div>
+        <div
+            className="fecha_container"
+        >
+            <h3
+                className="fecha__inicio"
+            >
+                2010
+                 -
+            </h3>
+            <h3
+                className="fecha__fin"
+            >
+                -&gt;  
+                2010
+            </h3>
+        </div>
+        <div
+            className="description__container"
+        >
+            <span
+                className="description__text"
+            >
+                collaboration in a project programming in Java with server Jboss.
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div
+    className="work__programmingC"
+>
+    <div
+        className="leaf__container"
+    >
+        <div
+            className="timeBox__headline__container"
+        >
+            <h3
+                className="timeBox__name"
+                onClick={[Function]}
+                style={
+                    Object {
+                        "cursor": "pointer",
+                      }
+                }
+            >
+                Software developer C++ at CITEF
+            </h3>
+            <div
+                className="logo__photo__container"
+            >
+                <img
+                    className="logo__photo"
+                    onClick={[Function]}
+                    src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fcitef.png?alt=media&token=aa241e1e-52dd-4041-a422-82796a6dd7b5"
+                    style={
+                        Object {
+                            "cursor": "pointer",
+                          }
+                    }
+                />
+            </div>
+        </div>
+        <div
+            className="fecha_container"
+        >
+            <h3
+                className="fecha__inicio"
+            >
+                2006
+                 -
+            </h3>
+            <h3
+                className="fecha__fin"
+            >
+                -&gt;  
+                2008
+            </h3>
+        </div>
+        <div
+            className="description__container"
+        >
+            <span
+                className="description__text"
+            >
+                part of the interface team building a train simulator, for the learning Madrid subway drivers.
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div
+    className="work__android"
+>
+    <div
+        className="leaf__container"
+    >
+        <div
+            className="timeBox__headline__container"
+        >
+            <h3
+                className="timeBox__name"
+                onClick={[Function]}
+                style={
+                    Object {
+                        "cursor": "pointer",
+                      }
+                }
+            >
+                Founder of Bilbao shopping on foot
+            </h3>
+            <div
+                className="logo__photo__container"
+            >
+                <img
+                    className="logo__photo"
+                    onClick={[Function]}
+                    src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FBSOF.png?alt=media&token=722dda9c-b232-4c8c-8ed6-ad5d640cfa14"
+                    style={
+                        Object {
+                            "cursor": "pointer",
+                          }
+                    }
+                />
+            </div>
+        </div>
+        <div
+            className="fecha_container"
+        >
+            <h3
+                className="fecha__inicio"
+            >
+                2012
+                 -
+            </h3>
+            <h3
+                className="fecha__fin"
+            >
+                -&gt;  
+                2015
+            </h3>
+        </div>
+        <div
+            className="description__container"
+        >
+            <span
+                className="description__text"
+            >
+                Start-up based on a marketing campaign alongside a highlighted position in the local business and shop searching mobile app.
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div
+    className="work__rope__acces__technician"
+>
+    <div
+        className="leaf__container"
+    >
+        <div
+            className="timeBox__headline__container"
+        >
+            <h3
+                className="timeBox__name"
+                onClick={[Function]}
+                style={
+                    Object {
+                        "cursor": "pointer",
+                      }
+                }
+            >
+                Asaken Rope Access
+            </h3>
+            <div
+                className="logo__photo__container"
+            >
+                <img
+                    className="logo__photo"
+                    onClick={[Function]}
+                    src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FasakenCroped.jpg?alt=media&token=d4ef928d-be3b-44a6-b015-acd25967c9a1"
+                    style={
+                        Object {
+                            "cursor": "pointer",
+                          }
+                    }
+                />
+            </div>
+        </div>
+        <div
+            className="fecha_container"
+        >
+            <h3
+                className="fecha__inicio"
+            >
+                2014
+                 -
+            </h3>
+            <h3
+                className="fecha__fin"
+            >
+                -&gt;  
+                2016
+            </h3>
+        </div>
+        <div
+            className="description__container"
+        >
+            <span
+                className="description__text"
+            >
+                very technical and interesting job in the field.
+                <br />
+            </span>
+            <span
+                className="description__text"
+            >
+                Oil rigs, wind farms, industrial factories.
+                <br />
+            </span>
+            <span
+                className="description__text"
+            >
+                During my last year,I got to be team leader in several projects.
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div
+    className="work__web__app"
+>
+    <div
+        className="leaf__container"
+    >
+        <div
+            className="timeBox__headline__container"
+        >
+            <h3
+                className="timeBox__name"
+                onClick={[Function]}
+                style={
+                    Object {
+                        "cursor": "pointer",
+                      }
+                }
+            >
+                Web App Developer freelance
+            </h3>
+            <div
+                className="logo__photo__container"
+            >
+                <img
+                    className="logo__photo"
+                    onClick={[Function]}
+                    src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fmico_disegno_textil.jpg?alt=media&token=628ae993-7cb4-4382-84a4-635344bcc0d3"
+                    style={
+                        Object {
+                            "cursor": "pointer",
+                          }
+                    }
+                />
+            </div>
+        </div>
+        <div
+            className="fecha_container"
+        >
+            <h3
+                className="fecha__inicio"
+            >
+                2017
+                 -
+            </h3>
+            <h3
+                className="fecha__fin"
+            >
+                -&gt;  
+                still on it
+            </h3>
+        </div>
+        <div
+            className="description__container"
+        >
+            <span
+                className="description__text"
+            >
+                I’ve been more than a year building web apps from scratch, my latest and biggest project is an e-comerce web app I'm building on my own.
+                <br />
+            </span>
+            <span
+                className="description__text"
+            >
+                Will be soon released :)
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div
+    className="work__web__app"
+>
+    <div
+        className="leaf__container"
+    >
+        <div
+            className="timeBox__headline__container"
+        >
+            <h3
+                className="timeBox__name"
+                onClick={[Function]}
+                style={
+                    Object {
+                        "cursor": "pointer",
+                      }
+                }
+            >
+                Web App Developer freelance
+            </h3>
+            <div
+                className="logo__photo__container"
+            >
+                <img
+                    className="logo__photo"
+                    onClick={[Function]}
+                    src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fmico_disegno_textil.jpg?alt=media&token=628ae993-7cb4-4382-84a4-635344bcc0d3"
+                    style={
+                        Object {
+                            "cursor": "pointer",
+                          }
+                    }
+                />
+            </div>
+        </div>
+        <div
+            className="fecha_container"
+        >
+            <h3
+                className="fecha__inicio"
+            >
+                2017
+                 -
+            </h3>
+            <h3
+                className="fecha__fin"
+            >
+                -&gt;  
+                still on it
+            </h3>
+        </div>
+        <div
+            className="description__container"
+        >
+            <span
+                className="description__text"
+            >
+                I’ve been more than a year building web apps from scratch, my latest and biggest project is an e-comerce web app I'm building on my own.
+                <br />
+            </span>
+            <span
+                className="description__text"
+            >
+                Will be soon released :)
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+]
+`;

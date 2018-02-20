@@ -1,0 +1,554 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getServicesComponents 1`] = `
+Array [
+  <div>
+    <div>
+        <div
+            className="name__pic__container"
+        >
+            <h2
+                className="service__name"
+            >
+                Bootstrap
+            </h2>
+            <img
+                className="logo_pic"
+                onClick={[Function]}
+                src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fbootstrap.png?alt=media&token=37ff7c85-72f7-4220-b2eb-19a0a232d355"
+                style={Object {}}
+            />
+        </div>
+        <div
+            className="progress__bar__container"
+        >
+            <div
+                className="progress__bar"
+                style={
+                    Object {
+                        "animationDuration": "3s",
+                        "animationName": "progress",
+                        "animationTimingFunction": "ease-in-out",
+                        "width": "75%",
+                      }
+                }
+            />
+        </div>
+        <h5
+            className="percentage__num"
+        >
+            75
+            %
+        </h5>
+        <div
+            className="bio__container__services"
+        >
+            <span>
+                I've been using it since I started learning JavaScript, it's a very easy and useful tool for styling responsive elements.
+                <br />
+            </span>
+            <span>
+                 I've been using Css-grid lately though, it's great!
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div>
+    <div>
+        <div
+            className="name__pic__container"
+        >
+            <h2
+                className="service__name"
+            >
+                Css
+            </h2>
+            <img
+                className="logo_pic"
+                onClick={[Function]}
+                src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fcss3.png?alt=media&token=91f3a9b3-d360-43f4-9277-c94bfae701e3"
+                style={Object {}}
+            />
+        </div>
+        <div
+            className="progress__bar__container"
+        >
+            <div
+                className="progress__bar"
+                style={
+                    Object {
+                        "animationDuration": "3s",
+                        "animationName": "progress",
+                        "animationTimingFunction": "ease-in-out",
+                        "width": "70%",
+                      }
+                }
+            />
+        </div>
+        <h5
+            className="percentage__num"
+        >
+            70
+            %
+        </h5>
+        <div
+            className="bio__container__services"
+        >
+            <span>
+                because of my Java and C++ background, I tended to do everything programmatically but I recently discover the world of possibilities that Css offers right out of the box and I love it!
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div>
+    <div>
+        <div
+            className="name__pic__container"
+        >
+            <h2
+                className="service__name"
+            >
+                Firebase
+            </h2>
+            <img
+                className="logo_pic"
+                onClick={[Function]}
+                src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Ffirebase.png?alt=media&token=23944ce2-4d4b-4384-890d-d6a577c843bd"
+                style={Object {}}
+            />
+        </div>
+        <div
+            className="progress__bar__container"
+        >
+            <div
+                className="progress__bar"
+                style={
+                    Object {
+                        "animationDuration": "3s",
+                        "animationName": "progress",
+                        "animationTimingFunction": "ease-in-out",
+                        "width": "80%",
+                      }
+                }
+            />
+        </div>
+        <h5
+            className="percentage__num"
+        >
+            80
+            %
+        </h5>
+        <div
+            className="bio__container__services"
+        >
+            <span>
+                I've been using Firebase for all my recent projects, using its real-time data-base, authentication built-in process, functions on server-side.... It's a very complete tool.
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div>
+    <div>
+        <div
+            className="name__pic__container"
+        >
+            <h2
+                className="service__name"
+            >
+                Github
+            </h2>
+            <img
+                className="logo_pic"
+                onClick={[Function]}
+                src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FgitTransInnerWhite.png?alt=media&token=2db6ffc5-a500-4747-a4c9-739294765497"
+                style={
+                    Object {
+                        "cursor": "pointer",
+                      }
+                }
+            />
+        </div>
+        <div
+            className="progress__bar__container"
+        >
+            <div
+                className="progress__bar"
+                style={
+                    Object {
+                        "animationDuration": "3s",
+                        "animationName": "progress",
+                        "animationTimingFunction": "ease-in-out",
+                        "width": "60%",
+                      }
+                }
+            />
+        </div>
+        <h5
+            className="percentage__num"
+        >
+            60
+            %
+        </h5>
+        <div
+            className="bio__container__services"
+        >
+            <span>
+                I use it to store my projects and version control them.
+                <br />
+            </span>
+            <span>
+                I've worked a bit with different branches.
+                <br />
+            </span>
+            <span>
+                Feel free to clone this repository or to dive in the code clicking on github logo :)
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div>
+    <div>
+        <div
+            className="name__pic__container"
+        >
+            <h2
+                className="service__name"
+            >
+                HTML
+            </h2>
+            <img
+                className="logo_pic"
+                onClick={[Function]}
+                src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fhtml.png?alt=media&token=9d3ccc3a-da88-47b2-8964-eb042b5f138d"
+                style={Object {}}
+            />
+        </div>
+        <div
+            className="progress__bar__container"
+        >
+            <div
+                className="progress__bar"
+                style={
+                    Object {
+                        "animationDuration": "3s",
+                        "animationName": "progress",
+                        "animationTimingFunction": "ease-in-out",
+                        "width": "60%",
+                      }
+                }
+            />
+        </div>
+        <h5
+            className="percentage__num"
+        >
+            60
+            %
+        </h5>
+        <div
+            className="bio__container__services"
+        >
+            <span>
+                I used pure HTML for just few web pages, it's specially useful for me when dealing with a configuration page for the owner of the page to configure the web-app or to fill up the data-base with copy... very fast and straight forward.
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div>
+    <div>
+        <div
+            className="name__pic__container"
+        >
+            <h2
+                className="service__name"
+            >
+                Jest
+            </h2>
+            <img
+                className="logo_pic"
+                onClick={[Function]}
+                src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fjest2.png?alt=media&token=43e189b7-a2b3-4602-a4c9-83cd1980eef4"
+                style={Object {}}
+            />
+        </div>
+        <div
+            className="progress__bar__container"
+        >
+            <div
+                className="progress__bar"
+                style={
+                    Object {
+                        "animationDuration": "3s",
+                        "animationName": "progress",
+                        "animationTimingFunction": "ease-in-out",
+                        "width": "50%",
+                      }
+                }
+            />
+        </div>
+        <h5
+            className="percentage__num"
+        >
+            50
+            %
+        </h5>
+        <div
+            className="bio__container__services"
+        >
+            <span>
+                Very recently I started using Jest with snapshots and is fantastic.
+                <br />
+            </span>
+            <span>
+                Here in this project I test few functions and components that way, clone this repo and check it out!
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div>
+    <div>
+        <div
+            className="name__pic__container"
+        >
+            <h2
+                className="service__name"
+            >
+                NodeJs
+            </h2>
+            <img
+                className="logo_pic"
+                onClick={[Function]}
+                src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FnodeJs.jpg?alt=media&token=4650d90d-96cb-4a2a-bd6d-8a62fd7e76db"
+                style={Object {}}
+            />
+        </div>
+        <div
+            className="progress__bar__container"
+        >
+            <div
+                className="progress__bar"
+                style={
+                    Object {
+                        "animationDuration": "3s",
+                        "animationName": "progress",
+                        "animationTimingFunction": "ease-in-out",
+                        "width": "20%",
+                      }
+                }
+            />
+        </div>
+        <h5
+            className="percentage__num"
+        >
+            20
+            %
+        </h5>
+        <div
+            className="bio__container__services"
+        >
+            <span>
+                haven't use it that much jet, I'm certainly looking forward to it. I've used it for certain functions on the Firebase back-end, using modules like node-mailer to send emails to users and the like.
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div>
+    <div>
+        <div
+            className="name__pic__container"
+        >
+            <h2
+                className="service__name"
+            >
+                ReactJs
+            </h2>
+            <img
+                className="logo_pic"
+                onClick={[Function]}
+                src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FreactJs.png?alt=media&token=e26d4e05-5609-4f14-8f34-2511419cddf8"
+                style={Object {}}
+            />
+        </div>
+        <div
+            className="progress__bar__container"
+        >
+            <div
+                className="progress__bar"
+                style={
+                    Object {
+                        "animationDuration": "3s",
+                        "animationName": "progress",
+                        "animationTimingFunction": "ease-in-out",
+                        "width": "80%",
+                      }
+                }
+            />
+        </div>
+        <h5
+            className="percentage__num"
+        >
+            80
+            %
+        </h5>
+        <div
+            className="bio__container__services"
+        >
+            <span>
+                All the heavy lifting of my web-apps have been done so far with ReactJs, using react-Redux it's so powerful, I just love the component way of programming.
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div>
+    <div>
+        <div
+            className="name__pic__container"
+        >
+            <h2
+                className="service__name"
+            >
+                ReactNative
+            </h2>
+            <img
+                className="logo_pic"
+                onClick={[Function]}
+                src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Freact-Native.png?alt=media&token=478958c2-f605-491b-b08f-36920c139501"
+                style={Object {}}
+            />
+        </div>
+        <div
+            className="progress__bar__container"
+        >
+            <div
+                className="progress__bar"
+                style={
+                    Object {
+                        "animationDuration": "3s",
+                        "animationName": "progress",
+                        "animationTimingFunction": "ease-in-out",
+                        "width": "15%",
+                      }
+                }
+            />
+        </div>
+        <h5
+            className="percentage__num"
+        >
+            15
+            %
+        </h5>
+        <div
+            className="bio__container__services"
+        >
+            <span>
+                I've just seen a glimpse of what can be done in react-native but I understand is the next step for me, I've got experience on mobile-app-development in Java for Android devices, that combined with my ReactJs experience points me towards a very enjoyable future time programming in React-Native :)
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div>
+    <div>
+        <div
+            className="name__pic__container"
+        >
+            <h2
+                className="service__name"
+            >
+                ReactNative
+            </h2>
+            <img
+                className="logo_pic"
+                onClick={[Function]}
+                src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Freact-Native.png?alt=media&token=478958c2-f605-491b-b08f-36920c139501"
+                style={Object {}}
+            />
+        </div>
+        <div
+            className="progress__bar__container"
+        >
+            <div
+                className="progress__bar"
+                style={
+                    Object {
+                        "animationDuration": "3s",
+                        "animationName": "progress",
+                        "animationTimingFunction": "ease-in-out",
+                        "width": "15%",
+                      }
+                }
+            />
+        </div>
+        <h5
+            className="percentage__num"
+        >
+            15
+            %
+        </h5>
+        <div
+            className="bio__container__services"
+        >
+            <span>
+                I've just seen a glimpse of what can be done in react-native but I understand is the next step for me, I've got experience on mobile-app-development in Java for Android devices, that combined with my ReactJs experience points me towards a very enjoyable future time programming in React-Native :)
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+  <div>
+    <div>
+        <div
+            className="name__pic__container"
+        >
+            <h2
+                className="service__name"
+            >
+                ReactNative
+            </h2>
+            <img
+                className="logo_pic"
+                onClick={[Function]}
+                src="https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Freact-Native.png?alt=media&token=478958c2-f605-491b-b08f-36920c139501"
+                style={Object {}}
+            />
+        </div>
+        <div
+            className="progress__bar__container"
+        >
+            <div
+                className="progress__bar"
+                style={
+                    Object {
+                        "animationDuration": "3s",
+                        "animationName": "progress",
+                        "animationTimingFunction": "ease-in-out",
+                        "width": "15%",
+                      }
+                }
+            />
+        </div>
+        <h5
+            className="percentage__num"
+        >
+            15
+            %
+        </h5>
+        <div
+            className="bio__container__services"
+        >
+            <span>
+                I've just seen a glimpse of what can be done in react-native but I understand is the next step for me, I've got experience on mobile-app-development in Java for Android devices, that combined with my ReactJs experience points me towards a very enjoyable future time programming in React-Native :)
+                <br />
+            </span>
+        </div>
+    </div>
+</div>,
+]
+`;

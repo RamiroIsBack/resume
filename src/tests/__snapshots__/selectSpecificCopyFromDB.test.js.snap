@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`selectSpecificCopyfromDB 1`] = `
+Object {
+  "bio": "I've always been trying to work in what I enjoy, 
+ I enjoy very much programming and that is what I've mostly done,creating mobile Apps, web apps on my own or collaborating in different projects.
+I also enjoyed learning from various work fields and living in different countries what made me more versatile as a worker, increasing my skills.
+Nowadays I live in Baltimore U.S.A. looking forward to continue my career as web-app developer here.
+At the moment I'm finishing up an e-commerce web-app project for a client in Europe.
+I'm very excited for new projects!",
+  "id": "summaryPic",
+  "nombre": "summaryPic",
+  "nombrePic": "yoClimbPortrait.jpg",
+  "urlPic": "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FyoClimbPortrait.jpg?alt=media&token=a4ec019f-789f-4d8a-b88d-0c6f7f38507c",
+}
+`;
