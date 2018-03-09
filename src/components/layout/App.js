@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import actions from '../../actions';
-import {Layout} from '../../css';
-import {PopularFunctions} from '../../utils';
+import {Layout_css} from '../../css'; // eslint-disable-line no-unused-vars
 import {
   IntroContainer,
   SummaryContainer,
@@ -26,6 +25,8 @@ class App extends Component {
     window.addEventListener('scroll', this.handleScroll.bind(this));
   }
   componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll.bind(this));
+
     window.removeEventListener('resize', this.handleWindowSizeChange.bind(this));
   }
   handleScroll(){
@@ -70,6 +71,7 @@ class App extends Component {
   }
 
   render() {
+
     let mobile = false;
     if (this.props.section.screenSize ==='mobile'){
       mobile = true;
@@ -81,7 +83,7 @@ class App extends Component {
         <NombreContainer />
 
 
-        <div className='container'>
+        <div className='main__container'>
           <div className='IntroContainer'>
             <IntroContainer  />
 

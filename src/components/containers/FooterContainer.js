@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Footer_css} from '../../css';
 import {connect} from 'react-redux';
 import actions from '../../actions';
 import {PopularFunctions} from '../../utils';
@@ -19,7 +18,7 @@ class FooterContainer extends Component {
     let connectList = [];
     let footerList =[];
     if(this.props.copy){
-      if (this.props.copy.footerList.length != 0){
+      if (this.props.copy.footerList.length !== 0){
         footerList = this.props.copy.footerList;
         for(let i = 0; i<footerList.length; i++){
           if(footerList[i].nombre === 'download'){
@@ -45,6 +44,7 @@ class FooterContainer extends Component {
               >
                 <img className = 'footer__connect__foto'
                   src = {footerList[i].urlPic}
+                  alt='connect'
                   id = {footerList[i].urlLink}
                 ></img>
 
@@ -72,6 +72,7 @@ class FooterContainer extends Component {
           </div>
           <div className='footer__tel__pic'>
             <img className='footer__picPhoto'
+              alt='tel'
               src= {telCopy.urlPic}
             ></img>
           </div>
@@ -84,6 +85,7 @@ class FooterContainer extends Component {
           <div className='footer__mail__pic'>
             <img className='footer__picPhoto'
               src= {emailCopy.urlPic}
+              alt='mail'
             ></img>
           </div>
         </div>

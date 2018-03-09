@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Sidebar_css} from '../../css';
 import {connect} from 'react-redux';
 import actions from '../../actions';
 import {PopularFunctions} from '../../utils';
@@ -45,8 +44,6 @@ class SideBarContainer extends Component {
     let copy = PopularFunctions.selectSpecificCopy(this.props,'sideBar');
 
     let colapsed = true;
-    let imgSideBarColapsed = '';
-    imgSideBarColapsed = copy.urlPic;
     let arrowClose = copy.urlArrowClose;
     let arrowOpen = copy.urlArrowOpen;
     if(!this.props.section.colapsed){
@@ -94,6 +91,7 @@ class SideBarContainer extends Component {
                   <img
                     className = 'sidebar__menu__arrow__colapse'
                     src = {arrowClose}
+                    alt='colapse'
                     onClick = {this.toggleMenu.bind(this)}
                   ></img>
                 </div>
@@ -125,6 +123,7 @@ class SideBarContainer extends Component {
                 <img
                   className = 'sidebar__colapsed__photo__mobile'
                   src= {arrowOpen}
+                  alt='colapsed'
                   onClick = {this.toggleMenu.bind(this)}
                 ></img>
               </div>

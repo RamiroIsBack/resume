@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Services_css} from '../../css';
 import {connect} from 'react-redux';
 import actions from '../../actions';
 import {Service} from '../presentational';
@@ -35,7 +34,7 @@ class ServicesContainer extends Component {
   render() {
     let servicesList = [];
     if(this.props.copy){
-      if (this.props.copy.servicesList.length != 0){
+      if (this.props.copy.servicesList.length !== 0){
         servicesList = this.getServicesComponents(this.props.copy.servicesList);
       }
     }

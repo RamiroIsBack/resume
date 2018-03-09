@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import actions from '../../actions';
 import {Mapa} from '../presentational';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker,  InfoWindow, } from 'react-google-maps';
+import { withScriptjs } from 'react-google-maps';
 class MapaContainer extends Component {
 
   render() {
@@ -23,13 +22,7 @@ class MapaContainer extends Component {
     );
   }
 }
-const dispatchToProps = (dispatch) =>{
 
-  return{
-
-
-  };
-};
 
 const stateToProps = (state) => {
   return{
@@ -38,4 +31,4 @@ const stateToProps = (state) => {
   };
 };
 
-export default connect (stateToProps,dispatchToProps)(withScriptjs(MapaContainer))
+export default connect (stateToProps,null)(withScriptjs(MapaContainer))
