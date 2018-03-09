@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {Nombre_css} from '../../css';
 import {connect} from 'react-redux';
 import actions from '../../actions'
-import {PopularFunctions} from '../../utils';
 
 class NombreContainer extends Component {
 

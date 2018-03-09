@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {TimeBox_css} from '../../css';
 
 class TimeBox extends Component {
 
@@ -31,6 +30,7 @@ class TimeBox extends Component {
             <img
               className ='logo__photo'
               src= {copy.urlPic}
+              alt=''
               style = {pointer}
               onClick = {this.handleClick.bind(this)}
             ></img>

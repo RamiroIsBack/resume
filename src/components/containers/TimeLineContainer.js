@@ -1,6 +1,5 @@
 
 import React, {Component} from 'react';
-import {TimeLineYears_css,TimeLineActivities_css} from '../../css';
 import {connect} from 'react-redux';
 import actions from '../../actions';
 import {PopularFunctions} from '../../utils';
@@ -24,14 +23,14 @@ class TimeLineContainer extends Component {
   }
 
   handleClick(url){
-    if(url !='falta'){
+    if(url !=='falta'){
       window.open(url,'_blank');
     }
   }
   render() {
     let timeLineList = [];
     if(this.props.copy){
-      if (this.props.copy.timeLineList.length != 0){
+      if (this.props.copy.timeLineList.length !== 0){
         timeLineList = this.getTimeLineComponents(this.props.copy.timeLineList);
       }
     }

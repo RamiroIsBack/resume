@@ -13,13 +13,13 @@ var getSubList=(copyList,request)=>{
   let servicesObj = {};
   let list = [];
 
-  if (copyList.length != 0){
+  if (copyList.length !== 0){
 
     for(let i = 0; i<copyList.length; i++){
       if(copyList[i].nombre === request){
         servicesObj = copyList[i];
         for(var key in servicesObj){
-          if (servicesObj.hasOwnProperty(key) && key != 'nombre' && key != 'id'){
+          if (servicesObj.hasOwnProperty(key) && key !== 'nombre' && key !== 'id'){
             list.push(servicesObj[key]);
           }
         }

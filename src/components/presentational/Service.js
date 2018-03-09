@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Services_css} from '../../css';
 
 class Service extends Component {
 
@@ -12,10 +11,10 @@ class Service extends Component {
   render() {
     let logo= '';
     let cursor = {};
-    let stylingBarWidth = '80%';
+    let stylingBarWidth =  { width:'80%'};
     if(this.props.serviceInfo){
       logo = this.props.serviceInfo.urlPic;
-      let percentage = parseInt(this.props.serviceInfo.percentage);
+      let percentage = parseInt(this.props.serviceInfo.percentage,10);
       if (this.props.sectionSelected){
         stylingBarWidth ={
           width: ''+percentage+'%',
@@ -42,6 +41,7 @@ class Service extends Component {
           <h2  className = 'service__name' >{this.props.serviceInfo.nombre}</h2>
           <img className = 'logo_pic'
             style= {cursor}
+            alt=''
             src= {logo}
             onClick = {this.handleClick.bind(this)}
           ></img>

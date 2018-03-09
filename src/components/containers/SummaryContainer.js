@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Summary_css} from '../../css';
 import {connect} from 'react-redux';
 import actions from '../../actions';
 import {PopularFunctions} from '../../utils';
@@ -68,6 +67,7 @@ class SummaryContainer extends Component {
                   </div>
                 </div>
                 <img className = 'summary__photo' src = {urlPic}
+                  alt=''
                   onLoad={this.handleImageLoaded.bind(this)}
                   onError={this.handleImageErrored.bind(this)}
                 ></img>
@@ -87,6 +87,7 @@ class SummaryContainer extends Component {
                 </h2>
                 <div className = 'summary__photo__container' >
                   <img className = 'summary__photo' src = {urlPic}
+                    alt=''
                     onLoad={this.handleImageLoaded.bind(this)}
                     onError={this.handleImageErrored.bind(this)}
                   ></img>

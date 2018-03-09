@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {Intro_css} from '../../css';
 import {connect} from 'react-redux';
 import actions from '../../actions';
-import {PopularFunctions} from '../../utils';
 
 class IntroContainer extends Component {
   constructor(){
@@ -42,6 +40,7 @@ class IntroContainer extends Component {
         <div className='intro__foto__container' >
           <img className='intro__foto' style = {animeIt}
             src= {urlPic}
+            alt=''
             onLoad={this.handleImageLoaded.bind(this)}
             onError={this.handleImageErrored.bind(this)}
           ></img>
