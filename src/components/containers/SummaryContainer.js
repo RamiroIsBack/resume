@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import actions from '../../actions';
 import {PopularFunctions} from '../../utils';
+import {Summary_css} from '../../css'; // eslint-disable-line no-unused-vars
 
 class SummaryContainer extends Component {
   componentDidMount(){
