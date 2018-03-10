@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import actions from '../../actions';
 import {PopularFunctions} from '../../utils';
 import {MapaContainer} from './'
+import {Footer_css} from '../../css'; // eslint-disable-line no-unused-vars
 
 class FooterContainer extends Component {
 

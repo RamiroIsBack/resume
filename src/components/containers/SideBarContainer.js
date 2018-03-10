@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import actions from '../../actions';
 import {PopularFunctions} from '../../utils';
+import {Sidebar_css} from '../../css'; // eslint-disable-line no-unused-vars
 
 class SideBarContainer extends Component {
 

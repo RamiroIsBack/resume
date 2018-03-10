@@ -83,7 +83,7 @@ class App extends Component {
         <NombreContainer />
 
 
-        <div className='main__container'>
+        <div className='Main__container'>
           <div className='IntroContainer'>
             <IntroContainer  />
 
