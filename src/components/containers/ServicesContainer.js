@@ -39,10 +39,9 @@ class ServicesContainer extends Component {
         servicesList = this.getServicesComponents(this.props.copy.servicesList);
       }
     }
-
-    let visual = PopularFunctions.figureOutOpacity(this.props);
+  
     return (
-      <div className = 'services__container' style= {visual}>
+      <div className = 'services__container'>
         {servicesList}
       </div>
     );

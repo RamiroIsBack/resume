@@ -56,10 +56,8 @@ class FooterContainer extends Component {
       }
     }
 
-    let visual = PopularFunctions.figureOutOpacity(this.props);
-
     return (
-      <div className='footer__container' style = {visual}>
+      <div className='footer__container'>
         <div className='footer__map__container'>
           <MapaContainer
             mapInfo = {gMapsCopy}

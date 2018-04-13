@@ -5,11 +5,7 @@ import {PopularFunctions} from '../../utils';
 import {Summary_css} from '../../css'; // eslint-disable-line no-unused-vars
 
 class SummaryContainer extends Component {
-  componentDidMount(){
-    if (!this.props.copy.copyLoaded){
-      this.props.getCopy();
-    }
-  }
+
   handleImageLoaded(){
 
     this.props.imgLoaded(true);
@@ -30,7 +26,7 @@ class SummaryContainer extends Component {
     let bio = '';
 
     let copy = PopularFunctions.selectSpecificCopy(this.props,'summaryPic');
-    let visual = PopularFunctions.figureOutOpacity(this.props);
+
     if (copy.bio){
       urlPic = copy.urlPic;
       bio = copy.bio;
@@ -42,19 +38,7 @@ class SummaryContainer extends Component {
 
     return (
       <div>
-        {visual.opacity===0 &&
-          <div>
-            <div className = 'spiner__copy'>
-              Loading Ramiro Santamaria's resume
-            </div>
-            <div className='spinner'>
-              <div className='double-bounce1'></div>
-              <div className='double-bounce2'></div>
-            </div>
-          </div>
-
-        }
-        <div className = 'summary__container' style = {visual}>
+        <div className = 'summary__container'>
           {!tablet &&
             <div>
               <div className = 'summary__photo__container' >
@@ -67,11 +51,14 @@ class SummaryContainer extends Component {
                       return <span className = 'bio' key={key}>{item}<div><br/></div></span>;})}
                   </div>
                 </div>
-                <img className = 'summary__photo' src = {urlPic}
-                  alt=''
-                  onLoad={this.handleImageLoaded.bind(this)}
-                  onError={this.handleImageErrored.bind(this)}
-                ></img>
+                <div>
+                  
+                  <img className = 'summary__photo' src = {urlPic}
+                    alt=''
+                    onLoad={this.handleImageLoaded.bind(this)}
+                    onError={this.handleImageErrored.bind(this)}
+                  ></img>
+                </div>
               </div>
             </div>
           }
