@@ -127,7 +127,7 @@ class App extends Component {
             <TimeLineContainer  />
 
           </div>
-          {mobile &&
+          {mobile && this.props.section.imgLoaded &&
             <div className='sidebarColapsable__contaniner'>
               <SideBarContainer  />
 

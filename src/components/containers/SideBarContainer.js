@@ -41,7 +41,6 @@ class SideBarContainer extends Component {
       };
     }
 
-    let visual = PopularFunctions.figureOutOpacity(this.props);
     let copy = PopularFunctions.selectSpecificCopy(this.props,'sideBar');
 
     let colapsed = true;
@@ -60,7 +59,7 @@ class SideBarContainer extends Component {
     return (
       <div>
         {!mobile &&
-          <div style= {visual}>
+          <div >
             <h4 className = 'sidebar__section__link '
               id = 'summary'
               style = {styleSummary}
@@ -85,7 +84,7 @@ class SideBarContainer extends Component {
           </div>
         }
         {mobile &&
-          <div style= {visual}>
+          <div >
             { !colapsed &&
               <div className = 'sidebar__menu__container__mobile'>
                 <div className = 'sidebar__menu__arrow__colapse__container'>

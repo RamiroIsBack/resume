@@ -1,29 +1,23 @@
 .intro__foto__container{
   max-height : 900px;
   max-width : 1450px;
-  min-height: 100px;
+  min-height: 380px;
   background-color: black;
 }
 .intro__foto{
   max-height: 100%;
   max-width: 100%;
-  
+
   }
   @keyframes fadeIntro {
   from {opacity: 0;}
   to {opacity:.5;}
   }
 
-.spiner__copy{
-  font-size: 20;
-  margin-top: 100px;
-  text-align: center;
-  font-weight: bolder;
-}
 
 .spinner {
-  width: 140px;
-  height: 140px;
+  width: 90px;
+  height: 90px;
 
   position: relative;
   margin: 100px auto;
@@ -60,5 +54,13 @@
   } 50% {
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
+  }
+}
+@media screen and (max-width: 640px) {
+  .intro__foto__container{
+    max-height : 900px;
+    max-width : 1450px;
+    min-height: 200px;
+    background-color: black;
   }
 }

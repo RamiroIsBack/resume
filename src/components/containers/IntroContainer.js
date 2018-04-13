@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import actions from '../../actions';
 import {Intro_css} from '../../css'; // eslint-disable-line no-unused-vars
+import {PopularFunctions} from '../../utils';
 
 class IntroContainer extends Component {
   constructor(){
@@ -10,17 +11,27 @@ class IntroContainer extends Component {
       imgLoaded:false
     };
   }
+  componentDidMount(){
+    if (!this.props.copy.copyLoaded){
+      this.props.getCopy();
+    }
+  }
   handleImageLoaded(){
 
     this.setState({imgLoaded:true});
   }
   handleImageErrored(){
-    console.log('error while handleing intro img');
+    console.log('waiting for intro img');
 
   }
 
   render() {
-    let urlPic ='./backgroundImage.png';
+    let copy = PopularFunctions.selectSpecificCopy(this.props,'introPic');
+    let urlPic = ''
+    if(copy.urlPic){
+      urlPic=copy.urlPic;
+    }
+
     let animeIt = {};
 
     if(this.state.imgLoaded){

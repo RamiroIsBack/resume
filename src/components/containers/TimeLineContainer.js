@@ -35,10 +35,9 @@ class TimeLineContainer extends Component {
         timeLineList = this.getTimeLineComponents(this.props.copy.timeLineList);
       }
     }
-    let visual = PopularFunctions.figureOutOpacity(this.props);
-
+    
     return (
-      <div className = 'timeLine__container' style = {visual} >
+      <div className = 'timeLine__container'>
         {timeLineList}
         <div className = 'line'>
         </div>
