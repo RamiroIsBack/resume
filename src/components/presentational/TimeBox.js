@@ -29,7 +29,7 @@ class TimeBox extends Component {
           >{copy.nombre}</h3>
 
           <div className ='logo__photo__container'>
-            <LazyLoad height={60} offsetVertical={100}>
+            <LazyLoad height={60} offsetVertical={200}>
               <img
                 className ='logo__photo'
                 src= {copy.urlPic}
