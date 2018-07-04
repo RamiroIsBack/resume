@@ -59,13 +59,13 @@
   text-align: right;
   display: inline-block;
 
-  max-height: 60px;
+  height: 60px;
   max-width: 120px;
 }
 
 .logo__photo{
   cursor: pointer;
-  max-height: 60px;
+  height: 60px;
   max-width: 120px;
 }
 .logo__photo_tablet{
