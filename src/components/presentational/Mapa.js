@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withGoogleMap, GoogleMap, Marker,  InfoWindow, } from 'react-google-maps'
+import LazyLoad from 'react-lazy-load';
 
 class Mapa extends Component {
   constructor(){
@@ -27,13 +28,14 @@ class Mapa extends Component {
 
         <InfoWindow >
           <div style = {{maxWidth: 600,padding : 0, margin: 0}}>
-
-            <img role='presentation' src={foto} className ='infoWindow__img' alt='foto' id='fotoInfoWindow'
-              style = {{
-                opacity: 0.9, maxHeight: 60, maxWidth:60, cursor: 'pointer', marginRight:'2px',
-              }}
-              onClick={() => this.handleClick('https://www.google.com/maps/place/Hampden,+Baltimore,+Maryland+21211/@39.3399061,-76.6020314,12.93z/data=!4m5!3m4!1s0x89c804d5f7905ff3:0x5cc1e5ec25566796!8m2!3d39.3333706!4d-76.632607')}>
-            </img>
+            <LazyLoad height={60} offsetVertical={100}>
+              <img role='presentation' src={foto} className ='infoWindow__img' alt='foto' id='fotoInfoWindow'
+                style = {{
+                  opacity: 0.9, maxHeight: 60, maxWidth:60, cursor: 'pointer', marginRight:'2px',
+                }}
+                onClick={() => this.handleClick('https://www.google.com/maps/place/Hampden,+Baltimore,+Maryland+21211/@39.3399061,-76.6020314,12.93z/data=!4m5!3m4!1s0x89c804d5f7905ff3:0x5cc1e5ec25566796!8m2!3d39.3333706!4d-76.632607')}>
+              </img>
+            </LazyLoad >
 
             <div className='infoWindow__bio' style = {{padding : 0,}} >
               <h6 style = {{marginTop : 2,marginBottom:2}}>I'm in</h6>

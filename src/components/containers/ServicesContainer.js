@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import actions from '../../actions';
 import {Service} from '../presentational';
-import {PopularFunctions} from '../../utils';
 import {Services_css} from '../../css'; // eslint-disable-line no-unused-vars
 
 class ServicesContainer extends Component {

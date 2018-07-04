@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import LazyLoad from 'react-lazy-load';
+
 
 class TimeBox extends Component {
 
@@ -27,13 +29,15 @@ class TimeBox extends Component {
           >{copy.nombre}</h3>
 
           <div className ='logo__photo__container'>
-            <img
-              className ='logo__photo'
-              src= {copy.urlPic}
-              alt=''
-              style = {pointer}
-              onClick = {this.handleClick.bind(this)}
-            ></img>
+            <LazyLoad height={60} offsetVertical={100}>
+              <img
+                className ='logo__photo'
+                src= {copy.urlPic}
+                alt=''
+                style = {pointer}
+                onClick = {this.handleClick.bind(this)}
+              ></img>
+            </LazyLoad>
           </div>
         </div>
         <div className ='fecha_container'>

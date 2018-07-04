@@ -7,8 +7,10 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-google-maps": "^9.4.5",
+    "react-lazy-load": "^3.0.13",
+    "react-loadable": "^5.4.0",
     "react-redux": "^5.0.6",
-    "react-scripts": "1.1.0",
+    "react-scripts": "^1.1.4",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
   },
