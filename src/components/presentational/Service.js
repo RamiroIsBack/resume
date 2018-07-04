@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import LazyLoad from 'react-lazy-load';
 
 class Service extends Component {
 
@@ -39,12 +40,14 @@ class Service extends Component {
       <div >
         <div className = 'name__pic__container'>
           <h2  className = 'service__name' >{this.props.serviceInfo.nombre}</h2>
-          <img className = 'logo_pic'
-            style= {cursor}
-            alt=''
-            src= {logo}
-            onClick = {this.handleClick.bind(this)}
-          ></img>
+          <LazyLoad height={60} offsetVertical={100}>
+            <img className = 'logo_pic'
+              style= {cursor}
+              alt=''
+              src= {logo}
+              onClick = {this.handleClick.bind(this)}
+            ></img>
+          </LazyLoad>
         </div>
         <div className = 'progress__bar__container'>
           <div className = 'progress__bar' style={stylingBarWidth}></div>

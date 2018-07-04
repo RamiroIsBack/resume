@@ -2,19 +2,45 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import actions from '../../actions';
 import {Layout_css} from '../../css'; // eslint-disable-line no-unused-vars
-import {
-  IntroContainer,
-  SummaryContainer,
+import Loadable from 'react-loadable';
+import {IntroContainer} from '../containers';
 
-  ServicesContainer,
-  TimeLineContainer,
-
-  SideBarContainer,
-
-  NombreContainer,
-  FooterContainer,
-
-} from '../containers';
+const AsyncSummaryContainer = Loadable({
+  loader: () => import('../containers/SummaryContainer'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+const AsyncServicesContainer = Loadable({
+  loader: () => import('../containers/ServicesContainer'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+const AsyncTimeLineContainer = Loadable({
+  loader: () => import('../containers/TimeLineContainer'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+const AsyncSideBarContainer = Loadable({
+  loader: () => import('../containers/SideBarContainer'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+const AsyncFooterContainer = Loadable({
+  loader: () => import('../containers/FooterContainer'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+const AsyncNombreContainer = Loadable({
+  loader: () => import('../containers/NombreContainer'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
 
 
 class App extends Component {
@@ -80,7 +106,7 @@ class App extends Component {
     return (
       <div>
 
-        <NombreContainer />
+        <AsyncNombreContainer />
 
 
         <div className='main__container'>
@@ -95,7 +121,7 @@ class App extends Component {
                 Professional Profile
               </div>
             }
-            <SummaryContainer  />
+            <AsyncSummaryContainer  />
 
           </div>
 
@@ -105,7 +131,7 @@ class App extends Component {
                 Skills and services
               </div>
             }
-            <ServicesContainer  />
+            <AsyncServicesContainer  />
 
           </div>
 
@@ -124,12 +150,12 @@ class App extends Component {
                 </div>
               </div>
             }
-            <TimeLineContainer  />
+            <AsyncTimeLineContainer  />
 
           </div>
           {mobile && this.props.section.imgLoaded &&
             <div className='sidebarColapsable__contaniner'>
-              <SideBarContainer  />
+              <AsyncSideBarContainer  />
 
             </div>
           }
@@ -137,14 +163,14 @@ class App extends Component {
           <div className='SideBarSpace'>
 
             <div className='sidebar__contaniner'>
-              <SideBarContainer  />
+              <AsyncSideBarContainer  />
 
             </div>
           </div>
           }
           <div className='FooterContainer' id='footerContainer'>
 
-            <FooterContainer  />
+            <AsyncFooterContainer  />
 
           </div>
 

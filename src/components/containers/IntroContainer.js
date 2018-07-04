@@ -17,7 +17,7 @@ class IntroContainer extends Component {
     }
   }
   handleImageLoaded(){
-
+    console.log('intro img is here!');
     this.setState({imgLoaded:true});
   }
   handleImageErrored(){
