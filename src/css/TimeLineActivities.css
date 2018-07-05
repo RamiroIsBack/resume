@@ -6,8 +6,8 @@
   grid-template-columns: repeat(13, 1fr);
   grid-template-rows: repeat(8, 200px) ;
   grid-template-areas:
-  "w w w w w w l r r r r r r "
-  ". . . . . . l . . . . . . "
+  "m m m m m m l r r r r r r "
+  "w w w w w w l . . . . . . "
   "t t t t t t l v v v v v v "
   "n n n n n n l a a a a a a "
   "e e e e e e l . . . . . . "
@@ -59,6 +59,9 @@
 .work__web__app{
   grid-area: w;
 }
+.work__mobile__app{
+  grid-area: m;
+}
 
 @media screen and (max-width: 705px) {
   .timeLine__container {
@@ -70,8 +73,8 @@
     grid-template-columns: repeat(13, 1fr);
     grid-template-rows: repeat(8, 220px) ;
     grid-template-areas:
-    "w w w w w w l r r r r r r "
-    ". . . . . . l . . . . . . "
+    "m m m m m m l r r r r r r "
+    "w w w w w w l . . . . . . "
     "t t t t t t l v v v v v v "
     "n n n n n n l a a a a a a "
     "e e e e e e l . . . . . . "
@@ -121,5 +124,8 @@
   }
   .work__web__app{
     grid-area: w;
+  }
+  .work__mobile__app{
+    grid-area: m;
   }
 }

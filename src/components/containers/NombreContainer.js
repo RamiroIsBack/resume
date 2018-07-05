@@ -13,7 +13,7 @@ class NombreContainer extends Component {
       <div className = 'nombre__contaniner'>
         <h3 className = 'saludo'>Hi! I'm</h3>
         <h3 className = 'nombre'>Ramiro Santamaria</h3>
-        <h3 className = 'puesto' >Web App Developer</h3>
+        <h3 className = 'puesto' >App Developer</h3>
       </div>
     );
   }
