@@ -1,43 +1,46 @@
-import constants from '../constants';
-import { Firebase } from '../utils';
-
+import constants from "../constants";
+import { Firebase } from "../utils";
 
 export default {
-  getCopy: (params)=>{
+  getCopy: params => {
     return dispatch => {
       return dispatch(Firebase.getCopy(params, constants.COPY_RECEIVED));
     };
-
   },
-  movetoSection: (section) =>{
-    return{
-      type: constants.MOVETO_SECTION ,
+  movetoSection: section => {
+    return {
+      type: constants.MOVETO_SECTION,
       data: section
     };
   },
-  imgLoaded: (loaded) =>{
-    return{
+  imgLoaded: loaded => {
+    return {
       type: constants.IMG_LOADED,
       data: loaded
     };
   },
-  chageScreenWidth: (screenSize) =>{
-    return{
-      type:constants.CHANGE_SCREEN_WIDTH,
-      data: screenSize,
+  chageScreenWidth: screenSize => {
+    return {
+      type: constants.CHANGE_SCREEN_WIDTH,
+      data: screenSize
     };
   },
-  toggleMenu:(order)=>{
-    return{
-      type:constants.TOGGLE_MENU,
-      data: order,
+  toggleMenu: order => {
+    return {
+      type: constants.TOGGLE_MENU,
+      data: order
     };
   },
-  changeScrollIndicator:(scrollIndicator)=>{
-    return{
-      type:constants.CHANGE_SCROLL_INDICATOR,
-      data: scrollIndicator,
+  changeScrollIndicator: scrollIndicator => {
+    return {
+      type: constants.CHANGE_SCROLL_INDICATOR,
+      data: scrollIndicator
     };
   },
-
+  changeJobSelected: jobSelected => {
+    return {
+      type: constants.SELECT_JOB,
+      data: jobSelected
+    };
+  }
 };
