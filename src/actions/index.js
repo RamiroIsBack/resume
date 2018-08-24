@@ -37,10 +37,10 @@ export default {
       data: scrollIndicator
     };
   },
-  changeJobSelected: jobSelected => {
+  changeWorkSelected: workSelected => {
     return {
-      type: constants.SELECT_JOB,
-      data: jobSelected
+      type: constants.SELECT_WORK,
+      data: workSelected
     };
   }
 };

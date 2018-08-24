@@ -1,30 +1,27 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import actions from '../../actions';
-import {Service} from '../presentational';
-import {Services_css} from '../../css'; // eslint-disable-line no-unused-vars
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import actions from "../../actions";
+import { Service } from "../presentational";
+import { Services_css } from "../../css"; // eslint-disable-line no-unused-vars
 
 class ServicesContainer extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      animatedAlready : false,
+      animatedAlready: false
     };
   }
-  getServicesComponents(rawList){
+  getServicesComponents(rawList) {
     let servicesComponentList = [];
-    let animeIt =false;
-    if(this.props.section.scrollIndicator === 'servicesContainer' ){
-      animeIt =true;
+    let animeIt = false;
+    if (this.props.section.scrollIndicator === "services") {
+      animeIt = true;
     }
 
-    for(let i = 0; i<rawList.length; i++){
+    for (let i = 0; i < rawList.length; i++) {
       servicesComponentList.push(
-        <div key ={i}>
-          <Service
-            sectionSelected= {animeIt}
-            serviceInfo ={rawList[i]}
-          />
+        <div key={i}>
+          <Service sectionSelected={animeIt} serviceInfo={rawList[i]} />
         </div>
       );
     }
@@ -33,32 +30,29 @@ class ServicesContainer extends Component {
 
   render() {
     let servicesList = [];
-    if(this.props.copy){
-      if (this.props.copy.servicesList.length !== 0){
+    if (this.props.copy) {
+      if (this.props.copy.servicesList.length !== 0) {
         servicesList = this.getServicesComponents(this.props.copy.servicesList);
       }
     }
-  
-    return (
-      <div className = 'services__container'>
-        {servicesList}
-      </div>
-    );
+
+    return <div className="services__container">{servicesList}</div>;
   }
 }
 
-const dispatchToProps = (dispatch) =>{
-
-  return{
-    getCopy: () => dispatch(actions.getCopy()),
-
+const dispatchToProps = dispatch => {
+  return {
+    getCopy: () => dispatch(actions.getCopy())
   };
 };
-const stateToProps = (state) => {
-  return{
-    copy :state.copy,
-    section: state.section,
+const stateToProps = state => {
+  return {
+    copy: state.copy,
+    section: state.section
   };
 };
 
-export default connect (stateToProps,dispatchToProps)(ServicesContainer);
+export default connect(
+  stateToProps,
+  dispatchToProps
+)(ServicesContainer);
