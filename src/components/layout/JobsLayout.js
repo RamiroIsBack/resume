@@ -3,22 +3,14 @@ import { connect } from "react-redux";
 import actions from "../../actions";
 
 import JobsListContainer from "../containers/JobsListContainer";
-import SelectedJobContainer from "../containers/SelectedJobContainer";
-
-import JobCss from "../../css"; // eslint-disable-line no-unused-vars
-
-import { PopularFunctions } from "../../utils";
+import Jobs_css from "../../css"; // eslint-disable-line no-unused-vars
 
 class JobsLayout extends Component {
   render() {
     return (
       <div>
-        mucho Layout!!!
         <div>
           <JobsListContainer />
-        </div>
-        <div>
-          <SelectedJobContainer />
         </div>
       </div>
     );

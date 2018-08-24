@@ -1,31 +1,33 @@
-import constants from '../constants';
+import constants from "../constants";
 
 var initialState = {
-
-  copyLoaded : false,
+  copyLoaded: false,
   copyList: [],
   servicesList: [],
   timeLineList: [],
-  footerList:[],
-
+  footerList: [],
+  talksList: [],
+  worksList: []
 };
-var getSubList=(copyList,request)=>{
+var getSubList = (copyList, request) => {
   let servicesObj = {};
   let list = [];
 
-  if (copyList.length !== 0){
-
-    for(let i = 0; i<copyList.length; i++){
-      if(copyList[i].nombre === request){
+  if (copyList.length !== 0) {
+    for (let i = 0; i < copyList.length; i++) {
+      if (copyList[i].nombre === request) {
         servicesObj = copyList[i];
-        for(var key in servicesObj){
-          if (servicesObj.hasOwnProperty(key) && key !== 'nombre' && key !== 'id'){
+        for (var key in servicesObj) {
+          if (
+            servicesObj.hasOwnProperty(key) &&
+            key !== "nombre" &&
+            key !== "id"
+          ) {
             list.push(servicesObj[key]);
           }
         }
         break;
       }
-
     }
   }
   return list;
@@ -34,21 +36,21 @@ var getSubList=(copyList,request)=>{
 export default (state = initialState, action) => {
   let newState = Object.assign({}, state);
   switch (action.type) {
+    case constants.COPY_RECEIVED:
+      if (action.data) {
+        let list = action.data;
+        newState["copyList"] = list;
+        newState["servicesList"] = getSubList(list, "services");
+        newState["timeLineList"] = getSubList(list, "timeLine");
+        newState["footerList"] = getSubList(list, "footer");
+        newState["talksList"] = getSubList(list, "talks");
+        newState["worksList"] = getSubList(list, "works");
+        newState["copyLoaded"] = true;
+        console.log("copyLoaded");
+      }
+      return newState;
 
-
-  case constants.COPY_RECEIVED:
-    if(action.data){
-      let list = action.data;
-      newState['copyList'] = list;
-      newState['servicesList'] = getSubList(list,'services');
-      newState['timeLineList'] = getSubList(list,'timeLine');
-      newState['footerList'] = getSubList(list,'footer');
-      newState['copyLoaded'] = true;
-      console.log('copyLoaded');
-    }
-    return newState;
-
-  default:
-    return state;
+    default:
+      return state;
   }
 };

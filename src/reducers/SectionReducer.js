@@ -1,12 +1,12 @@
 import constants from "../constants";
 
 var initialState = {
-  sectionSelected: "intro", //summary jobs services timeLine footer
-  jobSelected: 0,
+  sectionSelected: "intro", //summary work services timeLine footer
+  workSelected: "MicoTextil",
   imgLoaded: false,
   screenSize: "laptop", //or mobile
   colapsed: true,
-  scrollIndicator: "" //summaryContainer servicesContainer timeLineContainer
+  scrollIndicator: "" //summary work services timeLine
 };
 
 export default (state = initialState, action) => {
@@ -15,6 +15,7 @@ export default (state = initialState, action) => {
     case constants.MOVETO_SECTION:
       if (action.data) {
         newState["sectionSelected"] = action.data;
+        newState["scrollIndicator"] = action.data;
       }
       //console.log (newState.sectionSelected)
       return newState;
@@ -39,13 +40,14 @@ export default (state = initialState, action) => {
 
     case constants.CHANGE_SCROLL_INDICATOR:
       newState["scrollIndicator"] = action.data;
+      newState["sectionSelected"] = "";
       //console.log('scroll indicator progress bar: '+action.data);
 
       return newState;
 
-    case constants.SELECT_JOB:
-      newState["jobSelected"] = action.data;
-      console.log("number of job selected: " + action.data);
+    case constants.SELECT_WORK:
+      newState["workSelected"] = action.data;
+      console.log("WORK selected: " + action.data);
 
       return newState;
 

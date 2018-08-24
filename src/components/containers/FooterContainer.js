@@ -104,7 +104,7 @@ class FooterContainer extends Component {
             href={downloadCopy.urlLink}
             download="Ramiro Santamaria Resume.pdf"
           >
-            <h4 className="footer__download__text">Download resume.pdf</h4>
+            <h4 className="footer__download__text">Download .pdf</h4>
           </a>
           <a
             className="footer__download__foto__link__container"
