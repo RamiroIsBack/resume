@@ -3,6 +3,7 @@ import constants from "../constants";
 var initialState = {
   sectionSelected: "intro", //summary work services timeLine footer
   workSelected: "MicoTextil",
+  workModal: "",
   imgLoaded: false,
   screenSize: "laptop", //or mobile
   colapsed: true,
@@ -49,6 +50,10 @@ export default (state = initialState, action) => {
       newState["workSelected"] = action.data;
       console.log("WORK selected: " + action.data);
 
+      return newState;
+
+    case constants.TOGGLE_WORK_MODAL:
+      newState["workModal"] = action.data;
       return newState;
 
     default:

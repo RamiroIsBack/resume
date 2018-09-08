@@ -4,7 +4,7 @@ import actions from "../../actions";
 import { Layout_css } from "../../css"; // eslint-disable-line no-unused-vars
 import { IntroContainer } from "../containers";
 import {
-  AsyncModalWorkContainer,
+  AsyncWorkModalContainer,
   AsyncFooterContainer,
   AsyncJobsLayout,
   AsyncNombreContainer,
@@ -127,7 +127,7 @@ class App extends Component {
     return (
       <div>
         <AsyncNombreContainer />
-        <AsyncModalWorkContainer />
+        <AsyncWorkModalContainer />
         <div className="main__container">
           <div className="IntroContainer">
             <IntroContainer />
