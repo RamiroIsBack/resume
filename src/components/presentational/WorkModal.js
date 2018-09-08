@@ -19,6 +19,7 @@ class WorkModal extends React.Component {
               <div style={{ width: "60%" }}>
                 <h3>{this.props.workToShow.nombre}</h3>
               </div>
+
               <div style={{ width: "90%" }}>
                 <h4 style={{ fontWeight: "normal" }}>
                   {this.props.workToShow.bio}
@@ -28,6 +29,13 @@ class WorkModal extends React.Component {
                 <h5 style={{ fontWeight: "lighter" }}>
                   {this.props.workToShow.date}
                 </h5>
+              </div>
+              <div style={{ width: "100%" }}>
+                <img
+                  style={{ maxHeight: "300px", maxWidth: "90%" }}
+                  alt={this.props.workToShow.nombre}
+                  src={this.props.workToShow.urlPic2}
+                />
               </div>
               <div style={{ width: "60%" }}>
                 <a onClick={() => window.open(this.props.workToShow.url)}>
