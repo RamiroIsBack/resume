@@ -3,7 +3,6 @@ import actions from "../../actions";
 import { connect } from "react-redux";
 import Works_css from "../../css"; // eslint-disable-line no-unused-vars
 import Work from "../presentational/Work";
-//import SelectedWork from "../presentational/SelectedWork";
 
 class JobsContainer extends Component {
   produceWorkListJsx = (list, type, selectedName) => {
@@ -17,30 +16,34 @@ class JobsContainer extends Component {
           selected={selected}
           type={type}
           changeWorkSelected={this.changeWorkSelected}
+          mobile={this.props.section.screenSize === "mobile" ? true : false}
         />
       );
     });
   };
-  // produceSelectedWorkJsx = (list, selected) => {
-  //   let copy = {};
-  //   for (let i in list) {
-  //     copy = list[i];
-  //     if (selected === copy.nombre) {
-  //       break;
-  //     }
-  //   }
-  //   return <SelectedWork copy={copy} />;
-  // };
+
   changeWorkSelected = selection => {
     if (this.props.section.workSelected !== selection) {
       this.props.changeWorkSelected(selection);
     }
-    this.props.toggleWorkModal(selection);
+    if (
+      selection === "MobileAppFullStack" ||
+      selection === "ABlokar" ||
+      this.props.section.screenSize === "mobile"
+    ) {
+      this.props.toggleWorkModal(selection);
+    } else {
+      let completeList = [
+        ...this.props.copy.talksList,
+        ...this.props.copy.worksList
+      ];
+      let workCopy = completeList.find(work => work.nombre === selection);
+      window.open(workCopy.url);
+    }
   };
   render() {
     let worksJsxList = [];
     let talksJsxList = [];
-    //let selectedWork = {};
     if (this.props.copy) {
       if (this.props.copy.copyLoaded) {
         worksJsxList = this.produceWorkListJsx(
@@ -53,10 +56,6 @@ class JobsContainer extends Component {
           "talk",
           this.props.section.workSelected
         );
-        // selectedWork = this.produceSelectedWorkJsx(
-        //   [...this.props.copy.talksList, ...this.props.copy.worksList],
-        //   this.props.section.workSelected
-        // );
         return (
           <div>
             <div className="works__list__container">

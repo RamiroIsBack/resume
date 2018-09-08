@@ -44,7 +44,9 @@ export default (state = initialState, action) => {
         newState["timeLineList"] = getSubList(list, "timeLine");
         newState["footerList"] = getSubList(list, "footer");
         newState["talksList"] = getSubList(list, "talks");
-        newState["worksList"] = getSubList(list, "works");
+        newState["worksList"] = getSubList(list, "works").sort(
+          (a, b) => a.priority - b.priority
+        );
         newState["copyLoaded"] = true;
         console.log("copyLoaded");
       }
