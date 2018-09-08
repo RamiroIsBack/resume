@@ -16,10 +16,10 @@ import MapaContainer from "./MapaContainer.js";
 
 import JobsListContainer from "./JobsListContainer";
 
-import ModalWorkContainer from "./ModalWorkContainer";
+import WorkModalContainer from "./WorkModalContainer";
 
 export {
-  ModalWorkContainer,
+  WorkModalContainer,
   JobsListContainer,
   MapaContainer,
   FooterContainer,

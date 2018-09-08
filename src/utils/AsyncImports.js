@@ -1,8 +1,11 @@
 import React from "react";
 import Loadable from "react-loadable";
 
-export const AsyncModalWorkContainer = Loadable({
-  loader: () => import("../components/containers/ModalWorkContainer")
+export const AsyncWorkModalContainer = Loadable({
+  loader: () => import("../components/containers/WorkModalContainer"),
+  loading() {
+    return <div>Loading...</div>;
+  }
 });
 export const AsyncSummaryContainer = Loadable({
   loader: () => import("../components/containers/SummaryContainer"),

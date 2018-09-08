@@ -42,5 +42,11 @@ export default {
       type: constants.SELECT_WORK,
       data: workSelected
     };
+  },
+  toggleWorkModal: workSelected => {
+    return {
+      type: constants.TOGGLE_WORK_MODAL,
+      data: workSelected
+    };
   }
 };
