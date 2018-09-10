@@ -23,7 +23,7 @@ export default {
       zIndex: 31,
       top: "20px",
       left: "30px",
-      right: "300px",
+      right: "20%",
       //bottom: "300px",
       overflow: "auto",
       overflowX: "hidden",
