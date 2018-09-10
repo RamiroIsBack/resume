@@ -41,6 +41,7 @@ class WorkModalContainer extends Component {
           show={workModalShowing}
           workToShow={workToShow}
           onClose={() => this.props.toggleWorkModal("")}
+          mobile={this.props.section.screenSize === "mobile" ? true : false}
         />
       </div>
     );
