@@ -149,6 +149,8 @@ class App extends Component {
             ref={element => (this.workSection = element)}
           >
             <Waypoint
+              topOffset={"-200px"}
+              bottomOffset={200}
               onPositionChange={({ previousPosition, currentPosition }) => {
                 this.handleWorkWaypointEnter({
                   previousPosition,
@@ -180,6 +182,8 @@ class App extends Component {
             ref={element => (this.timeLineSection = element)}
           >
             <Waypoint
+              topOffset={-400}
+              bottomOffset={"300px"}
               onPositionChange={({ previousPosition, currentPosition }) => {
                 this.handleTimeLineWaypointEnter({
                   previousPosition,
