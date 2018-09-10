@@ -95,6 +95,14 @@ class App extends Component {
     }
   }
 
+  handleSummaryWaypointEnter({ previousPosition, currentPosition }) {
+    //setting sectionSelected to '' on the reducer
+    if (this.props.changeScrollIndicator) {
+      if (currentPosition === "inside") {
+        this.props.changeScrollIndicator("summary");
+      }
+    }
+  }
   handleWorkWaypointEnter({ previousPosition, currentPosition }) {
     if (this.props.changeScrollIndicator) {
       //setting sectionSelected to '' on the reducer
@@ -137,6 +145,15 @@ class App extends Component {
             id="summaryContainer"
             ref={element => (this.summarySection = element)}
           >
+            <Waypoint
+              bottomOffset={200}
+              onPositionChange={({ previousPosition, currentPosition }) => {
+                this.handleSummaryWaypointEnter({
+                  previousPosition,
+                  currentPosition
+                });
+              }}
+            />
             {this.props.section.imgLoaded && (
               <div className="section__headline">Professional Profile</div>
             )}
