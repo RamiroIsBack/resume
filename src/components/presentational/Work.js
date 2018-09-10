@@ -16,7 +16,9 @@ class Work extends Component {
         onClick={() => this.props.changeWorkSelected(this.props.copy.nombre)}
       >
         <div className="work__title__container" style={selectedStyle}>
-          <h2>{this.props.copy.nombreToShow}</h2>
+          <h2 style={{ marginBottom: 0, marginTop: 8 }}>
+            {this.props.copy.nombreToShow}
+          </h2>
         </div>
         <div className="work__title__container">
           <h3
@@ -24,7 +26,7 @@ class Work extends Component {
               opacity: "0.5",
               fontWeight: 100,
               margin: 0,
-              marginBottom: 6
+              marginBottom: 8
             }}
           >
             {typeAndState}
@@ -39,7 +41,9 @@ class Work extends Component {
         </div>
         {!this.props.mobile && (
           <div className="work__bio__container">
-            <p>{this.props.copy.bio}</p>
+            <p style={{ marginBottom: 0, marginTop: 8 }}>
+              {this.props.copy.bio}
+            </p>
           </div>
         )}
       </div>

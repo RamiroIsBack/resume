@@ -1,12 +1,13 @@
 .works__list__container {
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   grid-auto-flow: dense;
-  padding-bottom: 60px;
 }
 .work__container {
   cursor: pointer;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .work__container:hover .work__bio__container {
   opacity: 1;
