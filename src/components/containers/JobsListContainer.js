@@ -29,6 +29,7 @@ class JobsContainer extends Component {
     if (
       selection === "MobileAppFullStack" ||
       selection === "ABlokar" ||
+      selection === "XlsxProgram" ||
       this.props.section.screenSize === "mobile"
     ) {
       this.props.toggleWorkModal(selection);
