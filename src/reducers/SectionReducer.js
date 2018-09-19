@@ -41,8 +41,10 @@ export default (state = initialState, action) => {
       return newState;
 
     case constants.CHANGE_SCROLL_INDICATOR:
-      newState["scrollIndicator"] = action.data;
-      newState["sectionSelected"] = "";
+      if (newState.imgLoaded) {
+        newState["scrollIndicator"] = action.data;
+        newState["sectionSelected"] = "";
+      }
       //console.log('scroll indicator progress bar: '+action.data);
 
       return newState;
