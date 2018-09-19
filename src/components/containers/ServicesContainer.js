@@ -11,6 +11,9 @@ class ServicesContainer extends Component {
       animatedAlready: false
     };
   }
+  openModal(serviceInfo) {
+    this.props.openModal(serviceInfo);
+  }
   getServicesComponents(rawList) {
     let servicesComponentList = [];
     let animeIt = false;
@@ -21,7 +24,11 @@ class ServicesContainer extends Component {
     for (let i = 0; i < rawList.length; i++) {
       servicesComponentList.push(
         <div key={i}>
-          <Service sectionSelected={animeIt} serviceInfo={rawList[i]} />
+          <Service
+            sectionSelected={animeIt}
+            serviceInfo={rawList[i]}
+            openModal={this.openModal.bind(this)}
+          />
         </div>
       );
     }
@@ -42,7 +49,8 @@ class ServicesContainer extends Component {
 
 const dispatchToProps = dispatch => {
   return {
-    getCopy: () => dispatch(actions.getCopy())
+    getCopy: () => dispatch(actions.getCopy()),
+    openModal: serviceInfo => dispatch(actions.toggleWorkModal(serviceInfo))
   };
 };
 const stateToProps = state => {

@@ -16,7 +16,7 @@ export default {
       position: "absolute",
       backgroundColor: "white",
       maxWidth: "100%",
-      maxHeight: "90%",
+      maxHeight: "80%",
       minHeight: 300,
       minWidth: 300,
       margin: "0 auto",
@@ -40,15 +40,16 @@ export default {
       paddingLeft: "8px"
     },
     btnClose: {
-      position: "absolute",
+      position: "fixed",
       backgroundColor: "rgba(255,255,255,0.75)",
-      paddingTop: "10px",
-      paddingLeft: "18px",
+      padding: "8px",
+      marginRight: "18px",
+      marginTop: "5px",
       borderRadius: "5px",
       fontSize: "19px",
       fontWeight: "bolder",
-      border: "none",
-      right: "18px",
+      border: "1px solid black",
+      right: "20%",
       cursor: "pointer"
     }
   }
