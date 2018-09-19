@@ -4,6 +4,7 @@ var initialState = {
   sectionSelected: "intro", //summary work services timeLine footer
   workSelected: "MicoTextil",
   workModal: "",
+  serviceModal: "",
   imgLoaded: false,
   screenSize: "laptop", //or mobile
   colapsed: true,
@@ -53,7 +54,14 @@ export default (state = initialState, action) => {
       return newState;
 
     case constants.TOGGLE_WORK_MODAL:
-      newState["workModal"] = action.data;
+      if (typeof action.data === "object") {
+        //is comming from a service
+        newState["serviceModal"] = action.data;
+        newState["workModal"] = "";
+      } else {
+        newState["workModal"] = action.data;
+        newState["serviceModal"] = "";
+      }
       return newState;
 
     default:

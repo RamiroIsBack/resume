@@ -65,7 +65,7 @@ class WorkModal extends React.Component {
               {this.props.workToShow.urlPic2 && (
                 <div style={{ width: "100%" }}>
                   <img
-                    style={{ maxHeight: "300px", maxWidth: "90%" }}
+                    style={{ maxWidth: "90%" }}
                     alt={this.props.workToShow.nombre}
                     src={this.props.workToShow.urlPic2}
                   />
