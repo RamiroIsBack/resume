@@ -1,80 +1,78 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import actions from '../../actions';
-import {Intro_css} from '../../css'; // eslint-disable-line no-unused-vars
-import {PopularFunctions} from '../../utils';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import actions from "../../actions";
+import { Intro_css } from "../../css"; // eslint-disable-line no-unused-vars
+import { PopularFunctions } from "../../utils";
 
 class IntroContainer extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state={
-      imgLoaded:false
+    this.state = {
+      imgLoaded: false
     };
   }
-  componentDidMount(){
-    if (!this.props.copy.copyLoaded){
+  componentDidMount() {
+    if (!this.props.copy.copyLoaded) {
       this.props.getCopy();
     }
   }
-  handleImageLoaded(){
-    console.log('intro img is here!');
-    this.setState({imgLoaded:true});
+  handleImageLoaded() {
+    this.setState({ imgLoaded: true });
   }
-  handleImageErrored(){
-    console.log('waiting for intro img');
-
+  handleImageErrored() {
+    console.log("waiting for intro img");
   }
 
   render() {
-    let copy = PopularFunctions.selectSpecificCopy(this.props,'introPic');
-    let urlPic = ''
-    if(copy.urlPic){
-      urlPic=copy.urlPic;
+    let copy = PopularFunctions.selectSpecificCopy(this.props, "introPic");
+    let urlPic = "";
+    if (copy.urlPic) {
+      urlPic = copy.urlPic;
     }
 
     let animeIt = {};
 
-    if(this.state.imgLoaded){
+    if (this.state.imgLoaded) {
       animeIt = {
-        animation: 'fadeIntro 2s ease-in',
-        opacity: '0.5',
+        animation: "fadeIntro 2s ease-in",
+        opacity: "0.5"
       };
-    }
-    else{
+    } else {
       animeIt = {
-        opacity: '0',
+        opacity: "0"
       };
     }
 
     return (
       <div>
-
-        <div className='intro__foto__container' >
-          <img className='intro__foto' style = {animeIt}
-            src= {urlPic}
-            alt=''
+        <div className="intro__foto__container">
+          <img
+            className="intro__foto"
+            style={animeIt}
+            src={urlPic}
+            alt=""
             onLoad={this.handleImageLoaded.bind(this)}
             onError={this.handleImageErrored.bind(this)}
-          ></img>
+          />
         </div>
       </div>
     );
   }
 }
 
-const dispatchToProps = (dispatch) =>{
-
-  return{
-    getCopy: () => dispatch(actions.getCopy()),
-    imgLoaded: (loaded) => dispatch (actions.imgLoaded(loaded)),
-
+const dispatchToProps = dispatch => {
+  return {
+    getCopy: () => dispatch(actions.getCopy())
   };
 };
-const stateToProps = (state) => {
-  return{
-    copy :state.copy,
-    section: state.section,
+const stateToProps = state => {
+  return {
+    copy: state.copy,
+    section: state.section
   };
 };
 
-export default connect (stateToProps,dispatchToProps)(IntroContainer);
+export default connect(
+  stateToProps,
+  dispatchToProps
+)(IntroContainer);
