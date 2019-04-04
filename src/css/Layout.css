@@ -28,8 +28,8 @@
 .IntroContainer {
   grid-area: i;
   overflow-wrap: break-word;
-  position: relative;
   z-index: 2;
+  background-color: rgb(24, 21, 21);
 }
 .JobsLayout {
   grid-area: j;

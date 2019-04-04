@@ -1,19 +1,23 @@
-.intro__foto__container{
-  max-height : 900px;
-  max-width : 1450px;
+.intro__foto__container {
+  max-height: 900px;
+  max-width: 1450px;
   min-height: 380px;
-  background-color: black;
+  margin: auto;
+  background-color: rgb(24, 21, 21);
 }
-.intro__foto{
+.intro__foto {
   max-height: 100%;
   max-width: 100%;
-
+  margin: auto;
+}
+@keyframes fadeIntro {
+  from {
+    opacity: 0;
   }
-  @keyframes fadeIntro {
-  from {opacity: 0;}
-  to {opacity:.5;}
+  to {
+    opacity: 0.5;
   }
-
+}
 
 .spinner {
   width: 90px;
@@ -23,7 +27,8 @@
   margin: 100px auto;
 }
 
-.double-bounce1, .double-bounce2 {
+.double-bounce1,
+.double-bounce2 {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -33,33 +38,40 @@
   top: 0;
   left: 0;
 
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out;
+  -webkit-animation: sk-bounce 2s infinite ease-in-out;
+  animation: sk-bounce 2s infinite ease-in-out;
 }
 
 .double-bounce2 {
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
 }
 
 @-webkit-keyframes sk-bounce {
-  0%, 100% { -webkit-transform: scale(0.0) }
-  50% { -webkit-transform: scale(1.0) }
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
 }
 
 @keyframes sk-bounce {
-  0%, 100% {
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 50% {
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
   }
 }
 @media screen and (max-width: 640px) {
-  .intro__foto__container{
-    max-height : 900px;
-    max-width : 1450px;
+  .intro__foto__container {
+    max-height: 900px;
+    max-width: 1450px;
     min-height: 200px;
     background-color: black;
   }
