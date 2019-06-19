@@ -4,63 +4,69 @@
   display: grid;
   grid-gap: 30px;
   grid-template-columns: repeat(13, 1fr);
-  grid-template-rows: repeat(8, 200px) ;
+  grid-template-rows: repeat(9, 200px);
   grid-template-areas:
-  "m m m m m m l r r r r r r "
-  "w w w w w w l . . . . . . "
-  "t t t t t t l v v v v v v "
-  "n n n n n n l a a a a a a "
-  "e e e e e e l . . . . . . "
-  "j j j j j j l c c c c c c "
-  "p p p p p p l . . . . . . "
-  ". . . . . . l d d d d d d ";
+    "h h h h h h l s s s s s s "
+    "m m m m m m l r r r r r r "
+    "w w w w w w l . . . . . . "
+    "t t t t t t l v v v v v v "
+    "n n n n n n l a a a a a a "
+    "e e e e e e l . . . . . . "
+    "j j j j j j l c c c c c c "
+    "p p p p p p l . . . . . . "
+    ". . . . . . l d d d d d d ";
   text-align: center;
   position: relative;
-
 }
 
-.line{
+.line {
   grid-area: l;
   position: relative;
   border: 4px solid rgb(2, 145, 171);
   border-radius: 20px;
   width: 0;
 }
-.studies__degree{
+.studies__degree {
   grid-area: d;
 }
-.studies__civil__servant{
+.studies__civil__servant {
   grid-area: c;
 }
-.studies__android{
+.studies__android {
   grid-area: a;
 }
-.studies__vertical{
+.studies__vertical {
   grid-area: v;
 }
-.studies__react{
+.studies__react {
   grid-area: r;
 }
-.work__programmingC{
+.work__programmingC {
   grid-area: p;
 }
-.work__java{
+.work__java {
   grid-area: j;
 }
-.work__english__teacher{
+.work__english__teacher {
   grid-area: e;
 }
-.work__android{
+.work__android {
   grid-area: n;
 }
-.work__rope__acces__technician{
+.work__rope__acces__technician {
   grid-area: t;
 }
-.work__web__app{
+.work__web__app {
   grid-area: w;
 }
-.work__mobile__app{
+.work__mobile__app {
   grid-area: m;
+}
+.work__alpha {
+  grid-area: h;
+}
+.studies__windows__server {
+  grid-area: s;
 }
 
 @media screen and (max-width: 705px) {
@@ -71,61 +77,68 @@
     display: grid;
     grid-gap: 6px;
     grid-template-columns: repeat(13, 1fr);
-    grid-template-rows: repeat(8, 220px) ;
+    grid-template-rows: repeat(9, 220px);
     grid-template-areas:
-    "m m m m m m l r r r r r r "
-    "w w w w w w l . . . . . . "
-    "t t t t t t l v v v v v v "
-    "n n n n n n l a a a a a a "
-    "e e e e e e l . . . . . . "
-    "j j j j j j l c c c c c c "
-    "p p p p p p l . . . . . . "
-    ". . . . . . l d d d d d d ";
+      "h h h h h h l s s s s s s "
+      "m m m m m m l r r r r r r "
+      "w w w w w w l . . . . . . "
+      "t t t t t t l v v v v v v "
+      "n n n n n n l a a a a a a "
+      "e e e e e e l . . . . . . "
+      "j j j j j j l c c c c c c "
+      "p p p p p p l . . . . . . "
+      ". . . . . . l d d d d d d ";
     text-align: center;
     position: relative;
   }
 
-  .line{
+  .line {
     grid-area: l;
     position: relative;
     border: 2px solid rgb(2, 145, 171);
     border-radius: 20px;
     width: 0;
   }
-  .studies__degree{
+  .studies__degree {
     grid-area: d;
   }
-  .studies__civil__servant{
+  .studies__civil__servant {
     grid-area: c;
   }
-  .studies__android{
+  .studies__android {
     grid-area: a;
   }
-  .studies__vertical{
+  .studies__vertical {
     grid-area: v;
   }
-  .studies__react{
+  .studies__react {
     grid-area: r;
   }
-  .work__programmingC{
+  .work__programmingC {
     grid-area: p;
   }
-  .work__java{
+  .work__java {
     grid-area: j;
   }
-  .work__english__teacher{
+  .work__english__teacher {
     grid-area: e;
   }
-  .work__android{
+  .work__android {
     grid-area: n;
   }
-  .work__rope__acces__technician{
+  .work__rope__acces__technician {
     grid-area: t;
   }
-  .work__web__app{
+  .work__web__app {
     grid-area: w;
   }
-  .work__mobile__app{
+  .work__mobile__app {
     grid-area: m;
+  }
+  .work__alpha {
+    grid-area: h;
+  }
+  .studies__windows__server {
+    grid-area: s;
   }
 }
