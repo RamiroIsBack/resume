@@ -1,27 +1,25 @@
-.nombre__contaniner{
+.nombre__contaniner {
   text-align: center;
   border-radius: 25px;
   width: 99.9%;
-  margin:1px;
+  margin: 1px;
   position: absolute;
   z-index: 3;
   top: 50px;
-
-
 }
-.saludo{
+.saludo {
   margin: 0;
   padding: 4px;
-  color:white;
+  color: white;
   font-size: 55px;
   font-weight: 300;
 }
-.nombre{
+.nombre {
   margin: 0;
   padding: 4px;
   padding-top: 30px;
   padding-bottom: 40px;
-  color:white;
+  color: white;
   font-size: 90px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -30,57 +28,65 @@
 }
 
 .puesto {
-  display:inline-block;
+  display: inline-block;
+  max-width: fit-content;
   margin-top: 40px;
-  color:white;
+  color: white;
   font-size: 65px;
   font-weight: 300;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 4px solid rgb(81, 192, 242); /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: typing 3.5s steps(40, end),blink-caret .75s step-end infinite;
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: rgb(81, 192, 242); }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(81, 192, 242);
+  }
 }
 
 @media screen and (max-width: 810px) {
-  .nombre__contaniner{
+  .nombre__contaniner {
     text-align: center;
     border-radius: 25px;
     width: 99.9%;
-    margin:0;
+    margin: 0;
     padding: 0;
     position: absolute;
     z-index: 3;
     top: 20px;
-
-
   }
-  .saludo{
+  .saludo {
     margin: 0;
     padding: 4px;
-    color:white;
+    color: white;
     font-size: 45px;
     font-weight: 300;
   }
-  .nombre{
+  .nombre {
     margin: 0;
     padding: 4px;
     padding-top: 30px;
     padding-bottom: 40px;
-    color:white;
+    color: white;
     font-size: 70px;
     font-weight: 600;
     letter-spacing: 2px;
@@ -89,55 +95,52 @@
   }
 
   .puesto {
-    display:inline-block;
+    display: inline-block;
     margin-top: 40px;
-    color:white;
+    color: white;
     font-size: 55px;
     font-weight: 300;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: 4px solid rgb(81, 192, 242); /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-
+    letter-spacing: 0.15em; /* Adjust as needed */
   }
-
 }
 @media screen and (max-width: 700px) {
-  .saludo{
+  .saludo {
     margin: 0;
     padding: 4px 0 4px 0;
-    color:white;
+    color: white;
     font-size: 35px;
     font-weight: 300;
   }
-  .nombre{
+  .nombre {
     margin: 0;
     padding: 4px 0 4px 0;
     padding-top: 20px;
     padding-bottom: 30px;
-    color:white;
+    color: white;
     font-size: 65px;
     font-weight: 600;
     letter-spacing: 2px;
     text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 3px;
   }
   .puesto {
-    display:inline-block;
+    display: inline-block;
     margin-top: 20px;
-    color:white;
+    color: white;
     font-size: 50px;
     font-weight: 300;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: 4px solid rgb(81, 192, 242); /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-
+    letter-spacing: 0.15em; /* Adjust as needed */
   }
 }
 @media screen and (max-width: 640px) {
-  .nombre__contaniner{
+  .nombre__contaniner {
     text-align: center;
     border-radius: 25px;
     width: 99.9%;
@@ -145,71 +148,67 @@
     position: absolute;
     z-index: 3;
     top: 5px;
-
-
   }
-  .saludo{
+  .saludo {
     margin: 0;
     padding: 4px 0 4px 0;
-    color:white;
+    color: white;
     font-size: 30px;
     font-weight: 300;
   }
-  .nombre{
+  .nombre {
     margin: 0;
 
     padding-top: 10px;
     padding-bottom: 15px;
-    color:white;
+    color: white;
     font-size: 48px;
     font-weight: 500;
     letter-spacing: 2px;
     text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 3px;
   }
 
-  .puesto{
-    display:inline-block;
+  .puesto {
+    display: inline-block;
     margin-top: 15px;
-    color:white;
+    color: white;
     font-size: 35px;
     font-weight: 300;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: 3px solid rgb(81, 192, 242); /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing:2px; /* Adjust as needed */
-
+    letter-spacing: 2px; /* Adjust as needed */
   }
 }
 @media screen and (max-width: 470px) {
-  .nombre{
+  .nombre {
     margin: 0;
 
     padding-top: 2px;
     padding-bottom: 10px;
-    color:white;
+    color: white;
     font-size: 45px;
     font-weight: 500;
     letter-spacing: 2px;
     line-height: 40px;
     text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 3px;
   }
-  .puesto{
-    display:inline-block;
+  .puesto {
+    display: inline-block;
     margin-top: 15px;
-    color:white;
+    color: white;
     font-size: 30px;
     font-weight: 300;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: 3px solid rgb(81, 192, 242); /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing:2px; /* Adjust as needed */
-
+    letter-spacing: 2px; /* Adjust as needed */
   }
 }
 @media screen and (max-width: 370px) {
-  .nombre__contaniner{
+  .nombre__contaniner {
     text-align: center;
     border-radius: 25px;
     width: 99.9%;
@@ -217,22 +216,20 @@
     position: absolute;
     z-index: 3;
     top: 5px;
-
-
   }
-  .saludo{
+  .saludo {
     margin: 0;
 
-    color:white;
+    color: white;
     font-size: 25px;
     font-weight: 300;
   }
-  .nombre{
+  .nombre {
     margin: 0;
 
     padding-top: 2px;
     padding-bottom: 10px;
-    color:white;
+    color: white;
     font-size: 40px;
     font-weight: 500;
     letter-spacing: 2px;
@@ -240,17 +237,16 @@
     text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 3px;
   }
 
-  .puesto{
-    display:inline-block;
+  .puesto {
+    display: inline-block;
     margin-top: 20px;
-    color:white;
+    color: white;
     font-size: 26px;
     font-weight: 300;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: 3px solid rgb(81, 192, 242); /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing:2px; /* Adjust as needed */
-
+    letter-spacing: 2px; /* Adjust as needed */
   }
 }
