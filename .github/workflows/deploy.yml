@@ -1,0 +1,71 @@
+name: 🚀 Deploy to Production (SiteGround)
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  deploy:
+    name: Build & Deploy via FTP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Clean old hashed files on server
+        env:
+          FTP_HOST: ${{ secrets.SFTP_HOST }}
+          FTP_USER: ${{ secrets.SFTP_USERNAME }}
+          FTP_PASS: ${{ secrets.SFTP_PASSWORD }}
+          FTP_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
+        run: |
+          echo "=== Limpiando assets/ en el servidor ==="
+          listing=$(curl -sk --ssl-reqd \
+            --user "$FTP_USER:$FTP_PASS" \
+            "ftp://$FTP_HOST:21${FTP_PATH}assets/" 2>/dev/null || true)
+          while IFS= read -r line; do
+            fname=$(echo "$line" | awk '{print $NF}' | tr -d '\r')
+            [ -z "$fname" ] && continue
+            echo "Borrando: assets/$fname"
+            curl -sk --ssl-reqd \
+              --user "$FTP_USER:$FTP_PASS" \
+              -Q "DELE ${FTP_PATH}assets/$fname" \
+              "ftp://$FTP_HOST:21/" || true
+          done <<< "$listing"
+
+      - name: Upload dist/ to SiteGround
+        env:
+          FTP_HOST: ${{ secrets.SFTP_HOST }}
+          FTP_USER: ${{ secrets.SFTP_USERNAME }}
+          FTP_PASS: ${{ secrets.SFTP_PASSWORD }}
+          FTP_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
+        run: |
+          echo "=== Subiendo dist/ ==="
+          find dist -type f | while read f; do
+            relative="${f#dist/}"
+            url="ftp://$FTP_HOST:21${FTP_PATH}${relative}"
+            echo "Uploading $relative"
+            curl -sk --ssl-reqd --ftp-create-dirs --fail \
+              --user "$FTP_USER:$FTP_PASS" \
+              -T "$f" \
+              "$url" || { echo "FAILED: $relative (exit $?)"; exit 1; }
+            echo "OK: $relative"
+          done

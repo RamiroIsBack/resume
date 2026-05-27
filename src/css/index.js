@@ -1,24 +1,25 @@
-import Summary_css from "./Summary.css";
-import Layout_css from "./Layout.css";
-import Nombre_css from "./Nombre.css";
-import Intro_css from "./Intro.css";
-import Sidebar_css from "./Sidebar.css";
-import TimeBox_css from "./TimeBox.css";
-import Services_css from "./Services.css";
-import TimeLineYears_css from "./TimeLineYears.css";
-import TimeLineActivities_css from "./TimeLineActivities.css";
-import Footer_css from "./Footer.css";
-import Works_css from "./Works.css";
-export {
-  Works_css,
-  Footer_css,
-  TimeBox_css,
-  Services_css,
-  Summary_css,
-  Layout_css,
-  Nombre_css,
-  Intro_css,
-  Sidebar_css,
-  TimeLineYears_css,
-  TimeLineActivities_css
-};
+import "./Summary.css";
+import "./Layout.css";
+import "./Nombre.css";
+import "./Intro.css";
+import "./Sidebar.css";
+import "./TimeBox.css";
+import "./Services.css";
+import "./TimeLineYears.css";
+import "./TimeLineActivities.css";
+import "./Footer.css";
+import "./Works.css";
+
+// CSS files are imported for side effects only; these stubs satisfy legacy named/default imports
+export const Summary_css = null;
+export const Layout_css = null;
+export const Nombre_css = null;
+export const Intro_css = null;
+export const Sidebar_css = null;
+export const TimeBox_css = null;
+export const Services_css = null;
+export const TimeLineYears_css = null;
+export const TimeLineActivities_css = null;
+export const Footer_css = null;
+export const Works_css = null;
+export default null;

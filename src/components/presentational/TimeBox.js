@@ -42,7 +42,7 @@ class TimeBox extends Component {
         </div>
         <div className ='fecha_container'>
           <h3 className ='fecha__inicio'>{copy.fechaInicio} -</h3>
-          <h3 className ='fecha__fin'>->  {copy.fechaFin}</h3>
+          <h3 className ='fecha__fin'>{'-> '}{copy.fechaFin}</h3>
         </div>
         <div className= 'description__container'>
           {copy.description.split('\n').map((item, key) => {

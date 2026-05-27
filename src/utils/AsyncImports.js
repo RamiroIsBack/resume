@@ -1,51 +1,18 @@
-import React from "react";
-import Loadable from "react-loadable";
+import React, { lazy, Suspense } from "react";
 
-export const AsyncModalContainer = Loadable({
-  loader: () => import("../components/containers/ModalContainer"),
-  loading() {
-    return <div>Loading...</div>;
-  }
-});
-export const AsyncSummaryContainer = Loadable({
-  loader: () => import("../components/containers/SummaryContainer"),
-  loading() {
-    return <div>Loading...</div>;
-  }
-});
-export const AsyncJobsLayout = Loadable({
-  loader: () => import("../components/layout/JobsLayout"),
-  loading() {
-    return <div>Loading...</div>;
-  }
-});
-export const AsyncServicesContainer = Loadable({
-  loader: () => import("../components/containers/ServicesContainer"),
-  loading() {
-    return <div>Loading...</div>;
-  }
-});
-export const AsyncTimeLineContainer = Loadable({
-  loader: () => import("../components/containers/TimeLineContainer"),
-  loading() {
-    return <div>Loading...</div>;
-  }
-});
-export const AsyncSideBarContainer = Loadable({
-  loader: () => import("../components/containers/SideBarContainer"),
-  loading() {
-    return <div>Loading...</div>;
-  }
-});
-export const AsyncFooterContainer = Loadable({
-  loader: () => import("../components/containers/FooterContainer"),
-  loading() {
-    return <div>Loading...</div>;
-  }
-});
-export const AsyncNombreContainer = Loadable({
-  loader: () => import("../components/containers/NombreContainer"),
-  loading() {
-    return <div>Loading...</div>;
-  }
-});
+const Loading = () => <div>Loading...</div>;
+
+const wrap = (LazyComp) => (props) => (
+  <Suspense fallback={<Loading />}>
+    <LazyComp {...props} />
+  </Suspense>
+);
+
+export const AsyncModalContainer = wrap(lazy(() => import("../components/containers/ModalContainer")));
+export const AsyncSummaryContainer = wrap(lazy(() => import("../components/containers/SummaryContainer")));
+export const AsyncJobsLayout = wrap(lazy(() => import("../components/layout/JobsLayout")));
+export const AsyncServicesContainer = wrap(lazy(() => import("../components/containers/ServicesContainer")));
+export const AsyncTimeLineContainer = wrap(lazy(() => import("../components/containers/TimeLineContainer")));
+export const AsyncSideBarContainer = wrap(lazy(() => import("../components/containers/SideBarContainer")));
+export const AsyncFooterContainer = wrap(lazy(() => import("../components/containers/FooterContainer")));
+export const AsyncNombreContainer = wrap(lazy(() => import("../components/containers/NombreContainer")));
