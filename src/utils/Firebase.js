@@ -1,18 +1,14 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/database";
-import "firebase/storage";
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, get } from "firebase/database";
 import { firebaseConfig } from "./FirebaseConfig";
 
-firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 let copyList = [];
 
 const getCopy = (params, actionType) => {
   return dispatch =>
-    database
-      .ref("copy")
-      .once("value")
+    get(ref(database, "copy"))
       .then(snapshot => {
         snapshot.forEach(function(childSnapshot) {
           const valor = childSnapshot.val();
@@ -22,11 +18,10 @@ const getCopy = (params, actionType) => {
         if (actionType != null) {
           dispatch({
             type: actionType,
-            params: params, // can be null
-            data: copyList // list with all d objects
+            params: params,
+            data: copyList
           });
         }
-
         return copyList;
       })
       .catch(err => {
@@ -34,11 +29,10 @@ const getCopy = (params, actionType) => {
         throw err;
       });
 };
+
 const getCopyForTesting = () => {
   return new Promise((resolve, reject) => {
-    database
-      .ref("copy")
-      .once("value")
+    get(ref(database, "copy"))
       .then(snapshot => {
         snapshot.forEach(function(childSnapshot) {
           const valor = childSnapshot.val();
@@ -47,7 +41,6 @@ const getCopyForTesting = () => {
         });
         resolve(copyList);
       })
-
       .catch(err => {
         console.log("pics in db didnt download correctly");
         reject(err);
@@ -56,6 +49,6 @@ const getCopyForTesting = () => {
 };
 
 export default {
-  getCopy: getCopy,
-  getCopyForTesting: getCopyForTesting
+  getCopy,
+  getCopyForTesting
 };

@@ -12,6 +12,5 @@ export default defineConfig({
     esbuildOptions: {
       loader: { '.js': 'jsx' },
     },
-    include: ['firebase/app', 'firebase/auth', 'firebase/database', 'firebase/storage'],
   },
 })
