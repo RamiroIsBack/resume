@@ -1,60 +1,62 @@
 import React from "react";
-import { connect } from "react-redux";
-import actions from "../../actions";
-import { PopularFunctions } from "../../utils";
+import { useCopy } from "../../utils/useCopy";
+import { useUI } from "../../context/UIContext";
 import "../../css"; // eslint-disable-line no-unused-vars
 
 const ACTIVE = { borderBottom: "2px solid rgb(81, 192, 242)" };
 
-function SideBarContainer({ copy, section, movetoSection, toggleMenu }) {
+function SideBarContainer() {
+  const { copyList } = useCopy();
+  const { screenSize, sectionSelected, scrollIndicator, colapsed, movetoSection, toggleMenu } = useUI();
+
   function handleSectionSelection(event) {
     const id = event.target.id;
-    if (section.sectionSelected !== id && section.scrollIndicator !== id) {
+    if (sectionSelected !== id && scrollIndicator !== id) {
       movetoSection(id);
     }
-    if (section.screenSize === "mobile") {
-      toggleMenu(!section.colapsed);
+    if (screenSize === "mobile") {
+      toggleMenu(!colapsed);
     }
   }
 
-  const ind = section.scrollIndicator;
+  const ind = scrollIndicator;
   const styleSummary  = ind === "summary"  ? ACTIVE : {};
   const styleWork     = ind === "work"     ? ACTIVE : {};
   const styleServices = ind === "services" ? ACTIVE : {};
   const styleTimeLine = ind === "timeLine" ? ACTIVE : {};
 
-  const sideBarCopy = PopularFunctions.selectSpecificCopy({ copy }, "sideBar");
-  const colapsed = section.colapsed !== false;
-  const mobile = section.screenSize === "mobile";
+  const sideBarCopy = copyList.find(item => item.nombre === "sideBar") || {};
+  const isColapsed = colapsed !== false;
+  const mobile = screenSize === "mobile";
 
   return (
     <div>
       {!mobile && (
         <div>
-          <h4 className="sidebar__section__link " id="summary" style={styleSummary} onClick={handleSectionSelection}>Professional profile</h4>
-          <h4 className="sidebar__section__link"  id="work"    style={styleWork}     onClick={handleSectionSelection}>Recent Work</h4>
+          <h4 className="sidebar__section__link"  id="summary"  style={styleSummary}  onClick={handleSectionSelection}>Professional profile</h4>
+          <h4 className="sidebar__section__link"  id="work"     style={styleWork}     onClick={handleSectionSelection}>Recent Work</h4>
           <h4 className="sidebar__section__link"  id="services" style={styleServices} onClick={handleSectionSelection}>Skills and services</h4>
           <h4 className="sidebar__section__link"  id="timeLine" style={styleTimeLine} onClick={handleSectionSelection}>Time line resume</h4>
-          <h4 className="sidebar__section__link"  id="footer"  onClick={handleSectionSelection}>Contact</h4>
+          <h4 className="sidebar__section__link"  id="footer"                         onClick={handleSectionSelection}>Contact</h4>
         </div>
       )}
       {mobile && (
         <div>
-          {!colapsed && (
+          {!isColapsed && (
             <div className="sidebar__menu__container__mobile">
               <div className="sidebar__menu__arrow__colapse__container">
-                <img className="sidebar__menu__arrow__colapse" src={sideBarCopy.urlArrowClose} alt="colapse" onClick={() => toggleMenu(!section.colapsed)} />
+                <img className="sidebar__menu__arrow__colapse" src={sideBarCopy.urlArrowClose} alt="colapse" onClick={() => toggleMenu(!colapsed)} />
               </div>
-              <h4 className="sidebar__section__link " id="summary"  style={styleSummary}  onClick={handleSectionSelection}>Profile</h4>
+              <h4 className="sidebar__section__link"  id="summary"  style={styleSummary}  onClick={handleSectionSelection}>Profile</h4>
               <h4 className="sidebar__section__link"  id="work"     style={styleWork}     onClick={handleSectionSelection}>Work</h4>
               <h4 className="sidebar__section__link"  id="services" style={styleServices} onClick={handleSectionSelection}>Skills</h4>
               <h4 className="sidebar__section__link"  id="timeLine" style={styleTimeLine} onClick={handleSectionSelection}>Resume</h4>
-              <h4 className="sidebar__section__link"  id="footer"   onClick={handleSectionSelection}>Contact</h4>
+              <h4 className="sidebar__section__link"  id="footer"                         onClick={handleSectionSelection}>Contact</h4>
             </div>
           )}
-          {colapsed && (
+          {isColapsed && (
             <div className="sidebar__colapsed__photo__container__mobile">
-              <img className="sidebar__colapsed__photo__mobile" src={sideBarCopy.urlArrowOpen} alt="colapsed" onClick={() => toggleMenu(!section.colapsed)} />
+              <img className="sidebar__colapsed__photo__mobile" src={sideBarCopy.urlArrowOpen} alt="colapsed" onClick={() => toggleMenu(!colapsed)} />
             </div>
           )}
         </div>
@@ -63,10 +65,4 @@ function SideBarContainer({ copy, section, movetoSection, toggleMenu }) {
   );
 }
 
-const stateToProps = state => ({ copy: state.copy, section: state.section });
-const dispatchToProps = dispatch => ({
-  toggleMenu: order => dispatch(actions.toggleMenu(order)),
-  movetoSection: section => dispatch(actions.movetoSection(section))
-});
-
-export default connect(stateToProps, dispatchToProps)(SideBarContainer);
+export default SideBarContainer;

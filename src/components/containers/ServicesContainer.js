@@ -1,25 +1,23 @@
 import React from "react";
-import { connect } from "react-redux";
-import actions from "../../actions";
+import { useCopy } from "../../utils/useCopy";
+import { useUI } from "../../context/UIContext";
 import { Service } from "../presentational";
 import "../../css"; // eslint-disable-line no-unused-vars
 
-function ServicesContainer({ copy, section, openModal }) {
-  const animeIt = section.scrollIndicator === "services";
-  const servicesList = copy && copy.servicesList.length !== 0
-    ? copy.servicesList.map((item, i) => (
+function ServicesContainer() {
+  const { servicesList } = useCopy();
+  const { scrollIndicator, toggleWorkModal } = useUI();
+
+  const animeIt = scrollIndicator === "services";
+  const servicesList_ = servicesList.length !== 0
+    ? servicesList.map((item, i) => (
         <div key={i}>
-          <Service sectionSelected={animeIt} serviceInfo={item} openModal={openModal} />
+          <Service sectionSelected={animeIt} serviceInfo={item} openModal={toggleWorkModal} />
         </div>
       ))
     : [];
 
-  return <div className="services__container">{servicesList}</div>;
+  return <div className="services__container">{servicesList_}</div>;
 }
 
-const stateToProps = state => ({ copy: state.copy, section: state.section });
-const dispatchToProps = dispatch => ({
-  openModal: serviceInfo => dispatch(actions.toggleWorkModal(serviceInfo))
-});
-
-export default connect(stateToProps, dispatchToProps)(ServicesContainer);
+export default ServicesContainer;

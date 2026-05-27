@@ -1,17 +1,20 @@
 import React from "react";
 import { ServiceModal, WorkModal } from "../presentational";
-import { connect } from "react-redux";
-import actions from "../../actions";
+import { useCopy } from "../../utils/useCopy";
+import { useUI } from "../../context/UIContext";
 
-function ModalContainer({ copy, section, toggleWorkModal }) {
-  const modalShowing = section.workModal !== "" || section.serviceModal !== "";
+function ModalContainer() {
+  const { talksList, worksList } = useCopy();
+  const { screenSize, workModal, serviceModal, toggleWorkModal } = useUI();
+
+  const modalShowing = workModal !== "" || serviceModal !== "";
   if (!modalShowing) return null;
 
-  const mobile = section.screenSize === "mobile";
+  const mobile = screenSize === "mobile";
 
-  if (section.workModal !== "") {
-    const completeList = [...copy.talksList, ...copy.worksList];
-    const workToShow = completeList.find(w => w.nombre === section.workModal);
+  if (workModal !== "") {
+    const completeList = [...talksList, ...worksList];
+    const workToShow = completeList.find(w => w.nombre === workModal);
     return (
       <div>
         <WorkModal
@@ -28,7 +31,7 @@ function ModalContainer({ copy, section, toggleWorkModal }) {
     <div>
       <ServiceModal
         show={modalShowing}
-        workToShow={section.serviceModal}
+        workToShow={serviceModal}
         onClose={() => toggleWorkModal("")}
         mobile={mobile}
       />
@@ -36,9 +39,4 @@ function ModalContainer({ copy, section, toggleWorkModal }) {
   );
 }
 
-const stateToProps = state => ({ copy: state.copy, section: state.section });
-const dispatchToProps = dispatch => ({
-  toggleWorkModal: modalName => dispatch(actions.toggleWorkModal(modalName))
-});
-
-export default connect(stateToProps, dispatchToProps)(ModalContainer);
+export default ModalContainer;

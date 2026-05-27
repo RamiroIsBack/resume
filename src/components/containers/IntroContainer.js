@@ -1,19 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import actions from "../../actions";
+import React, { useState } from "react";
+import { useCopy } from "../../utils/useCopy";
 import "../../css"; // eslint-disable-line no-unused-vars
-import { PopularFunctions } from "../../utils";
 
-function IntroContainer({ copy, getCopy }) {
+function IntroContainer() {
   const [imgLoaded, setImgLoaded] = useState(false);
+  const { copyList } = useCopy();
 
-  useEffect(() => {
-    if (!copy.copyLoaded) {
-      getCopy();
-    }
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  const introCopy = PopularFunctions.selectSpecificCopy({ copy }, "introPic");
+  const introCopy = copyList.find(item => item.nombre === "introPic") || {};
   const urlPic = introCopy.urlPic || "";
   const animeIt = imgLoaded
     ? { animation: "fadeIntro 2s ease-in", opacity: "0.5" }
@@ -35,9 +28,4 @@ function IntroContainer({ copy, getCopy }) {
   );
 }
 
-const stateToProps = state => ({ copy: state.copy });
-const dispatchToProps = dispatch => ({
-  getCopy: () => dispatch(actions.getCopy())
-});
-
-export default connect(stateToProps, dispatchToProps)(IntroContainer);
+export default IntroContainer;

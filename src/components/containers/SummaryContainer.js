@@ -1,26 +1,28 @@
 import React from "react";
-import { connect } from "react-redux";
-import actions from "../../actions";
-import { PopularFunctions } from "../../utils";
+import { useCopy } from "../../utils/useCopy";
+import { useUI } from "../../context/UIContext";
 import "../../css"; // eslint-disable-line no-unused-vars
 
-function SummaryContainer({ copy, section, movetoSection, imgLoaded }) {
+function SummaryContainer() {
+  const { copyList } = useCopy();
+  const { screenSize, movetoSection, setImgLoaded } = useUI();
+
   function handleImageLoaded() {
     // setTimeout ensures scroll position is not cached before layout settles
-    setTimeout(() => imgLoaded(true), 0);
+    setTimeout(() => setImgLoaded(true), 0);
   }
   function handleImageErrored() {
-    imgLoaded(false);
+    setImgLoaded(false);
   }
   function handleClick() {
     movetoSection("footer");
     document.getElementById("footerContainer").scrollIntoView({ block: "start", behaviour: "smooth" });
   }
 
-  const picCopy = PopularFunctions.selectSpecificCopy({ copy }, "summaryPic");
+  const picCopy = copyList.find(item => item.nombre === "summaryPic") || {};
   const urlPic = picCopy.bio ? picCopy.urlPic : "";
   const bio = picCopy.bio || "";
-  const tablet = section.screenSize === "tablet" || section.screenSize === "mobile";
+  const tablet = screenSize === "tablet" || screenSize === "mobile";
 
   return (
     <div>
@@ -65,10 +67,4 @@ function SummaryContainer({ copy, section, movetoSection, imgLoaded }) {
   );
 }
 
-const stateToProps = state => ({ copy: state.copy, section: state.section });
-const dispatchToProps = dispatch => ({
-  movetoSection: section => dispatch(actions.movetoSection(section)),
-  imgLoaded: loaded => dispatch(actions.imgLoaded(loaded))
-});
-
-export default connect(stateToProps, dispatchToProps)(SummaryContainer);
+export default SummaryContainer;

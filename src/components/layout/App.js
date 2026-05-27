@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useCallback } from "react";
-import { connect } from "react-redux";
-import actions from "../../actions";
+import { useUI } from "../../context/UIContext";
 import "../../css"; // eslint-disable-line no-unused-vars
 import IntroContainer from "../containers/IntroContainer";
 import {
@@ -15,7 +14,9 @@ import {
 } from "../../utils/AsyncImports";
 import Waypoint from "react-waypoint";
 
-function App({ section, chageScreenWidth, changeScrollIndicator }) {
+function App() {
+  const { screenSize, sectionSelected, imgLoaded, chageScreenWidth, changeScrollIndicator } = useUI();
+
   const summarySection  = useRef(null);
   const workSection     = useRef(null);
   const servicesSection = useRef(null);
@@ -24,8 +25,8 @@ function App({ section, chageScreenWidth, changeScrollIndicator }) {
 
   // Keeps the latest screenSize accessible from the resize handler without
   // making the handler a new function on every render.
-  const screenSizeRef = useRef(section.screenSize);
-  useEffect(() => { screenSizeRef.current = section.screenSize; });
+  const screenSizeRef = useRef(screenSize);
+  useEffect(() => { screenSizeRef.current = screenSize; });
 
   const focusSection = useCallback((target) => {
     const map = {
@@ -38,12 +39,9 @@ function App({ section, chageScreenWidth, changeScrollIndicator }) {
     map[target]?.current?.scrollIntoView({ block: "start", behaviour: "smooth" });
   }, []);
 
-  // componentWillReceiveProps equivalent — fire when sectionSelected changes
   useEffect(() => {
-    if (section.sectionSelected !== "") {
-      focusSection(section.sectionSelected);
-    }
-  }, [section.sectionSelected, focusSection]);
+    if (sectionSelected !== "") focusSection(sectionSelected);
+  }, [sectionSelected, focusSection]);
 
   const handleWindowSizeChange = useCallback(() => {
     const w = window.innerWidth;
@@ -58,7 +56,7 @@ function App({ section, chageScreenWidth, changeScrollIndicator }) {
     return () => window.removeEventListener("resize", handleWindowSizeChange);
   }, [handleWindowSizeChange]);
 
-  const mobile = section.screenSize === "mobile";
+  const mobile = screenSize === "mobile";
 
   return (
     <div>
@@ -76,7 +74,7 @@ function App({ section, chageScreenWidth, changeScrollIndicator }) {
               if (currentPosition === "inside") changeScrollIndicator("summary");
             }}
           />
-          {section.imgLoaded && <div className="section__headline">Professional Profile</div>}
+          {imgLoaded && <div className="section__headline">Professional Profile</div>}
           <AsyncSummaryContainer />
         </div>
 
@@ -90,12 +88,12 @@ function App({ section, chageScreenWidth, changeScrollIndicator }) {
               else if (currentPosition === "above")   changeScrollIndicator("services");
             }}
           />
-          {section.imgLoaded && <div className="section__headline">Most Recent Work</div>}
+          {imgLoaded && <div className="section__headline">Most Recent Work</div>}
           <AsyncJobsLayout />
         </div>
 
         <div className="ServicesContainer" id="servicesContainer" ref={servicesSection}>
-          {section.imgLoaded && <div className="section__headline">Skills and services</div>}
+          {imgLoaded && <div className="section__headline">Skills and services</div>}
           <AsyncServicesContainer />
         </div>
 
@@ -108,7 +106,7 @@ function App({ section, chageScreenWidth, changeScrollIndicator }) {
               else if (currentPosition === "below") changeScrollIndicator("services");
             }}
           />
-          {section.imgLoaded && (
+          {imgLoaded && (
             <div className="section__headline">
               Time-line resume
               <div className="section__secondLiner__container">
@@ -120,7 +118,7 @@ function App({ section, chageScreenWidth, changeScrollIndicator }) {
           <AsyncTimeLineContainer />
         </div>
 
-        {mobile && section.imgLoaded && (
+        {mobile && imgLoaded && (
           <div className="sidebarColapsable__contaniner">
             <AsyncSideBarContainer />
           </div>
@@ -141,11 +139,4 @@ function App({ section, chageScreenWidth, changeScrollIndicator }) {
   );
 }
 
-const stateToProps = state => ({ copy: state.copy, section: state.section });
-const dispatchToProps = dispatch => ({
-  chageScreenWidth: device => dispatch(actions.chageScreenWidth(device)),
-  changeScrollIndicator: whereAmI => dispatch(actions.changeScrollIndicator(whereAmI)),
-  movetoSection: section => dispatch(actions.movetoSection(section))
-});
-
-export default connect(stateToProps, dispatchToProps)(App);
+export default App;

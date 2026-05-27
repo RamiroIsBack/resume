@@ -1,9 +1,11 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useCopy } from "../../utils/useCopy";
 import MapaContainer from "./MapaContainer";
 import "../../css"; // eslint-disable-line no-unused-vars
 
-function FooterContainer({ copy }) {
+function FooterContainer() {
+  const { footerList } = useCopy();
+
   function handleClick(event) {
     window.open(event.target.id, "_blank");
   }
@@ -14,8 +16,8 @@ function FooterContainer({ copy }) {
   let downloadCopy = {};
   const connectList = [];
 
-  if (copy && copy.footerList.length !== 0) {
-    copy.footerList.forEach((item, i) => {
+  if (footerList.length !== 0) {
+    footerList.forEach((item, i) => {
       if (item.nombre === "download")    downloadCopy = item;
       if (item.nombre === "gMaps")       gMapsCopy = item;
       if (item.nombre === "email")       emailCopy = item;
@@ -68,6 +70,4 @@ function FooterContainer({ copy }) {
   );
 }
 
-const stateToProps = state => ({ copy: state.copy });
-
-export default connect(stateToProps)(FooterContainer);
+export default FooterContainer;
