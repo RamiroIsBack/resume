@@ -1,66 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import actions from "../../actions";
 import { Service } from "../presentational";
-import { Services_css } from "../../css"; // eslint-disable-line no-unused-vars
+import "../../css"; // eslint-disable-line no-unused-vars
 
-class ServicesContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      animatedAlready: false
-    };
-  }
-  openModal(serviceInfo) {
-    this.props.openModal(serviceInfo);
-  }
-  getServicesComponents(rawList) {
-    let servicesComponentList = [];
-    let animeIt = false;
-    if (this.props.section.scrollIndicator === "services") {
-      animeIt = true;
-    }
-
-    for (let i = 0; i < rawList.length; i++) {
-      servicesComponentList.push(
+function ServicesContainer({ copy, section, openModal }) {
+  const animeIt = section.scrollIndicator === "services";
+  const servicesList = copy && copy.servicesList.length !== 0
+    ? copy.servicesList.map((item, i) => (
         <div key={i}>
-          <Service
-            sectionSelected={animeIt}
-            serviceInfo={rawList[i]}
-            openModal={this.openModal.bind(this)}
-          />
+          <Service sectionSelected={animeIt} serviceInfo={item} openModal={openModal} />
         </div>
-      );
-    }
-    return servicesComponentList;
-  }
+      ))
+    : [];
 
-  render() {
-    let servicesList = [];
-    if (this.props.copy) {
-      if (this.props.copy.servicesList.length !== 0) {
-        servicesList = this.getServicesComponents(this.props.copy.servicesList);
-      }
-    }
-
-    return <div className="services__container">{servicesList}</div>;
-  }
+  return <div className="services__container">{servicesList}</div>;
 }
 
-const dispatchToProps = dispatch => {
-  return {
-    getCopy: () => dispatch(actions.getCopy()),
-    openModal: serviceInfo => dispatch(actions.toggleWorkModal(serviceInfo))
-  };
-};
-const stateToProps = state => {
-  return {
-    copy: state.copy,
-    section: state.section
-  };
-};
+const stateToProps = state => ({ copy: state.copy, section: state.section });
+const dispatchToProps = dispatch => ({
+  openModal: serviceInfo => dispatch(actions.toggleWorkModal(serviceInfo))
+});
 
-export default connect(
-  stateToProps,
-  dispatchToProps
-)(ServicesContainer);
+export default connect(stateToProps, dispatchToProps)(ServicesContainer);

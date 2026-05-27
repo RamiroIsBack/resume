@@ -1,91 +1,59 @@
-import React, { Component } from "react";
+import React from "react";
 import actions from "../../actions";
 import { connect } from "react-redux";
-import Works_css from "../../css"; // eslint-disable-line no-unused-vars
+import "../../css"; // eslint-disable-line no-unused-vars
 import Work from "../presentational/Work";
 
-class JobsContainer extends Component {
-  produceWorkListJsx = (list, type, selectedName) => {
-    let selected = false;
-    return list.map(element => {
-      selectedName === element.nombre ? (selected = true) : (selected = false);
-      return (
-        <Work
-          key={element.nombre}
-          copy={element}
-          selected={selected}
-          type={type}
-          changeWorkSelected={this.changeWorkSelected}
-          mobile={this.props.section.screenSize === "mobile" ? true : false}
-        />
-      );
-    });
-  };
-
-  changeWorkSelected = selection => {
-    if (this.props.section.workSelected !== selection) {
-      this.props.changeWorkSelected(selection);
+function JobsContainer({ copy, section, changeWorkSelected, toggleWorkModal }) {
+  function handleWorkSelected(selection) {
+    if (section.workSelected !== selection) {
+      changeWorkSelected(selection);
     }
     if (
       selection === "MobileAppFullStack" ||
       selection === "ABlokar" ||
       selection === "XlsxProgram" ||
-      this.props.section.screenSize === "mobile"
+      section.screenSize === "mobile"
     ) {
-      this.props.toggleWorkModal(selection);
+      toggleWorkModal(selection);
     } else {
-      let completeList = [
-        ...this.props.copy.talksList,
-        ...this.props.copy.worksList
-      ];
-      let workCopy = completeList.find(work => work.nombre === selection);
+      const completeList = [...copy.talksList, ...copy.worksList];
+      const workCopy = completeList.find(work => work.nombre === selection);
       window.open(workCopy.url);
     }
-  };
-  render() {
-    let worksJsxList = [];
-    let talksJsxList = [];
-    if (this.props.copy) {
-      if (this.props.copy.copyLoaded) {
-        worksJsxList = this.produceWorkListJsx(
-          this.props.copy.worksList,
-          "app",
-          this.props.section.workSelected
-        );
-        talksJsxList = this.produceWorkListJsx(
-          this.props.copy.talksList,
-          "talk",
-          this.props.section.workSelected
-        );
-        return (
-          <div>
-            <div className="works__list__container">
-              {worksJsxList}
-              {talksJsxList}
-            </div>
-          </div>
-        );
-      }
-      //mockup for the works!!
-      return <div />;
-    }
   }
+
+  function produceWorkListJsx(list, type) {
+    return list.map(element => (
+      <Work
+        key={element.nombre}
+        copy={element}
+        selected={section.workSelected === element.nombre}
+        type={type}
+        changeWorkSelected={handleWorkSelected}
+        mobile={section.screenSize === "mobile"}
+      />
+    ));
+  }
+
+  if (!copy || !copy.copyLoaded) {
+    return <div />;
+  }
+
+  return (
+    <div>
+      <div className="works__list__container">
+        {produceWorkListJsx(copy.worksList, "app")}
+        {produceWorkListJsx(copy.talksList, "talk")}
+      </div>
+    </div>
+  );
 }
-const stateToProps = state => {
-  return {
-    copy: state.copy,
-    section: state.section
-  };
-};
-const dispatchToProps = dispatch => {
-  return {
-    changeWorkSelected: WorkSelection =>
-      dispatch(actions.changeWorkSelected(WorkSelection)),
-    toggleWorkModal: WorkSelection =>
-      dispatch(actions.toggleWorkModal(WorkSelection))
-  };
-};
-export default connect(
-  stateToProps,
-  dispatchToProps
-)(JobsContainer);
+
+const stateToProps = state => ({ copy: state.copy, section: state.section });
+const dispatchToProps = dispatch => ({
+  changeWorkSelected: selection => dispatch(actions.changeWorkSelected(selection)),
+  toggleWorkModal: selection => dispatch(actions.toggleWorkModal(selection))
+});
+
+export default connect(stateToProps, dispatchToProps)(JobsContainer);

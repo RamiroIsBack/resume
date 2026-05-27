@@ -1,75 +1,49 @@
-import React, { Component } from "react";
+import React from "react";
 import LazyLoad from "react-lazy-load";
 
-class Service extends Component {
-  handleClick() {
-    if (this.props.serviceInfo.urlLink) {
-      window.open(this.props.serviceInfo.urlLink, "_blank");
+function Service({ serviceInfo, sectionSelected, openModal }) {
+  function handleClick() {
+    if (serviceInfo.urlLink) {
+      window.open(serviceInfo.urlLink, "_blank");
     }
-    if (this.props.serviceInfo.urlPic2) {
-      this.props.openModal(this.props.serviceInfo);
+    if (serviceInfo.urlPic2) {
+      openModal(serviceInfo);
     }
   }
 
-  render() {
-    let logo = "";
-    let cursor = {};
-    let stylingBarWidth = { width: "80%" };
-    if (this.props.serviceInfo) {
-      logo = this.props.serviceInfo.urlPic;
-      let percentage = parseInt(this.props.serviceInfo.percentage, 10);
-      if (this.props.sectionSelected) {
-        stylingBarWidth = {
-          width: "" + percentage + "%",
-          animationName: "progress",
-          animationDuration: "3s",
-          animationTimingFunction: "ease-in-out"
-        };
-      } else {
-        stylingBarWidth = {
-          width: "" + percentage + "%"
-        };
-      }
-      if (this.props.serviceInfo.urlLink || this.props.serviceInfo.urlPic2) {
-        cursor = {
-          cursor: "pointer"
-        };
-      }
+  let logo = "";
+  let cursor = {};
+  let stylingBarWidth = { width: "80%" };
+  if (serviceInfo) {
+    logo = serviceInfo.urlPic;
+    const percentage = parseInt(serviceInfo.percentage, 10);
+    stylingBarWidth = sectionSelected
+      ? { width: `${percentage}%`, animationName: "progress", animationDuration: "3s", animationTimingFunction: "ease-in-out" }
+      : { width: `${percentage}%` };
+    if (serviceInfo.urlLink || serviceInfo.urlPic2) {
+      cursor = { cursor: "pointer" };
     }
+  }
 
-    return (
-      <div>
-        <div className="name__pic__container">
-          <h2 className="service__name">{this.props.serviceInfo.nombre}</h2>
-          <LazyLoad height={60} offsetVertical={100}>
-            <img
-              className="logo_pic"
-              style={cursor}
-              alt=""
-              src={logo}
-              onClick={this.handleClick.bind(this)}
-            />
-          </LazyLoad>
-        </div>
-        <div className="progress__bar__container">
-          <div className="progress__bar" style={stylingBarWidth} />
-        </div>
-        <h5 className="percentage__num">
-          {this.props.serviceInfo.percentage}%
-        </h5>
-        <div className="bio__container__services">
-          {this.props.serviceInfo.bio.split("\n").map((item, key) => {
-            return (
-              <span key={key}>
-                {item}
-                <br />
-              </span>
-            );
-          })}
-        </div>
+  return (
+    <div>
+      <div className="name__pic__container">
+        <h2 className="service__name">{serviceInfo.nombre}</h2>
+        <LazyLoad height={60} offsetVertical={100}>
+          <img className="logo_pic" style={cursor} alt="" src={logo} onClick={handleClick} />
+        </LazyLoad>
       </div>
-    );
-  }
+      <div className="progress__bar__container">
+        <div className="progress__bar" style={stylingBarWidth} />
+      </div>
+      <h5 className="percentage__num">{serviceInfo.percentage}%</h5>
+      <div className="bio__container__services">
+        {serviceInfo.bio.split("\n").map((item, key) => (
+          <span key={key}>{item}<br /></span>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Service;

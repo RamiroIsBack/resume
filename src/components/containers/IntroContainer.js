@@ -1,78 +1,43 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import actions from "../../actions";
-import { Intro_css } from "../../css"; // eslint-disable-line no-unused-vars
+import "../../css"; // eslint-disable-line no-unused-vars
 import { PopularFunctions } from "../../utils";
 
-class IntroContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      imgLoaded: false
-    };
-  }
-  componentDidMount() {
-    if (!this.props.copy.copyLoaded) {
-      this.props.getCopy();
+function IntroContainer({ copy, getCopy }) {
+  const [imgLoaded, setImgLoaded] = useState(false);
+
+  useEffect(() => {
+    if (!copy.copyLoaded) {
+      getCopy();
     }
-  }
-  handleImageLoaded() {
-    this.setState({ imgLoaded: true });
-  }
-  handleImageErrored() {
-    console.log("waiting for intro img");
-  }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  render() {
-    let copy = PopularFunctions.selectSpecificCopy(this.props, "introPic");
-    let urlPic = "";
-    if (copy.urlPic) {
-      urlPic = copy.urlPic;
-    }
+  const introCopy = PopularFunctions.selectSpecificCopy({ copy }, "introPic");
+  const urlPic = introCopy.urlPic || "";
+  const animeIt = imgLoaded
+    ? { animation: "fadeIntro 2s ease-in", opacity: "0.5" }
+    : { opacity: "0" };
 
-    let animeIt = {};
-
-    if (this.state.imgLoaded) {
-      animeIt = {
-        animation: "fadeIntro 2s ease-in",
-        opacity: "0.5"
-      };
-    } else {
-      animeIt = {
-        opacity: "0"
-      };
-    }
-
-    return (
-      <div>
-        <div className="intro__foto__container">
-          <img
-            className="intro__foto"
-            style={animeIt}
-            src={urlPic}
-            alt=""
-            onLoad={this.handleImageLoaded.bind(this)}
-            onError={this.handleImageErrored.bind(this)}
-          />
-        </div>
+  return (
+    <div>
+      <div className="intro__foto__container">
+        <img
+          className="intro__foto"
+          style={animeIt}
+          src={urlPic}
+          alt=""
+          onLoad={() => setImgLoaded(true)}
+          onError={() => console.log("waiting for intro img")}
+        />
       </div>
-    );
-  }
+    </div>
+  );
 }
 
-const dispatchToProps = dispatch => {
-  return {
-    getCopy: () => dispatch(actions.getCopy())
-  };
-};
-const stateToProps = state => {
-  return {
-    copy: state.copy,
-    section: state.section
-  };
-};
+const stateToProps = state => ({ copy: state.copy });
+const dispatchToProps = dispatch => ({
+  getCopy: () => dispatch(actions.getCopy())
+});
 
-export default connect(
-  stateToProps,
-  dispatchToProps
-)(IntroContainer);
+export default connect(stateToProps, dispatchToProps)(IntroContainer);

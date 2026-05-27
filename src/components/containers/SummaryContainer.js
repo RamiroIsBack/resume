@@ -1,133 +1,74 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import actions from "../../actions";
 import { PopularFunctions } from "../../utils";
-import { Summary_css } from "../../css"; // eslint-disable-line no-unused-vars
+import "../../css"; // eslint-disable-line no-unused-vars
 
-class SummaryContainer extends Component {
-  handleImageLoaded() {
-    setTimeout(() => {
-      //this function is called when everything else is done,
-      // this way we ensure that is not caching false scroll inputs
-      this.props.imgLoaded(true);
-    }, 0);
+function SummaryContainer({ copy, section, movetoSection, imgLoaded }) {
+  function handleImageLoaded() {
+    // setTimeout ensures scroll position is not cached before layout settles
+    setTimeout(() => imgLoaded(true), 0);
   }
-  handleImageErrored() {
-    this.props.imgLoaded(false);
+  function handleImageErrored() {
+    imgLoaded(false);
   }
-  handleClick() {
-    this.props.movetoSection("footer");
-    const element = document.getElementById("footerContainer");
-    element.scrollIntoView({ block: "start", behaviour: "smooth" });
+  function handleClick() {
+    movetoSection("footer");
+    document.getElementById("footerContainer").scrollIntoView({ block: "start", behaviour: "smooth" });
   }
 
-  render() {
-    let urlPic = "";
-    let bio = "";
+  const picCopy = PopularFunctions.selectSpecificCopy({ copy }, "summaryPic");
+  const urlPic = picCopy.bio ? picCopy.urlPic : "";
+  const bio = picCopy.bio || "";
+  const tablet = section.screenSize === "tablet" || section.screenSize === "mobile";
 
-    let copy = PopularFunctions.selectSpecificCopy(this.props, "summaryPic");
-
-    if (copy.bio) {
-      urlPic = copy.urlPic;
-      bio = copy.bio;
-    }
-    let tablet = false;
-    if (
-      this.props.section.screenSize === "tablet" ||
-      this.props.section.screenSize === "mobile"
-    ) {
-      tablet = true;
-    }
-
-    return (
-      <div>
-        <div className="summary__container">
-          {!tablet && (
-            <div>
-              <div className="summary__photo__container">
-                <div className="summary__copy">
-                  <h2 className="head__line">About me:</h2>
-                  <div className="bio__container">
-                    {bio.split("\n").map((item, key) => {
-                      return (
-                        <span className="bio" key={key}>
-                          {item}
-                          <div>
-                            <br />
-                          </div>
-                        </span>
-                      );
-                    })}
-                  </div>
-                </div>
-                <div>
-                  <img
-                    className="summary__photo"
-                    src={urlPic}
-                    alt=""
-                    onLoad={this.handleImageLoaded.bind(this)}
-                    onError={this.handleImageErrored.bind(this)}
-                  />
-                </div>
-              </div>
-            </div>
-          )}
-          {tablet && (
-            <div>
-              <div className="headLine__andPhoto__container">
-                <h2 className="head__line">Some words about me:</h2>
-                <h2
-                  className="contact__button"
-                  onClick={this.handleClick.bind(this)}
-                >
-                  Contact info
-                </h2>
-                <div className="summary__photo__container">
-                  <img
-                    className="summary__photo"
-                    src={urlPic}
-                    alt=""
-                    onLoad={this.handleImageLoaded.bind(this)}
-                    onError={this.handleImageErrored.bind(this)}
-                  />
-                </div>
-              </div>
+  return (
+    <div>
+      <div className="summary__container">
+        {!tablet && (
+          <div>
+            <div className="summary__photo__container">
               <div className="summary__copy">
+                <h2 className="head__line">About me:</h2>
                 <div className="bio__container">
-                  {bio.split("\n").map((item, key) => {
-                    return (
-                      <span className="bio" key={key}>
-                        {item}
-                        <br />
-                        <br />
-                      </span>
-                    );
-                  })}
+                  {bio.split("\n").map((item, key) => (
+                    <span className="bio" key={key}>{item}<div><br /></div></span>
+                  ))}
                 </div>
               </div>
+              <div>
+                <img className="summary__photo" src={urlPic} alt="" onLoad={handleImageLoaded} onError={handleImageErrored} />
+              </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
+        {tablet && (
+          <div>
+            <div className="headLine__andPhoto__container">
+              <h2 className="head__line">Some words about me:</h2>
+              <h2 className="contact__button" onClick={handleClick}>Contact info</h2>
+              <div className="summary__photo__container">
+                <img className="summary__photo" src={urlPic} alt="" onLoad={handleImageLoaded} onError={handleImageErrored} />
+              </div>
+            </div>
+            <div className="summary__copy">
+              <div className="bio__container">
+                {bio.split("\n").map((item, key) => (
+                  <span className="bio" key={key}>{item}<br /><br /></span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
-const dispatchToProps = dispatch => {
-  return {
-    movetoSection: section => dispatch(actions.movetoSection(section)),
-    getCopy: () => dispatch(actions.getCopy()),
-    imgLoaded: loaded => dispatch(actions.imgLoaded(loaded))
-  };
-};
-const stateToProps = state => {
-  return {
-    copy: state.copy,
-    section: state.section
-  };
-};
+const stateToProps = state => ({ copy: state.copy, section: state.section });
+const dispatchToProps = dispatch => ({
+  movetoSection: section => dispatch(actions.movetoSection(section)),
+  imgLoaded: loaded => dispatch(actions.imgLoaded(loaded))
+});
 
-export default connect(
-  stateToProps,
-  dispatchToProps
-)(SummaryContainer);
+export default connect(stateToProps, dispatchToProps)(SummaryContainer);

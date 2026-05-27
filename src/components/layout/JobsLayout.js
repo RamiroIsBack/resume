@@ -1,35 +1,15 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import actions from "../../actions";
-
+import React from "react";
 import JobsListContainer from "../containers/JobsListContainer";
-import Jobs_css from "../../css"; // eslint-disable-line no-unused-vars
+import "../../css"; // eslint-disable-line no-unused-vars
 
-class JobsLayout extends Component {
-  render() {
-    return (
+function JobsLayout() {
+  return (
+    <div>
       <div>
-        <div>
-          <JobsListContainer />
-        </div>
+        <JobsListContainer />
       </div>
-    );
-  }
+    </div>
+  );
 }
-const dispatchToProps = dispatch => {
-  return {
-    changeJobSelected: selection =>
-      dispatch(actions.changeJobSelected(selection))
-  };
-};
-const stateToProps = state => {
-  return {
-    copy: state.copy,
-    section: state.section
-  };
-};
 
-export default connect(
-  stateToProps,
-  dispatchToProps
-)(JobsLayout);
+export default JobsLayout;
