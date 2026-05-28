@@ -2,7 +2,7 @@ import React from 'react';
 import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import LazyLoad from 'react-lazy-load';
 
-const MAPS_URL = 'https://www.google.com/maps/place/Hampden,+Baltimore,+Maryland+21211/@39.3399061,-76.6020314,12.93z/data=!4m5!3m4!1s0x89c804d5f7905ff3:0x5cc1e5ec25566796!8m2!3d39.3333706!4d-76.632607';
+const MAPS_URL = 'https://www.google.com/maps/place/Alcal%C3%A1+de+Henares,+Madrid/@40.4817,-3.3763,13z';
 const MAP_STYLES = [
   { featureType: 'landscape.natural', elementType: 'geometry.fill', stylers: [{ visibility: 'on' }, { color: '#e0efef' }] },
   { featureType: 'poi', elementType: 'geometry.fill', stylers: [{ visibility: 'on' }, { hue: '#1900ff' }, { color: '#c0e8e8' }] },
@@ -23,10 +23,10 @@ function Mapa({ mapInfo }) {
     <GoogleMap
       defaultOptions={{ styles: MAP_STYLES }}
       defaultZoom={9}
-      defaultCenter={{ lat: 39.5332391, lng: -76.610066 }}
+      defaultCenter={{ lat: 40.4817, lng: -3.3663 }}
     >
       <Marker
-        position={{ lat: 39.3311347, lng: -76.6450283 }}
+        position={{ lat: 40.4817, lng: -3.3663 }}
         onClick={() => handleClick(MAPS_URL)}
       >
         <InfoWindow>
@@ -44,8 +44,8 @@ function Mapa({ mapInfo }) {
             </LazyLoad>
             <div className='infoWindow__bio' style={{ padding: 0 }}>
               <h6 style={{ marginTop: 2, marginBottom: 2 }}>I'm in</h6>
-              <h5 style={{ marginTop: 2, marginBottom: 0 }}>Hampden</h5>
-              <h6 style={{ marginTop: 2, marginBottom: 2 }}>Baltimore, MD</h6>
+              <h5 style={{ marginTop: 2, marginBottom: 0 }}>Alcalá de Henares</h5>
+              <h6 style={{ marginTop: 2, marginBottom: 2 }}>Madrid, Spain</h6>
             </div>
           </div>
         </InfoWindow>
