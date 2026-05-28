@@ -4,8 +4,9 @@
   display: grid;
   grid-gap: 30px;
   grid-template-columns: repeat(13, 1fr);
-  grid-template-rows: repeat(9, 200px);
+  grid-template-rows: repeat(10, 200px);
   grid-template-areas:
+    "x x x x x x l y y y y y y "
     "h h h h h h l s s s s s s "
     "m m m m m m l r r r r r r "
     "w w w w w w l . . . . . . "
@@ -68,6 +69,12 @@
 .studies__windows__server {
   grid-area: s;
 }
+.work__movement {
+  grid-area: x;
+}
+.studies__climbing {
+  grid-area: y;
+}
 
 @media screen and (max-width: 705px) {
   .timeLine__container {
@@ -77,8 +84,9 @@
     display: grid;
     grid-gap: 6px;
     grid-template-columns: repeat(13, 1fr);
-    grid-template-rows: repeat(9, 220px);
+    grid-template-rows: repeat(10, 220px);
     grid-template-areas:
+      "x x x x x x l y y y y y y "
       "h h h h h h l s s s s s s "
       "m m m m m m l r r r r r r "
       "w w w w w w l . . . . . . "
@@ -140,5 +148,11 @@
   }
   .studies__windows__server {
     grid-area: s;
+  }
+  .work__movement {
+    grid-area: x;
+  }
+  .studies__climbing {
+    grid-area: y;
   }
 }
