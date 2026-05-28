@@ -6,7 +6,7 @@ import Work from "../presentational/Work";
 
 function JobsContainer() {
   const { copyLoaded, worksList, talksList } = useCopy();
-  const { screenSize, workSelected, changeWorkSelected, toggleWorkModal } = useUI();
+  const { screenSize, workSelected, lang, changeWorkSelected, toggleWorkModal } = useUI();
 
   function handleWorkSelected(selection) {
     if (workSelected !== selection) {
@@ -35,6 +35,7 @@ function JobsContainer() {
         type={type}
         changeWorkSelected={handleWorkSelected}
         mobile={screenSize === "mobile"}
+        lang={lang}
       />
     ));
   }

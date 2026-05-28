@@ -26,6 +26,7 @@ export const ui = {
     visitSite:         "visit site:",
     watchVideo:        "watch video:",
     langToggle:        "ES",
+    workTypeTalk:      "talk",
   },
   es: {
     greeting:          "¡Hola! Soy",
@@ -54,5 +55,6 @@ export const ui = {
     visitSite:         "visitar web:",
     watchVideo:        "ver vídeo:",
     langToggle:        "EN",
+    workTypeTalk:      "charla",
   },
 };
