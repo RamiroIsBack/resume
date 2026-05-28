@@ -1,7 +1,8 @@
 import React from "react";
 import LazyLoad from "react-lazy-load";
+import { localize } from "../../utils/localize";
 
-function Service({ serviceInfo, sectionSelected, openModal }) {
+function Service({ serviceInfo, sectionSelected, openModal, lang }) {
   function handleClick() {
     if (serviceInfo.urlLink) {
       window.open(serviceInfo.urlLink, "_blank");
@@ -25,10 +26,13 @@ function Service({ serviceInfo, sectionSelected, openModal }) {
     }
   }
 
+  const nombre = localize(serviceInfo, "nombre", lang);
+  const bio    = localize(serviceInfo, "bio", lang);
+
   return (
     <div>
       <div className="name__pic__container">
-        <h2 className="service__name">{serviceInfo.nombre}</h2>
+        <h2 className="service__name">{nombre}</h2>
         <LazyLoad height={60} offsetVertical={100}>
           <img className="logo_pic" style={cursor} alt="" src={logo} onClick={handleClick} />
         </LazyLoad>
@@ -38,7 +42,7 @@ function Service({ serviceInfo, sectionSelected, openModal }) {
       </div>
       <h5 className="percentage__num">{serviceInfo.percentage}%</h5>
       <div className="bio__container__services">
-        {serviceInfo.bio.split("\n").map((item, key) => (
+        {bio.split("\n").map((item, key) => (
           <span key={key}>{item}<br /></span>
         ))}
       </div>

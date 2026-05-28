@@ -6,13 +6,13 @@ import "../../css"; // eslint-disable-line no-unused-vars
 
 function ServicesContainer() {
   const { servicesList } = useCopy();
-  const { scrollIndicator, toggleWorkModal } = useUI();
+  const { scrollIndicator, lang, toggleWorkModal } = useUI();
 
   const animeIt = scrollIndicator === "services";
   const servicesList_ = servicesList.length !== 0
     ? servicesList.map((item, i) => (
         <div key={i}>
-          <Service sectionSelected={animeIt} serviceInfo={item} openModal={toggleWorkModal} />
+          <Service sectionSelected={animeIt} serviceInfo={item} openModal={toggleWorkModal} lang={lang} />
         </div>
       ))
     : [];

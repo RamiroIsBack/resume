@@ -4,8 +4,11 @@
   display: grid;
   grid-gap: 30px;
   grid-template-columns: repeat(13, 1fr);
-  grid-template-rows: repeat(10, 200px);
+  grid-template-rows: repeat(13, 200px);
   grid-template-areas:
+    ". . . . . . l . . . . . . "
+    ". . . . . . l . . . . . . "
+    "q q q q q q l . . . . . . "
     "x x x x x x l y y y y y y "
     "h h h h h h l s s s s s s "
     "m m m m m m l r r r r r r "
@@ -75,6 +78,9 @@
 .studies__climbing {
   grid-area: y;
 }
+.work__ininin {
+  grid-area: q;
+}
 
 @media screen and (max-width: 705px) {
   .timeLine__container {
@@ -84,8 +90,11 @@
     display: grid;
     grid-gap: 6px;
     grid-template-columns: repeat(13, 1fr);
-    grid-template-rows: repeat(10, 220px);
+    grid-template-rows: repeat(13, 220px);
     grid-template-areas:
+      ". . . . . . l . . . . . . "
+      ". . . . . . l . . . . . . "
+      "q q q q q q l . . . . . . "
       "x x x x x x l y y y y y y "
       "h h h h h h l s s s s s s "
       "m m m m m m l r r r r r r "
@@ -154,5 +163,8 @@
   }
   .studies__climbing {
     grid-area: y;
+  }
+  .work__ininin {
+    grid-area: q;
   }
 }

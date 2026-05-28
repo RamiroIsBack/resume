@@ -1,7 +1,10 @@
 import React from 'react';
 import LazyLoad from 'react-lazy-load';
+import { localize } from '../../utils/localize';
 
-function TimeBox({ copy, urlClick }) {
+function TimeBox({ copy, urlClick, lang }) {
+  const nombre      = localize(copy, 'nombre', lang);
+  const description = localize(copy, 'description', lang);
   const pointer = { cursor: copy.urlLink === 'falta' ? 'auto' : 'pointer' };
   return (
     <div className='leaf__container'>
@@ -10,7 +13,7 @@ function TimeBox({ copy, urlClick }) {
           className='timeBox__name'
           style={pointer}
           onClick={() => urlClick(copy.urlLink)}
-        >{copy.nombre}</h3>
+        >{nombre}</h3>
         <div className='logo__photo__container'>
           <LazyLoad height={60} offsetVertical={200}>
             <img
@@ -28,7 +31,7 @@ function TimeBox({ copy, urlClick }) {
         <h3 className='fecha__fin'>{'-> '}{copy.fechaFin}</h3>
       </div>
       <div className='description__container'>
-        {copy.description.split('\n').map((item, key) => (
+        {description.split('\n').map((item, key) => (
           <span className='description__text' key={key}>{item}<br /></span>
         ))}
       </div>

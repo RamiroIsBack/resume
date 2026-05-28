@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useCallback } from "react";
 import { useUI } from "../../context/UIContext";
+import { ui } from "../../i18n/ui";
 import "../../css"; // eslint-disable-line no-unused-vars
 import IntroContainer from "../containers/IntroContainer";
 import {
@@ -14,8 +15,34 @@ import {
 } from "../../utils/AsyncImports";
 import Waypoint from "react-waypoint";
 
+function LangToggle({ lang, setLang }) {
+  const isEn = lang === "en";
+  return (
+    <div
+      onClick={() => setLang(isEn ? "es" : "en")}
+      style={{ position: "fixed", top: 15, right: 80, zIndex: 1000, cursor: "pointer", userSelect: "none" }}
+    >
+      <div style={{ position: "relative", background: "rgba(0,0,0,0.65)", border: "1px solid rgba(255,255,255,0.35)", borderRadius: 20, padding: "3px", display: "flex", alignItems: "center" }}>
+        <div style={{
+          position: "absolute",
+          top: 3,
+          left: isEn ? 3 : "calc(50% + 1px)",
+          width: "calc(50% - 4px)",
+          height: "calc(100% - 6px)",
+          background: "rgba(255,255,255,0.22)",
+          borderRadius: 16,
+          transition: "left 0.2s ease",
+        }} />
+        <span style={{ position: "relative", padding: "4px 14px", fontSize: 13, fontWeight: "bold", color: "white", zIndex: 1 }}>EN</span>
+        <span style={{ position: "relative", padding: "4px 14px", fontSize: 13, fontWeight: "bold", color: "white", zIndex: 1 }}>ES</span>
+      </div>
+    </div>
+  );
+}
+
 function App() {
-  const { screenSize, sectionSelected, imgLoaded, chageScreenWidth, changeScrollIndicator } = useUI();
+  const { screenSize, sectionSelected, imgLoaded, lang, chageScreenWidth, changeScrollIndicator, setLang } = useUI();
+  const t = ui[lang];
 
   const summarySection  = useRef(null);
   const workSection     = useRef(null);
@@ -23,8 +50,6 @@ function App() {
   const timeLineSection = useRef(null);
   const footerSection   = useRef(null);
 
-  // Keeps the latest screenSize accessible from the resize handler without
-  // making the handler a new function on every render.
   const screenSizeRef = useRef(screenSize);
   useEffect(() => { screenSizeRef.current = screenSize; });
 
@@ -60,6 +85,8 @@ function App() {
 
   return (
     <div>
+      <LangToggle lang={lang} setLang={setLang} />
+
       <AsyncNombreContainer />
       <AsyncModalContainer />
       <div className="main__container">
@@ -74,7 +101,7 @@ function App() {
               if (currentPosition === "inside") changeScrollIndicator("summary");
             }}
           />
-          {imgLoaded && <div className="section__headline">Professional Profile</div>}
+          {imgLoaded && <div className="section__headline">{t.sectionProfile}</div>}
           <AsyncSummaryContainer />
         </div>
 
@@ -88,12 +115,12 @@ function App() {
               else if (currentPosition === "above")   changeScrollIndicator("services");
             }}
           />
-          {imgLoaded && <div className="section__headline">Most Recent Work</div>}
+          {imgLoaded && <div className="section__headline">{t.sectionWork}</div>}
           <AsyncJobsLayout />
         </div>
 
         <div className="ServicesContainer" id="servicesContainer" ref={servicesSection}>
-          {imgLoaded && <div className="section__headline">Skills and services</div>}
+          {imgLoaded && <div className="section__headline">{t.sectionSkills}</div>}
           <AsyncServicesContainer />
         </div>
 
@@ -108,10 +135,10 @@ function App() {
           />
           {imgLoaded && (
             <div className="section__headline">
-              Time-line resume
+              {t.sectionTimeline}
               <div className="section__secondLiner__container">
-                <div className="section__secondLiner__work">Work</div>
-                <div className="section__secondLiner__studies">Studies</div>
+                <div className="section__secondLiner__work">{t.timelineWork}</div>
+                <div className="section__secondLiner__studies">{t.timelineStudies}</div>
               </div>
             </div>
           )}

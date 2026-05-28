@@ -1,13 +1,15 @@
 import React from "react";
 import { useCopy } from "../../utils/useCopy";
 import { useUI } from "../../context/UIContext";
+import { ui } from "../../i18n/ui";
 import "../../css"; // eslint-disable-line no-unused-vars
 
 const ACTIVE = { borderBottom: "2px solid rgb(81, 192, 242)" };
 
 function SideBarContainer() {
   const { copyList } = useCopy();
-  const { screenSize, sectionSelected, scrollIndicator, colapsed, movetoSection, toggleMenu } = useUI();
+  const { screenSize, sectionSelected, scrollIndicator, colapsed, lang, movetoSection, toggleMenu } = useUI();
+  const t = ui[lang];
 
   function handleSectionSelection(event) {
     const id = event.target.id;
@@ -33,11 +35,11 @@ function SideBarContainer() {
     <div>
       {!mobile && (
         <div>
-          <h4 className="sidebar__section__link"  id="summary"  style={styleSummary}  onClick={handleSectionSelection}>Professional profile</h4>
-          <h4 className="sidebar__section__link"  id="work"     style={styleWork}     onClick={handleSectionSelection}>Recent Work</h4>
-          <h4 className="sidebar__section__link"  id="services" style={styleServices} onClick={handleSectionSelection}>Skills and services</h4>
-          <h4 className="sidebar__section__link"  id="timeLine" style={styleTimeLine} onClick={handleSectionSelection}>Time line resume</h4>
-          <h4 className="sidebar__section__link"  id="footer"                         onClick={handleSectionSelection}>Contact</h4>
+          <h4 className="sidebar__section__link"  id="summary"  style={styleSummary}  onClick={handleSectionSelection}>{t.navProfile}</h4>
+          <h4 className="sidebar__section__link"  id="work"     style={styleWork}     onClick={handleSectionSelection}>{t.navWork}</h4>
+          <h4 className="sidebar__section__link"  id="services" style={styleServices} onClick={handleSectionSelection}>{t.navSkills}</h4>
+          <h4 className="sidebar__section__link"  id="timeLine" style={styleTimeLine} onClick={handleSectionSelection}>{t.navTimeline}</h4>
+          <h4 className="sidebar__section__link"  id="footer"                         onClick={handleSectionSelection}>{t.navContact}</h4>
         </div>
       )}
       {mobile && (
@@ -47,11 +49,11 @@ function SideBarContainer() {
               <div className="sidebar__menu__arrow__colapse__container">
                 <img className="sidebar__menu__arrow__colapse" src={sideBarCopy.urlArrowClose} alt="colapse" onClick={() => toggleMenu(!colapsed)} />
               </div>
-              <h4 className="sidebar__section__link"  id="summary"  style={styleSummary}  onClick={handleSectionSelection}>Profile</h4>
-              <h4 className="sidebar__section__link"  id="work"     style={styleWork}     onClick={handleSectionSelection}>Work</h4>
-              <h4 className="sidebar__section__link"  id="services" style={styleServices} onClick={handleSectionSelection}>Skills</h4>
-              <h4 className="sidebar__section__link"  id="timeLine" style={styleTimeLine} onClick={handleSectionSelection}>Resume</h4>
-              <h4 className="sidebar__section__link"  id="footer"                         onClick={handleSectionSelection}>Contact</h4>
+              <h4 className="sidebar__section__link"  id="summary"  style={styleSummary}  onClick={handleSectionSelection}>{t.navProfileMobile}</h4>
+              <h4 className="sidebar__section__link"  id="work"     style={styleWork}     onClick={handleSectionSelection}>{t.navWorkMobile}</h4>
+              <h4 className="sidebar__section__link"  id="services" style={styleServices} onClick={handleSectionSelection}>{t.navSkillsMobile}</h4>
+              <h4 className="sidebar__section__link"  id="timeLine" style={styleTimeLine} onClick={handleSectionSelection}>{t.navTimelineMobile}</h4>
+              <h4 className="sidebar__section__link"  id="footer"                         onClick={handleSectionSelection}>{t.navContact}</h4>
             </div>
           )}
           {isColapsed && (

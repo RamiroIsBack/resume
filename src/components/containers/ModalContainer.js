@@ -5,7 +5,7 @@ import { useUI } from "../../context/UIContext";
 
 function ModalContainer() {
   const { talksList, worksList } = useCopy();
-  const { screenSize, workModal, serviceModal, toggleWorkModal } = useUI();
+  const { screenSize, workModal, serviceModal, lang, toggleWorkModal } = useUI();
 
   const modalShowing = workModal !== "" || serviceModal !== "";
   if (!modalShowing) return null;
@@ -22,6 +22,7 @@ function ModalContainer() {
           workToShow={workToShow}
           onClose={() => toggleWorkModal("")}
           mobile={mobile}
+          lang={lang}
         />
       </div>
     );
@@ -34,6 +35,7 @@ function ModalContainer() {
         workToShow={serviceModal}
         onClose={() => toggleWorkModal("")}
         mobile={mobile}
+        lang={lang}
       />
     </div>
   );

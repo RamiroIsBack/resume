@@ -9,6 +9,7 @@ const initialState = {
   screenSize: "laptop",
   colapsed: true,
   scrollIndicator: "",
+  lang: "en",
 };
 
 function reducer(state, action) {
@@ -34,6 +35,8 @@ function reducer(state, action) {
         return { ...state, serviceModal: action.data, workModal: "" };
       }
       return { ...state, workModal: action.data, serviceModal: "" };
+    case "SET_LANG":
+      return { ...state, lang: action.data };
     default:
       return state;
   }
@@ -52,6 +55,7 @@ export function UIProvider({ children }) {
     changeWorkSelected:     (work)     => dispatch({ type: "SELECT_WORK",             data: work }),
     toggleWorkModal:        (work)     => dispatch({ type: "TOGGLE_WORK_MODAL",       data: work }),
     setImgLoaded:           (loaded)   => dispatch({ type: "IMG_LOADED",              data: loaded }),
+    setLang:                (lang)     => dispatch({ type: "SET_LANG",                data: lang }),
   };
   return <UIContext.Provider value={value}>{children}</UIContext.Provider>;
 }

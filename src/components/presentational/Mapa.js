@@ -1,6 +1,8 @@
 import React from 'react';
 import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import LazyLoad from 'react-lazy-load';
+import { useUI } from '../../context/UIContext';
+import { ui } from '../../i18n/ui';
 
 const MAPS_URL = 'https://www.google.com/maps/place/Alcal%C3%A1+de+Henares,+Madrid/@40.4817,-3.3763,13z';
 const MAP_STYLES = [
@@ -13,6 +15,8 @@ const MAP_STYLES = [
 ];
 
 function Mapa({ mapInfo }) {
+  const { lang } = useUI();
+  const t = ui[lang];
   const foto = mapInfo ? mapInfo.urlPic : '';
 
   function handleClick(url) {
@@ -43,9 +47,9 @@ function Mapa({ mapInfo }) {
               />
             </LazyLoad>
             <div className='infoWindow__bio' style={{ padding: 0 }}>
-              <h6 style={{ marginTop: 2, marginBottom: 2 }}>I'm in</h6>
-              <h5 style={{ marginTop: 2, marginBottom: 0 }}>Alcalá de Henares</h5>
-              <h6 style={{ marginTop: 2, marginBottom: 2 }}>Madrid, Spain</h6>
+              <h6 style={{ marginTop: 2, marginBottom: 2 }}>{t.iAmIn}</h6>
+              <h5 style={{ marginTop: 2, marginBottom: 0 }}>{t.city}</h5>
+              <h6 style={{ marginTop: 2, marginBottom: 2 }}>{t.country}</h6>
             </div>
           </div>
         </InfoWindow>

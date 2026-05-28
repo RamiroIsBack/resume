@@ -6,7 +6,7 @@ import "../../css"; // eslint-disable-line no-unused-vars
 
 function TimeLineContainer() {
   const { timeLineList } = useCopy();
-  const { screenSize } = useUI();
+  const { screenSize, lang } = useUI();
 
   function handleClick(url) {
     if (url !== "falta") {
@@ -17,7 +17,7 @@ function TimeLineContainer() {
   const timeLineJsx = timeLineList.length !== 0
     ? timeLineList.map((item, i) => (
         <div className={item.className} key={i}>
-          <TimeBox urlClick={handleClick} copy={item} screenSize={screenSize} />
+          <TimeBox urlClick={handleClick} copy={item} screenSize={screenSize} lang={lang} />
         </div>
       ))
     : [];
@@ -27,6 +27,9 @@ function TimeLineContainer() {
       {timeLineJsx}
       <div className="line" />
       <div className="year__container">
+        <div className="twentyseven">2027</div>
+        <div className="twentyfive">2025</div>
+        <div className="twentyone">2021</div>
         <div className="twenty">2020</div>
         <div className="nineteen">2019</div>
         <div className="eighteen">2018</div>
