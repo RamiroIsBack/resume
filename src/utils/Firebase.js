@@ -1,22 +1,16 @@
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref, get } from "firebase/database";
-import { firebaseConfig } from "./FirebaseConfig";
+import { copyList, servicesList, timeLineList, footerList, talksList, worksList } from "../data/content";
 
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-
-export function fetchCopyList() {
-  return get(ref(database, "copy")).then(snapshot => {
-    const list = [];
-    snapshot.forEach(childSnapshot => {
-      const valor = childSnapshot.val();
-      valor.id = childSnapshot.key;
-      list.push(valor);
-    });
-    return list;
-  });
+function buildLegacySnapshot() {
+  return [
+    { nombre: "copy",     ...Object.fromEntries(copyList.map(i => [i.nombre, i])) },
+    { nombre: "services", ...Object.fromEntries(servicesList.map(i => [i.nombre, i])) },
+    { nombre: "timeLine", ...Object.fromEntries(timeLineList.map(i => [i.className, i])) },
+    { nombre: "footer",   ...Object.fromEntries(footerList.map(i => [i.nombre, i])) },
+    { nombre: "talks",    ...Object.fromEntries(talksList.map(i => [i.nombre, i])) },
+    { nombre: "works",    ...Object.fromEntries(worksList.map(i => [i.nombre, i])) },
+  ];
 }
 
-export const getCopyForTesting = fetchCopyList;
+export const getCopyForTesting = () => Promise.resolve(buildLegacySnapshot());
 
 export default { getCopyForTesting };
