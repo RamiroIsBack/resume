@@ -5,10 +5,8 @@
   display: grid;
   grid-gap: 30px;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(13, 200px);
+  grid-template-rows: repeat(11, 200px);
   grid-template-areas:
-    "tw7 tw7"
-    "tw5 tw5"
     "tw1 tw1"
     "tw  tw "
     "ni  ni "
@@ -172,10 +170,8 @@
     display: grid;
     grid-gap: 6px;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(13, 220px);
+    grid-template-rows: repeat(11, 220px);
     grid-template-areas:
-      "tw7 tw7"
-      "tw5 tw5"
       "tw1 tw1"
       "tw  tw "
       "ni  ni "

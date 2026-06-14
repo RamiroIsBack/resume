@@ -14,7 +14,6 @@ function JobsContainer() {
     }
     if (
       selection === "MobileAppFullStack" ||
-      selection === "ABlokar" ||
       selection === "XlsxProgram" ||
       screenSize === "mobile"
     ) {

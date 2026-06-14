@@ -26,7 +26,7 @@ function Service({ serviceInfo, sectionSelected, openModal, lang }) {
     }
   }
 
-  const nombre = localize(serviceInfo, "nombre", lang);
+  const nombre = localize(serviceInfo, "nombreToShow", lang) || localize(serviceInfo, "nombre", lang);
   const bio    = localize(serviceInfo, "bio", lang);
 
   return (
