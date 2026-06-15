@@ -58,14 +58,7 @@ function FooterContainer() {
         </div>
       </div>
       <div className="footer__connect__foto__container">{connectList}</div>
-      <div className="footer__download__foto__container">
-        <a className="footer__download__text__link__container" href={downloadCopy.urlLink} download="Ramiro Santamaria Resume.pdf">
-          <h4 className="footer__download__text">Download .pdf</h4>
-        </a>
-        <a className="footer__download__foto__link__container" href={downloadCopy.urlLink} download="Ramiro Santamaria Resume.pdf">
-          <img className="footer__download__foto" src={downloadCopy.urlPic} alt="download" />
-        </a>
-      </div>
+      {/* PDF download hidden until resume is updated */}
     </div>
   );
 }
