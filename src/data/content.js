@@ -51,8 +51,6 @@ export const servicesList = [
     nombre: "ITStack",
     nombreToShow: "IT Operations Stack",
     type: "stack",
-    bio: "The full technology stack powering IT and Security Operations across INININ Group — from endpoint protection and patch management to email security, ITSM, and infrastructure.",
-    bio_es: "El stack tecnológico completo de las Operaciones IT y Seguridad en INININ Group — desde protección de endpoints y gestión de parches hasta seguridad de email, ITSM e infraestructura.",
     percentage: null,
     urlPic: "",
     tools: [
@@ -67,13 +65,6 @@ export const servicesList = [
       { icon: "🚀", name: "Azure DevOps",      category: "Dev",          category_es: "Desarrollo",    desc: "Software and AI agent project repository. CI/CD pipeline management.",                                  desc_es: "Repositorio de proyectos software y agentes IA. CI/CD. Gestión de ramas por agente." },
       { icon: "🐙", name: "GitHub",            category: "Dev",          category_es: "Desarrollo",    desc: "Version control. Source code repositories for all projects.",                                           desc_es: "Control de versiones. Repositorios de código fuente de proyectos." },
     ],
-  },
-  {
-    nombre: "ReactNative",
-    bio: "Creating native iOS and Android apps is both fun and challenging, I love it :)",
-    bio_es: "Crear apps nativas para iOS y Android es divertido y desafiante, ¡me encanta! :)",
-    percentage: 70,
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Freact-Native.png?alt=media&token=478958c2-f605-491b-b08f-36920c139501",
   },
   {
     nombre: "Firebase",
@@ -114,40 +105,11 @@ export const servicesList = [
     urlPic3: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FScrum%20checkBox%20(2).jpg?alt=media&token=4b653979-ab27-477d-8b13-d69c1e4f5861",
   },
   {
-    nombre: "Github",
-    bio: "I use it to store my projects and manage version control.\nI've worked with different branches.\nFeel free to clone this repository or to dive into the code by clicking the GitHub logo :)",
-    bio_es: "Lo uso para almacenar mis proyectos y gestionar el control de versiones.\nHe trabajado con diferentes ramas.\n¡Siéntete libre de clonar este repositorio o ver el código haciendo clic en el logo de GitHub! :)",
-    percentage: 60,
-    urlLink: "https://github.com/RamiroIsBack/resume",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FgitTransInnerWhite.png?alt=media&token=2db6ffc5-a500-4747-a4c9-739294765497",
-  },
-  {
-    nombre: "Css",
-    bio: "Because of my Java and C++ background I tended to do everything programmatically, but I recently discovered the world of possibilities that CSS offers and I love it!",
-    bio_es: "Debido a mi experiencia en Java y C++, tendía a hacer todo de forma programática, pero recientemente descubrí el mundo de posibilidades que ofrece CSS y ¡me encanta!",
-    percentage: 70,
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fcss3.png?alt=media&token=91f3a9b3-d360-43f4-9277-c94bfae701e3",
-  },
-  {
-    nombre: "Bootstrap",
-    bio: "I've been using it since I started learning JavaScript. It's a very easy and useful tool for styling responsive elements.\nI've been using CSS Grid lately though — it's great!",
-    bio_es: "Lo he usado desde que empecé a aprender JavaScript. Es una herramienta muy fácil y útil para estilizar elementos responsivos.\n¡Últimamente he estado usando CSS Grid y es genial!",
-    percentage: 75,
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fbootstrap.png?alt=media&token=37ff7c85-72f7-4220-b2eb-19a0a232d355",
-  },
-  {
     nombre: "HTML",
     bio: "I used pure HTML for just a few web pages. It's especially useful for configuration pages or to quickly fill a database with content — very fast and straightforward.",
     bio_es: "He usado HTML puro para pocas páginas web. Es especialmente útil para páginas de configuración o para rellenar rápidamente una base de datos con contenido — muy rápido y directo.",
     percentage: 60,
     urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fhtml.png?alt=media&token=9d3ccc3a-da88-47b2-8964-eb042b5f138d",
-  },
-  {
-    nombre: "Jest",
-    bio: "I recently started using Jest with snapshots and it's fantastic.\nIn this project I test a few functions and components that way — clone this repo and check it out!",
-    bio_es: "Recientemente empecé a usar Jest con snapshots y es fantástico.\n¡En este proyecto testeo algunas funciones y componentes de esa forma — clona este repo y compruébalo!",
-    percentage: 50,
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fjest2.png?alt=media&token=43e189b7-a2b3-4602-a4c9-83cd1980eef4",
   },
 ];
 

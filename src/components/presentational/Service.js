@@ -33,7 +33,6 @@ function Service({ serviceInfo, sectionSelected, openModal, lang }) {
     return (
       <div className="stack__card">
         <h2 className="service__name">{nombre}</h2>
-        <div className="bio__container__services">{bio}</div>
         <div className="stack__grid">
           {serviceInfo.tools.map((tool, i) => (
             <div className="tool__card" key={i}>
