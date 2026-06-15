@@ -29,6 +29,25 @@ function Service({ serviceInfo, sectionSelected, openModal, lang }) {
   const nombre = localize(serviceInfo, "nombreToShow", lang) || localize(serviceInfo, "nombre", lang);
   const bio    = localize(serviceInfo, "bio", lang);
 
+  if (serviceInfo.type === "stack") {
+    return (
+      <div className="stack__card">
+        <h2 className="service__name">{nombre}</h2>
+        <div className="bio__container__services">{bio}</div>
+        <div className="stack__grid">
+          {serviceInfo.tools.map((tool, i) => (
+            <div className="tool__card" key={i}>
+              <span className="tool__icon">{tool.icon}</span>
+              <div className="tool__name">{tool.name}</div>
+              <span className="tool__cat">{lang === "es" ? (tool.category_es || tool.category) : tool.category}</span>
+              <p className="tool__desc">{lang === "es" ? tool.desc_es : tool.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="name__pic__container">

@@ -54,3 +54,42 @@ display: inline-block;
   width: 85%;
   padding-left: 6px;
 }
+.stack__card {
+  grid-column: 1 / -1;
+  padding-left: 6px;
+}
+.stack__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+  width: 85%;
+}
+.tool__card {
+  border: 1px solid rgb(2, 145, 171);
+  border-radius: 8px;
+  padding: 12px 10px;
+}
+.tool__icon {
+  font-size: 20px;
+}
+.tool__name {
+  font-weight: 600;
+  margin: 4px 0 4px;
+  font-size: 14px;
+}
+.tool__cat {
+  display: inline-block;
+  background-color: rgb(2, 145, 171);
+  color: white;
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+.tool__desc {
+  font-size: 12px;
+  margin: 0;
+  color: #666;
+  line-height: 1.4;
+}
