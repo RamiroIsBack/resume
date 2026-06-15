@@ -1,7 +1,8 @@
 export const ui = {
   en: {
     greeting:          "Hi! I'm",
-    jobTitle:          "App Developer and AI agent orchestrator",
+    jobTitle:          "App Developer",
+    jobTitle2:         "and AI agent orchestrator",
     sectionProfile:    "Professional Profile",
     sectionWork:       "Most Recent Work",
     sectionSkills:     "Skills and services",
@@ -30,7 +31,8 @@ export const ui = {
   },
   es: {
     greeting:          "¡Hola! Soy",
-    jobTitle:          "Desarrollador de Apps y orquestador de agentes IA",
+    jobTitle:          "Desarrollador de Apps",
+    jobTitle2:         "y orquestador de agentes IA",
     sectionProfile:    "Perfil Profesional",
     sectionWork:       "Trabajos Recientes",
     sectionSkills:     "Habilidades y Servicios",
