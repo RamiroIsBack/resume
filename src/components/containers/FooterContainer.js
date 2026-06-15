@@ -22,7 +22,7 @@ function FooterContainer() {
       if (item.nombre === "gMaps")       gMapsCopy = item;
       if (item.nombre === "email")       emailCopy = item;
       if (item.nombre === "tel")         telCopy = item;
-      else if (["instagram", "stackOverFlow", "linkedIn", "gitHub"].includes(item.nombre)) {
+      else if (["stackOverFlow", "linkedIn", "gitHub"].includes(item.nombre)) {
         connectList.push(
           <div key={i} onClick={handleClick} id={item.urlLink}>
             <img className="footer__connect__foto" src={item.urlPic} alt="connect" id={item.urlLink} />
