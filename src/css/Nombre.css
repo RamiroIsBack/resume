@@ -39,12 +39,12 @@
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.15em; /* Adjust as needed */
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end 5 forwards;
+  animation: typing 1.4s steps(13, end), blink-caret 0.75s step-end 2 forwards;
 }
 
 .puesto.puesto__second {
-  animation: blink-caret 0.75s step-end infinite;
-  animation-delay: 3.5s;
+  animation: typing 2.7s steps(25, end), blink-caret 0.75s step-end infinite;
+  animation-delay: 1.4s;
   animation-fill-mode: backwards;
   border-right: 4px solid rgb(81, 192, 242);
 }
