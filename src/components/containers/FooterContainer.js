@@ -58,7 +58,11 @@ function FooterContainer() {
         </div>
       </div>
       <div className="footer__connect__foto__container">{connectList}</div>
-      {/* PDF download hidden until resume is updated */}
+      <div className="footer__download__container">
+        <a href={downloadCopy.urlLink} target="_blank" rel="noreferrer">
+          <img className="footer__picPhoto" src={downloadCopy.urlPic} alt="download CV" />
+        </a>
+      </div>
     </div>
   );
 }

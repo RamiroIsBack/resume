@@ -420,7 +420,7 @@ export const timeLineList = [
 export const footerList = [
   {
     nombre: "download",
-    urlLink: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/archivos%2FRamiro%20Santamaria%20resume%202019.pdf?alt=media&token=5fb7b593-b13b-45bb-808c-6a3ac2a7047c",
+    urlLink: "/files/CV-Ramiro-2026.pdf",
     urlPic:  "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FdownTrans.png?alt=media&token=03cb2575-0591-4c0d-ab3c-d57f5766c498",
   },
   {
