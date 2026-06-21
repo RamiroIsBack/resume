@@ -5,6 +5,7 @@ import { localize } from '../../utils/localize';
 function TimeBox({ copy, urlClick, lang }) {
   const nombre      = localize(copy, 'nombre', lang);
   const description = localize(copy, 'description', lang);
+  const fechaFin    = localize(copy, 'fechaFin', lang);
   const pointer = { cursor: copy.urlLink === 'falta' ? 'auto' : 'pointer' };
   return (
     <div className='leaf__container'>
@@ -28,7 +29,7 @@ function TimeBox({ copy, urlClick, lang }) {
       </div>
       <div className='fecha_container'>
         <h3 className='fecha__inicio'>{copy.fechaInicio} -</h3>
-        <h3 className='fecha__fin'>{'-> '}{copy.fechaFin}</h3>
+        <h3 className='fecha__fin'>{'-> '}{fechaFin}</h3>
       </div>
       <div className='description__container'>
         {description.split('\n').map((item, key) => (
