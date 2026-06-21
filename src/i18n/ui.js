@@ -28,6 +28,7 @@ export const ui = {
     watchVideo:        "watch video:",
     langToggle:        "ES",
     workTypeTalk:      "talk",
+    downloadCV:        "Download PDF CV",
   },
   es: {
     greeting:          "¡Hola! Soy",
@@ -58,5 +59,6 @@ export const ui = {
     watchVideo:        "ver vídeo:",
     langToggle:        "EN",
     workTypeTalk:      "charla",
+    downloadCV:        "Descargar CV en PDF",
   },
 };

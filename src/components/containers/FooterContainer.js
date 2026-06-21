@@ -1,10 +1,14 @@
 import React from "react";
 import { useCopy } from "../../utils/useCopy";
+import { useUI } from "../../context/UIContext";
+import { ui } from "../../i18n/ui";
 import MapaContainer from "./MapaContainer";
 import "../../css"; // eslint-disable-line no-unused-vars
 
 function FooterContainer() {
   const { footerList } = useCopy();
+  const { lang } = useUI();
+  const t = ui[lang];
 
   function handleClick(event) {
     window.open(event.target.id, "_blank");
@@ -58,10 +62,17 @@ function FooterContainer() {
         </div>
       </div>
       <div className="footer__connect__foto__container">{connectList}</div>
-      <div className="footer__download__container">
-        <a href={downloadCopy.urlLink} target="_blank" rel="noreferrer">
-          <img className="footer__picPhoto" src={downloadCopy.urlPic} alt="download CV" />
-        </a>
+      <div className="footer__download__foto__container">
+        <div className="footer__download__text__link__container">
+          <a href={downloadCopy.urlLink} download style={{ color: "inherit", textDecoration: "none" }}>
+            <p className="footer__download__text">{t.downloadCV}</p>
+          </a>
+        </div>
+        <div className="footer__download__foto__link__container">
+          <a href={downloadCopy.urlLink} download>
+            <img className="footer__download__foto" src={downloadCopy.urlPic} alt="download CV" />
+          </a>
+        </div>
       </div>
     </div>
   );
