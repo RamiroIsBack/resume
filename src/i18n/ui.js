@@ -28,7 +28,7 @@ export const ui = {
     watchVideo:        "watch video:",
     langToggle:        "ES",
     workTypeTalk:      "talk",
-    downloadCV:        "Download PDF CV",
+    downloadCV:        "Download PDF resume",
   },
   es: {
     greeting:          "¡Hola! Soy",

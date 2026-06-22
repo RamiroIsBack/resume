@@ -4,6 +4,7 @@
   min-height: 380px;
   margin: auto;
   background-color: rgb(24, 21, 21);
+  transition: min-height 0.35s ease;
 }
 .intro__foto {
   max-height: 100%;

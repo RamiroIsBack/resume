@@ -23,10 +23,12 @@
   letter-spacing: 1px;
   font-size: 26px;
   padding-left: 8px;
+  transition: font-size 0.35s ease;
 }
 
 .bio {
   font-size: 22px;
+  transition: font-size 0.35s ease;
 }
 
 .summary__photo__container {
@@ -36,6 +38,7 @@
   border-radius: 20px;
   background-color: black;
   clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+  transition: min-height 0.35s ease;
 }
 .summary__photo {
   width: 100%;
