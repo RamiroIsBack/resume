@@ -54,8 +54,10 @@ display: inline-block;
   width: 85%;
   padding-left: 6px;
 }
-.stack__card {
+.stack__wrapper {
   grid-column: 1 / -1;
+}
+.stack__card {
   padding-left: 6px;
 }
 .stack__grid {

@@ -11,7 +11,7 @@ function ServicesContainer() {
   const animeIt = scrollIndicator === "services";
   const servicesList_ = servicesList.length !== 0
     ? servicesList.map((item, i) => (
-        <div key={i}>
+        <div key={i} className={item.type === "stack" ? "stack__wrapper" : ""}>
           <Service sectionSelected={animeIt} serviceInfo={item} openModal={toggleWorkModal} lang={lang} />
         </div>
       ))
