@@ -60,10 +60,10 @@ display: inline-block;
 }
 .stack__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   margin-top: 14px;
-  width: 85%;
+  width: 100%;
 }
 .tool__card {
   border: 1px solid rgb(2, 145, 171);
