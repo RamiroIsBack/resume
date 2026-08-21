@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Clean URL: /digitalizacion -> digitalizacion.html (URL stays clean, no redirect)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^digitalizacion/?$ digitalizacion.html [L]

@@ -9,7 +9,7 @@ const initialState = {
   screenSize: "laptop",
   colapsed: true,
   scrollIndicator: "",
-  lang: "en",
+  lang: "es",
 };
 
 function reducer(state, action) {

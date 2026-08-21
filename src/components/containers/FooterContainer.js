@@ -38,6 +38,16 @@ function FooterContainer() {
 
   return (
     <div className="footer__container">
+      <div className="footer__cta__container">
+        <a
+          className="footer__cta__button"
+          href="/digitalizacion.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t.footerCtaButton}
+        </a>
+      </div>
       <div className="footer__map__container">
         <MapaContainer
           mapInfo={gMapsCopy}

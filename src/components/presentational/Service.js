@@ -26,8 +26,9 @@ function Service({ serviceInfo, sectionSelected, openModal, lang }) {
     }
   }
 
-  const nombre = localize(serviceInfo, "nombreToShow", lang) || localize(serviceInfo, "nombre", lang);
-  const bio    = localize(serviceInfo, "bio", lang);
+  const nombre   = localize(serviceInfo, "nombreToShow", lang) || localize(serviceInfo, "nombre", lang);
+  const bio      = localize(serviceInfo, "bio", lang);
+  const ctaLabel = localize(serviceInfo, "ctaLabel", lang);
 
   if (serviceInfo.type === "stack") {
     return (
@@ -63,6 +64,16 @@ function Service({ serviceInfo, sectionSelected, openModal, lang }) {
         {bio.split("\n").map((item, key) => (
           <span key={key}>{item}<br /></span>
         ))}
+        {ctaLabel && serviceInfo.ctaLink && (
+          <a
+            className="service__inline__cta"
+            href={serviceInfo.ctaLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {ctaLabel}
+          </a>
+        )}
       </div>
     </div>
   );

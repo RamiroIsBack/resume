@@ -54,6 +54,22 @@ display: inline-block;
   width: 85%;
   padding-left: 6px;
 }
+.service__inline__cta {
+  display: inline-block;
+  margin-top: 14px;
+  background: rgb(2, 145, 171);
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.service__inline__cta:hover {
+  background: rgb(1, 110, 130);
+  transform: translateY(-1px);
+}
 .stack__wrapper {
   grid-column: 1 / -1;
 }

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Digitalización · Ramiro Santamaría</title>
+<meta id="page-description" name="description" content="Consultoría de digitalización de procesos: diagnóstico, rediseño de procesos, selección de herramientas e implementación acompañada. Tarifa única 35 €/hora.">
+<link rel="shortcut icon" href="/favicon.ico">
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --ink-soft:#5c6770;
+    --paper:#f7f9fa;
+    --white:#ffffff;
+    --teal:#0291ab;
+    --teal-dark:#026e82;
+    --teal-soft:#e3f4f8;
+    --amber:#51c0f2;
+    --line:#e1e8eb;
+    --shadow:0 10px 30px -12px rgba(2,145,171,0.14);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  img,svg{display:block;}
+
+  /* NAV */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,248,251,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1080px;margin:0 auto;padding:12px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:14px;flex-wrap:wrap;row-gap:8px;
+  }
+  .nav-left{display:flex;align-items:center;gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:0.2px;text-decoration:none;color:var(--ink);}
+  .brand .mark{
+    width:32px;height:32px;border-radius:9px;
+    background:linear-gradient(135deg,#111,var(--teal));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:14px;font-weight:800;
+  }
+  nav.links{display:flex;gap:26px;font-size:14.5px;font-weight:500;color:var(--ink-soft);}
+  nav.links a{text-decoration:none;transition:color .15s;}
+  nav.links a:hover{color:var(--teal-dark);}
+  .nav-right{display:flex;align-items:center;gap:10px;}
+  .nav-cta{
+    background:var(--teal);color:#fff;padding:10px 18px;border-radius:999px;
+    font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--teal-dark);}
+
+  /* PILLS (lang toggle + home link) */
+  .pill-lang{
+    position:relative;box-sizing:border-box;width:88px;height:34px;
+    background:var(--white);border:1px solid var(--line);border-radius:20px;
+    padding:3px;display:flex;align-items:center;cursor:pointer;user-select:none;
+  }
+  .pill-lang .slider{
+    position:absolute;top:3px;left:calc(50% + 1px);width:calc(50% - 4px);height:calc(100% - 6px);
+    background:var(--teal);border-radius:16px;transition:left .2s ease;
+  }
+  .pill-lang.is-en .slider{left:3px;}
+  .pill-lang span{position:relative;flex:1;text-align:center;font-size:12.5px;font-weight:700;color:var(--ink-soft);z-index:1;transition:color .2s ease;}
+  .pill-lang.is-es span.lbl-es,.pill-lang.is-en span.lbl-en{color:#fff;}
+  .pill-home{
+    box-sizing:border-box;height:34px;padding:0 18px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(2,145,171,0.5);border:1px solid rgba(2,145,171,0.6);
+    color:var(--teal-dark);font-size:13px;font-weight:700;border-radius:20px;
+    text-decoration:none;white-space:nowrap;transition:background .2s ease;
+  }
+  .pill-home:hover{background:rgba(2,145,171,0.7);color:#fff;}
+
+  /* HERO */
+  .hero{
+    padding:88px 0 76px;
+    background:
+      radial-gradient(600px 300px at 85% -10%, rgba(13,148,136,0.14), transparent 60%),
+      linear-gradient(180deg,#0b1524 0%, #101f34 100%);
+    color:#fff;
+  }
+  .hero .wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(2,145,171,0.22);border:1px solid rgba(81,192,242,0.45);
+    color:#8fdcf7;font-size:13px;font-weight:600;letter-spacing:0.3px;
+    padding:6px 14px;border-radius:999px;margin-bottom:22px;
+  }
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;margin:0 0 18px;letter-spacing:-0.5px;font-weight:700;}
+  h1 .accent{color:var(--amber);}
+  .hero p.lead{font-size:17px;color:#c3ceda;max-width:520px;margin:0 0 30px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--teal);color:#fff;padding:14px 26px;border-radius:10px;
+    font-weight:700;font-size:15px;text-decoration:none;display:inline-block;
+    box-shadow:0 8px 24px -8px rgba(2,145,171,0.55);
+    border:none;cursor:pointer;
+  }
+  .btn-primary:hover{background:var(--teal-dark);}
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,0.28);color:#fff;padding:14px 26px;border-radius:10px;
+    font-weight:600;font-size:15px;text-decoration:none;display:inline-block;
+  }
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber);}
+  .hero-rate{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:var(--radius);
+    padding:26px;
+  }
+  .hero-rate .num{font-size:42px;font-weight:800;color:#fff;letter-spacing:-1px;}
+  .hero-rate .num span{font-size:17px;font-weight:600;color:#9fb0c3;}
+  .hero-rate .label{font-size:13px;color:#9fb0c3;margin-top:2px;}
+  .hero-rate ul{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:11px;}
+  .hero-rate li{display:flex;gap:10px;font-size:14px;color:#dbe4ee;align-items:flex-start;}
+  .hero-rate li .tick{color:var(--amber);font-weight:800;margin-top:1px;}
+
+  /* SECTION HEADS */
+  section{padding:76px 0;}
+  .section-head{max-width:640px;margin:0 auto 44px;text-align:center;}
+  .section-head .kicker{
+    text-transform:uppercase;font-size:12.5px;font-weight:700;letter-spacing:1.2px;
+    color:var(--ink-soft);margin-bottom:10px;
+  }
+  .section-head h2{font-size:clamp(28px,3.6vw,38px);margin:0 0 16px;letter-spacing:-0.2px;color:var(--teal);font-weight:200;}
+  .section-head h2::after{content:'';display:block;width:44px;height:3px;background:var(--amber);margin:16px auto 0;border-radius:2px;}
+  .section-head p{color:var(--ink-soft);font-size:15.5px;margin:0;}
+
+  /* VALUE CARDS */
+  .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .value-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 24px;box-shadow:var(--shadow);
+  }
+  .value-card .icon{
+    width:44px;height:44px;border-radius:11px;background:var(--teal-soft);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+    color:var(--teal-dark);font-size:20px;font-weight:800;
+  }
+  .value-card h3{font-size:16.5px;margin:0 0 8px;}
+  .value-card p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+
+  /* PHASES */
+  .phases-section{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .phase-list{display:flex;flex-direction:column;gap:0;}
+  .phase{
+    display:grid;grid-template-columns:64px 1fr auto;gap:22px;
+    padding:26px 0;border-bottom:1px solid var(--line);align-items:start;
+  }
+  .phase:last-child{border-bottom:none;}
+  .phase .n{
+    width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;
+  }
+  .phase.support .n{background:var(--amber);color:var(--teal-dark);}
+  .phase h3{font-size:16.5px;margin:0 0 6px;}
+  .phase p{font-size:14.5px;color:var(--ink-soft);margin:0;max-width:560px;}
+  .phase .hours{
+    text-align:right;font-size:13.5px;color:var(--ink-soft);white-space:nowrap;padding-top:4px;
+  }
+  .phase .hours strong{display:block;color:var(--ink);font-size:15px;font-weight:700;}
+  .no-inefficiency{
+    margin-top:36px;background:var(--teal-soft);border:1px solid #bfe3ef;border-radius:var(--radius);
+    padding:20px 24px;font-size:14.5px;color:var(--ink);
+  }
+  .no-inefficiency strong{color:var(--teal-dark);}
+
+  /* PRICING */
+  .pricing-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:stretch;}
+  .price-table{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:8px 0;box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;
+  }
+  table{width:100%;border-collapse:collapse;font-size:14px;}
+  thead th{
+    text-align:left;padding:14px 22px;font-size:12px;text-transform:uppercase;
+    letter-spacing:0.6px;color:var(--ink-soft);border-bottom:1px solid var(--line);
+  }
+  tbody td{padding:13px 22px;border-bottom:1px solid #eef1f6;color:var(--ink);}
+  tbody tr:last-child td{border-bottom:none;}
+  tfoot td{padding:16px 22px;font-weight:700;background:var(--paper);}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;}
+  .support-card{
+    background:linear-gradient(160deg,var(--teal),var(--teal-dark));
+    color:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;
+  }
+  .support-card h3{font-size:17px;margin:0 0 10px;}
+  .support-card p{font-size:14px;color:#c3ceda;margin:0 0 20px;}
+  .bono-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-top:1px solid rgba(255,255,255,0.12);font-size:14px;}
+  .bono-row:first-of-type{border-top:none;}
+  .bono-row .h{color:#c3ceda;}
+  .bono-row .p{font-weight:700;}
+  .rate-note{margin-top:auto;padding-top:18px;font-size:12.5px;color:#9fb0c3;}
+
+  /* CTA */
+  .cta{
+    background:var(--teal);
+    color:#fff;border-radius:20px;padding:52px 44px;text-align:center;
+    margin:0 24px;
+  }
+  .cta h2{font-size:clamp(22px,3vw,28px);margin:0 0 12px;font-weight:600;}
+  .cta p{font-size:15.5px;color:#dbf3fa;margin:0 0 26px;max-width:480px;margin-left:auto;margin-right:auto;}
+  .cta .btn-primary{background:#fff;color:var(--teal-dark);box-shadow:none;}
+  .cta .btn-primary:hover{background:#f0fbfd;}
+
+  footer{padding:40px 0;text-align:center;font-size:13px;color:var(--ink-soft);}
+  footer a{color:var(--teal-dark);text-decoration:none;font-weight:600;}
+  footer .back{display:block;margin-bottom:10px;}
+
+  @media (max-width:860px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .value-grid{grid-template-columns:1fr;}
+    .pricing-grid{grid-template-columns:1fr;}
+    nav.links{display:none;}
+  }
+  @media (max-width:600px){
+    .phase{grid-template-columns:44px 1fr;}
+    .phase .hours{grid-column:2;text-align:left;padding-top:6px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a class="brand" href="/"><span class="mark">RS</span> Ramiro Santamaría</a>
+      <a class="nav-cta" href="mailto:ramiro.santamaria.alvarez@gmail.com?subject=Digitalización%20de%20mi%20empresa" data-i18n="nav.talk">Hablemos</a>
+    </div>
+    <nav class="links">
+      <a href="#servicio" data-i18n="nav.service">Servicio</a>
+      <a href="#fases" data-i18n="nav.phases">Fases</a>
+      <a href="#precios" data-i18n="nav.pricing">Tarifas</a>
+      <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+    </nav>
+    <div class="nav-right">
+      <div class="pill-lang is-es" id="lang-pill" role="button" aria-label="Toggle language">
+        <div class="slider"></div>
+        <span class="lbl-en">EN</span>
+        <span class="lbl-es">ES</span>
+      </div>
+      <a class="pill-home" href="/" data-i18n="nav.home">Principal</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" data-i18n="hero.eyebrow">● Digitalización</span>
+      <h1 data-i18n="hero.h1">Digitaliza tu empresa <span class="accent">sin digitalizar la ineficiencia</span></h1>
+      <p class="lead" data-i18n="hero.lead">Antes de meter herramientas nuevas, entendemos cómo trabaja realmente tu empresa y rediseñamos el proceso. Digitalizar un proceso ineficiente solo hace que la ineficiencia vaya más rápido.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="mailto:ramiro.santamaria.alvarez@gmail.com?subject=Digitalización%20de%20mi%20empresa" data-i18n="hero.cta1">Pedir diagnóstico inicial</a>
+        <a class="btn-ghost" href="#fases" data-i18n="hero.cta2">Ver cómo funciona</a>
+      </div>
+    </div>
+    <div class="hero-rate">
+      <div class="num" data-i18n="rate.amount">35 € <span>/ hora</span></div>
+      <div class="label" data-i18n="rate.label">Tarifa única, sin letra pequeña</div>
+      <ul>
+        <li><span class="tick">✓</span> <span data-i18n="rate.li1">Se factura solo el tiempo dedicado, fase a fase</span></li>
+        <li><span class="tick">✓</span> <span data-i18n="rate.li2">Presupuesto orientativo desde el primer día</span></li>
+        <li><span class="tick">✓</span> <span data-i18n="rate.li3">Formación incluida en las herramientas implantadas</span></li>
+        <li><span class="tick">✓</span> <span data-i18n="rate.li4">Soporte post-lanzamiento con bolsa de horas mensual</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="servicio">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker" data-i18n="servicio.kicker">Cómo lo planteo</div>
+      <h2 data-i18n="servicio.h2">Tres principios detrás del proceso</h2>
+      <p data-i18n="servicio.p">Un método pensado para que la inversión en digitalización se note en el día a día, no solo en un powerpoint.</p>
+    </div>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="icon">1</div>
+        <h3 data-i18n="card1.h3">Diagnóstico antes que herramientas</h3>
+        <p data-i18n="card1.p">Primero se estudia cómo funciona realmente la empresa: procesos, cuellos de botella y dónde se pierde tiempo. Sin esto, cualquier herramienta es un parche.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">2</div>
+        <h3 data-i18n="card2.h3">Rediseño antes de digitalizar</h3>
+        <p data-i18n="card2.p">Se define cómo debería funcionar el proceso, no cómo automatizar el proceso actual. La eficiencia se gana en el rediseño, no en el software.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">3</div>
+        <h3 data-i18n="card3.h3">Implantación acompañada</h3>
+        <p data-i18n="card3.p">Selección de herramientas (incluida IA), plan por fases para no parar la operativa, y formación real al equipo hasta que lo usen solos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="phases-section" id="fases">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker" data-i18n="fases.kicker">El proceso</div>
+      <h2 data-i18n="fases.h2">Fases del servicio</h2>
+      <p data-i18n="fases.p">Horas orientativas por fase — el alcance real y el presupuesto cerrado se confirman tras el diagnóstico inicial.</p>
+    </div>
+
+    <div class="phase-list">
+      <div class="phase">
+        <div class="n">1</div>
+        <div><h3 data-i18n="phase1.h3">Diagnóstico y toma de requisitos</h3><p data-i18n="phase1.p">Objetivos, restricciones y qué problema de fondo se quiere resolver con la digitalización.</p></div>
+        <div class="hours"><strong>6–10 h</strong>210–350 €</div>
+      </div>
+      <div class="phase">
+        <div class="n">2</div>
+        <div><h3 data-i18n="phase2.h3">Estudio de la estructura operativa y procesos</h3><p data-i18n="phase2.p">Entrevistas estructuradas por departamento: flujos reales, excepciones y puntos de fricción, contrastando cualquier manual existente con lo que pasa de verdad.</p></div>
+        <div class="hours"><strong>10–20 h</strong>350–700 €</div>
+      </div>
+      <div class="phase">
+        <div class="n">3</div>
+        <div><h3 data-i18n="phase3.h3">Reestructuración de procesos deseada</h3><p data-i18n="phase3.p">Rediseño de cómo debería funcionar cada proceso antes de digitalizarlo. No se digitaliza la ineficiencia.</p></div>
+        <div class="hours"><strong>8–15 h</strong>280–525 €</div>
+      </div>
+      <div class="phase">
+        <div class="n">4</div>
+        <div><h3 data-i18n="phase4.h3">Selección de herramientas y tecnología</h3><p data-i18n="phase4.p">Recomendación de herramientas (ERP, CRM, IA) según proceso y presupuesto, con criterios de seguridad y protección de datos (RGPD).</p></div>
+        <div class="hours"><strong>6–12 h</strong>210–420 €</div>
+      </div>
+      <div class="phase">
+        <div class="n">5</div>
+        <div><h3 data-i18n="phase5.h3">Plan de digitalización por fases</h3><p data-i18n="phase5.p">Roadmap priorizado por impacto y esfuerzo, sin parar la operativa diaria de la empresa.</p></div>
+        <div class="hours"><strong>5–8 h</strong>175–280 €</div>
+      </div>
+      <div class="phase">
+        <div class="n">6</div>
+        <div><h3 data-i18n="phase6.h3">Implementación, formación y acompañamiento</h3><p data-i18n="phase6.p">Piloto acotado en un proceso concreto, ajustado con el equipo real, y luego formación práctica hasta que lo usen con autonomía.</p></div>
+        <div class="hours"><strong>15–30 h</strong>525–1.050 €</div>
+      </div>
+      <div class="phase support">
+        <div class="n">7</div>
+        <div><h3 data-i18n="phase7.h3">Soporte continuo: incidencias y bolsa de horas</h3><p data-i18n="phase7.p">Tras el lanzamiento, ajustes y dudas cubiertos con una bolsa de horas mensual, sin permanencia.</p></div>
+        <div class="hours"><strong data-i18n="phase7.hstrong">A demanda</strong><span data-i18n="phase7.hnote">desde 175 €/mes</span></div>
+      </div>
+    </div>
+
+    <div class="no-inefficiency" data-i18n="noineff">
+      <strong>Idea central:</strong> las fases 2 y 3 existen para que la fase 4 tenga sentido. Elegir el software antes de rediseñar el proceso es la forma más cara de comprar herramientas que nadie usará bien.
+    </div>
+  </div>
+</section>
+
+<section id="precios">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker" data-i18n="precios.kicker">Inversión</div>
+      <h2 data-i18n="precios.h2">Tarifas claras, sin sorpresas</h2>
+      <p data-i18n="precios.p">Todo se factura a 35 €/hora. La tabla muestra el rango orientativo para una PYME pequeña/mediana (5–30 empleados).</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-table">
+        <table>
+          <thead>
+            <tr><th data-i18n="table.h1">Fase</th><th class="num" data-i18n="table.h2">Horas</th><th class="num" data-i18n="table.h3">Importe</th></tr>
+          </thead>
+          <tbody>
+            <tr><td data-i18n="table.r1">1. Diagnóstico y requisitos</td><td class="num">6–10 h</td><td class="num">210–350 €</td></tr>
+            <tr><td data-i18n="table.r2">2. Estudio de procesos</td><td class="num">10–20 h</td><td class="num">350–700 €</td></tr>
+            <tr><td data-i18n="table.r3">3. Reestructuración de procesos</td><td class="num">8–15 h</td><td class="num">280–525 €</td></tr>
+            <tr><td data-i18n="table.r4">4. Selección de herramientas</td><td class="num">6–12 h</td><td class="num">210–420 €</td></tr>
+            <tr><td data-i18n="table.r5">5. Plan por fases</td><td class="num">5–8 h</td><td class="num">175–280 €</td></tr>
+            <tr><td data-i18n="table.r6">6. Implementación y formación</td><td class="num">15–30 h</td><td class="num">525–1.050 €</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td data-i18n="table.total">Total proyecto completo</td><td class="num">50–95 h</td><td class="num">1.750–3.325 €</td></tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="support-card">
+        <h3 data-i18n="support.h3">Bolsa de horas de soporte</h3>
+        <p data-i18n="support.p">Para incidencias y ajustes tras el lanzamiento. Se factura solo lo consumido, a la misma tarifa.</p>
+        <div class="bono-row"><span class="h" data-i18n="support.b1">5 h / mes</span><span class="p">175 €</span></div>
+        <div class="bono-row"><span class="h" data-i18n="support.b2">10 h / mes</span><span class="p">350 €</span></div>
+        <div class="bono-row"><span class="h" data-i18n="support.b3">20 h / mes</span><span class="p">700 €</span></div>
+        <div class="rate-note" data-i18n="support.note">Sin permanencia. El bono se ajusta cada mes según la necesidad real.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <div class="cta">
+      <h2 data-i18n="contacto.h2">¿Empezamos por el diagnóstico?</h2>
+      <p data-i18n="contacto.p">Es el compromiso más pequeño y el que más claridad da: en unas horas sabrás exactamente qué digitalizar primero y por qué.</p>
+      <a class="btn-primary" href="mailto:ramiro.santamaria.alvarez@gmail.com?subject=Digitalización%20de%20mi%20empresa" data-i18n="contacto.btn">Escríbenos</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a class="back" href="/" data-i18n="footer.back">← Volver al inicio</a>
+  <span data-i18n="footer.credit">Ramiro Santamaría · Digitalización de procesos</span> · <a href="mailto:ramiro.santamaria.alvarez@gmail.com">ramiro.santamaria.alvarez@gmail.com</a>
+</footer>
+
+<script>
+(function(){
+  var translations = {
+    es: {
+      "page.title": "Digitalización · Ramiro Santamaría",
+      "page.description": "Consultoría de digitalización de procesos: diagnóstico, rediseño de procesos, selección de herramientas e implementación acompañada. Tarifa única 35 €/hora.",
+      "nav.service": "Servicio",
+      "nav.phases": "Fases",
+      "nav.pricing": "Tarifas",
+      "nav.contact": "Contacto",
+      "nav.home": "Principal",
+      "nav.talk": "Hablemos",
+      "hero.eyebrow": "● Digitalización",
+      "hero.h1": "Digitaliza tu empresa <span class=\"accent\">sin digitalizar la ineficiencia</span>",
+      "hero.lead": "Antes de meter herramientas nuevas, entendemos cómo trabaja realmente tu empresa y rediseñamos el proceso. Digitalizar un proceso ineficiente solo hace que la ineficiencia vaya más rápido.",
+      "hero.cta1": "Pedir diagnóstico inicial",
+      "hero.cta2": "Ver cómo funciona",
+      "rate.amount": "35 € <span>/ hora</span>",
+      "rate.label": "Tarifa única, sin letra pequeña",
+      "rate.li1": "Se factura solo el tiempo dedicado, fase a fase",
+      "rate.li2": "Presupuesto orientativo desde el primer día",
+      "rate.li3": "Formación incluida en las herramientas implantadas",
+      "rate.li4": "Soporte post-lanzamiento con bolsa de horas mensual",
+      "servicio.kicker": "Cómo lo planteo",
+      "servicio.h2": "Tres principios detrás del proceso",
+      "servicio.p": "Un método pensado para que la inversión en digitalización se note en el día a día, no solo en un powerpoint.",
+      "card1.h3": "Diagnóstico antes que herramientas",
+      "card1.p": "Primero se estudia cómo funciona realmente la empresa: procesos, cuellos de botella y dónde se pierde tiempo. Sin esto, cualquier herramienta es un parche.",
+      "card2.h3": "Rediseño antes de digitalizar",
+      "card2.p": "Se define cómo debería funcionar el proceso, no cómo automatizar el proceso actual. La eficiencia se gana en el rediseño, no en el software.",
+      "card3.h3": "Implantación acompañada",
+      "card3.p": "Selección de herramientas (incluida IA), plan por fases para no parar la operativa, y formación real al equipo hasta que lo usen solos.",
+      "fases.kicker": "El proceso",
+      "fases.h2": "Fases del servicio",
+      "fases.p": "Horas orientativas por fase — el alcance real y el presupuesto cerrado se confirman tras el diagnóstico inicial.",
+      "phase1.h3": "Diagnóstico y toma de requisitos",
+      "phase1.p": "Objetivos, restricciones y qué problema de fondo se quiere resolver con la digitalización.",
+      "phase2.h3": "Estudio de la estructura operativa y procesos",
+      "phase2.p": "Entrevistas estructuradas por departamento: flujos reales, excepciones y puntos de fricción, contrastando cualquier manual existente con lo que pasa de verdad.",
+      "phase3.h3": "Reestructuración de procesos deseada",
+      "phase3.p": "Rediseño de cómo debería funcionar cada proceso antes de digitalizarlo. No se digitaliza la ineficiencia.",
+      "phase4.h3": "Selección de herramientas y tecnología",
+      "phase4.p": "Recomendación de herramientas (ERP, CRM, IA) según proceso y presupuesto, con criterios de seguridad y protección de datos (RGPD).",
+      "phase5.h3": "Plan de digitalización por fases",
+      "phase5.p": "Roadmap priorizado por impacto y esfuerzo, sin parar la operativa diaria de la empresa.",
+      "phase6.h3": "Implementación, formación y acompañamiento",
+      "phase6.p": "Piloto acotado en un proceso concreto, ajustado con el equipo real, y luego formación práctica hasta que lo usen con autonomía.",
+      "phase7.h3": "Soporte continuo: incidencias y bolsa de horas",
+      "phase7.p": "Tras el lanzamiento, ajustes y dudas cubiertos con una bolsa de horas mensual, sin permanencia.",
+      "phase7.hstrong": "A demanda",
+      "phase7.hnote": "desde 175 €/mes",
+      "noineff": "<strong>Idea central:</strong> las fases 2 y 3 existen para que la fase 4 tenga sentido. Elegir el software antes de rediseñar el proceso es la forma más cara de comprar herramientas que nadie usará bien.",
+      "precios.kicker": "Inversión",
+      "precios.h2": "Tarifas claras, sin sorpresas",
+      "precios.p": "Todo se factura a 35 €/hora. La tabla muestra el rango orientativo para una PYME pequeña/mediana (5–30 empleados).",
+      "table.h1": "Fase",
+      "table.h2": "Horas",
+      "table.h3": "Importe",
+      "table.r1": "1. Diagnóstico y requisitos",
+      "table.r2": "2. Estudio de procesos",
+      "table.r3": "3. Reestructuración de procesos",
+      "table.r4": "4. Selección de herramientas",
+      "table.r5": "5. Plan por fases",
+      "table.r6": "6. Implementación y formación",
+      "table.total": "Total proyecto completo",
+      "support.h3": "Bolsa de horas de soporte",
+      "support.p": "Para incidencias y ajustes tras el lanzamiento. Se factura solo lo consumido, a la misma tarifa.",
+      "support.b1": "5 h / mes",
+      "support.b2": "10 h / mes",
+      "support.b3": "20 h / mes",
+      "support.note": "Sin permanencia. El bono se ajusta cada mes según la necesidad real.",
+      "contacto.h2": "¿Empezamos por el diagnóstico?",
+      "contacto.p": "Es el compromiso más pequeño y el que más claridad da: en unas horas sabrás exactamente qué digitalizar primero y por qué.",
+      "contacto.btn": "Escríbenos",
+      "footer.back": "← Volver al inicio",
+      "footer.credit": "Ramiro Santamaría · Digitalización de procesos"
+    },
+    en: {
+      "page.title": "Digitalization · Ramiro Santamaría",
+      "page.description": "Business process digitalization consulting: diagnosis, process redesign, tool selection, and guided implementation. Flat rate €35/hour.",
+      "nav.service": "Service",
+      "nav.phases": "Phases",
+      "nav.pricing": "Pricing",
+      "nav.contact": "Contact",
+      "nav.home": "Home",
+      "nav.talk": "Let's talk",
+      "hero.eyebrow": "● Digitalization",
+      "hero.h1": "Digitalize your business <span class=\"accent\">without digitalizing inefficiency</span>",
+      "hero.lead": "Before adding new tools, we understand how your business actually works and redesign the process. Digitalizing an inefficient process only makes the inefficiency move faster.",
+      "hero.cta1": "Request initial diagnosis",
+      "hero.cta2": "See how it works",
+      "rate.amount": "€35 <span>/ hour</span>",
+      "rate.label": "Flat rate, no fine print",
+      "rate.li1": "Billed only for time actually spent, phase by phase",
+      "rate.li2": "Ballpark budget from day one",
+      "rate.li3": "Training included on every tool rolled out",
+      "rate.li4": "Post-launch support with a monthly hour bundle",
+      "servicio.kicker": "How I approach it",
+      "servicio.h2": "Three principles behind the process",
+      "servicio.p": "A method designed so the investment in digitalization shows up in day-to-day work, not just in a slide deck.",
+      "card1.h3": "Diagnosis before tools",
+      "card1.p": "First we study how the business actually works: processes, bottlenecks, and where time gets lost. Without this, any tool is just a patch.",
+      "card2.h3": "Redesign before digitalizing",
+      "card2.p": "We define how the process should work, not how to automate the current one. Efficiency is won in the redesign, not in the software.",
+      "card3.h3": "Guided rollout",
+      "card3.p": "Tool selection (including AI), a phased plan so operations never stop, and real training until the team can run it on their own.",
+      "fases.kicker": "The process",
+      "fases.h2": "Service phases",
+      "fases.p": "Estimated hours per phase — actual scope and final budget are confirmed after the initial diagnosis.",
+      "phase1.h3": "Diagnosis and requirements gathering",
+      "phase1.p": "Goals, constraints, and the underlying problem the digitalization needs to solve.",
+      "phase2.h3": "Study of operations and current processes",
+      "phase2.p": "Structured interviews by department: real workflows, exceptions, and friction points, checking any existing manual against what actually happens.",
+      "phase3.h3": "Target process redesign",
+      "phase3.p": "Redesigning how each process should work before digitalizing it. Inefficiency doesn't get digitalized.",
+      "phase4.h3": "Tool and technology selection",
+      "phase4.p": "Recommending tools (ERP, CRM, AI) based on process and budget, with data security and protection criteria (GDPR).",
+      "phase5.h3": "Phased digitalization roadmap",
+      "phase5.p": "Roadmap prioritized by impact and effort, without stopping the business's daily operations.",
+      "phase6.h3": "Implementation, training, and support",
+      "phase6.p": "A contained pilot on one specific process, fine-tuned with the real team, then hands-on training until they run it independently.",
+      "phase7.h3": "Ongoing support: issues and hour bundle",
+      "phase7.p": "After launch, adjustments and questions covered with a monthly hour bundle, no minimum commitment.",
+      "phase7.hstrong": "On demand",
+      "phase7.hnote": "from €175/month",
+      "noineff": "<strong>Core idea:</strong> phases 2 and 3 exist so phase 4 makes sense. Picking the software before redesigning the process is the most expensive way to buy tools nobody will use well.",
+      "precios.kicker": "Investment",
+      "precios.h2": "Clear pricing, no surprises",
+      "precios.p": "Everything is billed at €35/hour. The table shows the ballpark range for a small/medium business (5–30 employees).",
+      "table.h1": "Phase",
+      "table.h2": "Hours",
+      "table.h3": "Amount",
+      "table.r1": "1. Diagnosis and requirements",
+      "table.r2": "2. Process study",
+      "table.r3": "3. Process redesign",
+      "table.r4": "4. Tool selection",
+      "table.r5": "5. Phased plan",
+      "table.r6": "6. Implementation and training",
+      "table.total": "Full project total",
+      "support.h3": "Support hour bundle",
+      "support.p": "For issues and adjustments after launch. Billed only for what's actually used, at the same rate.",
+      "support.b1": "5 h / month",
+      "support.b2": "10 h / month",
+      "support.b3": "20 h / month",
+      "support.note": "No minimum commitment. The bundle is adjusted every month based on actual need.",
+      "contacto.h2": "Shall we start with the diagnosis?",
+      "contacto.p": "It's the smallest commitment and the one that brings the most clarity: in a few hours you'll know exactly what to digitalize first, and why.",
+      "contacto.btn": "Get in touch",
+      "footer.back": "← Back to home",
+      "footer.credit": "Ramiro Santamaría · Business process digitalization"
+    }
+  };
+
+  function setLang(lang){
+    var dict = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.title = dict['page.title'];
+    document.getElementById('page-description').setAttribute('content', dict['page.description']);
+    document.documentElement.setAttribute('lang', lang);
+    var pill = document.getElementById('lang-pill');
+    pill.classList.toggle('is-en', lang === 'en');
+    pill.classList.toggle('is-es', lang === 'es');
+    window.__lang = lang;
+  }
+
+  document.getElementById('lang-pill').addEventListener('click', function(){
+    setLang(window.__lang === 'en' ? 'es' : 'en');
+  });
+
+  setLang('es');
+})();
+</script>
+
+</body>
+</html>

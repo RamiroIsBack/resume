@@ -5,8 +5,9 @@
   display: grid;
   grid-gap: 30px;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(11, 200px);
+  grid-template-rows: repeat(12, 200px);
   grid-template-areas:
+    "tw6 tw6"
     "tw1 tw1"
     "tw  tw "
     "ni  ni "
@@ -33,6 +34,16 @@
 }
 .twentyfive {
   grid-area: tw5;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid rgb(2, 145, 171);
+  border-radius: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+  position: absolute;
+}
+.twentysix {
+  grid-area: tw6;
   display: inline-block;
   background-color: white;
   border: 1px solid rgb(2, 145, 171);
@@ -170,8 +181,9 @@
     display: grid;
     grid-gap: 6px;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(11, 220px);
+    grid-template-rows: repeat(12, 220px);
     grid-template-areas:
+      "tw6 tw6"
       "tw1 tw1"
       "tw  tw "
       "ni  ni "
@@ -200,6 +212,18 @@
   }
   .twentyfive {
     grid-area: tw5;
+    top: -15px;
+    display: inline-block;
+    background-color: white;
+    border: 1px solid rgb(2, 145, 171);
+    border-radius: 10px;
+    font-size: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
+    position: absolute;
+  }
+  .twentysix {
+    grid-area: tw6;
     top: -15px;
     display: inline-block;
     background-color: white;

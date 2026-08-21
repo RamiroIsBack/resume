@@ -10,7 +10,30 @@
       ". . a a a a . . m m m m"
       ". . t t t . d d m m m m"
       ". . c c c . d d m m m m"
-      ". . c c c . . . m m m m";
+      ". . c c c . g g m m m m";
+}
+
+.footer__cta__container{
+  grid-area: g;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer__cta__button{
+  display: inline-block;
+  background: white;
+  color: rgb(2, 145, 171);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.footer__cta__button:hover{
+  background: #e3f4f8;
+  transform: translateY(-1px);
 }
 
 
@@ -155,10 +178,11 @@
     display: grid;
     grid-gap: 3px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(7,auto);
+    grid-template-rows: repeat(8,auto);
     grid-template-areas:
 
         "d d d d d d d d d d d d"
+        "g g g g g g g g g g g g"
         "a a a a a a a a a a a a"
         "t t t t t t m m m m m m"
         "c c c c c . m m m m m m"
@@ -166,6 +190,9 @@
         "c c c c c . m m m m m m"
         "c c c c c . m m m m m m"
         ;
+  }
+  .footer__cta__container{
+    padding: 10px 14px;
   }
   .footer__mail{
     font-size: 14px;

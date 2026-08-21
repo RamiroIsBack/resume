@@ -22,7 +22,7 @@ function LangToggle({ lang, setLang }) {
       onClick={() => setLang(isEn ? "es" : "en")}
       style={{ position: "fixed", top: 15, right: 80, zIndex: 1000, cursor: "pointer", userSelect: "none" }}
     >
-      <div style={{ position: "relative", background: "rgba(0,0,0,0.65)", border: "1px solid rgba(255,255,255,0.35)", borderRadius: 20, padding: "3px", display: "flex", alignItems: "center" }}>
+      <div style={{ position: "relative", boxSizing: "border-box", width: 108, height: 31, background: "rgba(0,0,0,0.65)", border: "1px solid rgba(255,255,255,0.35)", borderRadius: 20, padding: 3, display: "flex", alignItems: "center" }}>
         <div style={{
           position: "absolute",
           top: 3,
@@ -33,10 +33,42 @@ function LangToggle({ lang, setLang }) {
           borderRadius: 16,
           transition: "left 0.2s ease",
         }} />
-        <span style={{ position: "relative", padding: "4px 14px", fontSize: 13, fontWeight: "bold", color: "white", zIndex: 1 }}>EN</span>
-        <span style={{ position: "relative", padding: "4px 14px", fontSize: 13, fontWeight: "bold", color: "white", zIndex: 1 }}>ES</span>
+        <span style={{ position: "relative", flex: 1, textAlign: "center", fontSize: 13, fontWeight: "bold", color: "white", zIndex: 1 }}>EN</span>
+        <span style={{ position: "relative", flex: 1, textAlign: "center", fontSize: 13, fontWeight: "bold", color: "white", zIndex: 1 }}>ES</span>
       </div>
     </div>
+  );
+}
+
+function DigitalizacionButton({ lang }) {
+  const label = lang === "en" ? "Digitalization" : "Digitalización";
+  return (
+    <a
+      href="/digitalizacion.html"
+      style={{
+        position: "fixed",
+        top: 55,
+        right: 80,
+        zIndex: 1000,
+        boxSizing: "border-box",
+        width: 108,
+        height: 31,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "rgba(2, 145, 171, 0.5)",
+        border: "1px solid rgba(255, 255, 255, 0.35)",
+        color: "white",
+        fontSize: 12,
+        fontWeight: "bold",
+        borderRadius: 20,
+        textDecoration: "none",
+        whiteSpace: "nowrap",
+        boxShadow: "0 4px 14px -4px rgba(2, 145, 171, 0.7)",
+      }}
+    >
+      {label}
+    </a>
   );
 }
 
@@ -86,6 +118,7 @@ function App() {
   return (
     <div>
       <LangToggle lang={lang} setLang={setLang} />
+      <DigitalizacionButton lang={lang} />
 
       <AsyncNombreContainer />
       <AsyncModalContainer />

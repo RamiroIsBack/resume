@@ -29,6 +29,8 @@ export const ui = {
     langToggle:        "ES",
     workTypeTalk:      "talk",
     downloadCV:        "Download PDF resume",
+    hireDigitalization: "Business digitalization service →",
+    footerCtaButton:   "Digitalize your business →",
   },
   es: {
     greeting:          "¡Hola! Soy",
@@ -60,5 +62,7 @@ export const ui = {
     langToggle:        "EN",
     workTypeTalk:      "charla",
     downloadCV:        "Descargar CV en PDF",
+    hireDigitalization: "Digitalización →",
+    footerCtaButton:   "Digitaliza tu empresa →",
   },
 };

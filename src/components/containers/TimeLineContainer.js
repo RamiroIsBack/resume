@@ -27,6 +27,7 @@ function TimeLineContainer() {
       {timeLineJsx}
       <div className="line" />
       <div className="year__container">
+        <div className="twentysix">2026</div>
         <div className="twentyone">2025</div>
         <div className="twenty">2021</div>
         <div className="nineteen">2019</div>

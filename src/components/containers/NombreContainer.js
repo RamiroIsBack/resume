@@ -12,6 +12,9 @@ function NombreContainer() {
       <h3 className='nombre'>Ramiro Santamaria</h3>
       <h3 className='puesto'>{t.jobTitle}</h3>
       <h3 className='puesto puesto__second'>{t.jobTitle2}</h3>
+      <a className='cta__digitalizacion' href='/digitalizacion.html'>
+        {t.hireDigitalization}
+      </a>
     </div>
   );
 }

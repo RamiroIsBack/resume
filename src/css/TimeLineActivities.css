@@ -1,11 +1,12 @@
 .timeLine__container {
-  height: 100%;
+  height: auto;
   width: 100%;
   display: grid;
   grid-gap: 30px;
   grid-template-columns: repeat(13, 1fr);
-  grid-template-rows: repeat(11, 200px);
+  grid-template-rows: repeat(12, 200px);
   grid-template-areas:
+    "z z z z z z l . . . . . . "
     "q q q q q q l . . . . . . "
     "x x x x x x l y y y y y y "
     "h h h h h h l s s s s s s "
@@ -79,17 +80,21 @@
 .work__ininin {
   grid-area: q;
 }
+.work__aiOrchestrator {
+  grid-area: z;
+}
 
 @media screen and (max-width: 705px) {
   .timeLine__container {
-    height: 100%;
+    height: auto;
 
     margin: 0;
     display: grid;
     grid-gap: 6px;
     grid-template-columns: repeat(13, 1fr);
-    grid-template-rows: repeat(11, 220px);
+    grid-template-rows: repeat(12, 220px);
     grid-template-areas:
+      "z z z z z z l . . . . . . "
       "q q q q q q l . . . . . . "
       "x x x x x x l y y y y y y "
       "h h h h h h l s s s s s s "

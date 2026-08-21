@@ -32,6 +32,9 @@ export const servicesList = [
     bio_es: "Construyendo la capa de automatización que hace escalar las operaciones IT — sistemas multi-agente, inteligencia en endpoints y monitorización sin intervención manual en infraestructura global.\nEste trabajo se sitúa en la intersección entre las operaciones IT tradicionales y la automatización inteligente — construyendo infraestructura que escala sin aumentar el equipo.",
     percentage: 75,
     urlPic: "https://avatars.githubusercontent.com/u/76263028?s=400&v=4",
+    ctaLabel: "Digitalize your business →",
+    ctaLabel_es: "Digitaliza tu empresa →",
+    ctaLink: "/digitalizacion.html",
   },
   {
     nombre: "ALBusinessCentral",
@@ -119,6 +122,18 @@ export const servicesList = [
 
 export const worksList = [
   {
+    nombre: "DigitalizacionGalvi",
+    nombreToShow: "PYMES Digitalization — Galvi",
+    nombreToShow_es: "Digitalización PYMES — Galvi",
+    bio: "Business digitalization consulting for Galvi: process diagnosis, workflow redesign, and tool rollout.",
+    bio_es: "Consultoría de digitalización de procesos para Galvi: diagnóstico, rediseño de flujos de trabajo e implantación de herramientas.",
+    state: "new service",
+    state_es: "servicio nuevo",
+    priority: -2,
+    url: "/digitalizacion.html",
+    urlPic: "https://www.galvi.es/wp-content/uploads/2024/01/Galvi-2020-logo-AZ-600px-300x151.png",
+  },
+  {
     nombre: "INININGroup",
     nombreToShow: "INININ Group",
     bio: "Corporate website for INININ Group, a multinational creative and technology agency operating across Spain, USA, LATAM, and Asia.",
@@ -196,11 +211,23 @@ export const talksList = [
 export const timeLineList = [
   // ── Work entries (left side) ──
   {
+    className: "work__aiOrchestrator",
+    nombre: "AI Agent Orchestrator freelance",
+    nombre_es: "Orquestador de Agentes IA freelance",
+    description: "Designing and orchestrating multi-agent AI systems for clients — automation workflows, endpoint intelligence, and IT operations that scale without adding headcount.",
+    description_es: "Diseño y orquesto sistemas de IA multi-agente para clientes — flujos de automatización, inteligencia en endpoints y operaciones IT que escalan sin aumentar el equipo.",
+    fechaInicio: "06/2026",
+    fechaFin: "still on it",
+    fechaFin_es: "en curso",
+    urlLink: "falta",
+    urlPic: "",
+  },
+  {
     className: "work__ininin",
     nombre: "IT & Security Operations at INININ Group",
     nombre_es: "IT & Security Operations at INININ Group",
-    description: "| Microsoft 365 Admin | International Infrastructure\nManaging IT and security operations for a multinational group across Spain, USA, LATAM, and Asia — endpoint management, network infrastructure, ERP implementations, and L2 support for distributed teams.",
-    description_es: "| Microsoft 365 Admin | Infraestructura Internacional\nGestión de las operaciones IT y de seguridad de un grupo multinacional en España, EE.UU., LATAM y Asia — gestión de endpoints, infraestructura de red, implementaciones ERP y soporte L2 para equipos distribuidos.",
+    description: "| Microsoft 365 Admin | International Infrastructure\nEndpoint management, network infrastructure, ERP rollouts, and L2 support across Spain, USA, LATAM, and Asia.",
+    description_es: "| Microsoft 365 Admin | Infraestructura Internacional\nGestión de endpoints, infraestructura de red, implementaciones ERP y soporte L2 en España, EE.UU., LATAM y Asia.",
     fechaInicio: "2021",
     fechaFin: "still on it",
     fechaFin_es: "en curso",
