@@ -4,6 +4,43 @@
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   grid-auto-flow: dense;
 }
+.works__list__container--ai {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  margin-bottom: 30px;
+}
+.works__list__container--ai .work__pic {
+  max-width: 100%;
+}
+.works__subheading {
+  text-align: center;
+  color: rgb(2, 145, 171);
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  margin: 0 0 16px 0;
+}
+.work__state {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.work__state--live {
+  background: #e3f6ee;
+  color: #0a7f55;
+}
+.work__state--pilot {
+  background: #e3f4f8;
+  color: #026e82;
+}
+.work__state--design {
+  background: #eef1f3;
+  color: #5c6770;
+}
 .work__container {
   cursor: pointer;
   padding-right: 15px;

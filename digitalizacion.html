@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="page-title">Digitalización · Ramiro Santamaría</title>
-<meta id="page-description" name="description" content="Consultoría de digitalización de procesos: diagnóstico, rediseño de procesos, selección de herramientas e implementación acompañada. Tarifa única 35 €/hora.">
+<meta id="page-description" name="description" content="Consultoría de digitalización de procesos: diagnóstico, rediseño de procesos, selección de herramientas e implementación acompañada. Diagnóstico inicial gratis y tarifa única de 40 €/hora.">
 <link rel="shortcut icon" href="/favicon.ico">
 <style>
   :root{
@@ -179,6 +179,74 @@
   }
   .no-inefficiency strong{color:var(--teal-dark);}
 
+  /* OFFER (precio tachado + gratis) */
+  s.old{color:#8a959e;font-weight:400;}
+  .free{color:#0a7f55;font-weight:800;}
+  .tag-offer{
+    display:inline-block;margin-left:6px;padding:2px 8px;border-radius:6px;
+    background:#0a7f55;color:#fff;font-size:10.5px;font-weight:800;
+    text-transform:uppercase;letter-spacing:0.6px;vertical-align:middle;
+  }
+  td small,td s.old.block{display:block;font-weight:400;color:var(--ink-soft);font-size:12px;white-space:normal;}
+
+  /* AI AGENTS */
+  .agents-section{
+    background:
+      radial-gradient(600px 300px at 15% -10%, rgba(13,148,136,0.14), transparent 60%),
+      linear-gradient(180deg,#0b1524 0%, #101f34 100%);
+    color:#fff;
+  }
+  .agents-section .section-head{max-width:720px;}
+  .agents-section .section-head .kicker{color:#8fdcf7;}
+  .agents-section .section-head h2{color:#fff;}
+  .agents-section .section-head p{color:#c3ceda;}
+  .principles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px;}
+  .principle{
+    background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);
+    border-radius:var(--radius);padding:20px;
+  }
+  .principle .icon{
+    width:38px;height:38px;border-radius:10px;background:rgba(2,145,171,0.35);
+    color:#8fdcf7;display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+  }
+  .principle h3{font-size:15px;margin:0 0 6px;}
+  .principle p{font-size:13.5px;color:#c3ceda;margin:0;}
+  .agent-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .agent-card{
+    background:var(--white);color:var(--ink);border-radius:var(--radius);
+    padding:26px 24px;box-shadow:0 10px 30px -12px rgba(0,0,0,0.4);
+    display:flex;flex-direction:column;gap:14px;min-width:0;
+  }
+  .agent-card.wide{grid-column:1 / -1;}
+  .agent-card h3{font-size:17px;margin:0;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .agent-card .lbl{
+    display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:0.8px;
+    font-weight:700;color:var(--teal-dark);margin-bottom:3px;
+  }
+  .agent-card p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .agent-card .result{
+    background:var(--teal-soft);border:1px solid #bfe3ef;border-radius:10px;
+    padding:12px 14px;font-size:14px;color:var(--ink);
+  }
+  .agent-card .result strong{color:var(--teal-dark);}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:2px;}
+  .chip{
+    font-size:12px;font-weight:600;color:var(--teal-dark);background:var(--paper);
+    border:1px solid var(--line);border-radius:999px;padding:4px 10px;
+  }
+  .badge-soon{
+    font-size:11px;font-weight:700;color:var(--ink-soft);background:var(--paper);
+    border:1px solid var(--line);border-radius:999px;padding:3px 10px;
+    text-transform:uppercase;letter-spacing:0.5px;
+  }
+  .agents-cta{
+    margin-top:36px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);
+    border-radius:var(--radius);padding:24px 28px;
+  }
+  .agents-cta p{margin:0;color:#dbe4ee;font-size:15px;max-width:640px;}
+  .agents-cta p strong{color:#fff;}
+
   /* PRICING */
   .pricing-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:stretch;}
   .price-table{
@@ -193,7 +261,7 @@
   tbody td{padding:13px 22px;border-bottom:1px solid #eef1f6;color:var(--ink);}
   tbody tr:last-child td{border-bottom:none;}
   tfoot td{padding:16px 22px;font-weight:700;background:var(--paper);}
-  td.num{text-align:right;font-variant-numeric:tabular-nums;}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
   .support-card{
     background:linear-gradient(160deg,var(--teal),var(--teal-dark));
     color:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);
@@ -226,9 +294,17 @@
     .hero .wrap{grid-template-columns:1fr;}
     .value-grid{grid-template-columns:1fr;}
     .pricing-grid{grid-template-columns:1fr;}
+    .principles{grid-template-columns:repeat(2,1fr);}
+    .agent-grid{grid-template-columns:1fr;}
     nav.links{display:none;}
   }
   @media (max-width:600px){
+    .principles{grid-template-columns:1fr;}
+    .agents-cta{padding:22px 20px;}
+    .cta{padding:40px 22px;}
+    table{font-size:13px;}
+    thead th,tbody td,tfoot td{padding-left:10px;padding-right:10px;}
+    td.num s.old{display:block;}
     .phase{grid-template-columns:44px 1fr;}
     .phase .hours{grid-column:2;text-align:left;padding-top:6px;}
   }
@@ -245,6 +321,7 @@
     <nav class="links">
       <a href="#servicio" data-i18n="nav.service">Servicio</a>
       <a href="#fases" data-i18n="nav.phases">Fases</a>
+      <a href="#agentes" data-i18n="nav.agents">Agentes IA</a>
       <a href="#precios" data-i18n="nav.pricing">Tarifas</a>
       <a href="#contacto" data-i18n="nav.contact">Contacto</a>
     </nav>
@@ -266,12 +343,12 @@
       <h1 data-i18n="hero.h1">Digitaliza tu empresa <span class="accent">sin digitalizar la ineficiencia</span></h1>
       <p class="lead" data-i18n="hero.lead">Antes de meter herramientas nuevas, entendemos cómo trabaja realmente tu empresa y rediseñamos el proceso. Digitalizar un proceso ineficiente solo hace que la ineficiencia vaya más rápido.</p>
       <div class="hero-actions">
-        <a class="btn-primary" href="mailto:ramiro.santamaria.alvarez@gmail.com?subject=Digitalización%20de%20mi%20empresa" data-i18n="hero.cta1">Pedir diagnóstico inicial</a>
+        <a class="btn-primary" href="mailto:ramiro.santamaria.alvarez@gmail.com?subject=Digitalización%20de%20mi%20empresa" data-i18n="hero.cta1">Pedir diagnóstico gratuito</a>
         <a class="btn-ghost" href="#fases" data-i18n="hero.cta2">Ver cómo funciona</a>
       </div>
     </div>
     <div class="hero-rate">
-      <div class="num" data-i18n="rate.amount">35 € <span>/ hora</span></div>
+      <div class="num" data-i18n="rate.amount">40 € <span>/ hora</span></div>
       <div class="label" data-i18n="rate.label">Tarifa única, sin letra pequeña</div>
       <ul>
         <li><span class="tick">✓</span> <span data-i18n="rate.li1">Se factura solo el tiempo dedicado, fase a fase</span></li>
@@ -322,37 +399,37 @@
       <div class="phase">
         <div class="n">1</div>
         <div><h3 data-i18n="phase1.h3">Diagnóstico y toma de requisitos</h3><p data-i18n="phase1.p">Objetivos, restricciones y qué problema de fondo se quiere resolver con la digitalización.</p></div>
-        <div class="hours"><strong>6–10 h</strong>210–350 €</div>
+        <div class="hours"><strong>6–10 h</strong><span data-i18n="phase1.amount"><s class="old">240–400 €</s> <span class="free">Gratis</span><span class="tag-offer">Oferta</span></span></div>
       </div>
       <div class="phase">
         <div class="n">2</div>
         <div><h3 data-i18n="phase2.h3">Estudio de la estructura operativa y procesos</h3><p data-i18n="phase2.p">Entrevistas estructuradas por departamento: flujos reales, excepciones y puntos de fricción, contrastando cualquier manual existente con lo que pasa de verdad.</p></div>
-        <div class="hours"><strong>10–20 h</strong>350–700 €</div>
+        <div class="hours"><strong>10–20 h</strong>400–800 €</div>
       </div>
       <div class="phase">
         <div class="n">3</div>
         <div><h3 data-i18n="phase3.h3">Reestructuración de procesos deseada</h3><p data-i18n="phase3.p">Rediseño de cómo debería funcionar cada proceso antes de digitalizarlo. No se digitaliza la ineficiencia.</p></div>
-        <div class="hours"><strong>8–15 h</strong>280–525 €</div>
+        <div class="hours"><strong>8–15 h</strong>320–600 €</div>
       </div>
       <div class="phase">
         <div class="n">4</div>
         <div><h3 data-i18n="phase4.h3">Selección de herramientas y tecnología</h3><p data-i18n="phase4.p">Recomendación de herramientas (ERP, CRM, IA) según proceso y presupuesto, con criterios de seguridad y protección de datos (RGPD).</p></div>
-        <div class="hours"><strong>6–12 h</strong>210–420 €</div>
+        <div class="hours"><strong>6–12 h</strong>240–480 €</div>
       </div>
       <div class="phase">
         <div class="n">5</div>
         <div><h3 data-i18n="phase5.h3">Plan de digitalización por fases</h3><p data-i18n="phase5.p">Roadmap priorizado por impacto y esfuerzo, sin parar la operativa diaria de la empresa.</p></div>
-        <div class="hours"><strong>5–8 h</strong>175–280 €</div>
+        <div class="hours"><strong>5–8 h</strong>200–320 €</div>
       </div>
       <div class="phase">
         <div class="n">6</div>
         <div><h3 data-i18n="phase6.h3">Implementación, formación y acompañamiento</h3><p data-i18n="phase6.p">Piloto acotado en un proceso concreto, ajustado con el equipo real, y luego formación práctica hasta que lo usen con autonomía.</p></div>
-        <div class="hours"><strong>15–30 h</strong>525–1.050 €</div>
+        <div class="hours"><strong>15–30 h</strong>600–1.200 €</div>
       </div>
       <div class="phase support">
         <div class="n">7</div>
         <div><h3 data-i18n="phase7.h3">Soporte continuo: incidencias y bolsa de horas</h3><p data-i18n="phase7.p">Tras el lanzamiento, ajustes y dudas cubiertos con una bolsa de horas mensual, sin permanencia.</p></div>
-        <div class="hours"><strong data-i18n="phase7.hstrong">A demanda</strong><span data-i18n="phase7.hnote">desde 175 €/mes</span></div>
+        <div class="hours"><strong data-i18n="phase7.hstrong">A demanda</strong><span data-i18n="phase7.hnote">desde 200 €/mes</span></div>
       </div>
     </div>
 
@@ -362,12 +439,85 @@
   </div>
 </section>
 
+<section class="agents-section" id="agentes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker" data-i18n="agentes.kicker">Agentes de IA</div>
+      <h2 data-i18n="agentes.h2">Agentes de IA para tu empresa</h2>
+      <p data-i18n="agentes.p">Agentes de IA que ya funcionan en empresas reales: leen el correo, consultan tu ERP, preparan el trabajo y una persona aprueba. Reglas primero, IA solo donde aporta criterio, y todo dentro de tu Microsoft 365 o Google Cloud.</p>
+    </div>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6"/><path d="M16 11l2 2 4-4"/></svg></div>
+        <h3 data-i18n="pr1.h3">Una persona aprueba</h3>
+        <p data-i18n="pr1.p">Nada sale hacia un cliente sin que alguien de tu equipo lo revise.</p>
+      </div>
+      <div class="principle">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6l-6 6 6 6"/><path d="M16 6l6 6-6 6"/></svg></div>
+        <h3 data-i18n="pr2.h3">Reglas primero, IA para las dudas</h3>
+        <p data-i18n="pr2.p">Lo predecible se resuelve con código; la IA solo entra en los casos ambiguos. Más barato y más fiable.</p>
+      </div>
+      <div class="principle">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+        <h3 data-i18n="pr3.h3">Tus datos en tu tenant</h3>
+        <p data-i18n="pr3.p">La IA corre en tu propia suscripción (Azure OpenAI / Copilot), sin máquinas virtuales.</p>
+      </div>
+      <div class="principle">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 7a7 7 0 1 0 0 10"/><path d="M4 10h9"/><path d="M4 14h9"/></svg></div>
+        <h3 data-i18n="pr4.h3">Coste fijo cercano a 0 €</h3>
+        <p data-i18n="pr4.p">Servicios serverless y gratuitos: solo se paga el uso.</p>
+      </div>
+    </div>
+
+    <div class="agent-grid">
+      <div class="agent-card">
+        <h3 data-i18n="ag1.h3">Pedidos por email directos al ERP</h3>
+        <div><span class="lbl" data-i18n="lbl.problem">El problema</span><p data-i18n="ag1.problem">Los pedidos llegan por correo en PDF o Excel y alguien los vuelve a teclear en el ERP, línea a línea.</p></div>
+        <div><span class="lbl" data-i18n="lbl.what">Qué hace</span><p data-i18n="ag1.what">Identifica al cliente, traduce sus códigos a los del ERP, detecta pedidos duplicados y deja la oferta preparada en Business Central. Ventas solo decide lo dudoso, desde una web o desde Teams.</p></div>
+        <div class="result"><span class="lbl" data-i18n="lbl.result">Resultado real</span><span data-i18n="ag1.result"><strong>97 % de las líneas con código automático</strong> en 31 pedidos reales, en menos de 1 minuto desde que llega el correo.</span></div>
+        <div class="chips"><span class="chip">Business Central Sales Order Agent</span><span class="chip">Microsoft Graph</span><span class="chip">Azure Functions</span><span class="chip">React</span></div>
+      </div>
+      <div class="agent-card">
+        <h3 data-i18n="ag2.h3">Gestión documental de calidad ISO 9001 / 14001</h3>
+        <div><span class="lbl" data-i18n="lbl.problem">El problema</span><p data-i18n="ag2.problem">Procedimientos repartidos en carpetas, versiones que se pisan y auditorías en las que hay que buscar a mano qué documento está vigente.</p></div>
+        <div><span class="lbl" data-i18n="lbl.what">Qué hace</span><p data-i18n="ag2.what">Repositorio con versiones y obsoletos automáticos, buscador, jerarquía de procedimientos, <strong>análisis de impacto de cada cambio</strong> en todos los documentos relacionados, auditoría por tipo de documento, tareas y un asistente que responde citando el documento y la versión vigente.</p></div>
+        <div class="result"><span class="lbl" data-i18n="lbl.result">Resultado real</span><span data-i18n="ag2.result">En producción en un laboratorio de I+D, con <strong>0 € de coste fijo</strong> y ~0,002 € por pregunta al asistente.</span></div>
+        <div class="chips"><span class="chip">Azure Static Web Apps</span><span class="chip">Azure SQL</span><span class="chip">Azure OpenAI</span><span class="chip">Copilot Studio</span><span class="chip">Teams / Planner</span></div>
+      </div>
+      <div class="agent-card">
+        <h3 data-i18n="ag3.h3">Asistente de dirección: correo, agenda y tareas</h3>
+        <div><span class="lbl" data-i18n="lbl.problem">El problema</span><p data-i18n="ag3.problem">Un directivo pierde cada día horas ordenando el correo, contestando lo rutinario y cuadrando la agenda.</p></div>
+        <div><span class="lbl" data-i18n="lbl.what">Qué hace</span><p data-i18n="ag3.what">Clasifica el correo, prepara borradores, propone huecos en la agenda y crea tareas. El directivo solo revisa y decide.</p></div>
+        <div class="result"><span class="lbl" data-i18n="lbl.security">Diseño de seguridad</span><span data-i18n="ag3.security">El agente <strong>no puede</strong> enviar, borrar ni archivar: no tiene esas herramientas. Está protegido frente a correos maliciosos que intentan dar órdenes a la IA.</span></div>
+        <div class="chips"><span class="chip">Google Workspace</span><span class="chip">Cloud Run</span><span class="chip">Claude</span><span class="chip" data-i18n="ag3.chipMcp">Conector MCP propio</span></div>
+      </div>
+      <div class="agent-card">
+        <h3 data-i18n="ag4.h3">Vigilancia de dominios y suplantación</h3>
+        <div><span class="lbl" data-i18n="lbl.problem">El problema</span><p data-i18n="ag4.problem">Aparecen dominios y webs que imitan tu marca para engañar a clientes y proveedores, y nadie se entera hasta que hay una estafa.</p></div>
+        <div><span class="lbl" data-i18n="lbl.what">Qué hace</span><p data-i18n="ag4.what">Monitor diario de dominios parecidos al de la marca, informes de evidencias y gestión de denuncias ante registradores cuando aparece una web fraudulenta.</p></div>
+      </div>
+      <div class="agent-card wide">
+        <h3><span data-i18n="ag5.h3">Automatización de IT</span><span class="badge-soon" data-i18n="ag5.badge">En preparación</span></h3>
+        <div><span class="lbl" data-i18n="lbl.problem">El problema</span><p data-i18n="ag5.problem">Las altas de equipos, los parches y los tickets dependen de listas manuales y de preguntar a la persona de IT.</p></div>
+        <div><span class="lbl" data-i18n="lbl.what">Qué hace</span><p data-i18n="ag5.what">Alta guiada de equipos nuevos y agentes que publican en Teams el estado de seguridad, parches y tickets.</p></div>
+        <div class="chips"><span class="chip">Copilot Studio</span><span class="chip">Power Automate</span><span class="chip">Microsoft Teams</span></div>
+      </div>
+    </div>
+
+    <div class="agents-cta">
+      <p data-i18n="agentes.cta.p">Cada agente empieza con el <strong>diagnóstico gratuito</strong>; después, piloto a 40 €/h con presupuesto cerrado por fases.</p>
+      <a class="btn-primary" href="mailto:ramiro.santamaria.alvarez@gmail.com?subject=Piloto%20de%20agente%20de%20IA" data-i18n="agentes.cta.btn">Quiero un piloto</a>
+    </div>
+  </div>
+</section>
+
 <section id="precios">
   <div class="wrap">
     <div class="section-head">
       <div class="kicker" data-i18n="precios.kicker">Inversión</div>
       <h2 data-i18n="precios.h2">Tarifas claras, sin sorpresas</h2>
-      <p data-i18n="precios.p">Todo se factura a 35 €/hora. La tabla muestra el rango orientativo para una PYME pequeña/mediana (5–30 empleados).</p>
+      <p data-i18n="precios.p">Todo se factura a 40 €/hora y el diagnóstico inicial es gratis. La tabla muestra el rango orientativo para una PYME pequeña/mediana (5–30 empleados).</p>
     </div>
 
     <div class="pricing-grid">
@@ -377,15 +527,15 @@
             <tr><th data-i18n="table.h1">Fase</th><th class="num" data-i18n="table.h2">Horas</th><th class="num" data-i18n="table.h3">Importe</th></tr>
           </thead>
           <tbody>
-            <tr><td data-i18n="table.r1">1. Diagnóstico y requisitos</td><td class="num">6–10 h</td><td class="num">210–350 €</td></tr>
-            <tr><td data-i18n="table.r2">2. Estudio de procesos</td><td class="num">10–20 h</td><td class="num">350–700 €</td></tr>
-            <tr><td data-i18n="table.r3">3. Reestructuración de procesos</td><td class="num">8–15 h</td><td class="num">280–525 €</td></tr>
-            <tr><td data-i18n="table.r4">4. Selección de herramientas</td><td class="num">6–12 h</td><td class="num">210–420 €</td></tr>
-            <tr><td data-i18n="table.r5">5. Plan por fases</td><td class="num">5–8 h</td><td class="num">175–280 €</td></tr>
-            <tr><td data-i18n="table.r6">6. Implementación y formación</td><td class="num">15–30 h</td><td class="num">525–1.050 €</td></tr>
+            <tr><td data-i18n="table.r1">1. Diagnóstico y requisitos</td><td class="num">6–10 h</td><td class="num" data-i18n="table.r1amount"><s class="old">240–400 €</s> <span class="free">Gratis</span></td></tr>
+            <tr><td data-i18n="table.r2">2. Estudio de procesos</td><td class="num">10–20 h</td><td class="num">400–800 €</td></tr>
+            <tr><td data-i18n="table.r3">3. Reestructuración de procesos</td><td class="num">8–15 h</td><td class="num">320–600 €</td></tr>
+            <tr><td data-i18n="table.r4">4. Selección de herramientas (incluida IA)</td><td class="num">6–12 h</td><td class="num">240–480 €</td></tr>
+            <tr><td data-i18n="table.r5">5. Plan por fases</td><td class="num">5–8 h</td><td class="num">200–320 €</td></tr>
+            <tr><td data-i18n="table.r6">6. Implementación y formación</td><td class="num">15–30 h</td><td class="num">600–1.200 €</td></tr>
           </tbody>
           <tfoot>
-            <tr><td data-i18n="table.total">Total proyecto completo</td><td class="num">50–95 h</td><td class="num">1.750–3.325 €</td></tr>
+            <tr><td data-i18n="table.total">Total proyecto completo</td><td class="num" data-i18n="table.totalHours">50–95 h<small>44–85 h facturables</small></td><td class="num"><s class="old block">2.000–3.800 €</s>1.760–3.400 €</td></tr>
           </tfoot>
         </table>
       </div>
@@ -393,9 +543,9 @@
       <div class="support-card">
         <h3 data-i18n="support.h3">Bolsa de horas de soporte</h3>
         <p data-i18n="support.p">Para incidencias y ajustes tras el lanzamiento. Se factura solo lo consumido, a la misma tarifa.</p>
-        <div class="bono-row"><span class="h" data-i18n="support.b1">5 h / mes</span><span class="p">175 €</span></div>
-        <div class="bono-row"><span class="h" data-i18n="support.b2">10 h / mes</span><span class="p">350 €</span></div>
-        <div class="bono-row"><span class="h" data-i18n="support.b3">20 h / mes</span><span class="p">700 €</span></div>
+        <div class="bono-row"><span class="h" data-i18n="support.b1">5 h / mes</span><span class="p">200 €</span></div>
+        <div class="bono-row"><span class="h" data-i18n="support.b2">10 h / mes</span><span class="p">400 €</span></div>
+        <div class="bono-row"><span class="h" data-i18n="support.b3">20 h / mes</span><span class="p">800 €</span></div>
         <div class="rate-note" data-i18n="support.note">Sin permanencia. El bono se ajusta cada mes según la necesidad real.</div>
       </div>
     </div>
@@ -405,7 +555,7 @@
 <section id="contacto">
   <div class="wrap">
     <div class="cta">
-      <h2 data-i18n="contacto.h2">¿Empezamos por el diagnóstico?</h2>
+      <h2 data-i18n="contacto.h2">¿Empezamos por el diagnóstico? Es gratis.</h2>
       <p data-i18n="contacto.p">Es el compromiso más pequeño y el que más claridad da: en unas horas sabrás exactamente qué digitalizar primero y por qué.</p>
       <a class="btn-primary" href="mailto:ramiro.santamaria.alvarez@gmail.com?subject=Digitalización%20de%20mi%20empresa" data-i18n="contacto.btn">Escríbenos</a>
     </div>
@@ -422,9 +572,10 @@
   var translations = {
     es: {
       "page.title": "Digitalización · Ramiro Santamaría",
-      "page.description": "Consultoría de digitalización de procesos: diagnóstico, rediseño de procesos, selección de herramientas e implementación acompañada. Tarifa única 35 €/hora.",
+      "page.description": "Consultoría de digitalización de procesos: diagnóstico, rediseño de procesos, selección de herramientas e implementación acompañada. Diagnóstico inicial gratis y tarifa única de 40 €/hora.",
       "nav.service": "Servicio",
       "nav.phases": "Fases",
+      "nav.agents": "Agentes IA",
       "nav.pricing": "Tarifas",
       "nav.contact": "Contacto",
       "nav.home": "Principal",
@@ -432,9 +583,9 @@
       "hero.eyebrow": "● Digitalización",
       "hero.h1": "Digitaliza tu empresa <span class=\"accent\">sin digitalizar la ineficiencia</span>",
       "hero.lead": "Antes de meter herramientas nuevas, entendemos cómo trabaja realmente tu empresa y rediseñamos el proceso. Digitalizar un proceso ineficiente solo hace que la ineficiencia vaya más rápido.",
-      "hero.cta1": "Pedir diagnóstico inicial",
+      "hero.cta1": "Pedir diagnóstico gratuito",
       "hero.cta2": "Ver cómo funciona",
-      "rate.amount": "35 € <span>/ hora</span>",
+      "rate.amount": "40 € <span>/ hora</span>",
       "rate.label": "Tarifa única, sin letra pequeña",
       "rate.li1": "Se factura solo el tiempo dedicado, fase a fase",
       "rate.li2": "Presupuesto orientativo desde el primer día",
@@ -454,6 +605,7 @@
       "fases.p": "Horas orientativas por fase — el alcance real y el presupuesto cerrado se confirman tras el diagnóstico inicial.",
       "phase1.h3": "Diagnóstico y toma de requisitos",
       "phase1.p": "Objetivos, restricciones y qué problema de fondo se quiere resolver con la digitalización.",
+      "phase1.amount": "<s class=\"old\">240–400 €</s> <span class=\"free\">Gratis</span><span class=\"tag-offer\">Oferta</span>",
       "phase2.h3": "Estudio de la estructura operativa y procesos",
       "phase2.p": "Entrevistas estructuradas por departamento: flujos reales, excepciones y puntos de fricción, contrastando cualquier manual existente con lo que pasa de verdad.",
       "phase3.h3": "Reestructuración de procesos deseada",
@@ -467,28 +619,67 @@
       "phase7.h3": "Soporte continuo: incidencias y bolsa de horas",
       "phase7.p": "Tras el lanzamiento, ajustes y dudas cubiertos con una bolsa de horas mensual, sin permanencia.",
       "phase7.hstrong": "A demanda",
-      "phase7.hnote": "desde 175 €/mes",
+      "phase7.hnote": "desde 200 €/mes",
       "noineff": "<strong>Idea central:</strong> las fases 2 y 3 existen para que la fase 4 tenga sentido. Elegir el software antes de rediseñar el proceso es la forma más cara de comprar herramientas que nadie usará bien.",
+      "agentes.kicker": "Agentes de IA",
+      "agentes.h2": "Agentes de IA para tu empresa",
+      "agentes.p": "Agentes de IA que ya funcionan en empresas reales: leen el correo, consultan tu ERP, preparan el trabajo y una persona aprueba. Reglas primero, IA solo donde aporta criterio, y todo dentro de tu Microsoft 365 o Google Cloud.",
+      "pr1.h3": "Una persona aprueba",
+      "pr1.p": "Nada sale hacia un cliente sin que alguien de tu equipo lo revise.",
+      "pr2.h3": "Reglas primero, IA para las dudas",
+      "pr2.p": "Lo predecible se resuelve con código; la IA solo entra en los casos ambiguos. Más barato y más fiable.",
+      "pr3.h3": "Tus datos en tu tenant",
+      "pr3.p": "La IA corre en tu propia suscripción (Azure OpenAI / Copilot), sin máquinas virtuales.",
+      "pr4.h3": "Coste fijo cercano a 0 €",
+      "pr4.p": "Servicios serverless y gratuitos: solo se paga el uso.",
+      "lbl.problem": "El problema",
+      "lbl.what": "Qué hace",
+      "lbl.result": "Resultado real",
+      "lbl.security": "Diseño de seguridad",
+      "ag1.h3": "Pedidos por email directos al ERP",
+      "ag1.problem": "Los pedidos llegan por correo en PDF o Excel y alguien los vuelve a teclear en el ERP, línea a línea.",
+      "ag1.what": "Identifica al cliente, traduce sus códigos a los del ERP, detecta pedidos duplicados y deja la oferta preparada en Business Central. Ventas solo decide lo dudoso, desde una web o desde Teams.",
+      "ag1.result": "<strong>97 % de las líneas con código automático</strong> en 31 pedidos reales, en menos de 1 minuto desde que llega el correo.",
+      "ag2.h3": "Gestión documental de calidad ISO 9001 / 14001",
+      "ag2.problem": "Procedimientos repartidos en carpetas, versiones que se pisan y auditorías en las que hay que buscar a mano qué documento está vigente.",
+      "ag2.what": "Repositorio con versiones y obsoletos automáticos, buscador, jerarquía de procedimientos, <strong>análisis de impacto de cada cambio</strong> en todos los documentos relacionados, auditoría por tipo de documento, tareas y un asistente que responde citando el documento y la versión vigente.",
+      "ag2.result": "En producción en un laboratorio de I+D, con <strong>0 € de coste fijo</strong> y ~0,002 € por pregunta al asistente.",
+      "ag3.h3": "Asistente de dirección: correo, agenda y tareas",
+      "ag3.problem": "Un directivo pierde cada día horas ordenando el correo, contestando lo rutinario y cuadrando la agenda.",
+      "ag3.what": "Clasifica el correo, prepara borradores, propone huecos en la agenda y crea tareas. El directivo solo revisa y decide.",
+      "ag3.security": "El agente <strong>no puede</strong> enviar, borrar ni archivar: no tiene esas herramientas. Está protegido frente a correos maliciosos que intentan dar órdenes a la IA.",
+      "ag3.chipMcp": "Conector MCP propio",
+      "ag4.h3": "Vigilancia de dominios y suplantación",
+      "ag4.problem": "Aparecen dominios y webs que imitan tu marca para engañar a clientes y proveedores, y nadie se entera hasta que hay una estafa.",
+      "ag4.what": "Monitor diario de dominios parecidos al de la marca, informes de evidencias y gestión de denuncias ante registradores cuando aparece una web fraudulenta.",
+      "ag5.h3": "Automatización de IT",
+      "ag5.badge": "En preparación",
+      "ag5.problem": "Las altas de equipos, los parches y los tickets dependen de listas manuales y de preguntar a la persona de IT.",
+      "ag5.what": "Alta guiada de equipos nuevos y agentes que publican en Teams el estado de seguridad, parches y tickets.",
+      "agentes.cta.p": "Cada agente empieza con el <strong>diagnóstico gratuito</strong>; después, piloto a 40 €/h con presupuesto cerrado por fases.",
+      "agentes.cta.btn": "Quiero un piloto",
       "precios.kicker": "Inversión",
       "precios.h2": "Tarifas claras, sin sorpresas",
-      "precios.p": "Todo se factura a 35 €/hora. La tabla muestra el rango orientativo para una PYME pequeña/mediana (5–30 empleados).",
+      "precios.p": "Todo se factura a 40 €/hora y el diagnóstico inicial es gratis. La tabla muestra el rango orientativo para una PYME pequeña/mediana (5–30 empleados).",
       "table.h1": "Fase",
       "table.h2": "Horas",
       "table.h3": "Importe",
       "table.r1": "1. Diagnóstico y requisitos",
+      "table.r1amount": "<s class=\"old\">240–400 €</s> <span class=\"free\">Gratis</span>",
       "table.r2": "2. Estudio de procesos",
       "table.r3": "3. Reestructuración de procesos",
-      "table.r4": "4. Selección de herramientas",
+      "table.r4": "4. Selección de herramientas (incluida IA)",
       "table.r5": "5. Plan por fases",
       "table.r6": "6. Implementación y formación",
       "table.total": "Total proyecto completo",
+      "table.totalHours": "50–95 h<small>44–85 h facturables</small>",
       "support.h3": "Bolsa de horas de soporte",
       "support.p": "Para incidencias y ajustes tras el lanzamiento. Se factura solo lo consumido, a la misma tarifa.",
       "support.b1": "5 h / mes",
       "support.b2": "10 h / mes",
       "support.b3": "20 h / mes",
       "support.note": "Sin permanencia. El bono se ajusta cada mes según la necesidad real.",
-      "contacto.h2": "¿Empezamos por el diagnóstico?",
+      "contacto.h2": "¿Empezamos por el diagnóstico? Es gratis.",
       "contacto.p": "Es el compromiso más pequeño y el que más claridad da: en unas horas sabrás exactamente qué digitalizar primero y por qué.",
       "contacto.btn": "Escríbenos",
       "footer.back": "← Volver al inicio",
@@ -496,9 +687,10 @@
     },
     en: {
       "page.title": "Digitalization · Ramiro Santamaría",
-      "page.description": "Business process digitalization consulting: diagnosis, process redesign, tool selection, and guided implementation. Flat rate €35/hour.",
+      "page.description": "Business process digitalization consulting: diagnosis, process redesign, tool selection, and guided implementation. Free initial diagnosis and a flat rate of €40/hour.",
       "nav.service": "Service",
       "nav.phases": "Phases",
+      "nav.agents": "AI agents",
       "nav.pricing": "Pricing",
       "nav.contact": "Contact",
       "nav.home": "Home",
@@ -506,9 +698,9 @@
       "hero.eyebrow": "● Digitalization",
       "hero.h1": "Digitalize your business <span class=\"accent\">without digitalizing inefficiency</span>",
       "hero.lead": "Before adding new tools, we understand how your business actually works and redesign the process. Digitalizing an inefficient process only makes the inefficiency move faster.",
-      "hero.cta1": "Request initial diagnosis",
+      "hero.cta1": "Request a free diagnosis",
       "hero.cta2": "See how it works",
-      "rate.amount": "€35 <span>/ hour</span>",
+      "rate.amount": "€40 <span>/ hour</span>",
       "rate.label": "Flat rate, no fine print",
       "rate.li1": "Billed only for time actually spent, phase by phase",
       "rate.li2": "Ballpark budget from day one",
@@ -528,6 +720,7 @@
       "fases.p": "Estimated hours per phase — actual scope and final budget are confirmed after the initial diagnosis.",
       "phase1.h3": "Diagnosis and requirements gathering",
       "phase1.p": "Goals, constraints, and the underlying problem the digitalization needs to solve.",
+      "phase1.amount": "<s class=\"old\">240–400 €</s> <span class=\"free\">Free</span><span class=\"tag-offer\">Offer</span>",
       "phase2.h3": "Study of operations and current processes",
       "phase2.p": "Structured interviews by department: real workflows, exceptions, and friction points, checking any existing manual against what actually happens.",
       "phase3.h3": "Target process redesign",
@@ -541,28 +734,67 @@
       "phase7.h3": "Ongoing support: issues and hour bundle",
       "phase7.p": "After launch, adjustments and questions covered with a monthly hour bundle, no minimum commitment.",
       "phase7.hstrong": "On demand",
-      "phase7.hnote": "from €175/month",
+      "phase7.hnote": "from €200/month",
       "noineff": "<strong>Core idea:</strong> phases 2 and 3 exist so phase 4 makes sense. Picking the software before redesigning the process is the most expensive way to buy tools nobody will use well.",
+      "agentes.kicker": "AI agents",
+      "agentes.h2": "AI agents for your business",
+      "agentes.p": "AI agents already working in real companies: they read email, query your ERP, prepare the work, and a person approves. Rules first, AI only where judgment adds value, and everything inside your own Microsoft 365 or Google Cloud.",
+      "pr1.h3": "A person approves",
+      "pr1.p": "Nothing goes out to a customer until someone on your team has reviewed it.",
+      "pr2.h3": "Rules first, AI for the doubts",
+      "pr2.p": "Predictable cases are solved with code; AI only steps in on the ambiguous ones. Cheaper and more reliable.",
+      "pr3.h3": "Your data in your tenant",
+      "pr3.p": "The AI runs in your own subscription (Azure OpenAI / Copilot), with no virtual machines.",
+      "pr4.h3": "Fixed cost close to €0",
+      "pr4.p": "Serverless and free-tier services: you only pay for usage.",
+      "lbl.problem": "The problem",
+      "lbl.what": "What it does",
+      "lbl.result": "Real result",
+      "lbl.security": "Security by design",
+      "ag1.h3": "Email orders straight into the ERP",
+      "ag1.problem": "Orders arrive by email as PDF or Excel and someone re-types them into the ERP, line by line.",
+      "ag1.what": "It identifies the customer, maps their item codes to the ERP's, flags duplicate orders, and leaves the quote ready in Business Central. Sales only decides the unclear cases, from a web app or from Teams.",
+      "ag1.result": "<strong>97% of lines coded automatically</strong> across 31 real orders, in under 1 minute from the moment the email arrives.",
+      "ag2.h3": "ISO 9001 / 14001 quality document management",
+      "ag2.problem": "Procedures scattered across folders, versions overwriting each other, and audits where someone has to hunt for the current document by hand.",
+      "ag2.what": "A repository with automatic versioning and obsolescence, search, procedure hierarchy, <strong>impact analysis of every change</strong> across all related documents, audits by document type, tasks, and an assistant that answers citing the document and its current version.",
+      "ag2.result": "In production at an R&amp;D laboratory, with <strong>€0 fixed cost</strong> and ~€0.002 per question to the assistant.",
+      "ag3.h3": "Executive assistant: email, calendar, and tasks",
+      "ag3.problem": "An executive loses hours every day sorting email, answering routine messages, and juggling the calendar.",
+      "ag3.what": "It sorts email, drafts replies, suggests calendar slots, and creates tasks. The executive only reviews and decides.",
+      "ag3.security": "The agent <strong>cannot</strong> send, delete, or archive: it simply doesn't have those tools. It's protected against malicious emails that try to give the AI orders.",
+      "ag3.chipMcp": "Custom MCP connector",
+      "ag4.h3": "Domain monitoring and impersonation response",
+      "ag4.problem": "Domains and websites imitating your brand appear to scam customers and suppliers, and nobody notices until there's a fraud.",
+      "ag4.what": "Daily monitoring of lookalike domains, evidence reports, and takedown requests to registrars when a fraudulent site shows up.",
+      "ag5.h3": "IT automation",
+      "ag5.badge": "Coming soon",
+      "ag5.problem": "Device onboarding, patches, and tickets depend on manual checklists and on asking the IT person.",
+      "ag5.what": "Guided onboarding of new devices, and agents that post security status, patches, and tickets to Teams.",
+      "agentes.cta.p": "Every agent starts with the <strong>free diagnosis</strong>; then a pilot at €40/h with a fixed, phase-by-phase budget.",
+      "agentes.cta.btn": "I want a pilot",
       "precios.kicker": "Investment",
       "precios.h2": "Clear pricing, no surprises",
-      "precios.p": "Everything is billed at €35/hour. The table shows the ballpark range for a small/medium business (5–30 employees).",
+      "precios.p": "Everything is billed at €40/hour, and the initial diagnosis is free. The table shows the ballpark range for a small/medium business (5–30 employees).",
       "table.h1": "Phase",
       "table.h2": "Hours",
       "table.h3": "Amount",
       "table.r1": "1. Diagnosis and requirements",
+      "table.r1amount": "<s class=\"old\">240–400 €</s> <span class=\"free\">Free</span>",
       "table.r2": "2. Process study",
       "table.r3": "3. Process redesign",
-      "table.r4": "4. Tool selection",
+      "table.r4": "4. Tool selection (including AI)",
       "table.r5": "5. Phased plan",
       "table.r6": "6. Implementation and training",
       "table.total": "Full project total",
+      "table.totalHours": "50–95 h<small>44–85 billable hours</small>",
       "support.h3": "Support hour bundle",
       "support.p": "For issues and adjustments after launch. Billed only for what's actually used, at the same rate.",
       "support.b1": "5 h / month",
       "support.b2": "10 h / month",
       "support.b3": "20 h / month",
       "support.note": "No minimum commitment. The bundle is adjusted every month based on actual need.",
-      "contacto.h2": "Shall we start with the diagnosis?",
+      "contacto.h2": "Shall we start with the diagnosis? It's free.",
       "contacto.p": "It's the smallest commitment and the one that brings the most clarity: in a few hours you'll know exactly what to digitalize first, and why.",
       "contacto.btn": "Get in touch",
       "footer.back": "← Back to home",

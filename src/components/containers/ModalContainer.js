@@ -4,7 +4,7 @@ import { useCopy } from "../../utils/useCopy";
 import { useUI } from "../../context/UIContext";
 
 function ModalContainer() {
-  const { talksList, worksList } = useCopy();
+  const { talksList, worksList, aiProjectsList } = useCopy();
   const { screenSize, workModal, serviceModal, lang, toggleWorkModal } = useUI();
 
   const modalShowing = workModal !== "" || serviceModal !== "";
@@ -13,7 +13,7 @@ function ModalContainer() {
   const mobile = screenSize === "mobile";
 
   if (workModal !== "") {
-    const completeList = [...talksList, ...worksList];
+    const completeList = [...aiProjectsList, ...talksList, ...worksList];
     const workToShow = completeList.find(w => w.nombre === workModal);
     return (
       <div>

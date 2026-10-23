@@ -3,10 +3,12 @@ import { useCopy } from "../../utils/useCopy";
 import { useUI } from "../../context/UIContext";
 import "../../css"; // eslint-disable-line no-unused-vars
 import Work from "../presentational/Work";
+import { ui } from "../../i18n/ui";
 
 function JobsContainer() {
-  const { copyLoaded, worksList, talksList } = useCopy();
+  const { copyLoaded, worksList, talksList, aiProjectsList } = useCopy();
   const { screenSize, workSelected, lang, changeWorkSelected, toggleWorkModal } = useUI();
+  const t = ui[lang] || ui.en;
 
   function handleWorkSelected(selection) {
     if (workSelected !== selection) {
@@ -19,7 +21,7 @@ function JobsContainer() {
     ) {
       toggleWorkModal(selection);
     } else {
-      const completeList = [...talksList, ...worksList];
+      const completeList = [...aiProjectsList, ...talksList, ...worksList];
       const workCopy = completeList.find(work => work.nombre === selection);
       window.open(workCopy.url);
     }
@@ -45,6 +47,11 @@ function JobsContainer() {
 
   return (
     <div>
+      <h3 className="works__subheading">{t.sectionAiProjects}</h3>
+      <div className="works__list__container works__list__container--ai">
+        {produceWorkListJsx(aiProjectsList, "app")}
+      </div>
+      <h3 className="works__subheading">{t.sectionOtherWork}</h3>
       <div className="works__list__container">
         {produceWorkListJsx(worksList, "app")}
         {produceWorkListJsx(talksList, "talk")}

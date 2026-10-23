@@ -191,6 +191,77 @@ export const worksList = [
   },
 ];
 
+// ─── AI PROJECTS ──────────────────────────────────────────────────────────────
+// Anonymized on purpose: no client names. stateLevel drives the badge color (live | pilot | design).
+
+export const aiProjectsList = [
+  {
+    nombre: "AiIsoDocs",
+    nombreToShow: "ISO document management",
+    nombreToShow_es: "Gestión documental ISO",
+    bio: "R&D laboratory. Custom Azure app using the tenant's own AI: versioning, change impact analysis, audits, and an assistant. ES/EN.",
+    bio_es: "Laboratorio de I+D. App propia en Azure con la IA del tenant: versiones, impacto de cambios, auditoría y asistente. ES/EN.",
+    state: "in production",
+    state_es: "en producción",
+    stateLevel: "live",
+    priority: 0,
+    url: "/digitalizacion.html#agentes",
+    urlPic: "/images/ai/docs-iso.svg",
+  },
+  {
+    nombre: "AiOrdersErp",
+    nombreToShow: "Email orders to ERP",
+    nombreToShow_es: "Pedidos por email al ERP",
+    bio: "Industrial company. Business Central Sales Order Agent + custom middleware; 97% of lines coded automatically; moving to an Azure app.",
+    bio_es: "Empresa industrial. Sales Order Agent de BC + middleware propio; 97 % de líneas automáticas; pasando a app en Azure.",
+    state: "pilot validated",
+    state_es: "piloto validado",
+    stateLevel: "pilot",
+    priority: 1,
+    url: "/digitalizacion.html#agentes",
+    urlPic: "/images/ai/orders-erp.svg",
+  },
+  {
+    nombre: "AiExecAssistant",
+    nombreToShow: "Executive assistant",
+    nombreToShow_es: "Asistente de dirección",
+    bio: "Email and calendar for an executive. 3 services on Cloud Run, rules engine + Claude for the doubtful cases, MCP connector with safe actions only.",
+    bio_es: "Correo y agenda de un directivo. 3 servicios en Cloud Run, motor de reglas + Claude para las dudas, conector MCP con solo acciones seguras.",
+    state: "pilot deployed",
+    state_es: "piloto desplegado",
+    stateLevel: "pilot",
+    priority: 2,
+    url: "/digitalizacion.html#agentes",
+    urlPic: "/images/ai/exec-assistant.svg",
+  },
+  {
+    nombre: "AiDomainWatch",
+    nombreToShow: "Domain monitoring",
+    nombreToShow_es: "Vigilancia de dominios",
+    bio: "Impersonation response: daily detection script + evidence dossier and takedown requests.",
+    bio_es: "Respuesta a suplantación: script diario de detección + dossier y denuncias.",
+    state: "in use",
+    state_es: "en uso",
+    stateLevel: "live",
+    priority: 3,
+    url: "/digitalizacion.html#agentes",
+    urlPic: "/images/ai/domain-watch.svg",
+  },
+  {
+    nombre: "AiItAgents",
+    nombreToShow: "IT agents in Teams",
+    nombreToShow_es: "Agentes IT en Teams",
+    bio: "Roadmap of 6 agents with Copilot Studio and Power Automate.",
+    bio_es: "Roadmap de 6 agentes con Copilot Studio y Power Automate.",
+    state: "in design",
+    state_es: "en diseño",
+    stateLevel: "design",
+    priority: 4,
+    url: "/digitalizacion.html#agentes",
+    urlPic: "/images/ai/it-agents.svg",
+  },
+];
+
 // ─── TALKS ────────────────────────────────────────────────────────────────────
 
 export const talksList = [
