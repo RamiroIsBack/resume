@@ -19,9 +19,15 @@ function Work({ type, copy, selected, changeWorkSelected, mobile, lang }) {
         <h2 style={{ marginBottom: 0, marginTop: 8 }}>{nombreToShow}</h2>
       </div>
       <div className="work__title__container">
-        <h3 style={{ opacity: "0.5", fontWeight: 100, margin: 0, marginBottom: 8 }}>
-          {typeAndState}
-        </h3>
+        {copy.stateLevel ? (
+          <h3 style={{ margin: 0, marginBottom: 8 }}>
+            <span className={`work__state work__state--${copy.stateLevel}`}>{typeAndState}</span>
+          </h3>
+        ) : (
+          <h3 style={{ opacity: "0.5", fontWeight: 100, margin: 0, marginBottom: 8 }}>
+            {typeAndState}
+          </h3>
+        )}
       </div>
       <div className="work__pic__container">
         <img className="work__pic" alt={copy.nombre} src={copy.urlPic} />
