@@ -11,7 +11,7 @@ function WorkModal({ show, mobile, workToShow, onClose, lang }) {
   function handleVideo() {
     if (!workToShow.urlVideo) return null;
     if (mobile) return workToShow.urlVideo;
-    const opts = { height: "390", width: "640", playerVars: { autoplay: 0 } };
+    const opts = { height: "390", width: "640", host: "https://www.youtube-nocookie.com", playerVars: { autoplay: 0 } };
     const idForVideo = workToShow.urlVideo.substring(
       workToShow.urlVideo.indexOf("=") + 1
     );

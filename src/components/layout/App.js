@@ -3,6 +3,9 @@ import { useUI } from "../../context/UIContext";
 import { ui } from "../../i18n/ui";
 import "../../css"; // eslint-disable-line no-unused-vars
 import IntroContainer from "../containers/IntroContainer";
+import CollaboratorsContainer from "../containers/CollaboratorsContainer";
+import { useCopy } from "../../utils/useCopy";
+import { cauceUrl } from "../../utils/cauceUrl";
 import {
   AsyncModalContainer,
   AsyncFooterContainer,
@@ -19,62 +22,56 @@ function LangToggle({ lang, setLang }) {
   const isEn = lang === "en";
   return (
     <div
+      role="button"
+      tabIndex={0}
+      aria-label={isEn ? "Cambiar a español" : "Switch to English"}
       onClick={() => setLang(isEn ? "es" : "en")}
-      style={{ position: "fixed", top: 15, right: 80, zIndex: 1000, cursor: "pointer", userSelect: "none" }}
+      onKeyDown={e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setLang(isEn ? "es" : "en"); } }}
+      style={{ cursor: "pointer", userSelect: "none" }}
     >
-      <div style={{ position: "relative", boxSizing: "border-box", width: 108, height: 31, background: "rgba(0,0,0,0.65)", border: "1px solid rgba(255,255,255,0.35)", borderRadius: 20, padding: 3, display: "flex", alignItems: "center" }}>
+      <div style={{ position: "relative", boxSizing: "border-box", width: 88, height: 28, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.35)", borderRadius: 20, padding: 3, display: "flex", alignItems: "center" }}>
         <div style={{
           position: "absolute",
           top: 3,
           left: isEn ? 3 : "calc(50% + 1px)",
           width: "calc(50% - 4px)",
           height: "calc(100% - 6px)",
-          background: "rgba(255,255,255,0.22)",
+          background: "rgba(255,255,255,0.25)",
           borderRadius: 16,
           transition: "left 0.2s ease",
         }} />
-        <span style={{ position: "relative", flex: 1, textAlign: "center", fontSize: 13, fontWeight: "bold", color: "white", zIndex: 1 }}>EN</span>
-        <span style={{ position: "relative", flex: 1, textAlign: "center", fontSize: 13, fontWeight: "bold", color: "white", zIndex: 1 }}>ES</span>
+        <span style={{ position: "relative", flex: 1, textAlign: "center", fontSize: 12, fontWeight: "bold", color: "white", zIndex: 1 }}>EN</span>
+        <span style={{ position: "relative", flex: 1, textAlign: "center", fontSize: 12, fontWeight: "bold", color: "white", zIndex: 1 }}>ES</span>
       </div>
     </div>
   );
 }
 
-function DigitalizacionButton({ lang }) {
-  const label = lang === "en" ? "Digitalization" : "Digitalización";
+// Thin Cauce IA strip on top of /equipo: logo + link back to the Cauce IA landing, and the language toggle.
+function BrandStrip({ lang, setLang, t }) {
   return (
-    <a
-      href="/digitalizacion.html"
-      style={{
-        position: "fixed",
-        top: 55,
-        right: 80,
-        zIndex: 1000,
-        boxSizing: "border-box",
-        width: 108,
-        height: 31,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "rgba(2, 145, 171, 0.5)",
-        border: "1px solid rgba(255, 255, 255, 0.35)",
-        color: "white",
-        fontSize: 12,
-        fontWeight: "bold",
-        borderRadius: 20,
-        textDecoration: "none",
-        whiteSpace: "nowrap",
-        boxShadow: "0 4px 14px -4px rgba(2, 145, 171, 0.7)",
-      }}
-    >
-      {label}
-    </a>
+    <div className="brand__strip">
+      <a className="brand__strip__link" href={cauceUrl("/")} aria-label="Cauce IA">
+        <svg className="brand__strip__symbol" viewBox="0 0 88 64" aria-hidden="true">
+          <g fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="6">
+            <path d="M6 10 C30 10 30 32 54 32" stroke="#2DD4BF" />
+            <path d="M6 32 L54 32" stroke="#2DD4BF" />
+            <path d="M6 54 C30 54 30 32 54 32" stroke="#2DD4BF" />
+            <path d="M54 32 L70 32" stroke="#F59E0B" />
+          </g>
+          <circle cx="76" cy="32" r="7" fill="#F59E0B" />
+        </svg>
+        <span className="brand__strip__text">{t.backToCauce}</span>
+      </a>
+      <LangToggle lang={lang} setLang={setLang} />
+    </div>
   );
 }
 
 function App() {
   const { screenSize, sectionSelected, imgLoaded, lang, chageScreenWidth, changeScrollIndicator, setLang } = useUI();
   const t = ui[lang];
+  const { collaboratorsList } = useCopy();
 
   const summarySection  = useRef(null);
   const workSection     = useRef(null);
@@ -117,8 +114,7 @@ function App() {
 
   return (
     <div>
-      <LangToggle lang={lang} setLang={setLang} />
-      <DigitalizacionButton lang={lang} />
+      <BrandStrip lang={lang} setLang={setLang} t={t} />
 
       <AsyncNombreContainer />
       <AsyncModalContainer />
@@ -137,6 +133,13 @@ function App() {
           {imgLoaded && <div className="section__headline">{t.sectionProfile}</div>}
           <AsyncSummaryContainer />
         </div>
+
+        {collaboratorsList.length > 0 && (
+          <div className="CollaboratorsContainer" id="collaboratorsContainer">
+            {imgLoaded && <div className="section__headline">{t.sectionCollaborators}</div>}
+            <CollaboratorsContainer collaborators={collaboratorsList} lang={lang} />
+          </div>
+        )}
 
         <div className="JobsLayout" id="workContainer" ref={workSection}>
           <Waypoint
@@ -194,6 +197,11 @@ function App() {
         <div className="FooterContainer" id="footerContainer" ref={footerSection}>
           <AsyncFooterContainer />
         </div>
+      </div>
+      <div className="legal__links">
+        <a href="/aviso-legal">{t.legalNotice}</a>
+        <a href="/privacidad">{t.privacy}</a>
+        <span>© 2026 Cauce IA</span>
       </div>
     </div>
   );

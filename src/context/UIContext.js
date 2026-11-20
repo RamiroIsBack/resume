@@ -1,5 +1,14 @@
 import React, { createContext, useContext, useReducer } from "react";
 
+// Shared with the static Cauce IA pages (public/js/cauce-lang.js).
+const LANG_KEY = "cauce-lang";
+function storedLang() {
+  try { return localStorage.getItem(LANG_KEY) === "en" ? "en" : "es"; } catch (e) { return "es"; }
+}
+function storeLang(lang) {
+  try { localStorage.setItem(LANG_KEY, lang); } catch (e) { /* no storage: this visit only */ }
+}
+
 const initialState = {
   sectionSelected: "intro",
   workSelected: "MicoTextil",
@@ -9,7 +18,7 @@ const initialState = {
   screenSize: "laptop",
   colapsed: true,
   scrollIndicator: "",
-  lang: "es",
+  lang: storedLang(),
 };
 
 function reducer(state, action) {
@@ -36,6 +45,7 @@ function reducer(state, action) {
       }
       return { ...state, workModal: action.data, serviceModal: "" };
     case "SET_LANG":
+      storeLang(action.data);
       return { ...state, lang: action.data };
     default:
       return state;

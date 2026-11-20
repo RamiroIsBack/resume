@@ -3,292 +3,221 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title id="page-title">Digitalización · Ramiro Santamaría</title>
-<meta id="page-description" name="description" content="Consultoría de digitalización de procesos: diagnóstico, rediseño de procesos, selección de herramientas e implementación acompañada. Diagnóstico inicial gratis y tarifa única de 40 €/hora.">
-<link rel="shortcut icon" href="/favicon.ico">
+<title id="page-title">Cauce IA · Procesos que fluyen. IA con criterio.</title>
+<meta id="page-description" name="description" content="Cauce IA: consultoría de procesos y agentes de IA para empresas. Primero el proceso, luego la herramienta. Diagnóstico inicial gratis y tarifa única de 40 €/hora.">
+<link rel="canonical" href="https://cauce-ia.es/">
+<link rel="icon" type="image/svg+xml" href="/brand/cauce-ia-simbolo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<meta name="theme-color" content="#134E4A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cauce IA">
+<meta property="og:title" content="Cauce IA · Procesos que fluyen. IA con criterio.">
+<meta property="og:description" content="Consultoría de procesos y agentes de IA para empresas. Diagnóstico inicial gratis.">
+<meta property="og:url" content="https://cauce-ia.es/">
+<meta property="og:image" content="https://cauce-ia.es/brand/og-cauce-ia.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Cauce IA",
+  "slogan": "Procesos que fluyen. IA con criterio.",
+  "description": "Consultoría de procesos y agentes de IA para empresas: diagnóstico, rediseño de procesos, selección de herramientas e implantación acompañada.",
+  "url": "https://cauce-ia.es/",
+  "logo": "https://cauce-ia.es/brand/cauce-ia-simbolo.svg",
+  "image": "https://cauce-ia.es/brand/og-cauce-ia.png",
+  "email": "ramiro.santamaria.alvarez@gmail.com",
+  "priceRange": "40 €/h",
+  "areaServed": "ES",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Alcalá de Henares",
+    "addressRegion": "Madrid",
+    "postalCode": "28803",
+    "addressCountry": "ES"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Ramiro Santamaría Álvarez",
+    "url": "https://cauce-ia.es/equipo"
+  }
+}
+</script>
+<link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/space-grotesk-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/cauce.css">
 <style>
-  :root{
-    --ink:#1a1a1a;
-    --ink-soft:#5c6770;
-    --paper:#f7f9fa;
-    --white:#ffffff;
-    --teal:#0291ab;
-    --teal-dark:#026e82;
-    --teal-soft:#e3f4f8;
-    --amber:#51c0f2;
-    --line:#e1e8eb;
-    --shadow:0 10px 30px -12px rgba(2,145,171,0.14);
-    --radius:14px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-    color:var(--ink);
-    background:var(--paper);
-    line-height:1.55;
-  }
-  a{color:inherit;}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
-  img,svg{display:block;}
-
-  /* NAV */
-  header.nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(246,248,251,0.92);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{
-    max-width:1080px;margin:0 auto;padding:12px 24px;
-    display:flex;align-items:center;justify-content:space-between;
-    gap:14px;flex-wrap:wrap;row-gap:8px;
-  }
-  .nav-left{display:flex;align-items:center;gap:16px;}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:0.2px;text-decoration:none;color:var(--ink);}
-  .brand .mark{
-    width:32px;height:32px;border-radius:9px;
-    background:linear-gradient(135deg,#111,var(--teal));
-    display:flex;align-items:center;justify-content:center;
-    color:#fff;font-size:14px;font-weight:800;
-  }
-  nav.links{display:flex;gap:26px;font-size:14.5px;font-weight:500;color:var(--ink-soft);}
-  nav.links a{text-decoration:none;transition:color .15s;}
-  nav.links a:hover{color:var(--teal-dark);}
-  .nav-right{display:flex;align-items:center;gap:10px;}
-  .nav-cta{
-    background:var(--teal);color:#fff;padding:10px 18px;border-radius:999px;
-    font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;
-  }
-  .nav-cta:hover{background:var(--teal-dark);}
-
-  /* PILLS (lang toggle + home link) */
-  .pill-lang{
-    position:relative;box-sizing:border-box;width:88px;height:34px;
-    background:var(--white);border:1px solid var(--line);border-radius:20px;
-    padding:3px;display:flex;align-items:center;cursor:pointer;user-select:none;
-  }
-  .pill-lang .slider{
-    position:absolute;top:3px;left:calc(50% + 1px);width:calc(50% - 4px);height:calc(100% - 6px);
-    background:var(--teal);border-radius:16px;transition:left .2s ease;
-  }
-  .pill-lang.is-en .slider{left:3px;}
-  .pill-lang span{position:relative;flex:1;text-align:center;font-size:12.5px;font-weight:700;color:var(--ink-soft);z-index:1;transition:color .2s ease;}
-  .pill-lang.is-es span.lbl-es,.pill-lang.is-en span.lbl-en{color:#fff;}
-  .pill-home{
-    box-sizing:border-box;height:34px;padding:0 18px;
-    display:flex;align-items:center;justify-content:center;
-    background:rgba(2,145,171,0.5);border:1px solid rgba(2,145,171,0.6);
-    color:var(--teal-dark);font-size:13px;font-weight:700;border-radius:20px;
-    text-decoration:none;white-space:nowrap;transition:background .2s ease;
-  }
-  .pill-home:hover{background:rgba(2,145,171,0.7);color:#fff;}
-
   /* HERO */
-  .hero{
-    padding:88px 0 76px;
-    background:
-      radial-gradient(600px 300px at 85% -10%, rgba(13,148,136,0.14), transparent 60%),
-      linear-gradient(180deg,#0b1524 0%, #101f34 100%);
-    color:#fff;
-  }
+  .hero{background:var(--brand-deep);color:var(--on-brand);padding:84px 0 76px;}
   .hero .wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;}
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
-    background:rgba(2,145,171,0.22);border:1px solid rgba(81,192,242,0.45);
-    color:#8fdcf7;font-size:13px;font-weight:600;letter-spacing:0.3px;
-    padding:6px 14px;border-radius:999px;margin-bottom:22px;
+    border:1px solid rgba(255,255,255,0.3);border-radius:999px;
+    color:var(--on-brand-muted);font-size:13px;font-weight:500;letter-spacing:0.2px;
+    padding:5px 14px;margin-bottom:22px;
   }
-  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;margin:0 0 18px;letter-spacing:-0.5px;font-weight:700;}
-  h1 .accent{color:var(--amber);}
-  .hero p.lead{font-size:17px;color:#c3ceda;max-width:520px;margin:0 0 30px;}
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
-  .btn-primary{
-    background:var(--teal);color:#fff;padding:14px 26px;border-radius:10px;
-    font-weight:700;font-size:15px;text-decoration:none;display:inline-block;
-    box-shadow:0 8px 24px -8px rgba(2,145,171,0.55);
-    border:none;cursor:pointer;
-  }
-  .btn-primary:hover{background:var(--teal-dark);}
-  .btn-ghost{
-    border:1px solid rgba(255,255,255,0.28);color:#fff;padding:14px 26px;border-radius:10px;
-    font-weight:600;font-size:15px;text-decoration:none;display:inline-block;
-  }
-  .btn-ghost:hover{border-color:var(--amber);color:var(--amber);}
-  .hero-rate{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.14);
-    border-radius:var(--radius);
-    padding:26px;
-  }
-  .hero-rate .num{font-size:42px;font-weight:800;color:#fff;letter-spacing:-1px;}
-  .hero-rate .num span{font-size:17px;font-weight:600;color:#9fb0c3;}
-  .hero-rate .label{font-size:13px;color:#9fb0c3;margin-top:2px;}
-  .hero-rate ul{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:11px;}
-  .hero-rate li{display:flex;gap:10px;font-size:14px;color:#dbe4ee;align-items:flex-start;}
-  .hero-rate li .tick{color:var(--amber);font-weight:800;margin-top:1px;}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-light);}
+  h1{font-size:clamp(34px,5vw,56px);line-height:1.08;margin:0 0 20px;letter-spacing:-1px;font-weight:600;}
+  h1 .accent{color:var(--brand-light);}
+  .hero p.lead{font-size:17px;color:var(--on-brand-muted);max-width:520px;margin:0 0 30px;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .hero-rate{border:1px solid rgba(255,255,255,0.22);border-radius:var(--r-lg);padding:26px;}
+  .hero-rate .num{font-family:var(--font-display);font-size:44px;font-weight:600;letter-spacing:-1px;line-height:1.1;}
+  .hero-rate .num span{font-family:var(--font-sans);font-size:17px;font-weight:500;color:var(--on-brand-muted);}
+  .hero-rate .label{font-size:13.5px;color:var(--on-brand-muted);margin-top:4px;}
+  .hero-rate ul{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .hero-rate li{display:flex;gap:10px;font-size:14.5px;align-items:flex-start;}
+  .hero-rate li .tick{color:var(--brand-light);font-weight:700;}
 
-  /* SECTION HEADS */
+  /* SECCIONES */
   section{padding:76px 0;}
-  .section-head{max-width:640px;margin:0 auto 44px;text-align:center;}
+  .section-head{max-width:660px;margin:0 auto 44px;text-align:center;}
   .section-head .kicker{
-    text-transform:uppercase;font-size:12.5px;font-weight:700;letter-spacing:1.2px;
-    color:var(--ink-soft);margin-bottom:10px;
+    text-transform:uppercase;font-size:12.5px;font-weight:600;letter-spacing:1.2px;
+    color:var(--brand);margin-bottom:10px;
   }
-  .section-head h2{font-size:clamp(28px,3.6vw,38px);margin:0 0 16px;letter-spacing:-0.2px;color:var(--teal);font-weight:200;}
-  .section-head h2::after{content:'';display:block;width:44px;height:3px;background:var(--amber);margin:16px auto 0;border-radius:2px;}
-  .section-head p{color:var(--ink-soft);font-size:15.5px;margin:0;}
+  .section-head h2{font-size:clamp(28px,3.6vw,40px);line-height:1.15;margin:0 0 14px;letter-spacing:-0.5px;font-weight:600;}
+  .section-head p{color:var(--ink-muted);font-size:16px;margin:0;}
 
-  /* VALUE CARDS */
-  .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-  .value-card{
-    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
-    padding:28px 24px;box-shadow:var(--shadow);
-  }
+  /* PRINCIPIOS DEL MÉTODO */
+  .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .value-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 24px;}
   .value-card .icon{
-    width:44px;height:44px;border-radius:11px;background:var(--teal-soft);
+    width:40px;height:40px;border-radius:var(--r-md);background:var(--brand-tint);
     display:flex;align-items:center;justify-content:center;margin-bottom:16px;
-    color:var(--teal-dark);font-size:20px;font-weight:800;
+    color:var(--brand-deep);font-family:var(--font-display);font-size:18px;font-weight:600;
   }
-  .value-card h3{font-size:16.5px;margin:0 0 8px;}
-  .value-card p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .value-card h3{font-size:18px;font-weight:600;margin:0 0 8px;}
+  .value-card p{font-size:15px;color:var(--ink-muted);margin:0;}
 
-  /* PHASES */
-  .phases-section{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .phase-list{display:flex;flex-direction:column;gap:0;}
+  /* FASES */
+  .phases-section{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
   .phase{
     display:grid;grid-template-columns:64px 1fr auto;gap:22px;
-    padding:26px 0;border-bottom:1px solid var(--line);align-items:start;
+    padding:24px 0;border-bottom:1px solid var(--border);align-items:start;
   }
   .phase:last-child{border-bottom:none;}
   .phase .n{
-    width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;
+    width:44px;height:44px;border-radius:50%;background:var(--brand);color:var(--on-brand);
+    display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:600;font-size:16px;
   }
-  .phase.support .n{background:var(--amber);color:var(--teal-dark);}
-  .phase h3{font-size:16.5px;margin:0 0 6px;}
-  .phase p{font-size:14.5px;color:var(--ink-soft);margin:0;max-width:560px;}
-  .phase .hours{
-    text-align:right;font-size:13.5px;color:var(--ink-soft);white-space:nowrap;padding-top:4px;
-  }
-  .phase .hours strong{display:block;color:var(--ink);font-size:15px;font-weight:700;}
+  .phase.support .n{background:var(--brand-tint);color:var(--brand-deep);}
+  .phase h3{font-size:18px;font-weight:600;margin:0 0 6px;}
+  .phase p{font-size:15px;color:var(--ink-muted);margin:0;max-width:560px;}
+  .phase .hours{text-align:right;font-size:14px;color:var(--ink-muted);white-space:nowrap;padding-top:4px;}
+  .phase .hours strong{display:block;color:var(--ink);font-size:15px;font-weight:600;}
   .no-inefficiency{
-    margin-top:36px;background:var(--teal-soft);border:1px solid #bfe3ef;border-radius:var(--radius);
-    padding:20px 24px;font-size:14.5px;color:var(--ink);
+    margin-top:36px;background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r-lg);
+    padding:20px 24px;font-size:15px;
   }
-  .no-inefficiency strong{color:var(--teal-dark);}
+  .no-inefficiency strong{color:var(--brand-deep);}
 
-  /* OFFER (precio tachado + gratis) */
-  s.old{color:#8a959e;font-weight:400;}
-  .free{color:#0a7f55;font-weight:800;}
+  /* OFERTA: precio tachado + gratis */
+  s.old{color:var(--ink-muted);font-weight:400;}
+  .free{color:var(--accent);font-weight:700;}
   .tag-offer{
-    display:inline-block;margin-left:6px;padding:2px 8px;border-radius:6px;
-    background:#0a7f55;color:#fff;font-size:10.5px;font-weight:800;
+    display:inline-block;margin-left:6px;padding:2px 8px;border-radius:var(--r-sm);
+    background:var(--accent);color:var(--on-brand);font-size:11px;font-weight:700;
     text-transform:uppercase;letter-spacing:0.6px;vertical-align:middle;
   }
-  td small,td s.old.block{display:block;font-weight:400;color:var(--ink-soft);font-size:12px;white-space:normal;}
 
-  /* AI AGENTS */
-  .agents-section{
-    background:
-      radial-gradient(600px 300px at 15% -10%, rgba(13,148,136,0.14), transparent 60%),
-      linear-gradient(180deg,#0b1524 0%, #101f34 100%);
-    color:#fff;
-  }
+  /* AGENTES DE IA */
+  .agents-section{background:var(--brand-deep);color:var(--on-brand);}
   .agents-section .section-head{max-width:720px;}
-  .agents-section .section-head .kicker{color:#8fdcf7;}
-  .agents-section .section-head h2{color:#fff;}
-  .agents-section .section-head p{color:#c3ceda;}
+  .agents-section .section-head .kicker{color:var(--brand-light);}
+  .agents-section .section-head p{color:var(--on-brand-muted);}
   .principles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px;}
-  .principle{
-    background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);
-    border-radius:var(--radius);padding:20px;
-  }
+  .principle{border:1px solid rgba(255,255,255,0.22);border-radius:var(--r-lg);padding:20px;}
   .principle .icon{
-    width:38px;height:38px;border-radius:10px;background:rgba(2,145,171,0.35);
-    color:#8fdcf7;display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+    width:38px;height:38px;border-radius:var(--r-md);background:rgba(45,212,191,0.16);
+    color:var(--brand-light);display:flex;align-items:center;justify-content:center;margin-bottom:12px;
   }
-  .principle h3{font-size:15px;margin:0 0 6px;}
-  .principle p{font-size:13.5px;color:#c3ceda;margin:0;}
-  .agent-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .principle h3{font-size:16px;font-weight:600;margin:0 0 6px;}
+  .principle p{font-size:14px;color:var(--on-brand-muted);margin:0;}
+  .agent-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
   .agent-card{
-    background:var(--white);color:var(--ink);border-radius:var(--radius);
-    padding:26px 24px;box-shadow:0 10px 30px -12px rgba(0,0,0,0.4);
-    display:flex;flex-direction:column;gap:14px;min-width:0;
+    background:var(--white);color:var(--ink);border-radius:var(--r-lg);
+    padding:26px 24px;display:flex;flex-direction:column;gap:14px;min-width:0;
   }
   .agent-card.wide{grid-column:1 / -1;}
-  .agent-card h3{font-size:17px;margin:0;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .agent-card h3{font-size:19px;font-weight:600;margin:0;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
   .agent-card .lbl{
-    display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:0.8px;
-    font-weight:700;color:var(--teal-dark);margin-bottom:3px;
+    display:block;font-size:12px;text-transform:uppercase;letter-spacing:0.8px;
+    font-weight:600;color:var(--brand);margin-bottom:3px;
   }
-  .agent-card p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .agent-card p{font-size:15px;color:var(--ink-muted);margin:0;}
   .agent-card .result{
-    background:var(--teal-soft);border:1px solid #bfe3ef;border-radius:10px;
-    padding:12px 14px;font-size:14px;color:var(--ink);
+    background:var(--brand-tint);border-radius:var(--r-md);padding:12px 14px;font-size:14.5px;color:var(--ink);
   }
-  .agent-card .result strong{color:var(--teal-dark);}
+  .agent-card .result .lbl{color:var(--brand-deep);}
+  .agent-card .result strong{color:var(--brand-deep);}
   .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:2px;}
   .chip{
-    font-size:12px;font-weight:600;color:var(--teal-dark);background:var(--paper);
-    border:1px solid var(--line);border-radius:999px;padding:4px 10px;
+    font-size:12.5px;font-weight:500;color:var(--brand-deep);background:var(--surface-alt);
+    border:1px solid var(--border);border-radius:999px;padding:3px 10px;
   }
   .badge-soon{
-    font-size:11px;font-weight:700;color:var(--ink-soft);background:var(--paper);
-    border:1px solid var(--line);border-radius:999px;padding:3px 10px;
+    font-family:var(--font-sans);font-size:11px;font-weight:600;color:var(--ink-muted);background:var(--surface-alt);
+    border:1px solid var(--border);border-radius:999px;padding:3px 10px;
     text-transform:uppercase;letter-spacing:0.5px;
   }
   .agents-cta{
     margin-top:36px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
-    background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);
-    border-radius:var(--radius);padding:24px 28px;
+    border:1px solid rgba(255,255,255,0.22);border-radius:var(--r-lg);padding:24px 28px;
   }
-  .agents-cta p{margin:0;color:#dbe4ee;font-size:15px;max-width:640px;}
-  .agents-cta p strong{color:#fff;}
+  .agents-cta p{margin:0;color:var(--on-brand-muted);font-size:15.5px;max-width:640px;}
+  .agents-cta p strong{color:var(--on-brand);}
+  .btn-light{background:var(--white);color:var(--brand-deep);}
+  .btn-light:hover{background:var(--brand-tint);}
 
-  /* PRICING */
+  /* PRECIOS */
   .pricing-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:stretch;}
   .price-table{
-    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
-    padding:8px 0;box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;
+    background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);
+    padding:8px 0;overflow:hidden;overflow-x:auto;
   }
-  table{width:100%;border-collapse:collapse;font-size:14px;}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;}
   thead th{
-    text-align:left;padding:14px 22px;font-size:12px;text-transform:uppercase;
-    letter-spacing:0.6px;color:var(--ink-soft);border-bottom:1px solid var(--line);
+    text-align:left;padding:14px 22px;font-size:12px;font-weight:600;text-transform:uppercase;
+    letter-spacing:0.6px;color:var(--ink-muted);border-bottom:1px solid var(--border);
   }
-  tbody td{padding:13px 22px;border-bottom:1px solid #eef1f6;color:var(--ink);}
+  tbody td{padding:13px 22px;border-bottom:1px solid var(--border);}
   tbody tr:last-child td{border-bottom:none;}
-  tfoot td{padding:16px 22px;font-weight:700;background:var(--paper);}
+  tfoot td{padding:16px 22px;font-weight:600;background:var(--surface-alt);}
   td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  td small,td s.old.block{display:block;font-weight:400;color:var(--ink-muted);font-size:12.5px;white-space:normal;}
   .support-card{
-    background:linear-gradient(160deg,var(--teal),var(--teal-dark));
-    color:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);
+    background:var(--brand-deep);color:var(--on-brand);border-radius:var(--r-lg);padding:28px;
     display:flex;flex-direction:column;
   }
-  .support-card h3{font-size:17px;margin:0 0 10px;}
-  .support-card p{font-size:14px;color:#c3ceda;margin:0 0 20px;}
-  .bono-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-top:1px solid rgba(255,255,255,0.12);font-size:14px;}
+  .support-card h3{font-size:19px;font-weight:600;margin:0 0 10px;}
+  .support-card p{font-size:14.5px;color:var(--on-brand-muted);margin:0 0 20px;}
+  .bono-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-top:1px solid rgba(255,255,255,0.18);font-size:14.5px;}
   .bono-row:first-of-type{border-top:none;}
-  .bono-row .h{color:#c3ceda;}
-  .bono-row .p{font-weight:700;}
-  .rate-note{margin-top:auto;padding-top:18px;font-size:12.5px;color:#9fb0c3;}
+  .bono-row .h{color:var(--on-brand-muted);}
+  .bono-row .p{font-weight:600;}
+  .rate-note{margin-top:auto;padding-top:18px;font-size:13px;color:var(--on-brand-muted);}
 
-  /* CTA */
+  /* QUIÉN ESTÁ DETRÁS */
+  .who-section{background:var(--surface-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .who{display:grid;grid-template-columns:180px 1fr;gap:36px;align-items:center;max-width:820px;margin:0 auto;}
+  .who img{width:180px;height:180px;border-radius:var(--r-lg);object-fit:cover;object-position:64% 32%;border:1px solid var(--border);}
+  .who .kicker{text-transform:uppercase;font-size:12.5px;font-weight:600;letter-spacing:1.2px;color:var(--brand);margin-bottom:8px;}
+  .who h2{font-size:clamp(24px,3vw,32px);line-height:1.2;margin:0 0 12px;font-weight:600;letter-spacing:-0.3px;}
+  .who p{color:var(--ink-muted);font-size:16px;margin:0 0 18px;}
+
+  /* CTA FINAL */
   .cta{
-    background:var(--teal);
-    color:#fff;border-radius:20px;padding:52px 44px;text-align:center;
-    margin:0 24px;
+    background:var(--brand-deep);color:var(--on-brand);border-radius:var(--r-lg);
+    padding:52px 44px;text-align:center;
   }
-  .cta h2{font-size:clamp(22px,3vw,28px);margin:0 0 12px;font-weight:600;}
-  .cta p{font-size:15.5px;color:#dbf3fa;margin:0 0 26px;max-width:480px;margin-left:auto;margin-right:auto;}
-  .cta .btn-primary{background:#fff;color:var(--teal-dark);box-shadow:none;}
-  .cta .btn-primary:hover{background:#f0fbfd;}
-
-  footer{padding:40px 0;text-align:center;font-size:13px;color:var(--ink-soft);}
-  footer a{color:var(--teal-dark);text-decoration:none;font-weight:600;}
-  footer .back{display:block;margin-bottom:10px;}
+  .cta h2{font-size:clamp(24px,3vw,32px);margin:0 0 12px;font-weight:600;}
+  .cta p{font-size:16px;color:var(--on-brand-muted);margin:0 auto 26px;max-width:500px;}
 
   @media (max-width:860px){
     .hero .wrap{grid-template-columns:1fr;}
@@ -296,16 +225,19 @@
     .pricing-grid{grid-template-columns:1fr;}
     .principles{grid-template-columns:repeat(2,1fr);}
     .agent-grid{grid-template-columns:1fr;}
-    nav.links{display:none;}
   }
   @media (max-width:600px){
+    .hero{padding:56px 0 52px;}
+    section{padding:56px 0;}
     .principles{grid-template-columns:1fr;}
     .agents-cta{padding:22px 20px;}
     .cta{padding:40px 22px;}
+    .who{grid-template-columns:1fr;text-align:center;gap:20px;}
+    .who img{margin:0 auto;width:140px;height:140px;}
     table{font-size:13px;}
     thead th,tbody td,tfoot td{padding-left:10px;padding-right:10px;}
     td.num s.old{display:block;}
-    .phase{grid-template-columns:44px 1fr;}
+    .phase{grid-template-columns:44px 1fr;gap:16px;}
     .phase .hours{grid-column:2;text-align:left;padding-top:6px;}
   }
 </style>
@@ -314,10 +246,10 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <div class="nav-left">
-      <a class="brand" href="/"><span class="mark">RS</span> Ramiro Santamaría</a>
-      <a class="nav-cta" href="mailto:ramiro.santamaria.alvarez@gmail.com?subject=Digitalización%20de%20mi%20empresa" data-i18n="nav.talk">Hablemos</a>
-    </div>
+    <a class="brand" href="/" aria-label="Cauce IA">
+      <svg viewBox="0 0 88 64" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"><path d="M6 10 C30 10 30 32 54 32" stroke="#0F766E"/><path d="M6 32 L54 32" stroke="#0F766E"/><path d="M6 54 C30 54 30 32 54 32" stroke="#0F766E"/><path d="M54 32 L70 32" stroke="#B45309"/></g><circle cx="76" cy="32" r="7" fill="#B45309"/></svg>
+      <span class="wordmark">cauce <b>IA</b></span>
+    </a>
     <nav class="links">
       <a href="#servicio" data-i18n="nav.service">Servicio</a>
       <a href="#fases" data-i18n="nav.phases">Fases</a>
@@ -326,35 +258,35 @@
       <a href="#contacto" data-i18n="nav.contact">Contacto</a>
     </nav>
     <div class="nav-right">
-      <div class="pill-lang is-es" id="lang-pill" role="button" aria-label="Toggle language">
+      <div class="pill-lang is-es" id="lang-pill" role="button" tabindex="0" aria-label="Switch to English">
         <div class="slider"></div>
         <span class="lbl-en">EN</span>
         <span class="lbl-es">ES</span>
       </div>
-      <a class="pill-home" href="/" data-i18n="nav.home">Principal</a>
+      <a class="pill-link" href="/equipo" data-i18n="nav.team">Equipo</a>
     </div>
   </div>
 </header>
 
-<section class="hero">
+<section class="hero on-dark">
   <div class="wrap">
     <div>
-      <span class="eyebrow" data-i18n="hero.eyebrow">● Digitalización</span>
-      <h1 data-i18n="hero.h1">Digitaliza tu empresa <span class="accent">sin digitalizar la ineficiencia</span></h1>
-      <p class="lead" data-i18n="hero.lead">Antes de meter herramientas nuevas, entendemos cómo trabaja realmente tu empresa y rediseñamos el proceso. Digitalizar un proceso ineficiente solo hace que la ineficiencia vaya más rápido.</p>
+      <span class="eyebrow"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.eyebrow">Cauce IA · Procesos y agentes de IA</span></span>
+      <h1 data-i18n="hero.h1">Procesos que fluyen. <span class="accent">IA con criterio.</span></h1>
+      <p class="lead" data-i18n="hero.lead">Primero entendemos cómo trabaja tu empresa y rediseñamos el proceso; después ponemos la tecnología, incluida la IA, donde de verdad aporta. Digitalizar un proceso ineficiente solo hace que la ineficiencia vaya más rápido.</p>
       <div class="hero-actions">
-        <a class="btn-primary" href="mailto:ramiro.santamaria.alvarez@gmail.com?subject=Digitalización%20de%20mi%20empresa" data-i18n="hero.cta1">Pedir diagnóstico gratuito</a>
-        <a class="btn-ghost" href="#fases" data-i18n="hero.cta2">Ver cómo funciona</a>
+        <a class="btn btn-accent" href="mailto:ramiro.santamaria.alvarez@gmail.com?subject=Diagnóstico%20gratuito%20·%20Cauce%20IA" data-i18n="hero.cta1">Pedir diagnóstico gratuito</a>
+        <a class="btn btn-ghost" href="#fases" data-i18n="hero.cta2">Ver cómo funciona</a>
       </div>
     </div>
     <div class="hero-rate">
       <div class="num" data-i18n="rate.amount">40 € <span>/ hora</span></div>
       <div class="label" data-i18n="rate.label">Tarifa única, sin letra pequeña</div>
       <ul>
-        <li><span class="tick">✓</span> <span data-i18n="rate.li1">Se factura solo el tiempo dedicado, fase a fase</span></li>
-        <li><span class="tick">✓</span> <span data-i18n="rate.li2">Presupuesto orientativo desde el primer día</span></li>
-        <li><span class="tick">✓</span> <span data-i18n="rate.li3">Formación incluida en las herramientas implantadas</span></li>
-        <li><span class="tick">✓</span> <span data-i18n="rate.li4">Soporte post-lanzamiento con bolsa de horas mensual</span></li>
+        <li><span class="tick" aria-hidden="true">✓</span> <span data-i18n="rate.li0">Diagnóstico inicial gratis</span></li>
+        <li><span class="tick" aria-hidden="true">✓</span> <span data-i18n="rate.li1">Se factura solo el tiempo dedicado, fase a fase</span></li>
+        <li><span class="tick" aria-hidden="true">✓</span> <span data-i18n="rate.li3">Formación incluida en las herramientas implantadas</span></li>
+        <li><span class="tick" aria-hidden="true">✓</span> <span data-i18n="rate.li4">Soporte post-lanzamiento con bolsa de horas mensual</span></li>
       </ul>
     </div>
   </div>
@@ -507,7 +439,7 @@
 
     <div class="agents-cta">
       <p data-i18n="agentes.cta.p">Cada agente empieza con el <strong>diagnóstico gratuito</strong>; después, piloto a 40 €/h con presupuesto cerrado por fases.</p>
-      <a class="btn-primary" href="mailto:ramiro.santamaria.alvarez@gmail.com?subject=Piloto%20de%20agente%20de%20IA" data-i18n="agentes.cta.btn">Quiero un piloto</a>
+      <a class="btn btn-light" href="mailto:ramiro.santamaria.alvarez@gmail.com?subject=Piloto%20de%20agente%20de%20IA%20·%20Cauce%20IA" data-i18n="agentes.cta.btn">Quiero un piloto</a>
     </div>
   </div>
 </section>
@@ -552,43 +484,71 @@
   </div>
 </section>
 
-<section id="contacto">
+<section class="who-section" id="quien">
   <div class="wrap">
-    <div class="cta">
-      <h2 data-i18n="contacto.h2">¿Empezamos por el diagnóstico? Es gratis.</h2>
-      <p data-i18n="contacto.p">Es el compromiso más pequeño y el que más claridad da: en unas horas sabrás exactamente qué digitalizar primero y por qué.</p>
-      <a class="btn-primary" href="mailto:ramiro.santamaria.alvarez@gmail.com?subject=Digitalización%20de%20mi%20empresa" data-i18n="contacto.btn">Escríbenos</a>
+    <div class="who">
+      <img src="/images/ramiro.jpg" alt="Ramiro Santamaría" width="180" height="180" loading="lazy">
+      <div>
+        <div class="kicker" data-i18n="who.kicker">Quién está detrás</div>
+        <h2 data-i18n="who.h2">Ramiro Santamaría</h2>
+        <p data-i18n="who.p">Desarrollador full-stack y responsable de IT y seguridad en un grupo multinacional. Llevo años construyendo aplicaciones, integraciones con ERP y, ahora, agentes de IA que trabajan con las personas, no en su lugar. En cada proyecto hablas conmigo directamente.</p>
+        <a class="btn btn-outline" href="/equipo" data-i18n="who.btn">Conoce al equipo →</a>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <a class="back" href="/" data-i18n="footer.back">← Volver al inicio</a>
-  <span data-i18n="footer.credit">Ramiro Santamaría · Digitalización de procesos</span> · <a href="mailto:ramiro.santamaria.alvarez@gmail.com">ramiro.santamaria.alvarez@gmail.com</a>
+<section id="contacto">
+  <div class="wrap">
+    <div class="cta on-dark">
+      <h2 data-i18n="contacto.h2">¿Empezamos por el diagnóstico? Es gratis.</h2>
+      <p data-i18n="contacto.p">Es el compromiso más pequeño y el que más claridad da: en unas horas sabrás exactamente qué digitalizar primero y por qué.</p>
+      <a class="btn btn-accent" href="mailto:ramiro.santamaria.alvarez@gmail.com?subject=Diagnóstico%20gratuito%20·%20Cauce%20IA" data-i18n="contacto.btn">Pedir diagnóstico gratuito</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <a class="brand" href="/" aria-label="Cauce IA">
+        <svg viewBox="0 0 88 64" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"><path d="M6 10 C30 10 30 32 54 32" stroke="#0F766E"/><path d="M6 32 L54 32" stroke="#0F766E"/><path d="M6 54 C30 54 30 32 54 32" stroke="#0F766E"/><path d="M54 32 L70 32" stroke="#B45309"/></g><circle cx="76" cy="32" r="7" fill="#B45309"/></svg>
+        <span class="wordmark">cauce <b>IA</b></span>
+      </a>
+    </div>
+    <div data-i18n="footer.tagline">Procesos que fluyen. IA con criterio.</div>
+    <div class="footer-links">
+      <a href="/equipo" data-i18n="footer.team">Equipo</a>
+      <a href="mailto:ramiro.santamaria.alvarez@gmail.com">ramiro.santamaria.alvarez@gmail.com</a>
+      <a href="/aviso-legal" data-i18n="footer.legal">Aviso legal</a>
+      <a href="/privacidad" data-i18n="footer.privacy">Privacidad</a>
+    </div>
+    <div class="legal-owner" data-i18n="footer.owner">© 2026 Cauce IA, nombre comercial de Ramiro Santamaría Álvarez.</div>
+  </div>
 </footer>
 
+<script src="/js/cauce-lang.js"></script>
 <script>
 (function(){
   var translations = {
     es: {
-      "page.title": "Digitalización · Ramiro Santamaría",
-      "page.description": "Consultoría de digitalización de procesos: diagnóstico, rediseño de procesos, selección de herramientas e implementación acompañada. Diagnóstico inicial gratis y tarifa única de 40 €/hora.",
+      "page.title": "Cauce IA · Procesos que fluyen. IA con criterio.",
+      "page.description": "Cauce IA: consultoría de procesos y agentes de IA para empresas. Primero el proceso, luego la herramienta. Diagnóstico inicial gratis y tarifa única de 40 €/hora.",
       "nav.service": "Servicio",
       "nav.phases": "Fases",
       "nav.agents": "Agentes IA",
       "nav.pricing": "Tarifas",
       "nav.contact": "Contacto",
-      "nav.home": "Principal",
-      "nav.talk": "Hablemos",
-      "hero.eyebrow": "● Digitalización",
-      "hero.h1": "Digitaliza tu empresa <span class=\"accent\">sin digitalizar la ineficiencia</span>",
-      "hero.lead": "Antes de meter herramientas nuevas, entendemos cómo trabaja realmente tu empresa y rediseñamos el proceso. Digitalizar un proceso ineficiente solo hace que la ineficiencia vaya más rápido.",
+      "nav.team": "Equipo",
+      "hero.eyebrow": "Cauce IA · Procesos y agentes de IA",
+      "hero.h1": "Procesos que fluyen. <span class=\"accent\">IA con criterio.</span>",
+      "hero.lead": "Primero entendemos cómo trabaja tu empresa y rediseñamos el proceso; después ponemos la tecnología, incluida la IA, donde de verdad aporta. Digitalizar un proceso ineficiente solo hace que la ineficiencia vaya más rápido.",
       "hero.cta1": "Pedir diagnóstico gratuito",
       "hero.cta2": "Ver cómo funciona",
       "rate.amount": "40 € <span>/ hora</span>",
       "rate.label": "Tarifa única, sin letra pequeña",
+      "rate.li0": "Diagnóstico inicial gratis",
       "rate.li1": "Se factura solo el tiempo dedicado, fase a fase",
-      "rate.li2": "Presupuesto orientativo desde el primer día",
       "rate.li3": "Formación incluida en las herramientas implantadas",
       "rate.li4": "Soporte post-lanzamiento con bolsa de horas mensual",
       "servicio.kicker": "Cómo lo planteo",
@@ -681,29 +641,35 @@
       "support.note": "Sin permanencia. El bono se ajusta cada mes según la necesidad real.",
       "contacto.h2": "¿Empezamos por el diagnóstico? Es gratis.",
       "contacto.p": "Es el compromiso más pequeño y el que más claridad da: en unas horas sabrás exactamente qué digitalizar primero y por qué.",
-      "contacto.btn": "Escríbenos",
-      "footer.back": "← Volver al inicio",
-      "footer.credit": "Ramiro Santamaría · Digitalización de procesos"
+      "contacto.btn": "Pedir diagnóstico gratuito",
+      "who.kicker": "Quién está detrás",
+      "who.h2": "Ramiro Santamaría",
+      "who.p": "Desarrollador full-stack y responsable de IT y seguridad en un grupo multinacional. Llevo años construyendo aplicaciones, integraciones con ERP y, ahora, agentes de IA que trabajan con las personas, no en su lugar. En cada proyecto hablas conmigo directamente.",
+      "who.btn": "Conoce al equipo →",
+      "footer.tagline": "Procesos que fluyen. IA con criterio.",
+      "footer.team": "Equipo",
+      "footer.legal": "Aviso legal",
+      "footer.privacy": "Privacidad",
+      "footer.owner": "© 2026 Cauce IA, nombre comercial de Ramiro Santamaría Álvarez."
     },
     en: {
-      "page.title": "Digitalization · Ramiro Santamaría",
-      "page.description": "Business process digitalization consulting: diagnosis, process redesign, tool selection, and guided implementation. Free initial diagnosis and a flat rate of €40/hour.",
+      "page.title": "Cauce IA · Processes that flow. AI with judgement.",
+      "page.description": "Cauce IA: process consulting and AI agents for businesses. Process first, tools second. Free initial diagnosis and a flat rate of €40/hour.",
       "nav.service": "Service",
       "nav.phases": "Phases",
       "nav.agents": "AI agents",
       "nav.pricing": "Pricing",
       "nav.contact": "Contact",
-      "nav.home": "Home",
-      "nav.talk": "Let's talk",
-      "hero.eyebrow": "● Digitalization",
-      "hero.h1": "Digitalize your business <span class=\"accent\">without digitalizing inefficiency</span>",
-      "hero.lead": "Before adding new tools, we understand how your business actually works and redesign the process. Digitalizing an inefficient process only makes the inefficiency move faster.",
+      "nav.team": "Team",
+      "hero.eyebrow": "Cauce IA · Processes and AI agents",
+      "hero.h1": "Processes that flow. <span class=\"accent\">AI with judgement.</span>",
+      "hero.lead": "First we understand how your business works and redesign the process; then we put technology, AI included, where it really adds value. Digitalizing an inefficient process only makes the inefficiency move faster.",
       "hero.cta1": "Request a free diagnosis",
       "hero.cta2": "See how it works",
       "rate.amount": "€40 <span>/ hour</span>",
       "rate.label": "Flat rate, no fine print",
+      "rate.li0": "Free initial diagnosis",
       "rate.li1": "Billed only for time actually spent, phase by phase",
-      "rate.li2": "Ballpark budget from day one",
       "rate.li3": "Training included on every tool rolled out",
       "rate.li4": "Post-launch support with a monthly hour bundle",
       "servicio.kicker": "How I approach it",
@@ -796,32 +762,20 @@
       "support.note": "No minimum commitment. The bundle is adjusted every month based on actual need.",
       "contacto.h2": "Shall we start with the diagnosis? It's free.",
       "contacto.p": "It's the smallest commitment and the one that brings the most clarity: in a few hours you'll know exactly what to digitalize first, and why.",
-      "contacto.btn": "Get in touch",
-      "footer.back": "← Back to home",
-      "footer.credit": "Ramiro Santamaría · Business process digitalization"
+      "contacto.btn": "Request a free diagnosis",
+      "who.kicker": "Who's behind it",
+      "who.h2": "Ramiro Santamaría",
+      "who.p": "Full-stack developer and head of IT and security at a multinational group. I've spent years building applications, ERP integrations and, now, AI agents that work with people, not instead of them. On every project you talk to me directly.",
+      "who.btn": "Meet the team →",
+      "footer.tagline": "Processes that flow. AI with judgement.",
+      "footer.team": "Team",
+      "footer.legal": "Legal notice",
+      "footer.privacy": "Privacy",
+      "footer.owner": "© 2026 Cauce IA, trade name of Ramiro Santamaría Álvarez."
     }
   };
 
-  function setLang(lang){
-    var dict = translations[lang];
-    document.querySelectorAll('[data-i18n]').forEach(function(el){
-      var key = el.getAttribute('data-i18n');
-      if (dict[key] !== undefined) el.innerHTML = dict[key];
-    });
-    document.title = dict['page.title'];
-    document.getElementById('page-description').setAttribute('content', dict['page.description']);
-    document.documentElement.setAttribute('lang', lang);
-    var pill = document.getElementById('lang-pill');
-    pill.classList.toggle('is-en', lang === 'en');
-    pill.classList.toggle('is-es', lang === 'es');
-    window.__lang = lang;
-  }
-
-  document.getElementById('lang-pill').addEventListener('click', function(){
-    setLang(window.__lang === 'en' ? 'es' : 'en');
-  });
-
-  setLang('es');
+  CauceLang.init(translations);
 })();
 </script>
 

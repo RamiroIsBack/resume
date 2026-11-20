@@ -1,0 +1,142 @@
+/* Cauce IA · base compartida (portada y páginas legales). Tokens: /brand/cauce-ia-tokens.json */
+
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2");}
+@font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-latin-500-normal.woff2) format("woff2");}
+@font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2");}
+@font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/inter-latin-700-normal.woff2) format("woff2");}
+@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/space-grotesk-latin-500-normal.woff2) format("woff2");}
+@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/space-grotesk-latin-600-normal.woff2) format("woff2");}
+
+:root{
+  --surface:#FAFAF7;
+  --surface-alt:#F1EEE6;
+  --white:#FFFFFF;
+  --border:#E7E5DE;
+  --ink:#1C1917;
+  --ink-muted:#57534E;
+  --brand:#0F766E;
+  --brand-deep:#134E4A;
+  --brand-tint:#CCFBF1;
+  --brand-light:#2DD4BF;      /* brand en tema oscuro: textos de marca sobre brand-deep */
+  --on-brand:#FFFFFF;
+  --on-brand-muted:#D5E8E5;   /* texto secundario sobre brand-deep */
+  --accent:#B45309;           /* solo el «visto bueno» */
+  --accent-light:#F59E0B;     /* accent sobre fondos oscuros */
+  --accent-tint:#FEF3C7;
+  --success:#15803D;
+  --font-display:"Space Grotesk","Inter",system-ui,sans-serif;
+  --font-sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r-sm:4px;
+  --r-md:8px;
+  --r-lg:16px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.6;
+  color:var(--ink);
+  background:var(--surface);
+}
+a{color:inherit;}
+img,svg{display:block;}
+h1,h2,h3{font-family:var(--font-display);line-height:1.25;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+/* LOGO (símbolo SVG + nombre en HTML) */
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);}
+.brand svg{width:44px;height:32px;flex:none;}
+.brand .wordmark{font-family:var(--font-display);font-weight:600;font-size:22px;letter-spacing:-0.5px;line-height:1;}
+.brand .wordmark b{font-weight:600;color:var(--brand);}
+
+/* NAV */
+header.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,250,247,0.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1080px;margin:0 auto;padding:12px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;row-gap:8px;
+}
+nav.links{display:flex;gap:24px;font-size:14.5px;font-weight:500;color:var(--ink-muted);}
+nav.links a{text-decoration:none;transition:color .15s;}
+nav.links a:hover{color:var(--brand);}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.pill-lang{
+  position:relative;width:88px;height:34px;
+  background:var(--white);border:1px solid var(--border);border-radius:999px;
+  padding:3px;display:flex;align-items:center;cursor:pointer;user-select:none;
+}
+.pill-lang .slider{
+  position:absolute;top:3px;left:calc(50% + 1px);width:calc(50% - 4px);height:calc(100% - 6px);
+  background:var(--brand);border-radius:999px;transition:left .2s ease;
+}
+.pill-lang.is-en .slider{left:3px;}
+.pill-lang span{position:relative;flex:1;text-align:center;font-size:12.5px;font-weight:700;color:var(--ink-muted);z-index:1;transition:color .2s ease;}
+.pill-lang.is-es span.lbl-es,.pill-lang.is-en span.lbl-en{color:var(--on-brand);}
+.pill-link{
+  height:34px;padding:0 16px;display:flex;align-items:center;
+  border:1px solid var(--border);border-radius:999px;background:var(--white);
+  color:var(--brand);font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;
+}
+.pill-link:hover{border-color:var(--brand);}
+
+/* BOTONES */
+.btn{
+  display:inline-block;padding:13px 24px;border-radius:var(--r-md);
+  font-weight:600;font-size:15px;text-decoration:none;border:1px solid transparent;cursor:pointer;
+}
+.btn-brand{background:var(--brand);color:var(--on-brand);}
+.btn-brand:hover{background:var(--brand-deep);}
+.btn-accent{background:var(--accent);color:var(--on-brand);}
+.btn-accent:hover{background:#92400E;}
+.btn-outline{border-color:var(--border);color:var(--brand);background:var(--white);}
+.btn-outline:hover{border-color:var(--brand);}
+.on-dark .btn-accent{background:var(--accent-light);color:var(--ink);}
+.on-dark .btn-accent:hover{background:#FBBF24;}
+.on-dark .btn-ghost{border-color:rgba(255,255,255,0.4);color:var(--on-brand);background:transparent;}
+.on-dark .btn-ghost:hover{border-color:var(--on-brand);}
+
+/* PIE */
+footer.site-footer{
+  border-top:1px solid var(--border);padding:36px 0 44px;
+  font-size:14px;color:var(--ink-muted);text-align:center;
+}
+footer.site-footer a{color:var(--brand);text-decoration:none;font-weight:600;}
+footer.site-footer a:hover{text-decoration:underline;}
+footer.site-footer .footer-brand{display:flex;justify-content:center;margin-bottom:12px;}
+footer.site-footer .brand{color:var(--ink);}
+footer.site-footer .footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;margin:10px 0;}
+footer.site-footer .legal-owner{font-size:12.5px;margin-top:8px;}
+
+/* PÁGINAS LEGALES */
+.legal{max-width:760px;margin:0 auto;padding:56px 24px 64px;}
+.legal h1{font-size:clamp(28px,4vw,40px);line-height:1.15;margin:0 0 8px;font-weight:600;letter-spacing:-0.5px;}
+.legal .updated{color:var(--ink-muted);font-size:14px;margin:0 0 32px;}
+.legal h2{font-size:20px;font-weight:600;margin:36px 0 10px;}
+.legal p,.legal li{font-size:15.5px;}
+.legal a{color:var(--brand);}
+.legal table{width:100%;border-collapse:collapse;font-size:14.5px;margin:12px 0;}
+.legal th,.legal td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top;}
+.legal th{background:var(--surface-alt);font-weight:600;width:34%;}
+.legal td{overflow-wrap:anywhere;}
+
+@media (max-width:860px){
+  nav.links{display:none;}
+}
+@media (max-width:600px){
+  .legal{padding:40px 16px 48px;}
+  .legal th,.legal td{display:block;width:auto;}
+  .legal th{border-bottom:none;}
+}
+@media (max-width:420px){
+  .nav-inner{padding:10px 16px;}
+  .brand .wordmark{font-size:20px;}
+  .pill-link{padding:0 12px;}
+}

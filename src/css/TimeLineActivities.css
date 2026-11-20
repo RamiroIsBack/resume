@@ -77,7 +77,7 @@
 .studies__climbing {
   grid-area: y;
 }
-.work__ininin {
+.work__itops {
   grid-area: q;
 }
 .work__aiOrchestrator {
@@ -165,7 +165,7 @@
   .studies__climbing {
     grid-area: y;
   }
-  .work__ininin {
+  .work__itops {
     grid-area: q;
   }
 }

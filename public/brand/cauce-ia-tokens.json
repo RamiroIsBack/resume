@@ -1,0 +1,243 @@
+{
+ "name": "Cauce IA",
+ "version": 1,
+ "color": {
+  "themes": [
+   {
+    "id": "light",
+    "name": "Claro"
+   },
+   {
+    "id": "dark",
+    "name": "Oscuro"
+   }
+  ],
+  "tokens": [
+   {
+    "name": "surface",
+    "value": {
+     "light": "#FAFAF7",
+     "dark": "#141412"
+    },
+    "usage": "Fondo de página."
+   },
+   {
+    "name": "surface-alt",
+    "value": {
+     "light": "#F1EEE6",
+     "dark": "#1F1E1B"
+    },
+    "usage": "Fondo de tarjetas, bandas y bloques secundarios."
+   },
+   {
+    "name": "border",
+    "value": {
+     "light": "#E7E5DE",
+     "dark": "#2E2C28"
+    },
+    "usage": "Líneas y bordes finos (hairline)."
+   },
+   {
+    "name": "ink",
+    "value": {
+     "light": "#1C1917",
+     "dark": "#F5F5F4"
+    },
+    "usage": "Texto principal sobre surface y surface-alt."
+   },
+   {
+    "name": "ink-muted",
+    "value": {
+     "light": "#57534E",
+     "dark": "#A8A29E"
+    },
+    "usage": "Texto secundario, pies y etiquetas sobre surface."
+   },
+   {
+    "name": "brand",
+    "value": {
+     "light": "#0F766E",
+     "dark": "#2DD4BF"
+    },
+    "usage": "Color Cauce: el flujo, los sistemas y la IA. Enlaces, símbolo, botones principales."
+   },
+   {
+    "name": "brand-deep",
+    "value": {
+     "light": "#134E4A",
+     "dark": "#115E59"
+    },
+    "usage": "Bloques grandes y fondos de marca; texto on-brand encima."
+   },
+   {
+    "name": "brand-tint",
+    "value": {
+     "light": "#CCFBF1",
+     "dark": "#134E4A"
+    },
+    "usage": "Fondos suaves de marca (avisos informativos, chips)."
+   },
+   {
+    "name": "on-brand",
+    "value": {
+     "light": "#FFFFFF",
+     "dark": "#042F2E"
+    },
+    "usage": "Texto e iconos sobre brand y brand-deep (oscuro: sobre brand)."
+   },
+   {
+    "name": "accent",
+    "value": {
+     "light": "#B45309",
+     "dark": "#F59E0B"
+    },
+    "usage": "Visto bueno: el momento en que una persona aprueba. Úsalo con moderación (un punto, un botón de aprobar, un dato clave)."
+   },
+   {
+    "name": "accent-tint",
+    "value": {
+     "light": "#FEF3C7",
+     "dark": "#451A03"
+    },
+    "usage": "Fondo de avisos de aprobación pendiente."
+   },
+   {
+    "name": "success",
+    "value": {
+     "light": "#15803D",
+     "dark": "#4ADE80"
+    },
+    "usage": "Estado correcto/aprobado."
+   },
+   {
+    "name": "danger",
+    "value": {
+     "light": "#B91C1C",
+     "dark": "#F87171"
+    },
+    "usage": "Errores y acciones destructivas."
+   }
+  ]
+ },
+ "type": {
+  "fonts": [],
+  "families": {
+   "display": "\"Space Grotesk\", \"Inter\", system-ui, sans-serif",
+   "sans": "\"Inter\", system-ui, -apple-system, \"Segoe UI\", sans-serif"
+  },
+  "groups": [
+   {
+    "name": "Titulares",
+    "family": "display",
+    "styles": [
+     {
+      "name": "display",
+      "fontSize": "56px",
+      "lineHeight": "60px",
+      "fontWeight": 600
+     },
+     {
+      "name": "h1",
+      "fontSize": "40px",
+      "lineHeight": "46px",
+      "fontWeight": 600
+     },
+     {
+      "name": "h2",
+      "fontSize": "28px",
+      "lineHeight": "34px",
+      "fontWeight": 600
+     },
+     {
+      "name": "h3",
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "fontWeight": 500
+     }
+    ]
+   },
+   {
+    "name": "Texto",
+    "family": "sans",
+    "styles": [
+     {
+      "name": "body",
+      "fontSize": "16px",
+      "lineHeight": "26px",
+      "fontWeight": 400
+     },
+     {
+      "name": "small",
+      "fontSize": "14px",
+      "lineHeight": "22px",
+      "fontWeight": 400
+     },
+     {
+      "name": "label",
+      "fontSize": "13px",
+      "lineHeight": "18px",
+      "fontWeight": 500
+     }
+    ]
+   }
+  ]
+ },
+ "spacing": {
+  "tokens": [
+   {
+    "name": "space-1",
+    "value": "4px",
+    "usage": "Separación mínima entre icono y texto."
+   },
+   {
+    "name": "space-2",
+    "value": "8px",
+    "usage": "Huecos dentro de chips y botones."
+   },
+   {
+    "name": "space-4",
+    "value": "16px",
+    "usage": "Relleno de tarjetas y separación entre elementos."
+   },
+   {
+    "name": "space-6",
+    "value": "24px",
+    "usage": "Separación entre bloques de una sección."
+   },
+   {
+    "name": "space-10",
+    "value": "40px",
+    "usage": "Separación entre secciones de una página o documento."
+   },
+   {
+    "name": "space-16",
+    "value": "64px",
+    "usage": "Márgenes de portadas y héroes."
+   }
+  ]
+ },
+ "radius": {
+  "tokens": [
+   {
+    "name": "radius-sm",
+    "value": "4px",
+    "usage": "Inputs, etiquetas."
+   },
+   {
+    "name": "radius-md",
+    "value": "8px",
+    "usage": "Botones y tarjetas."
+   },
+   {
+    "name": "radius-lg",
+    "value": "16px",
+    "usage": "Bloques grandes, portadas, diapositivas."
+   },
+   {
+    "name": "radius-pill",
+    "value": "999px",
+    "usage": "Chips y el punto del visto bueno."
+   }
+  ]
+ }
+}

@@ -304,3 +304,16 @@
     letter-spacing: 2px; /* Adjust as needed */
   }
 }
+
+/* The second job title is longer: shrink it on narrow phones so the typewriter line fits the screen */
+@media screen and (max-width: 470px) {
+  .puesto.puesto__second {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .puesto.puesto__second {
+    font-size: 19px;
+  }
+}

@@ -1,4 +1,7 @@
-import { copyList, servicesList, timeLineList, footerList, talksList, worksList, aiProjectsList } from "../data/content";
+import { copyList, servicesList, timeLineList, footerList, talksList, worksList, aiProjectsList, collaboratorsList } from "../data/content";
+import { resolveCauceLink } from "./cauceUrl";
+
+const withCauceLinks = item => ({ ...item, url: resolveCauceLink(item.url), ctaLink: resolveCauceLink(item.ctaLink) });
 
 export function useCopy() {
   return {
@@ -6,11 +9,12 @@ export function useCopy() {
     copyLoaded: true,
     isLoading: false,
     error: null,
-    servicesList,
+    servicesList: servicesList.map(withCauceLinks),
     timeLineList,
     footerList,
     talksList,
-    worksList: [...worksList].sort((a, b) => a.priority - b.priority),
-    aiProjectsList: [...aiProjectsList].sort((a, b) => a.priority - b.priority),
+    worksList: [...worksList].sort((a, b) => a.priority - b.priority).map(withCauceLinks),
+    aiProjectsList: [...aiProjectsList].sort((a, b) => a.priority - b.priority).map(withCauceLinks),
+    collaboratorsList,
   };
 }

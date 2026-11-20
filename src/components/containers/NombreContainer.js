@@ -1,6 +1,7 @@
 import React from 'react';
 import { useUI } from '../../context/UIContext';
 import { ui } from '../../i18n/ui';
+import { cauceUrl } from '../../utils/cauceUrl';
 import '../../css'; // eslint-disable-line no-unused-vars
 
 function NombreContainer() {
@@ -12,7 +13,7 @@ function NombreContainer() {
       <h3 className='nombre'>Ramiro Santamaria</h3>
       <h3 className='puesto'>{t.jobTitle}</h3>
       <h3 className='puesto puesto__second'>{t.jobTitle2}</h3>
-      <a className='cta__digitalizacion' href='/digitalizacion.html'>
+      <a className='cta__digitalizacion' href={cauceUrl('/')}>
         {t.hireDigitalization}
       </a>
     </div>

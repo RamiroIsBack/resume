@@ -2,6 +2,7 @@ import React from "react";
 import { useCopy } from "../../utils/useCopy";
 import { useUI } from "../../context/UIContext";
 import { ui } from "../../i18n/ui";
+import { cauceUrl } from "../../utils/cauceUrl";
 import MapaContainer from "./MapaContainer";
 import "../../css"; // eslint-disable-line no-unused-vars
 
@@ -39,12 +40,7 @@ function FooterContainer() {
   return (
     <div className="footer__container">
       <div className="footer__cta__container">
-        <a
-          className="footer__cta__button"
-          href="/digitalizacion.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a className="footer__cta__button" href={cauceUrl("/")}>
           {t.footerCtaButton}
         </a>
       </div>

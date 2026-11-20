@@ -8,8 +8,8 @@ export const introPic = {
 export const summaryPic = {
   nombre: "summaryPic",
   urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FyoClimbPortrait.jpg?alt=media&token=a4ec019f-789f-4d8a-b88d-0c6f7f38507c",
-  bio: "I've always been trying to work in what I enjoy.\nI enjoy very much programming — and that's what I've mostly done: creating mobile apps and web apps on my own or collaborating in different projects.\nI also enjoyed learning from various work fields and living in different countries, which made me more versatile as a worker and keeps expanding my skills.\nNowadays I live in Alcalá de Henares, Madrid, working across two things that genuinely excite me: full-stack development and IT & security operations.\nAt INININ Group I manage IT and security infrastructure for a multinational group across Spain, USA, LATAM, and Asia. On the ERP side I develop extensions for Microsoft Dynamics 365 Business Central in AL.\nAlways excited for new projects!",
-  bio_es: "Siempre he intentado trabajar en lo que disfruto.\nDisfruto mucho programando — y eso es lo que he hecho principalmente: creando apps móviles y aplicaciones web por mi cuenta o colaborando en diferentes proyectos.\nTambién disfruté aprendiendo de distintos campos laborales y viviendo en diferentes países, lo que me hizo más versátil como trabajador y sigue ampliando mis habilidades.\nActualmente vivo en Alcalá de Henares, Madrid, trabajando en dos cosas que me apasionan: el desarrollo full-stack y las operaciones IT y seguridad.\nEn INININ Group gestiono la infraestructura IT y de seguridad de un grupo multinacional con presencia en España, EE.UU., LATAM y Asia. En el área ERP desarrollo extensiones para Microsoft Dynamics 365 Business Central en AL.\n¡Siempre emocionado por nuevos proyectos!",
+  bio: "I've always been trying to work in what I enjoy.\nI enjoy very much programming — and that's what I've mostly done: creating mobile apps and web apps on my own or collaborating in different projects.\nI also enjoyed learning from various work fields and living in different countries, which made me more versatile as a worker and keeps expanding my skills.\nNowadays I live in Alcalá de Henares, Madrid, working across two things that genuinely excite me: full-stack development and IT & security operations.\nI manage IT and security infrastructure for a multinational group across Spain, USA, LATAM, and Asia. On the ERP side I develop extensions for Microsoft Dynamics 365 Business Central in AL.\nAlways excited for new projects!",
+  bio_es: "Siempre he intentado trabajar en lo que disfruto.\nDisfruto mucho programando — y eso es lo que he hecho principalmente: creando apps móviles y aplicaciones web por mi cuenta o colaborando en diferentes proyectos.\nTambién disfruté aprendiendo de distintos campos laborales y viviendo en diferentes países, lo que me hizo más versátil como trabajador y sigue ampliando mis habilidades.\nActualmente vivo en Alcalá de Henares, Madrid, trabajando en dos cosas que me apasionan: el desarrollo full-stack y las operaciones IT y seguridad.\nGestiono la infraestructura IT y de seguridad de un grupo multinacional con presencia en España, EE.UU., LATAM y Asia. En el área ERP desarrollo extensiones para Microsoft Dynamics 365 Business Central en AL.\n¡Siempre emocionado por nuevos proyectos!",
 };
 
 export const sideBar = {
@@ -34,7 +34,7 @@ export const servicesList = [
     urlPic: "https://avatars.githubusercontent.com/u/76263028?s=400&v=4",
     ctaLabel: "Digitalize your business →",
     ctaLabel_es: "Digitaliza tu empresa →",
-    ctaLink: "/digitalizacion.html",
+    ctaLink: "/",
   },
   {
     nombre: "ALBusinessCentral",
@@ -130,19 +130,8 @@ export const worksList = [
     state: "new service",
     state_es: "servicio nuevo",
     priority: -2,
-    url: "/digitalizacion.html",
+    url: "/",
     urlPic: "https://www.galvi.es/wp-content/uploads/2024/01/Galvi-2020-logo-AZ-600px-300x151.png",
-  },
-  {
-    nombre: "INININGroup",
-    nombreToShow: "INININ Group",
-    bio: "Corporate website for INININ Group, a multinational creative and technology agency operating across Spain, USA, LATAM, and Asia.",
-    bio_es: "Sitio web corporativo de INININ Group, agencia creativa y tecnológica multinacional con presencia en España, EE.UU., LATAM y Asia.",
-    state: "in production",
-    state_es: "en producción",
-    priority: -1,
-    url: "https://ininingroup.com/",
-    urlPic: "https://ininingroup.com/wp-content/uploads/2026/04/logo_INININ_rojo-scaled.png",
   },
   {
     nombre: "alphaBiosciences",
@@ -205,7 +194,7 @@ export const aiProjectsList = [
     state_es: "en producción",
     stateLevel: "live",
     priority: 0,
-    url: "/digitalizacion.html#agentes",
+    url: "/#agentes",
     urlPic: "/images/ai/docs-iso.svg",
   },
   {
@@ -218,7 +207,7 @@ export const aiProjectsList = [
     state_es: "piloto validado",
     stateLevel: "pilot",
     priority: 1,
-    url: "/digitalizacion.html#agentes",
+    url: "/#agentes",
     urlPic: "/images/ai/orders-erp.svg",
   },
   {
@@ -231,7 +220,7 @@ export const aiProjectsList = [
     state_es: "piloto desplegado",
     stateLevel: "pilot",
     priority: 2,
-    url: "/digitalizacion.html#agentes",
+    url: "/#agentes",
     urlPic: "/images/ai/exec-assistant.svg",
   },
   {
@@ -244,7 +233,7 @@ export const aiProjectsList = [
     state_es: "en uso",
     stateLevel: "live",
     priority: 3,
-    url: "/digitalizacion.html#agentes",
+    url: "/#agentes",
     urlPic: "/images/ai/domain-watch.svg",
   },
   {
@@ -257,10 +246,16 @@ export const aiProjectsList = [
     state_es: "en diseño",
     stateLevel: "design",
     priority: 4,
-    url: "/digitalizacion.html#agentes",
+    url: "/#agentes",
     urlPic: "/images/ai/it-agents.svg",
   },
 ];
+
+// ─── COLLABORATORS ───────────────────────────────────────────────────────────
+// Future Cauce IA collaborators. The section stays hidden while the list is empty.
+// Shape: { nombre, role, role_es, bio, bio_es, urlPic, url }
+
+export const collaboratorsList = [];
 
 // ─── TALKS ────────────────────────────────────────────────────────────────────
 
@@ -294,16 +289,16 @@ export const timeLineList = [
     urlPic: "",
   },
   {
-    className: "work__ininin",
-    nombre: "IT & Security Operations at INININ Group",
-    nombre_es: "IT & Security Operations at INININ Group",
+    className: "work__itops",
+    nombre: "IT & Security Operations at a multinational group",
+    nombre_es: "Operaciones IT y seguridad en un grupo multinacional",
     description: "| Microsoft 365 Admin | International Infrastructure\nEndpoint management, network infrastructure, ERP rollouts, and L2 support across Spain, USA, LATAM, and Asia.",
     description_es: "| Microsoft 365 Admin | Infraestructura Internacional\nGestión de endpoints, infraestructura de red, implementaciones ERP y soporte L2 en España, EE.UU., LATAM y Asia.",
     fechaInicio: "2021",
     fechaFin: "still on it",
     fechaFin_es: "en curso",
-    urlLink: "https://ininingroup.com/",
-    urlPic: "https://ininingroup.com/wp-content/uploads/2026/04/logo_INININ_rojo-scaled.png",
+    urlLink: "falta",
+    urlPic: "",
   },
   {
     className: "work__movement",

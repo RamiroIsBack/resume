@@ -1,3 +1,100 @@
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/space-grotesk-latin-600-normal.woff2) format("woff2");
+}
+
+/* Cauce IA brand strip (fixed, 40px): #root is pushed down so nothing sits under it */
+#root {
+  position: relative;
+  margin-top: 40px;
+}
+.brand__strip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 1000;
+  box-sizing: border-box;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #134e4a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.brand__strip__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Space Grotesk", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+}
+.brand__strip__link:hover .brand__strip__text {
+  text-decoration: underline;
+}
+.brand__strip__symbol {
+  width: 33px;
+  height: 24px;
+}
+
+/* Collaborators (hidden while collaboratorsList is empty) */
+.CollaboratorsContainer {
+  grid-area: c;
+  overflow-wrap: break-word;
+}
+.collaborators__list {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  padding: 0 20px 30px;
+}
+.collaborator {
+  text-align: center;
+}
+.collaborator__pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 10px;
+  display: block;
+}
+.collaborator__name {
+  margin: 0;
+}
+.collaborator__role {
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+/* Legal links under the footer */
+.legal__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  padding: 18px 16px 24px;
+  font-size: 14px;
+  color: #57534e;
+  background: #fafaf7;
+}
+.legal__links a {
+  color: #0f766e;
+  font-weight: 600;
+  text-decoration: none;
+}
+.legal__links a:hover {
+  text-decoration: underline;
+}
+
 .sidebar__contaniner {
   background: transparent;
   border-radius: 25px;
@@ -18,6 +115,7 @@
   grid-template-areas:
     "i i i i i i i i i i i i"
     "s u u u u u u u u u u u"
+    "s c c c c c c c c c c c"
     "s j j j j j j j j j j j"
     "s e e e e e e e e e e e"
     "s t t t t t t t t t t t"
@@ -103,7 +201,7 @@
   .sidebarColapsable__contaniner {
     background: transparent;
     border-radius: 25px;
-    top: 2px;
+    top: 44px;
     right: 0;
     width: 65px;
     position: fixed;
@@ -123,6 +221,7 @@
     grid-template-areas:
       "i i i i i i i i i i i i"
       "u u u u u u u u u u u u"
+      "c c c c c c c c c c c c"
       "j j j j j j j j j j j j"
       "e e e e e e e e e e e e"
       "t t t t t t t t t t t t"
