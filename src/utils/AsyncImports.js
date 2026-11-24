@@ -1,18 +1,17 @@
 import React, { lazy, Suspense } from "react";
 
-const Loading = () => <div>Loading...</div>;
-
+// Only below-the-fold sections are lazy. Nombre, Summary, JobsLayout and SideBar are imported statically in
+// App.js: they are above the fold, and lazy-loading them made a second request wave after main.js.
 const wrap = (LazyComp) => (props) => (
-  <Suspense fallback={<Loading />}>
+  <Suspense fallback={null}>
     <LazyComp {...props} />
   </Suspense>
 );
 
 export const AsyncModalContainer = wrap(lazy(() => import("../components/containers/ModalContainer")));
-export const AsyncSummaryContainer = wrap(lazy(() => import("../components/containers/SummaryContainer")));
-export const AsyncJobsLayout = wrap(lazy(() => import("../components/layout/JobsLayout")));
 export const AsyncServicesContainer = wrap(lazy(() => import("../components/containers/ServicesContainer")));
 export const AsyncTimeLineContainer = wrap(lazy(() => import("../components/containers/TimeLineContainer")));
-export const AsyncSideBarContainer = wrap(lazy(() => import("../components/containers/SideBarContainer")));
 export const AsyncFooterContainer = wrap(lazy(() => import("../components/containers/FooterContainer")));
-export const AsyncNombreContainer = wrap(lazy(() => import("../components/containers/NombreContainer")));
+// Google Maps (react-google-maps + lodash, plus ~1.5 MB from maps.googleapis.com) is only loaded when the footer
+// gets close to the viewport; see FooterContainer.
+export const AsyncMapaContainer = wrap(lazy(() => import("../components/containers/MapaContainer")));

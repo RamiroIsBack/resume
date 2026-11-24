@@ -1,21 +1,21 @@
-// All site content — edit text here. Photos stay in Firebase Storage (plain HTTPS links).
+// All site content — edit text here. Images live in public/images/cv (WebP, sized to 2x their display box).
 
 export const introPic = {
   nombre: "introPic",
-  urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FbackgroundImage.jpg?alt=media&token=8a8843f8-ebad-41ce-b59e-242d7c16615f",
+  urlPic: "/images/cv/hero-climbing.webp",
 };
 
 export const summaryPic = {
   nombre: "summaryPic",
-  urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FyoClimbPortrait.jpg?alt=media&token=a4ec019f-789f-4d8a-b88d-0c6f7f38507c",
+  urlPic: "/images/cv/portrait.webp",
   bio: "I've always been trying to work in what I enjoy.\nI enjoy very much programming — and that's what I've mostly done: creating mobile apps and web apps on my own or collaborating in different projects.\nI also enjoyed learning from various work fields and living in different countries, which made me more versatile as a worker and keeps expanding my skills.\nNowadays I live in Alcalá de Henares, Madrid, working across two things that genuinely excite me: full-stack development and IT & security operations.\nI manage IT and security infrastructure for a multinational group across Spain, USA, LATAM, and Asia. On the ERP side I develop extensions for Microsoft Dynamics 365 Business Central in AL.\nAlways excited for new projects!",
   bio_es: "Siempre he intentado trabajar en lo que disfruto.\nDisfruto mucho programando — y eso es lo que he hecho principalmente: creando apps móviles y aplicaciones web por mi cuenta o colaborando en diferentes proyectos.\nTambién disfruté aprendiendo de distintos campos laborales y viviendo en diferentes países, lo que me hizo más versátil como trabajador y sigue ampliando mis habilidades.\nActualmente vivo en Alcalá de Henares, Madrid, trabajando en dos cosas que me apasionan: el desarrollo full-stack y las operaciones IT y seguridad.\nGestiono la infraestructura IT y de seguridad de un grupo multinacional con presencia en España, EE.UU., LATAM y Asia. En el área ERP desarrollo extensiones para Microsoft Dynamics 365 Business Central en AL.\n¡Siempre emocionado por nuevos proyectos!",
 };
 
 export const sideBar = {
   nombre: "sideBar",
-  urlArrowClose: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FarrowRight.svg?alt=media&token=8af7c7fd-d157-4964-9cbc-6881d7bcf151",
-  urlArrowOpen:  "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FarrowLeft.png?alt=media&token=e561680f-d1d5-4ec3-b379-e731caac9766",
+  urlArrowClose: "/images/cv/arrow-close.svg",
+  urlArrowOpen:  "/images/cv/arrow-open.webp",
 };
 
 // copyList is used by components that look up items by nombre
@@ -31,7 +31,7 @@ export const servicesList = [
     bio: "Building the automation layer that makes IT operations scale — multi-agent systems, endpoint intelligence, and zero-touch monitoring across global infrastructure.\nThe work sits at the intersection of traditional IT operations and intelligent automation — building infrastructure that scales without scaling headcount.",
     bio_es: "Construyendo la capa de automatización que hace escalar las operaciones IT — sistemas multi-agente, inteligencia en endpoints y monitorización sin intervención manual en infraestructura global.\nEste trabajo se sitúa en la intersección entre las operaciones IT tradicionales y la automatización inteligente — construyendo infraestructura que escala sin aumentar el equipo.",
     percentage: 75,
-    urlPic: "https://avatars.githubusercontent.com/u/76263028?s=400&v=4",
+    urlPic: "/images/cv/skill-ai-automation.webp",
     ctaLabel: "Digitalize your business →",
     ctaLabel_es: "Digitaliza tu empresa →",
     ctaLink: "/",
@@ -42,14 +42,14 @@ export const servicesList = [
     bio: "AL is Microsoft's language for extending and customising Dynamics 365 Business Central — the ERP platform used by hundreds of thousands of companies worldwide.\nWith AL I build extensions that add new tables, pages, reports, and business logic on top of the standard ERP, tailoring it to each client's processes without touching core code.\nDeployments go through the extension model (per-tenant or AppSource), keeping upgrades clean and the base application intact.\nCurrent projects include custom workflows, automated data integrations with external APIs, and finance-module customisations for multinational clients.",
     bio_es: "AL es el lenguaje de Microsoft para extender y personalizar Dynamics 365 Business Central — la plataforma ERP usada por cientos de miles de empresas en todo el mundo.\nCon AL construyo extensiones que añaden nuevas tablas, páginas, informes y lógica de negocio sobre el ERP estándar, adaptándolo a los procesos de cada cliente sin tocar el código base.\nLos despliegues se realizan mediante el modelo de extensiones (per-tenant o AppSource), manteniendo las actualizaciones limpias y la aplicación base intacta.\nLos proyectos actuales incluyen flujos de trabajo personalizados, integraciones automatizadas con APIs externas y personalizaciones del módulo financiero para clientes multinacionales.",
     percentage: 70,
-    urlPic: "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/Business-Central-icon?resMode=sharp2&op_usm=1.5,0.65,15,0&qlt=100&fit=constrain",
+    urlPic: "/images/cv/skill-business-central.svg",
   },
   {
     nombre: "ReactJs",
     bio: "All the heavy lifting of my web-apps have been done so far with ReactJs, using SWR and React Context it's so powerful, I just love the component way of programming.",
     bio_es: "Todo el trabajo pesado de mis aplicaciones web lo he realizado con ReactJs. Usando SWR y React Context es muy potente, ¡me encanta la programación basada en componentes!",
     percentage: 80,
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FreactJs.png?alt=media&token=e26d4e05-5609-4f14-8f34-2511419cddf8",
+    urlPic: "/images/cv/skill-react.webp",
   },
   {
     nombre: "ITStack",
@@ -76,45 +76,45 @@ export const servicesList = [
     bio: "I've been using Firebase for all my recent projects: its real-time database, authentication, server-side functions... It's a very complete tool.",
     bio_es: "He usado Firebase en todos mis proyectos recientes: su base de datos en tiempo real, autenticación, funciones en el servidor... Es una herramienta muy completa.",
     percentage: 80,
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Ffirebase.png?alt=media&token=23944ce2-4d4b-4384-890d-d6a577c843bd",
+    urlPic: "/images/cv/skill-firebase.webp",
   },
   {
     nombre: "NodeJs",
     bio: "I've got a Node-Express back-end up and running with GraphQL integrated. There is just so much that can be done in Node, I can't wait to keep on learning.",
     bio_es: "Tengo un backend Node-Express funcionando con GraphQL integrado. Hay tanto que se puede hacer en Node, tengo muchas ganas de seguir aprendiendo.",
     percentage: 60,
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FnodeJs.jpg?alt=media&token=4650d90d-96cb-4a2a-bd6d-8a62fd7e76db",
+    urlPic: "/images/cv/skill-nodejs.webp",
   },
   {
     nombre: "WordPress",
     bio: "I used WordPress in different projects, mainly for e-commerce.",
     bio_es: "He usado WordPress en diferentes proyectos, principalmente para e-commerce.",
     percentage: 80,
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Flogo-wordpress.jpg?alt=media&token=a46bbd73-230b-4312-b989-878557edaabf",
+    urlPic: "/images/cv/skill-wordpress.webp",
   },
   {
     nombre: "GraphQL",
     bio: "Used it alongside Apollo for the front end and integrated in an Express server for the backend. I love the possibilities this tool brings — definitely the next generation of REST APIs.",
     bio_es: "Lo usé junto con Apollo para el front end e integrado en un servidor Express para el backend. Me encantan las posibilidades que ofrece, definitivamente la próxima generación de las API REST.",
     percentage: 60,
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fgraphql.png?alt=media&token=8ccb1621-8a9e-4e47-aa0d-b6629496da3b",
+    urlPic: "/images/cv/skill-graphql.webp",
   },
   {
     nombre: "Scrum-Agile",
     bio: "Since 2017, I use Scrum agile techniques in every project that I manage. Click the image to see the slides of a presentation I created for my projects.",
     bio_es: "Desde 2017, uso técnicas ágiles de Scrum en cada proyecto que gestiono. Haz clic en la imagen para ver las diapositivas de una presentación que creé para mis proyectos.",
     percentage: 70,
-    urlPic:  "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FScrum%20checkBox%20(3).jpg?alt=media&token=be3357e4-a13f-4d3b-a1e2-8620b99c804f",
-    urlPic1: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FScrum%20checkBox.jpg?alt=media&token=7f8dff10-31e6-450e-b315-ce685bac1033",
-    urlPic2: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FScrum%20checkBox%20(1).jpg?alt=media&token=a69e885c-f14c-4864-aacc-e7460d44c2d4",
-    urlPic3: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FScrum%20checkBox%20(2).jpg?alt=media&token=4b653979-ab27-477d-8b13-d69c1e4f5861",
+    urlPic:  "/images/cv/skill-scrum.webp",
+    urlPic1: "/images/cv/scrum-slide-1.webp",
+    urlPic2: "/images/cv/scrum-slide-2.webp",
+    urlPic3: "/images/cv/scrum-slide-3.webp",
   },
   {
     nombre: "HTML",
     bio: "I used pure HTML for just a few web pages. It's especially useful for configuration pages or to quickly fill a database with content — very fast and straightforward.",
     bio_es: "He usado HTML puro para pocas páginas web. Es especialmente útil para páginas de configuración o para rellenar rápidamente una base de datos con contenido — muy rápido y directo.",
     percentage: 60,
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fhtml.png?alt=media&token=9d3ccc3a-da88-47b2-8964-eb042b5f138d",
+    urlPic: "/images/cv/skill-html.webp",
   },
 ];
 
@@ -131,7 +131,7 @@ export const worksList = [
     state_es: "servicio nuevo",
     priority: -2,
     url: "/",
-    urlPic: "https://www.galvi.es/wp-content/uploads/2024/01/Galvi-2020-logo-AZ-600px-300x151.png",
+    urlPic: "/images/cv/work-digitalization-client.webp",
   },
   {
     nombre: "alphaBiosciences",
@@ -142,7 +142,7 @@ export const worksList = [
     state_es: "en producción",
     priority: 0,
     url: "https://alphabiosciences.com/",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Falphabioscienceslogo.png?alt=media&token=e97e3f89-3d67-4cbf-a8bb-5310e1028a2d",
+    urlPic: "/images/cv/work-client-lab.webp",
   },
   {
     nombre: "Blokes",
@@ -153,7 +153,7 @@ export const worksList = [
     state_es: "en producción",
     priority: 1,
     url: "https://rocomadrid.com/blokes",
-    urlPic: "https://rocomadrid.com/wp-content/uploads/2025/12/logo-rocomadrid-89eac3.svg",
+    urlPic: "/images/cv/work-climbing-gym.svg",
   },
   {
     nombre: "FisioterapiaBuendia",
@@ -164,8 +164,8 @@ export const worksList = [
     state_es: "en producción",
     priority: 4,
     url: "https://www.fisioterapiabuendia.com/",
-    urlPic:  "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fbuendia.png?alt=media&token=b5c55226-078d-4b92-8489-f497a62475f2",
-    urlPic2: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fbuendia2.jpg?alt=media&token=ccba8452-fd37-4383-8193-e4c59dc6afb7",
+    urlPic:  "/images/cv/work-physio-web.webp",
+    urlPic2: "/images/cv/work-physio-web-2.webp",
   },
   {
     nombre: "XlsxProgram",
@@ -175,8 +175,8 @@ export const worksList = [
     state: "in production",
     state_es: "en producción",
     priority: 5,
-    urlPic:  "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FexcellProgramAsyncMapSeries.jpg?alt=media&token=52c17d16-a89d-4a84-af45-c24d5097a13d",
-    urlPic2: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FexcellProgramFluxDiagram.jpg?alt=media&token=81357c57-ebb4-4190-b7c6-e0387c09a0fd",
+    urlPic:  "/images/cv/work-excel-tool.webp",
+    urlPic2: "/images/cv/work-excel-tool-diagram.webp",
   },
 ];
 
@@ -267,7 +267,7 @@ export const talksList = [
     bio: "I gave this talk about a fast and robust full stack architecture for a mobile app at CharmCityJs monthly Meetup.",
     bio_es: "Di esta charla sobre una arquitectura full stack rápida y robusta para una app móvil en la reunión mensual de CharmCityJs.",
     date: "08/01/2018",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FWhatsApp%20Image%202018-08-02%20at%2018.02.40.jpeg?alt=media&token=2dd4ae39-53c2-4bd8-a52f-ba25e75fdecd",
+    urlPic: "/images/cv/talk-meetup.webp",
     urlVideo: "https://www.youtube.com/watch?v=epIiTNjvW8o",
   },
 ];
@@ -309,7 +309,7 @@ export const timeLineList = [
     fechaInicio: "2018",
     fechaFin: 2021,
     urlLink: "https://www.movementgyms.com/",
-    urlPic: "https://movementgyms.com/app/uploads/2021/11/Movement-Logo-H-RGB-Teal-White.svg",
+    urlPic: "",
   },
   {
     className: "work__alpha",
@@ -320,7 +320,7 @@ export const timeLineList = [
     fechaInicio: "11/2018",
     fechaFin: 2021,
     urlLink: "https://alphabiosciences.com/",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FAlphaLogo.jpg?alt=media&token=e0cc00d4-bde2-46dd-b2ec-722af39dc495",
+    urlPic: "/images/cv/tl-client-lab.webp",
   },
   {
     className: "work__mobile__app",
@@ -344,7 +344,7 @@ export const timeLineList = [
     fechaFin: "still on it",
     fechaFin_es: "en curso",
     urlLink: "http://www.micotextil.com/",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fmico_disegno_textil.jpg?alt=media&token=628ae993-7cb4-4382-84a4-635344bcc0d3",
+    urlPic: "/images/cv/tl-textile-web.webp",
   },
   {
     className: "work__rope__acces__technician",
@@ -355,7 +355,7 @@ export const timeLineList = [
     fechaInicio: 2014,
     fechaFin: 2016,
     urlLink: "https://www.asakenropeaccess.com/homeeng",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FasakenCroped.jpg?alt=media&token=d4ef928d-be3b-44a6-b015-acd25967c9a1",
+    urlPic: "/images/cv/tl-rope-access-company.webp",
   },
   {
     className: "work__android",
@@ -366,7 +366,7 @@ export const timeLineList = [
     fechaInicio: 2012,
     fechaFin: 2015,
     urlLink: "https://play.google.com/store/apps/details?id=com.awimbawe.ramiro.bilbaoComercio",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FBSOF.png?alt=media&token=722dda9c-b232-4c8c-8ed6-ad5d640cfa14",
+    urlPic: "/images/cv/tl-shopping-app.webp",
   },
   {
     className: "work__english__teacher",
@@ -377,7 +377,7 @@ export const timeLineList = [
     fechaInicio: 2009,
     fechaFin: 2012,
     urlLink: "http://www.mdsidiomas.com/",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FMDS.jpg?alt=media&token=04363ae9-87aa-4c09-be5d-4dd2f29a6e0e",
+    urlPic: "/images/cv/tl-language-school.webp",
   },
   {
     className: "work__java",
@@ -388,7 +388,7 @@ export const timeLineList = [
     fechaInicio: 2010,
     fechaFin: 2010,
     urlLink: "falta",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fjava.png?alt=media&token=d0c05b0b-656e-4159-8cc7-73c8c7ba0c4f",
+    urlPic: "/images/cv/tl-java.webp",
   },
   {
     className: "work__programmingC",
@@ -399,7 +399,7 @@ export const timeLineList = [
     fechaInicio: 2006,
     fechaFin: 2008,
     urlLink: "http://www.citef.es/en/",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fcitef.png?alt=media&token=aa241e1e-52dd-4041-a422-82796a6dd7b5",
+    urlPic: "/images/cv/tl-research-centre.webp",
   },
 
   // ── Studies entries (right side) ──
@@ -424,7 +424,7 @@ export const timeLineList = [
     fechaFin: "still on it",
     fechaFin_es: "en curso",
     urlLink: "https://www.udemy.com/windows-server-2016-administration-and-deployment/",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FWserver2016Logo.png?alt=media&token=77ee136f-501d-4c05-ab20-07fb679af361",
+    urlPic: "/images/cv/tl-windows-server.webp",
   },
   {
     className: "studies__react",
@@ -436,7 +436,7 @@ export const timeLineList = [
     fechaFin: "never ending",
     fechaFin_es: "sin fin",
     urlLink: "https://www.udemy.com/graphql-with-react-course/learn/v4/content",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fudemy.png?alt=media&token=b10d8ae5-5cf2-4b28-be17-75bd9b960f71",
+    urlPic: "/images/cv/tl-online-courses.webp",
   },
   {
     className: "studies__vertical",
@@ -447,7 +447,7 @@ export const timeLineList = [
     fechaInicio: 2014,
     fechaFin: 2016,
     urlLink: "https://www.irata.org/",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fgwo.jpg?alt=media&token=97f84471-61c0-42fc-8925-f97f0958222f",
+    urlPic: "/images/cv/tl-rope-access.webp",
   },
   {
     className: "studies__android",
@@ -458,7 +458,7 @@ export const timeLineList = [
     fechaInicio: 2013,
     fechaFin: 2014,
     urlLink: "https://apkcloud.pw/apk/com-awimbawe-ramiro-bilbaoComercio/",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fandroid.png?alt=media&token=dbd89d37-fd48-4257-aab4-53122db4ac39",
+    urlPic: "/images/cv/tl-android.webp",
   },
   {
     className: "studies__civil__servant",
@@ -469,7 +469,7 @@ export const timeLineList = [
     fechaInicio: 2008,
     fechaFin: 2010,
     urlLink: "falta",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fcivil.jpg?alt=media&token=ed72cab4-6e35-43b5-a7cf-2f3ff1a2cf7f",
+    urlPic: "/images/cv/tl-civil-service.webp",
   },
   {
     className: "studies__degree",
@@ -480,7 +480,7 @@ export const timeLineList = [
     fechaInicio: 2000,
     fechaFin: 2005,
     urlLink: "http://www.uax.es/en/",
-    urlPic: "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2Fuax.png?alt=media&token=d7927956-96fe-4a08-b399-32038af344a2",
+    urlPic: "/images/cv/tl-university.webp",
   },
 ];
 
@@ -490,41 +490,41 @@ export const footerList = [
   {
     nombre: "download",
     urlLink: "/files/CV-Ramiro-2026.pdf",
-    urlPic:  "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FdownTrans.png?alt=media&token=03cb2575-0591-4c0d-ab3c-d57f5766c498",
+    urlPic:  "/images/cv/icon-download.webp",
   },
   {
     nombre: "gMaps",
     urlLink: "https://www.google.com/maps/place/Alcal%C3%A1+de+Henares,+Madrid/@40.4817,-3.3763,13z",
-    urlPic:  "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FMeO2.png?alt=media&token=b86521d2-c73b-49c5-86d0-6a3036908888",
+    urlPic:  "/images/cv/map-photo.webp",
   },
   {
     nombre: "email",
     urlLink: "ramiro.santamaria.alvarez@gmail.com",
-    urlPic:  "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FmailTrans.png?alt=media&token=9ba4796a-b2fa-4491-9fc8-1d87a53d7105",
+    urlPic:  "/images/cv/icon-mail.webp",
   },
   {
     nombre: "tel",
     urlLink: "+34 616619907",
-    urlPic:  "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FphoneTrans.png?alt=media&token=0cbada0e-7f74-40f9-a0cf-4c4b905ea110",
+    urlPic:  "/images/cv/icon-phone.webp",
   },
   {
     nombre: "instagram",
     urlLink: "https://www.instagram.com/ramirosan69/",
-    urlPic:  "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FinstaTrans.png?alt=media&token=bdea3612-2d10-4322-9d60-3d722151b811",
+    urlPic:  "/images/cv/icon-instagram.webp",
   },
   {
     nombre: "stackOverFlow",
     urlLink: "https://stackoverflow.com/users/8069457/ramiroisback",
-    urlPic:  "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FstackTrans.png?alt=media&token=c5b2ed4a-c6b7-463f-8604-a1edd288d581",
+    urlPic:  "/images/cv/icon-stackoverflow.webp",
   },
   {
     nombre: "linkedIn",
     urlLink: "https://www.linkedin.com/in/ramiro-santamaria-alvarez-b5a69072/",
-    urlPic:  "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FlinkedinTrans.png?alt=media&token=f8419593-baba-4009-9291-d4187d69d94c",
+    urlPic:  "/images/cv/icon-linkedin.webp",
   },
   {
     nombre: "gitHub",
     urlLink: "https://github.com/RamiroIsBack",
-    urlPic:  "https://firebasestorage.googleapis.com/v0/b/resume-40a8a.appspot.com/o/fotos%2FgithubTrans.png?alt=media&token=be01e4cd-8261-4b0d-ba99-8e07c144fe2c",
+    urlPic:  "/images/cv/icon-github.webp",
   },
 ];

@@ -1,7 +1,7 @@
 import React from "react";
 import { useCopy } from "../../utils/useCopy";
 import { useUI } from "../../context/UIContext";
-import { TimeBox } from "../presentational";
+import TimeBox from "../presentational/TimeBox";
 import "../../css"; // eslint-disable-line no-unused-vars
 
 function TimeLineContainer() {

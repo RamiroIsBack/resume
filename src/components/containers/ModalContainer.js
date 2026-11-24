@@ -1,5 +1,6 @@
 import React from "react";
-import { ServiceModal, WorkModal } from "../presentational";
+import ServiceModal from "../presentational/ServiceModal";
+import WorkModal from "../presentational/WorkModal";
 import { useCopy } from "../../utils/useCopy";
 import { useUI } from "../../context/UIContext";
 

@@ -47,7 +47,7 @@ function SideBarContainer() {
           {!isColapsed && (
             <div className="sidebar__menu__container__mobile">
               <div className="sidebar__menu__arrow__colapse__container">
-                <img className="sidebar__menu__arrow__colapse" src={sideBarCopy.urlArrowClose} alt="colapse" onClick={() => toggleMenu(!colapsed)} />
+                <img className="sidebar__menu__arrow__colapse" src={sideBarCopy.urlArrowClose} alt="colapse" width="20" height="30" onClick={() => toggleMenu(!colapsed)} />
               </div>
               <h4 className="sidebar__section__link"  id="summary"  style={styleSummary}  onClick={handleSectionSelection}>{t.navProfileMobile}</h4>
               <h4 className="sidebar__section__link"  id="work"     style={styleWork}     onClick={handleSectionSelection}>{t.navWorkMobile}</h4>
@@ -58,7 +58,7 @@ function SideBarContainer() {
           )}
           {isColapsed && (
             <div className="sidebar__colapsed__photo__container__mobile">
-              <img className="sidebar__colapsed__photo__mobile" src={sideBarCopy.urlArrowOpen} alt="colapsed" onClick={() => toggleMenu(!colapsed)} />
+              <img className="sidebar__colapsed__photo__mobile" src={sideBarCopy.urlArrowOpen} alt="colapsed" width="40" height="40" onClick={() => toggleMenu(!colapsed)} />
             </div>
           )}
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useCopy } from "../../utils/useCopy";
 import { useUI } from "../../context/UIContext";
-import { Service } from "../presentational";
+import Service from "../presentational/Service";
 import "../../css"; // eslint-disable-line no-unused-vars
 
 function ServicesContainer() {

@@ -20,6 +20,9 @@ function IntroContainer() {
           style={animeIt}
           src={urlPic}
           alt=""
+          width="1600"
+          height="860"
+          fetchpriority="high"
           onLoad={() => setImgLoaded(true)}
           onError={() => console.log("waiting for intro img")}
         />

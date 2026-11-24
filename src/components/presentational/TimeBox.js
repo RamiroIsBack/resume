@@ -1,5 +1,4 @@
 import React from 'react';
-import LazyLoad from 'react-lazy-load';
 import { localize } from '../../utils/localize';
 
 function TimeBox({ copy, urlClick, lang }) {
@@ -16,15 +15,18 @@ function TimeBox({ copy, urlClick, lang }) {
           onClick={() => urlClick(copy.urlLink)}
         >{nombre}</h3>
         <div className='logo__photo__container'>
-          <LazyLoad height={60} offsetVertical={200}>
+          {copy.urlPic && (
             <img
               className='logo__photo'
               src={copy.urlPic}
               alt=''
+              height='60'
+              loading='lazy'
+              decoding='async'
               style={pointer}
               onClick={() => urlClick(copy.urlLink)}
             />
-          </LazyLoad>
+          )}
         </div>
       </div>
       <div className='fecha_container'>

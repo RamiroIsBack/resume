@@ -1,5 +1,4 @@
 import React from "react";
-import LazyLoad from "react-lazy-load";
 import { localize } from "../../utils/localize";
 
 function Service({ serviceInfo, sectionSelected, openModal, lang }) {
@@ -52,9 +51,7 @@ function Service({ serviceInfo, sectionSelected, openModal, lang }) {
     <div>
       <div className="name__pic__container">
         <h2 className="service__name">{nombre}</h2>
-        <LazyLoad height={60} offsetVertical={100}>
-          <img className="logo_pic" style={cursor} alt="" src={logo} onClick={handleClick} />
-        </LazyLoad>
+        <img className="logo_pic" style={cursor} alt="" src={logo} width="60" height="60" loading="lazy" decoding="async" onClick={handleClick} />
       </div>
       <div className="progress__bar__container">
         <div className="progress__bar" style={stylingBarWidth} />

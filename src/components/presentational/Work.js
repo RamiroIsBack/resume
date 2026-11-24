@@ -30,7 +30,7 @@ function Work({ type, copy, selected, changeWorkSelected, mobile, lang }) {
         )}
       </div>
       <div className="work__pic__container">
-        <img className="work__pic" alt={copy.nombre} src={copy.urlPic} />
+        <img className="work__pic" alt={copy.nombre} src={copy.urlPic} loading="lazy" decoding="async" />
       </div>
       {!mobile && (
         <div className="work__bio__container">

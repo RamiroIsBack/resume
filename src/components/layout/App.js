@@ -3,17 +3,17 @@ import { useUI } from "../../context/UIContext";
 import { ui } from "../../i18n/ui";
 import "../../css"; // eslint-disable-line no-unused-vars
 import IntroContainer from "../containers/IntroContainer";
+import NombreContainer from "../containers/NombreContainer";
+import SummaryContainer from "../containers/SummaryContainer";
+import SideBarContainer from "../containers/SideBarContainer";
+import JobsLayout from "./JobsLayout";
 import CollaboratorsContainer from "../containers/CollaboratorsContainer";
 import { useCopy } from "../../utils/useCopy";
 import { cauceUrl } from "../../utils/cauceUrl";
 import {
   AsyncModalContainer,
   AsyncFooterContainer,
-  AsyncJobsLayout,
-  AsyncNombreContainer,
   AsyncServicesContainer,
-  AsyncSideBarContainer,
-  AsyncSummaryContainer,
   AsyncTimeLineContainer
 } from "../../utils/AsyncImports";
 import Waypoint from "react-waypoint";
@@ -69,7 +69,7 @@ function BrandStrip({ lang, setLang, t }) {
 }
 
 function App() {
-  const { screenSize, sectionSelected, imgLoaded, lang, chageScreenWidth, changeScrollIndicator, setLang } = useUI();
+  const { screenSize, sectionSelected, imgLoaded, lang, workModal, serviceModal, chageScreenWidth, changeScrollIndicator, setLang } = useUI();
   const t = ui[lang];
   const { collaboratorsList } = useCopy();
 
@@ -116,8 +116,8 @@ function App() {
     <div>
       <BrandStrip lang={lang} setLang={setLang} t={t} />
 
-      <AsyncNombreContainer />
-      <AsyncModalContainer />
+      <NombreContainer />
+      {(workModal !== "" || serviceModal !== "") && <AsyncModalContainer />}
       <div className="main__container">
         <div className="IntroContainer">
           <IntroContainer />
@@ -131,7 +131,7 @@ function App() {
             }}
           />
           {imgLoaded && <div className="section__headline">{t.sectionProfile}</div>}
-          <AsyncSummaryContainer />
+          <SummaryContainer />
         </div>
 
         {collaboratorsList.length > 0 && (
@@ -152,7 +152,7 @@ function App() {
             }}
           />
           {imgLoaded && <div className="section__headline">{t.sectionWork}</div>}
-          <AsyncJobsLayout />
+          <JobsLayout />
         </div>
 
         <div className="ServicesContainer" id="servicesContainer" ref={servicesSection}>
@@ -183,13 +183,13 @@ function App() {
 
         {mobile && imgLoaded && (
           <div className="sidebarColapsable__contaniner">
-            <AsyncSideBarContainer />
+            <SideBarContainer />
           </div>
         )}
         {!mobile && (
           <div className="SideBarSpace">
             <div className="sidebar__contaniner">
-              <AsyncSideBarContainer />
+              <SideBarContainer />
             </div>
           </div>
         )}

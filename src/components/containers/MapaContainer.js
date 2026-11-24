@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mapa } from '../presentational';
+import Mapa from '../presentational/Mapa';
 import { withScriptjs } from 'react-google-maps';
 
 function MapaContainer({ mapInfo }) {

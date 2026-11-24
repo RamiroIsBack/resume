@@ -9,6 +9,7 @@
 .intro__foto {
   max-height: 100%;
   max-width: 100%;
+  height: auto;
   margin: auto;
 }
 @keyframes fadeIntro {

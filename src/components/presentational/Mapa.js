@@ -1,6 +1,5 @@
 import React from 'react';
 import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
-import LazyLoad from 'react-lazy-load';
 import { useUI } from '../../context/UIContext';
 import { ui } from '../../i18n/ui';
 
@@ -35,17 +34,18 @@ function Mapa({ mapInfo }) {
       >
         <InfoWindow>
           <div style={{ maxWidth: 600, padding: 0, margin: 0 }}>
-            <LazyLoad height={60} offsetVertical={100}>
-              <img
-                role='presentation'
-                src={foto}
-                className='infoWindow__img'
-                alt='foto'
-                id='fotoInfoWindow'
-                style={{ opacity: 0.9, maxHeight: 60, maxWidth: 60, cursor: 'pointer', marginRight: '2px' }}
-                onClick={() => handleClick(MAPS_URL)}
-              />
-            </LazyLoad>
+            <img
+              role='presentation'
+              src={foto}
+              className='infoWindow__img'
+              alt='foto'
+              id='fotoInfoWindow'
+              width='60'
+              height='58'
+              decoding='async'
+              style={{ opacity: 0.9, maxHeight: 60, maxWidth: 60, cursor: 'pointer', marginRight: '2px' }}
+              onClick={() => handleClick(MAPS_URL)}
+            />
             <div className='infoWindow__bio' style={{ padding: 0 }}>
               <h6 style={{ marginTop: 2, marginBottom: 2 }}>{t.iAmIn}</h6>
               <h5 style={{ marginTop: 2, marginBottom: 0 }}>{t.city}</h5>

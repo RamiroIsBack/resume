@@ -42,7 +42,7 @@ function SummaryContainer() {
                 </div>
               </div>
               <div>
-                <img className="summary__photo" src={urlPic} alt="" onLoad={handleImageLoaded} onError={handleImageErrored} />
+                <img className="summary__photo" src={urlPic} alt="" width="1500" height="1000" decoding="async" onLoad={handleImageLoaded} onError={handleImageErrored} />
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@ function SummaryContainer() {
               <h2 className="head__line">{t.aboutMeMobile}</h2>
               <h2 className="contact__button" onClick={handleClick}>{t.contactInfo}</h2>
               <div className="summary__photo__container">
-                <img className="summary__photo" src={urlPic} alt="" onLoad={handleImageLoaded} onError={handleImageErrored} />
+                <img className="summary__photo" src={urlPic} alt="" width="1500" height="1000" decoding="async" onLoad={handleImageLoaded} onError={handleImageErrored} />
               </div>
             </div>
             <div className="summary__copy">
