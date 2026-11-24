@@ -1,8 +1,11 @@
 # Un solo sitio de SiteGround sirve tres dominios (aparcados): cauce-ia.es (principal), cauce-ia.com y
 # ramirosantamaria.com. El enrutado por dominio se hace aquí.
-#   cauce-ia.es/            -> digitalizacion.html (portada de Cauce IA)
-#   cauce-ia.es/equipo      -> index.html (app React del CV)
-#   /aviso-legal, /privacidad -> páginas legales (en cualquier dominio)
+#   cauce-ia.es/              -> digitalizacion.html (portada de Cauce IA)
+#   cauce-ia.es/equipo        -> index.html (app React del CV)
+#   cauce-ia.es/aviso-legal, /privacidad -> páginas legales
+#   cauce-ia.com y ramirosantamaria.com -> 301 a cauce-ia.es (ver abajo)
+# Las reglas de dominio casan solo con el dominio exacto y su www: los subdominios
+# (project.ramirosantamaria.com, etc.) no se ven afectados.
 
 DirectoryIndex index.html
 RewriteEngine On
@@ -11,6 +14,20 @@ RewriteBase /
 # Validación de certificados (Let's Encrypt): sin redirecciones
 RewriteRule ^\.well-known/ - [L]
 
+# ramirosantamaria.com (con o sin www, http o https) -> cauce-ia.es en un solo salto.
+# Los recursos estáticos (CV en PDF, imágenes, assets...) se siguen sirviendo para no romper enlaces antiguos.
+RewriteCond %{HTTP_HOST} ^(www\.)?ramirosantamaria\.com$ [NC]
+RewriteRule ^digitalizacion(\.html)?/?$ https://cauce-ia.es/ [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?ramirosantamaria\.com$ [NC]
+RewriteRule ^(aviso-legal|privacidad)(\.html)?/?$ https://cauce-ia.es/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?ramirosantamaria\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/(assets|files|images|brand|fonts|css|js)/
+RewriteRule ^ https://cauce-ia.es/equipo [R=301,L]
+
+# cauce-ia.com (con o sin www) -> cauce-ia.es (misma ruta), en un solo salto
+RewriteCond %{HTTP_HOST} ^(www\.)?cauce-ia\.com$ [NC]
+RewriteRule ^ https://cauce-ia.es%{REQUEST_URI} [R=301,L]
+
 # Forzar https
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
@@ -18,21 +35,6 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 # www -> sin www
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
-
-# cauce-ia.com -> cauce-ia.es (misma ruta)
-RewriteCond %{HTTP_HOST} ^cauce-ia\.com$ [NC]
-RewriteRule ^ https://cauce-ia.es%{REQUEST_URI} [R=301,L]
-
-# ramirosantamaria.com -> cauce-ia.es
-# FASE 2: descomentar SOLO cuando https://cauce-ia.es funcione con SSL. Los recursos estáticos (CV en PDF,
-# imágenes, assets) se siguen sirviendo para no romper enlaces antiguos.
-# RewriteCond %{HTTP_HOST} ^ramirosantamaria\.com$ [NC]
-# RewriteRule ^digitalizacion(\.html)?/?$ https://cauce-ia.es/ [R=301,L]
-# RewriteCond %{HTTP_HOST} ^ramirosantamaria\.com$ [NC]
-# RewriteRule ^(aviso-legal|privacidad)(\.html)?/?$ https://cauce-ia.es/$1 [R=301,L]
-# RewriteCond %{HTTP_HOST} ^ramirosantamaria\.com$ [NC]
-# RewriteCond %{REQUEST_URI} !^/(assets|files|images|brand|fonts|css|js)/
-# RewriteRule ^ https://cauce-ia.es/equipo [R=301,L]
 
 # cauce-ia.es: URLs antiguas de la portada -> /. Se mira THE_REQUEST (lo que pidió el navegador) para no
 # entrar en bucle con la reescritura interna de / a digitalizacion.html.
@@ -47,13 +49,8 @@ RewriteRule ^ https://cauce-ia.es/equipo [R=301,L]
 RewriteCond %{HTTP_HOST} ^cauce-ia\.es$ [NC]
 RewriteRule ^$ digitalizacion.html [L]
 
-# /equipo -> app del CV (en cualquier dominio, para que también funcione en ramirosantamaria.com en la fase 1)
+# /equipo -> app del CV
 RewriteRule ^equipo/?$ index.html [L]
 
 # URLs limpias de las páginas legales
 RewriteRule ^(aviso-legal|privacidad)/?$ $1.html [L]
-
-# URL limpia: /digitalizacion -> digitalizacion.html (ramirosantamaria.com en la fase 1)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^digitalizacion/?$ digitalizacion.html [L]
