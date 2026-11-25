@@ -20,7 +20,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-public/files/
+# Only the current, reviewed CV is published (the repo is public)
+public/files/*
+!public/files/CV-Ramiro-2027.pdf
 
 # working notes / briefs not meant for the repo
 /cowork

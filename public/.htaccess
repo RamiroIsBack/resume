@@ -14,6 +14,10 @@ RewriteBase /
 # Validación de certificados (Let's Encrypt): sin redirecciones
 RewriteRule ^\.well-known/ - [L]
 
+# CV en PDF: el enlace antiguo apunta al vigente (en cualquier dominio). Solo funciona mientras el fichero
+# antiguo NO exista en el servidor: Nginx sirve directamente los ficheros que existen.
+RewriteRule ^files/CV-Ramiro-2026\.pdf$ https://cauce-ia.es/files/CV-Ramiro-2027.pdf [R=301,L]
+
 # ramirosantamaria.com (con o sin www, http o https) -> cauce-ia.es en un solo salto.
 # Los recursos estáticos (CV en PDF, imágenes, assets...) se siguen sirviendo para no romper enlaces antiguos.
 RewriteCond %{HTTP_HOST} ^(www\.)?ramirosantamaria\.com$ [NC]

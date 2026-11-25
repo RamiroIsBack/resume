@@ -38,9 +38,6 @@
 .studies__android {
   grid-area: a;
 }
-.studies__vertical {
-  grid-area: v;
-}
 .studies__react {
   grid-area: r;
 }
@@ -65,7 +62,7 @@
 .work__mobile__app {
   grid-area: m;
 }
-.work__alpha {
+.work__biotech {
   grid-area: h;
 }
 .studies__windows__server {
@@ -126,9 +123,6 @@
   .studies__android {
     grid-area: a;
   }
-  .studies__vertical {
-    grid-area: v;
-  }
   .studies__react {
     grid-area: r;
   }
@@ -153,7 +147,7 @@
   .work__mobile__app {
     grid-area: m;
   }
-  .work__alpha {
+  .work__biotech {
     grid-area: h;
   }
   .studies__windows__server {
